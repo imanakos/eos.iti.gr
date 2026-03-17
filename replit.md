@@ -25,7 +25,7 @@ Fully self-contained with all content fetched and migrated from the original sit
 
 **Pages (all internal routes):**
 - `/` — Home
-- `/news` — All 54+ news articles with search + pagination (real images from eos.iti.gr)
+- `/news` — All 157 news articles with search + pagination (all images locally hosted)
 - `/our-work` — Our Work hub linking to all sub-pages
 - `/our-work/projects` — All research projects with real logos
 - `/our-work/cooperations` — All cooperations (NASA LCLUC, EARSeL, Copernicus Academy, etc.)
@@ -41,11 +41,21 @@ Fully self-contained with all content fetched and migrated from the original sit
 - `/contact` — Contact with real director info + functional mailto form
 
 **Data files:**
-- `src/data/newsData.ts` — 54 news articles with images and original URLs
+- `src/data/newsData.ts` — 157 news articles (complete) with images, dates, and original URLs
 - `src/data/projectsData.ts` — All projects (recent + past) with descriptions
 
+**Publications page** — 7 tabs: Journal (37), Books (6), Conference (21), Networking (95), Poster Corner (9), Video Corner (19), Press Corner (5)
+
+**Images:** All 200+ images self-hosted in `public/images/` — zero external requests to eos.iti.gr
+- `public/images/logo/logoeos8.png` — real EOS logo (matched to original site)
+- `public/images/news/` — all 157 news article images
+- `public/images/cooperation/projects/` — all cooperation org logos
+- `public/images/projects/` — all project logos
+- `public/images/publishing/` — poster/press corner images
+- `public/images/structure/` — team photos
+- `public/files/hopfen.pdf` — press corner PDF download
+
 **Tech:** wouter (routing), framer-motion (animations), lucide-react (icons), TailwindCSS v4
-**Images:** Loaded directly from eos.iti.gr (no downloads needed, all public)
 **No backend** — fully static frontend
 **Domain plan:** Once deployed, point eos.iti.gr DNS to this Replit app
 

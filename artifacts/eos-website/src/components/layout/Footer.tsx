@@ -9,18 +9,11 @@ export function Footer() {
 
           <div className="flex flex-col gap-5">
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center p-1">
-                <img
-                  src={`${import.meta.env.BASE_URL}images/logo.png`}
-                  alt="EOS Logo"
-                  className="w-full h-full object-cover"
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-xl text-white leading-tight tracking-tight">EOS</span>
-                <span className="text-[10px] font-medium tracking-widest uppercase text-slate-400">CERTH / ITI</span>
-              </div>
+              <img
+                src={`${import.meta.env.BASE_URL}images/logo/logoeos8.png`}
+                alt="EOS Logo"
+                className="h-12 w-auto object-contain brightness-200"
+              />
             </Link>
             <p className="text-sm leading-relaxed text-slate-400">
               The EOS Remote Sensing team at CERTH/ITI develops Earth Observation services and products for environmental monitoring and sustainability.

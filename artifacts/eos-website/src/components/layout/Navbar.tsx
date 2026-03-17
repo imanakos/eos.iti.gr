@@ -110,22 +110,11 @@ export function Navbar() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <div className="relative w-10 h-10 overflow-hidden rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg">
-              <img
-                src={`${import.meta.env.BASE_URL}images/logo.png`}
-                alt="EOS Logo"
-                className="w-full h-full object-cover p-1"
-                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className={cn("font-bold text-xl leading-tight tracking-tight", isScrolled ? "text-foreground" : "text-foreground md:text-white")}>
-                EOS
-              </span>
-              <span className={cn("text-[10px] font-medium tracking-widest uppercase opacity-80", isScrolled ? "text-muted-foreground" : "text-muted-foreground md:text-white/80")}>
-                CERTH / ITI
-              </span>
-            </div>
+            <img
+              src={`${import.meta.env.BASE_URL}images/logo/logoeos8.png`}
+              alt="EOS Logo"
+              className="h-12 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Nav */}
