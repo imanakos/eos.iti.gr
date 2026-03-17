@@ -1,0 +1,34 @@
+packages:
+  "framer-motion": "For smooth page transitions and scroll-triggered animations in the modern UI"
+  "clsx": "For conditional class name joining"
+  "tailwind-merge": "To properly merge tailwind classes in reusable components"
+
+images:
+  - path: "artifacts/eos-website/public/images/hero-bg.png"
+    description: "Breathtaking cinematic satellite view of Earth from space, showing vibrant deep blue oceans, vivid green continents, and swirling atmospheric clouds, highly detailed, scientific professional aesthetic"
+    aspect_ratio: "16:9"
+  - path: "artifacts/eos-website/public/images/logo.png"
+    description: "Modern minimalist geometric logo for an Earth Observation science team, abstract satellite or globe shape, using deep blue and forest green colors on transparent background"
+    aspect_ratio: "1:1"
+  - path: "artifacts/eos-website/public/images/news-1.png"
+    description: "Abstract digital satellite map showing land degradation and soil analysis, technical data overlay, earth tones"
+    aspect_ratio: "16:9"
+  - path: "artifacts/eos-website/public/images/news-2.png"
+    description: "Lush green agricultural fields from a top-down drone perspective, precision agriculture concept"
+    aspect_ratio: "16:9"
+  - path: "artifacts/eos-website/public/images/news-3.png"
+    description: "Neat rows of hop farm fields from a satellite perspective, agricultural monitoring"
+    aspect_ratio: "16:9"
+  - path: "artifacts/eos-website/public/images/news-4.png"
+    description: "Modern science university campus building, professional academic setting"
+    aspect_ratio: "16:9"
+  - path: "artifacts/eos-website/public/images/news-5.png"
+    description: "Dense healthy forest canopy from above, sustainable forestry and environmental monitoring concept"
+    aspect_ratio: "16:9"
+  - path: "artifacts/eos-website/public/images/news-6.png"
+    description: "Water quality monitoring concept, clean blue lake with digital data grid overlays"
+    aspect_ratio: "16:9"
+
+notes:
+  - This is a static informational site as requested, no backend API integration is required.
+  - External links are hardcoded to open in new tabs per the requirements.
