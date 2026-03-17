@@ -84,8 +84,8 @@ export function Footer() {
             © {new Date().getFullYear()} EOS – CERTH/ITI Remote Sensing Research Team. All rights reserved.
           </p>
           <div className="flex gap-5">
-            <a href="https://eos.iti.gr/team.php" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-500 hover:text-white transition-colors">Team</a>
-            <a href="https://eos.iti.gr/background.php" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-500 hover:text-white transition-colors">Background</a>
+            <Link href="/about/team" className="text-xs text-slate-500 hover:text-white transition-colors">Team</Link>
+            <Link href="/about" className="text-xs text-slate-500 hover:text-white transition-colors">Background</Link>
             <a href="https://eos.iti.gr/privacy-policy.php" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-500 hover:text-white transition-colors">Privacy Policy</a>
           </div>
         </div>

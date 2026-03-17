@@ -20,11 +20,34 @@ pnpm workspace monorepo using TypeScript. Contains the EOS (CERTH/ITI Remote Sen
 ## Artifacts
 
 ### `artifacts/eos-website` — EOS Website (preview: `/`)
-Modern React + Vite website for the EOS CERTH/ITI Remote Sensing research team.
-- Pages: Home, Services, News, Our Work, About, Contact
-- Uses: wouter (routing), framer-motion (animations), lucide-react (icons)
-- Images in: `public/images/`
-- No backend — fully static frontend
+Complete replacement website for eos.iti.gr — CERTH/ITI Remote Sensing research team.
+Fully self-contained with all content fetched and migrated from the original site.
+
+**Pages (all internal routes):**
+- `/` — Home
+- `/news` — All 54+ news articles with search + pagination (real images from eos.iti.gr)
+- `/our-work` — Our Work hub linking to all sub-pages
+- `/our-work/projects` — All research projects with real logos
+- `/our-work/cooperations` — All cooperations (NASA LCLUC, EARSeL, Copernicus Academy, etc.)
+- `/our-work/publications` — Publications list with real DOI links
+- `/our-work/special-issues` — Journals: Remote Sensing, Land (MDPI)
+- `/our-work/workshops` — EARSeL/NASA LCLUC workshops 2014–2021 with reports
+- `/services` — Services overview
+- `/services/uav` — UAV services page (DJI Mini 3 Pro, Anafi AI Parrot, etc.)
+- `/services/zenodo` — Zenodo open data products
+- `/e-learning` — All 16 SEOS EU FP6 modules + 3 other platforms
+- `/about` — Background page
+- `/about/team` — Team with real photos (Dr. Ioannis Manakos, PhD candidates)
+- `/contact` — Contact with real director info + functional mailto form
+
+**Data files:**
+- `src/data/newsData.ts` — 54 news articles with images and original URLs
+- `src/data/projectsData.ts` — All projects (recent + past) with descriptions
+
+**Tech:** wouter (routing), framer-motion (animations), lucide-react (icons), TailwindCSS v4
+**Images:** Loaded directly from eos.iti.gr (no downloads needed, all public)
+**No backend** — fully static frontend
+**Domain plan:** Once deployed, point eos.iti.gr DNS to this Replit app
 
 ### `artifacts/api-server` — API Server (preview: `/api`)
 Express 5 API server. Routes live in `src/routes/`.
