@@ -56,15 +56,15 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
-                <a href="mailto:info@iti.gr" className="text-sm text-slate-400 hover:text-white transition-colors">info@iti.gr</a>
+                <a href="mailto:imanakos@iti.gr" className="text-sm text-slate-400 hover:text-white transition-colors">imanakos@iti.gr</a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-sm text-slate-400">+30 2311 257701</span>
+                <span className="text-sm text-slate-400">+30 2311 257760</span>
               </li>
               <li className="flex items-center gap-3">
                 <Globe className="w-4 h-4 text-primary shrink-0" />
-                <a href="https://www.iti.gr" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors">www.iti.gr</a>
+                <a href="https://www.iti.gr/iti/en/people/ioannis-manakos/" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors">Dr. I. Manakos — ITI profile</a>
               </li>
             </ul>
           </div>

@@ -2,20 +2,17 @@ const uavFleet = [
   {
     name: "DJI Mini 3 Pro",
     specs: "4K camera",
-    icon: "🚁",
     description: "Compact, high-performance drone with a 4K camera ideal for aerial surveys, vegetation monitoring, and precision agriculture field work.",
   },
   {
     name: "Anafi AI Parrot",
     specs: "48 Megapixel camera",
-    icon: "🌍",
     description: "Advanced multi-rotor UAV equipped with a 48 Mpx sensor, ideal for high-resolution aerial photography, hyperspectral coupling, and detailed environmental monitoring.",
   },
   {
-    name: "Third UAV",
-    specs: "Specialist platform",
-    icon: "📡",
-    description: "Additional UAV platform enabling simultaneous multi-drone deployments for large-area environmental surveys.",
+    name: "Specialist UAV Platform",
+    specs: "Multi-purpose",
+    description: "Additional UAV platform for specialist deployments, enabling simultaneous multi-drone operations for large-area environmental surveys and multi-band data acquisition campaigns.",
   },
 ];
 
@@ -24,11 +21,20 @@ export default function UAV() {
     <div className="pt-24 pb-20 min-h-screen bg-slate-50 dark:bg-background">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
 
-        <div className="mb-12">
+        <div className="mb-10">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">UAV Services</h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             The EOS Team has developed the capacity of its personnel and hardware with three cutting-edge Unmanned Aerial Vehicles (UAVs) to facilitate activities in environmental monitoring.
           </p>
+        </div>
+
+        {/* Fleet photo */}
+        <div className="rounded-2xl overflow-hidden border border-border shadow-md mb-10">
+          <img
+            src="/images/news/drones.png"
+            alt="EOS UAV Fleet — DJI Mini 3 Pro, Anafi AI Parrot, and DJI Mavic 3 Multispectral"
+            className="w-full object-cover"
+          />
         </div>
 
         <section className="mb-12">
@@ -36,7 +42,6 @@ export default function UAV() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {uavFleet.map((uav, i) => (
               <div key={i} className="bg-card rounded-2xl border border-border p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-4xl mb-4">{uav.icon}</div>
                 <h3 className="text-lg font-bold text-foreground mb-1">{uav.name}</h3>
                 <span className="inline-block px-2 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-medium mb-3">{uav.specs}</span>
                 <p className="text-sm text-muted-foreground leading-relaxed">{uav.description}</p>

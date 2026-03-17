@@ -1,15 +1,22 @@
 import { useState } from "react";
 import { Search, ChevronDown } from "lucide-react";
 import { newsArticles } from "../data/newsData";
+import { newsBodyText } from "../data/newsBodyData";
 
-const PAGE_SIZE = 24;
+const PAGE_SIZE = 12;
+
+function getNewsId(originalUrl: string): string {
+  const match = originalUrl.match(/#(news\d+)$/);
+  return match ? match[1] : "";
+}
 
 export default function News() {
   const [search, setSearch] = useState("");
   const [visible, setVisible] = useState(PAGE_SIZE);
 
   const filtered = newsArticles.filter(a =>
-    a.title.toLowerCase().includes(search.toLowerCase())
+    a.title.toLowerCase().includes(search.toLowerCase()) ||
+    (getNewsId(a.originalUrl) && (newsBodyText[getNewsId(a.originalUrl)] || "").toLowerCase().includes(search.toLowerCase()))
   );
   const shown = filtered.slice(0, visible);
 
@@ -38,30 +45,42 @@ export default function News() {
           <p className="text-muted-foreground text-center py-12">No results for "{search}".</p>
         )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {shown.map((article, i) => (
-            <div
-              key={i}
-              className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm flex flex-col"
-            >
-              <div className="aspect-video overflow-hidden bg-muted">
-                <img
-                  src={article.img}
-                  alt={article.title}
-                  className="w-full h-full object-cover"
-                  onError={e => {
-                    (e.target as HTMLImageElement).src = "/images/structure/Plot_Final.png";
-                  }}
-                />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {shown.map((article, i) => {
+            const newsId = getNewsId(article.originalUrl);
+            const body = newsId ? newsBodyText[newsId] : undefined;
+            const excerpt = body ? body.slice(0, 200).replace(/\s\S*$/, "") + "…" : undefined;
+            return (
+              <div
+                key={i}
+                className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm flex flex-col hover:shadow-md transition-shadow"
+              >
+                <div className="aspect-video overflow-hidden bg-muted flex-shrink-0">
+                  <img
+                    src={article.img}
+                    alt={article.title}
+                    className="w-full h-full object-cover"
+                    onError={e => {
+                      (e.target as HTMLImageElement).src = "/images/structure/Plot_Final.png";
+                    }}
+                  />
+                </div>
+                <div className="p-5 flex flex-col flex-1">
+                  {article.date && (
+                    <span className="text-xs font-medium text-primary mb-2 block">{article.date}</span>
+                  )}
+                  <h3 className="text-sm font-bold text-foreground leading-snug mb-2">
+                    {article.title}
+                  </h3>
+                  {excerpt && (
+                    <p className="text-xs text-muted-foreground leading-relaxed flex-1">
+                      {excerpt}
+                    </p>
+                  )}
+                </div>
               </div>
-              <div className="p-4 flex flex-col flex-1">
-                <span className="text-xs text-muted-foreground mb-2">{article.date}</span>
-                <h3 className="text-sm font-semibold text-foreground leading-snug flex-1">
-                  {article.title}
-                </h3>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {visible < filtered.length && (

@@ -96,23 +96,17 @@ export default function Home() {
         </div>
 
         {/* Copernicus Ambassador badge — absolutely anchored to bottom-right of hero */}
-        <a
-          href="https://www.copernicus.eu/en/opportunities/education/copernicus-academy"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute bottom-8 right-8 z-10 flex items-center gap-3 px-4 py-3 rounded-2xl bg-black/40 backdrop-blur-md border border-white/20 hover:bg-black/60 transition-colors"
-          title="Copernicus Academy Ambassador"
-        >
+        <div className="absolute bottom-8 right-8 z-10 flex items-center gap-3 px-4 py-3 rounded-2xl bg-black/40 backdrop-blur-md border border-white/20">
           <img
             src={`${import.meta.env.BASE_URL}images/logo/CopernicusAmbassador.svg`}
-            alt="Copernicus Ambassador"
+            alt="Copernicus Academy Ambassador"
             className="h-10 w-auto"
           />
           <div className="text-left">
             <p className="text-white font-semibold text-sm leading-tight">Copernicus Academy</p>
             <p className="text-white/70 text-xs">Ambassador Member</p>
           </div>
-        </a>
+        </div>
       </section>
 
       {/* Vision & Goals Section */}
