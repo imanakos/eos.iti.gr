@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, Globe, Layers, Map, Satellite } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { newsArticles } from "@/data/newsData";
 
 const featuredServices = [
   {
@@ -27,25 +28,8 @@ const featuredServices = [
   }
 ];
 
-const newsPreview = [
-  {
-    title: "EOS contributes to land degradation monitoring",
-    image: `${import.meta.env.BASE_URL}images/news-1.png`,
-    date: "Latest"
-  },
-  {
-    title: "DigiCotton - Producer Information Day",
-    image: `${import.meta.env.BASE_URL}images/news-2.png`,
-    date: "Recent"
-  },
-  {
-    title: "Satellite Image Analysis Expanded for Hallertau Hop Farms",
-    image: `${import.meta.env.BASE_URL}images/news-3.png`,
-    date: "Recent"
-  }
-];
-
 export default function Home() {
+  const newsPreview = newsArticles.slice(0, 3);
   return (
     <div className="w-full">
       {/* Hero Section */}
@@ -108,7 +92,27 @@ export default function Home() {
               </Button>
             </Link>
           </motion.div>
+
         </div>
+
+        {/* Copernicus Ambassador badge — absolutely anchored to bottom-right of hero */}
+        <a
+          href="https://www.copernicus.eu/en/opportunities/education/copernicus-academy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute bottom-8 right-8 z-10 flex items-center gap-3 px-4 py-3 rounded-2xl bg-black/40 backdrop-blur-md border border-white/20 hover:bg-black/60 transition-colors"
+          title="Copernicus Academy Ambassador"
+        >
+          <img
+            src={`${import.meta.env.BASE_URL}images/logo/CopernicusAmbassador.svg`}
+            alt="Copernicus Ambassador"
+            className="h-10 w-auto"
+          />
+          <div className="text-left">
+            <p className="text-white font-semibold text-sm leading-tight">Copernicus Academy</p>
+            <p className="text-white/70 text-xs">Ambassador Member</p>
+          </div>
+        </a>
       </section>
 
       {/* Vision & Goals Section */}
@@ -218,21 +222,24 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {newsPreview.map((news, i) => (
-              <div key={i} className="group cursor-pointer">
+              <Link key={i} href="/news" className="group block">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-4 border border-border">
-                  <img 
-                    src={news.image} 
-                    alt={news.title} 
+                  <img
+                    src={news.img}
+                    alt={news.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={e => { (e.target as HTMLImageElement).src = `${import.meta.env.BASE_URL}images/structure/Plot_Final.png`; }}
                   />
-                  <div className="absolute top-4 left-4 bg-background/90 backdrop-blur text-foreground text-xs font-bold px-3 py-1 rounded-full">
-                    {news.date}
-                  </div>
+                  {news.date && (
+                    <div className="absolute top-4 left-4 bg-background/90 backdrop-blur text-foreground text-xs font-bold px-3 py-1 rounded-full">
+                      {news.date}
+                    </div>
+                  )}
                 </div>
                 <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
                   {news.title}
                 </h3>
-              </div>
+              </Link>
             ))}
           </div>
           <div className="mt-8 text-center md:hidden">
