@@ -1,109 +1,93 @@
-import { ArrowUpRight, Calendar } from "lucide-react";
+import { useState } from "react";
+import { ExternalLink, Search, ChevronDown } from "lucide-react";
+import { newsArticles } from "../data/newsData";
 
-const newsArticles = [
-  {
-    title: "EOS contributes to land degradation monitoring",
-    excerpt: "New initiatives in the Asterousia MONALISA project aim to leverage satellite data for early detection of soil degradation across Mediterranean landscapes.",
-    image: `${import.meta.env.BASE_URL}images/news-1.png`,
-    date: "April 2025",
-    href: "https://eos.iti.gr/by_our_team.php#news155",
-  },
-  {
-    title: "DigiCotton - Producer and Agricultural Advisor Information Day",
-    excerpt: "Sharing insights on how precision agriculture and Earth Observation can optimize cotton yield and resource usage with farmers and agronomists.",
-    image: `${import.meta.env.BASE_URL}images/news-2.png`,
-    date: "March 2025",
-    href: "https://eos.iti.gr/by_our_team.php#news154",
-  },
-  {
-    title: "Satellite Image Analysis Expanded for Hallertau Hop Farms",
-    excerpt: "Our team expands monitoring capabilities for hop farms in Germany, providing vital satellite-derived data for harvest predictions.",
-    image: `${import.meta.env.BASE_URL}images/news-3.png`,
-    date: "2024",
-    href: "https://eos.iti.gr/by_our_team.php#news148",
-  },
-  {
-    title: "EOS team at the 200th anniversary of the Karlsruhe Institute of Technology (KIT)",
-    excerpt: "Presenting our latest findings and forging new academic partnerships at the historic 200th anniversary celebration of KIT.",
-    image: `${import.meta.env.BASE_URL}images/news-4.png`,
-    date: "2024",
-    href: "https://eos.iti.gr/by_our_team.php#news147",
-  },
-  {
-    title: "Forest and Sustainable Development",
-    excerpt: "New research highlights the critical role of continuous remote sensing in maintaining sustainable forestry practices and detecting land cover changes.",
-    image: `${import.meta.env.BASE_URL}images/news-5.png`,
-    date: "2024",
-    href: "https://eos.iti.gr/by_our_team.php#news143",
-  },
-  {
-    title: "The WQeMS Services Platform",
-    excerpt: "Successful rollout of the Water Quality Emergency Monitoring Service, delivering crucial data to water utilities across Europe.",
-    image: `${import.meta.env.BASE_URL}images/news-6.png`,
-    date: "2023",
-    href: "https://eos.iti.gr/by_our_team.php#news130",
-  },
-];
+const PAGE_SIZE = 24;
 
 export default function News() {
+  const [search, setSearch] = useState("");
+  const [visible, setVisible] = useState(PAGE_SIZE);
+
+  const filtered = newsArticles.filter(a =>
+    a.title.toLowerCase().includes(search.toLowerCase())
+  );
+  const shown = filtered.slice(0, visible);
+
   return (
-    <div className="pt-24 pb-16 min-h-screen bg-background">
+    <div className="pt-24 pb-20 min-h-screen bg-slate-50 dark:bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
 
-        <div className="mb-12 border-b border-border pb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Latest News</h1>
-          <p className="text-xl text-muted-foreground">Discover the latest updates, events, and breakthroughs from the EOS team.</p>
+        <div className="mb-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">News</h1>
+          <p className="text-xl text-muted-foreground mb-6">
+            Latest updates, publications, events and activities from the EOS Remote Sensing team.
+          </p>
+          <div className="relative max-w-md">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+            <input
+              type="text"
+              placeholder="Search news..."
+              value={search}
+              onChange={e => { setSearch(e.target.value); setVisible(PAGE_SIZE); }}
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm"
+            />
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
-          {newsArticles.map((article, i) => (
+        {filtered.length === 0 && (
+          <p className="text-muted-foreground text-center py-12">No results for "{search}".</p>
+        )}
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          {shown.map((article, i) => (
             <a
               key={i}
-              href={article.href}
+              href={article.originalUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col h-full cursor-pointer"
+              className="group bg-card rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-200 flex flex-col"
             >
-              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-6 bg-muted">
+              <div className="aspect-video overflow-hidden bg-muted">
                 <img
-                  src={article.image}
+                  src={article.img}
                   alt={article.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={e => {
+                    (e.target as HTMLImageElement).src = "https://eos.iti.gr/images/structure/Plot_Final.png";
+                  }}
                 />
               </div>
-
-              <div className="flex items-center gap-2 text-sm text-primary font-semibold mb-3">
-                <Calendar className="w-4 h-4" />
-                {article.date}
-              </div>
-
-              <h2 className="text-2xl font-bold text-foreground mb-3 leading-snug group-hover:text-primary transition-colors">
-                {article.title}
-              </h2>
-
-              <p className="text-muted-foreground mb-6 flex-grow leading-relaxed">
-                {article.excerpt}
-              </p>
-
-              <div className="flex items-center text-sm font-bold text-primary transition-colors mt-auto w-fit gap-1">
-                Read more <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <div className="p-4 flex flex-col flex-1">
+                <span className="text-xs text-muted-foreground mb-2">{article.date}</span>
+                <h3 className="text-sm font-semibold text-foreground leading-snug group-hover:text-primary transition-colors flex-1">
+                  {article.title}
+                </h3>
+                <div className="mt-3 flex items-center gap-1 text-xs text-primary font-medium">
+                  Read more <ExternalLink className="w-3 h-3" />
+                </div>
               </div>
             </a>
           ))}
         </div>
 
-        <div className="mt-16 text-center border-t border-border pt-10">
-          <p className="text-muted-foreground mb-4">See all news and updates on our main website</p>
-          <a
-            href="https://eos.iti.gr/by_our_team.php"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
-          >
-            View All News <ArrowUpRight className="w-4 h-4" />
-          </a>
-        </div>
+        {visible < filtered.length && (
+          <div className="mt-10 text-center">
+            <button
+              onClick={() => setVisible(v => v + PAGE_SIZE)}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-card border border-border text-foreground font-medium hover:bg-muted transition-colors"
+            >
+              <ChevronDown className="w-4 h-4" />
+              Load more ({filtered.length - visible} remaining)
+            </button>
+          </div>
+        )}
 
+        <p className="text-center text-xs text-muted-foreground mt-8">
+          Showing {shown.length} of {filtered.length} articles ·{" "}
+          <a href="https://eos.iti.gr/by_our_team.php" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+            View all on original site
+          </a>
+        </p>
       </div>
     </div>
   );

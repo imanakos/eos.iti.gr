@@ -23,11 +23,11 @@ const navItems: NavItem[] = [
     label: "Our Work",
     isDropdown: true,
     items: [
-      { label: "Projects", href: "https://eos.iti.gr/projects.php", external: true },
-      { label: "Cooperations", href: "https://eos.iti.gr/cooperation.php", external: true },
-      { label: "Publications", href: "https://eos.iti.gr/publishing.php", external: true },
-      { label: "Special Issues", href: "https://eos.iti.gr/special-issues.php", external: true },
-      { label: "Workshops", href: "https://eos.iti.gr/workshops.php", external: true },
+      { label: "Projects", href: "/our-work/projects" },
+      { label: "Cooperations", href: "/our-work/cooperations" },
+      { label: "Publications", href: "/our-work/publications" },
+      { label: "Special Issues", href: "/our-work/special-issues" },
+      { label: "Workshops", href: "/our-work/workshops" },
     ]
   },
   {
@@ -39,13 +39,13 @@ const navItems: NavItem[] = [
       { label: "Inundation Maps", href: "https://eos.iti.gr/regions-inundation.php", external: true },
       { label: "Land Cover Maps", href: "https://eos.iti.gr/eodesm.php", external: true },
       { label: "crocoTile", href: "https://elter-crocotile.datalabs.ceh.ac.uk/", external: true },
-      { label: "Zenodo Products", href: "https://eos.iti.gr/zenodo.php", external: true },
+      { label: "Zenodo Products", href: "/services/zenodo" },
       { label: "Hyperspectral Cubes", href: "https://eos.iti.gr/images/services/spectral-presentation.pdf", external: true },
       { label: "WebGIS Tool", href: "http://web-gis-irrigation.iti.gr/", external: true },
       { label: "LTER Products", href: "https://b2share.eudat.eu/records/?q=hydroperiod&sort=-&page=1&size=10", external: true },
       { label: "EO-4-WaterUtilities", href: "https://portal-wqems.iti.gr/", external: true },
       { label: "EO-4-ProtectedAreas", href: "https://ecosense.biosense.rs/#/home", external: true },
-      { label: "UAV Services", href: "https://eos.iti.gr/uav.php", external: true },
+      { label: "UAV Services", href: "/services/uav" },
     ]
   },
   {
@@ -62,7 +62,7 @@ const navItems: NavItem[] = [
     label: "e-Learning",
     isDropdown: true,
     items: [
-      { label: "Earth Observation Training", href: "https://eos.iti.gr/e-learning.php", external: true },
+      { label: "Earth Observation Training", href: "/e-learning" },
       { label: "Waste Water Treatment", href: "https://etraining-aquacycle.eu/", external: true },
       { label: "Water Utilities Training", href: "https://training.wqems.eu/group/4?type=catalog", external: true },
     ]
@@ -72,8 +72,8 @@ const navItems: NavItem[] = [
     label: "About Us",
     isDropdown: true,
     items: [
-      { label: "Team", href: "https://eos.iti.gr/team.php", external: true },
-      { label: "Background", href: "https://eos.iti.gr/background.php", external: true },
+      { label: "Team", href: "/about/team" },
+      { label: "Background", href: "/about" },
       { label: "Contact", href: "/contact" },
       { label: "Privacy Policy", href: "https://eos.iti.gr/privacy-policy.php", external: true },
     ]

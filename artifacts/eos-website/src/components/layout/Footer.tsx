@@ -30,11 +30,11 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-white mb-5 text-sm uppercase tracking-wider">Our Work</h3>
             <ul className="flex flex-col gap-2.5">
-              <li><a href="https://eos.iti.gr/projects.php" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">Projects <ExternalLink className="w-3 h-3 opacity-50" /></a></li>
-              <li><a href="https://eos.iti.gr/cooperation.php" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">Cooperations <ExternalLink className="w-3 h-3 opacity-50" /></a></li>
-              <li><a href="https://eos.iti.gr/publishing.php" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">Publications <ExternalLink className="w-3 h-3 opacity-50" /></a></li>
-              <li><a href="https://eos.iti.gr/special-issues.php" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">Special Issues <ExternalLink className="w-3 h-3 opacity-50" /></a></li>
-              <li><a href="https://eos.iti.gr/workshops.php" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">Workshops <ExternalLink className="w-3 h-3 opacity-50" /></a></li>
+              <li><Link href="/our-work/projects" className="text-sm text-slate-400 hover:text-white transition-colors">Projects</Link></li>
+              <li><Link href="/our-work/cooperations" className="text-sm text-slate-400 hover:text-white transition-colors">Cooperations</Link></li>
+              <li><Link href="/our-work/publications" className="text-sm text-slate-400 hover:text-white transition-colors">Publications</Link></li>
+              <li><Link href="/our-work/special-issues" className="text-sm text-slate-400 hover:text-white transition-colors">Special Issues</Link></li>
+              <li><Link href="/our-work/workshops" className="text-sm text-slate-400 hover:text-white transition-colors">Workshops</Link></li>
             </ul>
           </div>
 
