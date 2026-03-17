@@ -31,7 +31,7 @@ export default function Contact() {
 
             <div className="bg-card rounded-2xl border border-border p-6 shadow-sm flex items-start gap-5">
               <img
-                src="https://eos.iti.gr/images/structure/imanakos.jpg"
+                src="/images/structure/imanakos.jpg"
                 alt="Dr. Ioannis Manakos"
                 className="w-20 h-20 rounded-xl object-cover object-top flex-shrink-0"
                 onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}

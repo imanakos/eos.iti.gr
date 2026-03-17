@@ -4,21 +4,21 @@ const currentPersonnel = [
   {
     name: "Ioannis Manakos, Dr.",
     role: "Director of Research in Remote Sensing",
-    img: "https://eos.iti.gr/images/structure/imanakos.jpg",
+    img: "/images/structure/imanakos.jpg",
     bio: "Director of Research in 'Remote Sensing' at the Information Technologies Institute (ITI) of the Centre for Research and Technology Hellas (CERTH). Cooperating with academics and researchers from Europe, America, Asia and Africa in subjects relevant to research and development in Remote Sensing since 1996.",
     url: "https://www.iti.gr/iti/en/people/ioannis-manakos/",
   },
   {
     name: "Afroditi Kita, PhD Candidate",
     role: "PhD Candidate",
-    img: "https://eos.iti.gr/images/structure/afro_kita.png",
+    img: "/images/structure/afro_kita.png",
     bio: "PhD Candidate co-supervised by the Information Technologies Institute (ITI) of the Centre for Research and Technology Hellas (CERTH). Research focus on Earth Observation data for aquatic vegetation and water body monitoring.",
     url: null,
   },
   {
     name: "Rizos-Theodoros Chadoulis, PhD Candidate",
     role: "PhD Candidate",
-    img: "https://eos.iti.gr/images/structure/hadoulis.jpg",
+    img: "/images/structure/hadoulis.jpg",
     bio: "PhD Candidate co-supervised by the Information Technologies Institute (ITI) of the Centre for Research and Technology Hellas (CERTH). Research focus on hyperspectral imaging, plant disease detection, and deep learning for remote sensing applications.",
     url: null,
   },
@@ -95,7 +95,7 @@ export default function Team() {
             </div>
             <div className="flex items-center justify-center py-4">
               <img
-                src="https://eos.iti.gr/images/structure/Plot_Final.png"
+                src="/images/structure/Plot_Final.png"
                 alt="EOS team personnel chart"
                 className="max-w-full rounded-xl"
                 onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}

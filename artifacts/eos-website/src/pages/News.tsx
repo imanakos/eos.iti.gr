@@ -50,7 +50,7 @@ export default function News() {
                   alt={article.title}
                   className="w-full h-full object-cover"
                   onError={e => {
-                    (e.target as HTMLImageElement).src = "https://eos.iti.gr/images/structure/Plot_Final.png";
+                    (e.target as HTMLImageElement).src = "/images/structure/Plot_Final.png";
                   }}
                 />
               </div>

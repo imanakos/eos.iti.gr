@@ -4,7 +4,7 @@ const issues = [
   {
     title: "Remote Sensing in Ecosystem Modelling",
     journal: "Remote Sensing | ISSN 2072-4292",
-    img: "https://eos.iti.gr/images/special-issues/remote-sensing.png",
+    img: "/images/special-issues/remote-sensing.png",
     impact: "Current Impact Factor: 4.118; 5-Year Impact Factor: 4.740; JCR category rank: 7/30 (Q1) in 'Remote Sensing'",
     links: [
       { label: "Special issue @ mdpi.com", url: "https://www.mdpi.com/journal/remotesensing/special_issues/ecosystem_modelling_RS" },
@@ -13,7 +13,7 @@ const issues = [
   {
     title: "Monitoring Land Cover Change: Towards Sustainability",
     journal: "Land | ISSN 2073-445X",
-    img: "https://eos.iti.gr/images/special-issues/EARSel-banner2.15.png",
+    img: "/images/special-issues/EARSel-banner2.15.png",
     impact: "CiteScore 2018 (Scopus): 2.15 — rank 37/140 (Q2) in 'Nature and Landscape Conservation' and 90/336 (Q2) in 'Ecology'",
     links: [
       { label: "Special issue @ mdpi.com", url: "https://www.mdpi.com/journal/land/special_issues/EARSeL" },
@@ -22,7 +22,7 @@ const issues = [
   {
     title: "Sentinel Analysis Ready Data (Sentinel ARD)",
     journal: "Remote Sensing | ISSN 2072-4292",
-    img: "https://eos.iti.gr/images/special-issues/2019-08-26_Remote%20Sensing_SI%20Banner_H.jpg",
+    img: "/images/special-issues/Remote_Sensing_SI_Banner_H.jpg",
     impact: "A special issue of Remote Sensing dedicated to Sentinel Analysis Ready Data methodologies.",
     links: [
       { label: "Special issue @ mdpi.com", url: "https://www.mdpi.com/journal/remotesensing/special_issues/ARD" },
