@@ -13,14 +13,14 @@ const currentPersonnel = [
     role: "PhD Candidate",
     img: "https://eos.iti.gr/images/structure/afro_kita.png",
     bio: "PhD Candidate co-supervised by the Information Technologies Institute (ITI) of the Centre for Research and Technology Hellas (CERTH). Research focus on Earth Observation data for aquatic vegetation and water body monitoring.",
-    url: "https://eos.iti.gr/team.php",
+    url: null,
   },
   {
     name: "Rizos-Theodoros Chadoulis, PhD Candidate",
     role: "PhD Candidate",
     img: "https://eos.iti.gr/images/structure/hadoulis.jpg",
     bio: "PhD Candidate co-supervised by the Information Technologies Institute (ITI) of the Centre for Research and Technology Hellas (CERTH). Research focus on hyperspectral imaging, plant disease detection, and deep learning for remote sensing applications.",
-    url: "https://eos.iti.gr/team.php",
+    url: null,
   },
 ];
 
@@ -71,14 +71,16 @@ export default function Team() {
                   <h3 className="font-bold text-foreground text-base mb-1">{person.name}</h3>
                   <span className="text-xs font-medium text-primary mb-3">{person.role}</span>
                   <p className="text-sm text-muted-foreground leading-relaxed flex-1">{person.bio}</p>
+                  {person.url && (
                   <a
                     href={person.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
                   >
-                    Read more <ExternalLink className="w-3 h-3" />
+                    Profile page <ExternalLink className="w-3 h-3" />
                   </a>
+                )}
                 </div>
               </div>
             ))}
@@ -114,15 +116,7 @@ export default function Team() {
             {collaboratingCategories.map((cat, i) => (
               <div key={i} className="bg-card rounded-2xl border border-border p-5 shadow-sm">
                 <h3 className="font-bold text-foreground mb-2">{cat.label}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{cat.description}</p>
-                <a
-                  href={`https://eos.iti.gr/team.php${cat.anchor}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
-                >
-                  View full list <ExternalLink className="w-3 h-3" />
-                </a>
+                <p className="text-sm text-muted-foreground">{cat.description}</p>
               </div>
             ))}
           </div>

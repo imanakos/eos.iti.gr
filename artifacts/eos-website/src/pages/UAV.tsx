@@ -1,5 +1,3 @@
-import { ExternalLink } from "lucide-react";
-
 const uavFleet = [
   {
     name: "DJI Mini 3 Pro",
@@ -75,14 +73,6 @@ export default function UAV() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors"
             >
               Contact us →
-            </a>
-            <a
-              href="https://eos.iti.gr/uav.php"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-border text-foreground font-medium text-sm hover:bg-muted transition-colors"
-            >
-              Full UAV page <ExternalLink className="w-4 h-4" />
             </a>
           </div>
         </div>

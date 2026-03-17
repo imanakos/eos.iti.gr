@@ -12,21 +12,21 @@ export const projects: Project[] = [
     img: "https://eos.iti.gr/images/projects/monalisa.png",
     description: "Land Degradation Neutrality monitoring under EU Horizon Europe RIA. EOS contributes to monitoring and mitigating land degradation and desertification across Mediterranean areas.",
     status: "recent",
-    url: "https://eos.iti.gr/by_our_team.php#news155",
+    url: "https://monalisa4land.eu/",
   },
   {
     name: "DigiCotton",
     img: "https://eos.iti.gr/images/projects/digicotton_logo.jpg",
     description: "Digital solutions for cotton crop monitoring. A platform providing real-time guidance on best agricultural practices using satellite, telematics, and remote sensing data for cotton farmers in Nestos valley.",
     status: "recent",
-    url: "https://eos.iti.gr/by_our_team.php#news157",
+    url: "https://digicotton.gr/",
   },
   {
     name: "DigiRyzi",
     img: "https://eos.iti.gr/images/projects/digiryzi_logo.jpg",
     description: "Digital farming initiative reshaping rice cultivation in Greece. Enables real-time monitoring using satellite imagery, integrated weather data, and in-situ observations for the Axios River Delta.",
     status: "recent",
-    url: "https://eos.iti.gr/by_our_team.php#news156",
+    url: "https://digiryzi.gr/",
   },
   {
     name: "MEDWAYCAP",
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     img: "https://eos.iti.gr/images/projects/medeos.png",
     description: "Mediterranean Earth Observation Services project. Concluded with a key presentation at IEEE IGARSS 2024.",
     status: "recent",
-    url: "https://eos.iti.gr/by_our_team.php#news133",
+    url: "https://medeos.deimos.pt/",
   },
   {
     name: "WQeMS",

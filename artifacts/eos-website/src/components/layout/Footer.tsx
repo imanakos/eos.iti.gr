@@ -23,7 +23,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-sm leading-relaxed text-slate-400">
-              eos.iti.gr is the website of the CERTH/ITI Remote Sensing research team, interfacing Earth Observation live product demos to the public.
+              The EOS Remote Sensing team at CERTH/ITI develops Earth Observation services and products for environmental monitoring and sustainability.
             </p>
           </div>
 
@@ -41,12 +41,11 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-white mb-5 text-sm uppercase tracking-wider">Services & Tools</h3>
             <ul className="flex flex-col gap-2.5">
-              <li><a href="https://eos.iti.gr/regions-vegetation.php" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">Vegetation Indices <ExternalLink className="w-3 h-3 opacity-50" /></a></li>
-              <li><a href="https://eos.iti.gr/regions-inundation.php" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">Inundation Maps <ExternalLink className="w-3 h-3 opacity-50" /></a></li>
-              <li><a href="https://eos.iti.gr/eodesm.php" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">Land Cover Maps <ExternalLink className="w-3 h-3 opacity-50" /></a></li>
-              <li><a href="http://datacube.iti.gr/" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">Greek Data Cubes <ExternalLink className="w-3 h-3 opacity-50" /></a></li>
+              <li><Link href="/services/uav" className="text-sm text-slate-400 hover:text-white transition-colors">UAV Services</Link></li>
+              <li><Link href="/services/zenodo" className="text-sm text-slate-400 hover:text-white transition-colors">Zenodo Products</Link></li>
               <li><a href="https://portal-wqems.iti.gr/" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">EO-4-WaterUtilities <ExternalLink className="w-3 h-3 opacity-50" /></a></li>
               <li><a href="https://ecosense.biosense.rs/#/home" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">EO-4-ProtectedAreas <ExternalLink className="w-3 h-3 opacity-50" /></a></li>
+              <li><a href="http://datacube.iti.gr/" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">Greek Data Cubes <ExternalLink className="w-3 h-3 opacity-50" /></a></li>
               <li><Link href="/services" className="text-sm text-slate-400 hover:text-white transition-colors">View All Services →</Link></li>
             </ul>
           </div>
@@ -86,7 +85,7 @@ export function Footer() {
           <div className="flex gap-5">
             <Link href="/about/team" className="text-xs text-slate-500 hover:text-white transition-colors">Team</Link>
             <Link href="/about" className="text-xs text-slate-500 hover:text-white transition-colors">Background</Link>
-            <a href="https://eos.iti.gr/privacy-policy.php" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-500 hover:text-white transition-colors">Privacy Policy</a>
+            <Link href="/contact" className="text-xs text-slate-500 hover:text-white transition-colors">Contact</Link>
           </div>
         </div>
       </div>

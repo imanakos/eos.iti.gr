@@ -35,17 +35,12 @@ const navItems: NavItem[] = [
     isDropdown: true,
     items: [
       { label: "Overview", href: "/services" },
-      { label: "Vegetation Indices", href: "https://eos.iti.gr/regions-vegetation.php", external: true },
-      { label: "Inundation Maps", href: "https://eos.iti.gr/regions-inundation.php", external: true },
-      { label: "Land Cover Maps", href: "https://eos.iti.gr/eodesm.php", external: true },
-      { label: "crocoTile", href: "https://elter-crocotile.datalabs.ceh.ac.uk/", external: true },
+      { label: "UAV Services", href: "/services/uav" },
       { label: "Zenodo Products", href: "/services/zenodo" },
-      { label: "Hyperspectral Cubes", href: "https://eos.iti.gr/images/services/spectral-presentation.pdf", external: true },
+      { label: "crocoTile", href: "https://elter-crocotile.datalabs.ceh.ac.uk/", external: true },
       { label: "WebGIS Tool", href: "http://web-gis-irrigation.iti.gr/", external: true },
-      { label: "LTER Products", href: "https://b2share.eudat.eu/records/?q=hydroperiod&sort=-&page=1&size=10", external: true },
       { label: "EO-4-WaterUtilities", href: "https://portal-wqems.iti.gr/", external: true },
       { label: "EO-4-ProtectedAreas", href: "https://ecosense.biosense.rs/#/home", external: true },
-      { label: "UAV Services", href: "/services/uav" },
     ]
   },
   {
@@ -75,7 +70,6 @@ const navItems: NavItem[] = [
       { label: "Team", href: "/about/team" },
       { label: "Background", href: "/about" },
       { label: "Contact", href: "/contact" },
-      { label: "Privacy Policy", href: "https://eos.iti.gr/privacy-policy.php", external: true },
     ]
   },
 ];

@@ -5,22 +5,25 @@ import { Button } from "@/components/ui/button";
 
 const featuredServices = [
   {
-    title: "Vegetation Indices",
-    desc: "Calculate vegetation indices from Sentinel-2 images to monitor plant health and agricultural vitality.",
+    title: "EO-4-WaterUtilities",
+    desc: "WQeMS platform providing Earth Observation services for water quality monitoring and early warning for water utilities.",
+    icon: <Globe className="w-6 h-6 text-primary" />,
+    href: "https://portal-wqems.iti.gr/",
+    external: true,
+  },
+  {
+    title: "UAV Services",
+    desc: "High-resolution UAV surveys for precision agriculture, environmental monitoring, and field research campaigns.",
     icon: <Layers className="w-6 h-6 text-secondary" />,
-    href: "https://eos.iti.gr/regions-vegetation.php"
+    href: "/services/uav",
+    external: false,
   },
   {
-    title: "Inundation Maps",
-    desc: "Estimate inundation maps from Sentinel-2 images for flood monitoring and water resource management.",
-    icon: <Map className="w-6 h-6 text-primary" />,
-    href: "https://eos.iti.gr/regions-inundation.php"
-  },
-  {
-    title: "Greek Data Cubes",
-    desc: "Harness satellite data in an efficient and easy way to monitor changes over time.",
-    icon: <Globe className="w-6 h-6 text-accent" />,
-    href: "http://datacube.iti.gr/"
+    title: "Open Data (Zenodo)",
+    desc: "Published datasets, training materials, and research outputs freely available through Zenodo.",
+    icon: <Map className="w-6 h-6 text-accent" />,
+    href: "/services/zenodo",
+    external: false,
   }
 ];
 
@@ -84,7 +87,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            eos.iti.gr showcases live product demos, innovative research, and tools developed by our team for monitoring biodiversity, habitats, and land cover changes.
+            The EOS team develops innovative research, tools, and Earth Observation services for monitoring biodiversity, habitats, land cover changes, and water resources.
           </motion.p>
           
           <motion.div 
@@ -170,24 +173,26 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredServices.map((service, i) => (
-              <a 
-                key={i}
-                href={service.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-card rounded-3xl p-8 shadow-lg shadow-black/5 border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300 flex flex-col items-start"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6 flex-grow">{service.desc}</p>
-                <div className="flex items-center text-sm font-semibold text-primary group-hover:text-accent transition-colors">
-                  Access Tool <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </a>
-            ))}
+            {featuredServices.map((service, i) => {
+              const inner = (
+                <>
+                  <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-6 flex-grow">{service.desc}</p>
+                  <div className="flex items-center text-sm font-semibold text-primary group-hover:text-accent transition-colors">
+                    Learn More <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </>
+              );
+              const cls = "group bg-card rounded-3xl p-8 shadow-lg shadow-black/5 border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300 flex flex-col items-start";
+              return service.external ? (
+                <a key={i} href={service.href} target="_blank" rel="noopener noreferrer" className={cls}>{inner}</a>
+              ) : (
+                <Link key={i} href={service.href} className={cls}>{inner}</Link>
+              );
+            })}
           </div>
           
           <div className="mt-12 text-center">

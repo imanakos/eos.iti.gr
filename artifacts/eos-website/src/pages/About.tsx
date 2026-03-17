@@ -1,4 +1,5 @@
-import { MapPin, Building2, Users, ExternalLink, BookOpen, Satellite } from "lucide-react";
+import { MapPin, Building2, Users, BookOpen, Satellite } from "lucide-react";
+import { Link } from "wouter";
 
 export default function About() {
   return (
@@ -29,16 +30,6 @@ export default function About() {
               <p>
                 Our team innovates in Earth Observation research with the development of products and services for monitoring and assessment of biodiversity, habitats, cultivations, resources, and land cover/use changes to support decisions, modelling and scenarios towards sustainability.
               </p>
-            </div>
-            <div className="mt-6">
-              <a
-                href="https://eos.iti.gr/background.php"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 text-primary font-semibold text-sm hover:bg-primary/20 transition-colors"
-              >
-                Read Full Background <ExternalLink className="w-4 h-4" />
-              </a>
             </div>
           </section>
 
@@ -94,14 +85,12 @@ export default function About() {
             <p className="text-lg leading-relaxed text-muted-foreground mb-6">
               Our multidisciplinary team consists of remote sensing experts, environmental scientists, software engineers, and GIS specialists working collaboratively to build next-generation monitoring tools.
             </p>
-            <a
-              href="https://eos.iti.gr/team.php"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/about/team"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary/10 text-secondary font-semibold text-sm hover:bg-secondary/20 transition-colors"
             >
-              View Full Team Directory <ExternalLink className="w-4 h-4" />
-            </a>
+              View Team Directory →
+            </Link>
           </section>
 
           <section className="bg-card rounded-3xl p-8 md:p-10 border border-border shadow-lg">
@@ -113,22 +102,18 @@ export default function About() {
               Our research is regularly published in top-tier scientific journals. The team also guest-edits special issues and organizes workshops at major international conferences.
             </p>
             <div className="flex flex-wrap gap-3">
-              <a
-                href="https://eos.iti.gr/publishing.php"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/our-work/publications"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent/10 text-accent font-semibold text-sm hover:bg-accent/20 transition-colors"
               >
-                Publications <ExternalLink className="w-4 h-4" />
-              </a>
-              <a
-                href="https://eos.iti.gr/special-issues.php"
-                target="_blank"
-                rel="noopener noreferrer"
+                Publications →
+              </Link>
+              <Link
+                href="/our-work/special-issues"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-muted text-foreground font-medium text-sm hover:bg-border transition-colors"
               >
-                Special Issues <ExternalLink className="w-4 h-4" />
-              </a>
+                Special Issues →
+              </Link>
             </div>
           </section>
 

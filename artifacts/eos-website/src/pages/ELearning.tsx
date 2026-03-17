@@ -23,7 +23,7 @@ const otherPlatforms = [
   {
     name: "Earth Observation Training (EOTiST)",
     desc: "Standard and Advanced courses on Remote Sensing, Ecosystem Research, Modelling and Computer Science. Developed within the EU EOTiST project and available on Zenodo.",
-    url: "https://eos.iti.gr/e-learning.php",
+    url: "https://zenodo.org/records/13712172",
   },
   {
     name: "Waste Water Treatment Training",

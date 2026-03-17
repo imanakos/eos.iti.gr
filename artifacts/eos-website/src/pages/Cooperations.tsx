@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import { Link } from "wouter";
 
 const cooperations = [
   {
@@ -23,7 +24,7 @@ const cooperations = [
     name: "MEDRIN",
     img: "https://eos.iti.gr/images/cooperation/projects/sherin-medrin.png",
     description: "Mediterranean Regional Information Network — a regional network supporting land cover monitoring and Earth Observation capacity building in the Mediterranean area.",
-    url: "https://eos.iti.gr/cooperation.php",
+    url: "https://gofcgold.org/regional-networks/mediterranean-regional-information-network-medrin",
   },
   {
     name: "SCERIN",
@@ -53,7 +54,7 @@ const cooperations = [
     name: "EnCeladus Hellenic Supersite",
     img: "https://eos.iti.gr/images/cooperation/projects/geo.png",
     description: "Hellenic Supersite for Earth Observation and environmental monitoring in the EnCeladus framework.",
-    url: "https://eos.iti.gr/cooperation.php",
+    url: "https://www.earthobservations.org/",
   },
 ];
 
@@ -97,10 +98,7 @@ export default function Cooperations() {
         </div>
 
         <p className="mt-8 text-center text-sm text-muted-foreground">
-          … and many others.{" "}
-          <a href="https://eos.iti.gr/cooperation.php" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-            View full cooperations list <ExternalLink className="w-3 h-3 inline" />
-          </a>
+          … and many others. <a href="/contact" className="text-primary hover:underline">Contact us</a> for more information on cooperations.
         </p>
 
       </div>

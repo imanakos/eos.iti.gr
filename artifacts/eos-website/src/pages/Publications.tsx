@@ -32,13 +32,13 @@ const journalPubs = [
 ];
 
 const categories = [
-  { id: "journal", label: "Journal Publications", url: "https://eos.iti.gr/publishing.php#journal" },
-  { id: "book", label: "Books / Book Chapters", url: "https://eos.iti.gr/publishing.php#book" },
-  { id: "conference", label: "Conference Publications", url: "https://eos.iti.gr/publishing.php#conference" },
-  { id: "speeches", label: "Networking / Communication", url: "https://eos.iti.gr/publishing.php#speeches" },
-  { id: "posters", label: "Poster Corner", url: "https://eos.iti.gr/publishing.php#posters" },
-  { id: "videos", label: "Video Corner", url: "https://eos.iti.gr/publishing.php#videos" },
-  { id: "press", label: "Press Corner", url: "https://eos.iti.gr/publishing.php#press" },
+  "Journal Publications",
+  "Books / Book Chapters",
+  "Conference Publications",
+  "Networking / Communication",
+  "Poster Corner",
+  "Video Corner",
+  "Press Corner",
 ];
 
 export default function Publications() {
@@ -55,16 +55,13 @@ export default function Publications() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-12">
           {categories.map(cat => (
-            <a
-              key={cat.id}
-              href={cat.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-3 rounded-xl bg-card border border-border text-sm font-medium text-foreground hover:bg-primary/5 hover:border-primary/30 hover:text-primary transition-colors"
+            <div
+              key={cat}
+              className="flex items-center gap-2 px-4 py-3 rounded-xl bg-card border border-border text-sm font-medium text-foreground"
             >
               <BookOpen className="w-4 h-4 text-primary flex-shrink-0" />
-              {cat.label}
-            </a>
+              {cat}
+            </div>
           ))}
         </div>
 
@@ -90,16 +87,9 @@ export default function Publications() {
         <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl border border-primary/20 p-6 text-center">
           <h3 className="font-bold text-foreground mb-2">Full publication list</h3>
           <p className="text-sm text-muted-foreground mb-4">
-            View the complete bibliography including books, conference papers, networking activities, posters, videos, and press coverage.
+            The complete bibliography covers seven categories: journal articles, books, conference papers, networking and communication activities, posters, videos, and press coverage. The full archive is being updated on this site.
           </p>
-          <a
-            href="https://eos.iti.gr/publishing.php"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors"
-          >
-            View all publications <ExternalLink className="w-4 h-4" />
-          </a>
+          <p className="text-xs text-muted-foreground italic">Full archive coming soon — contact us for the complete bibliography.</p>
         </div>
 
       </div>

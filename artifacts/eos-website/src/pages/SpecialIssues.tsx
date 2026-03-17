@@ -8,7 +8,6 @@ const issues = [
     impact: "Current Impact Factor: 4.118; 5-Year Impact Factor: 4.740; JCR category rank: 7/30 (Q1) in 'Remote Sensing'",
     links: [
       { label: "Special issue @ mdpi.com", url: "https://www.mdpi.com/journal/remotesensing/special_issues/ecosystem_modelling_RS" },
-      { label: "News post", url: "https://eos.iti.gr/by_our_team.php#news2" },
     ],
   },
   {
@@ -18,7 +17,6 @@ const issues = [
     impact: "CiteScore 2018 (Scopus): 2.15 — rank 37/140 (Q2) in 'Nature and Landscape Conservation' and 90/336 (Q2) in 'Ecology'",
     links: [
       { label: "Special issue @ mdpi.com", url: "https://www.mdpi.com/journal/land/special_issues/EARSeL" },
-      { label: "News post", url: "https://eos.iti.gr/by_our_team.php#news3" },
     ],
   },
   {
@@ -28,7 +26,6 @@ const issues = [
     impact: "A special issue of Remote Sensing dedicated to Sentinel Analysis Ready Data methodologies.",
     links: [
       { label: "Special issue @ mdpi.com", url: "https://www.mdpi.com/journal/remotesensing/special_issues/ARD" },
-      { label: "News post", url: "https://eos.iti.gr/by_our_team.php#news18" },
     ],
   },
 ];
