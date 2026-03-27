@@ -25,7 +25,7 @@ Fully self-contained with all content fetched and migrated from the original sit
 
 **Pages (all internal routes):**
 - `/` — Home
-- `/news` — All 157 news articles with search + pagination (all images locally hosted)
+- `/news` — All 157 news articles with search + pagination (all images locally hosted); clicking any card opens a full-article modal with body text, image, date, and original link
 - `/our-work` — Our Work hub linking to all sub-pages
 - `/our-work/projects` — All research projects with real logos
 - `/our-work/cooperations` — All cooperations (NASA LCLUC, EARSeL, Copernicus Academy, etc.)
@@ -49,14 +49,17 @@ Fully self-contained with all content fetched and migrated from the original sit
 
 **Publications page** — 7 tabs: Journal (37), Books (6), Conference (21), Networking (95), Poster Corner (9), Video Corner (19), Press Corner (5)
 
-**Images:** All 200+ images self-hosted in `public/images/` — zero external requests to eos.iti.gr
+**Images & Videos:** All media self-hosted in `public/` — zero external requests to eos.iti.gr
 - `public/images/logo/logoeos8.png` — real EOS logo (matched to original site)
-- `public/images/news/` — all 157 news article images
+- `public/images/news/` — all 157 news article images (all downloaded)
 - `public/images/cooperation/projects/` — all cooperation org logos
 - `public/images/projects/` — all project logos
 - `public/images/publishing/` — poster/press corner images
-- `public/images/structure/` — team photos
+- `public/images/structure/` — team photos (Plot_Final.png = personnel stats chart)
+- `public/videos/` — digiryzi (24MB, complete) and digicotton (196MB/205MB) ERT interviews
 - `public/files/hopfen.pdf` — press corner PDF download
+
+**News body data:** `src/data/newsBodyData.ts` — 138 articles have body text; cleaned of HTML artifacts (92 `<div>` tags, 1 jQuery script fragment, scraped junk). 19 oldest articles (2014–2018) show link to original URL in modal.
 
 **Tech:** wouter (routing), framer-motion (animations), lucide-react (icons), TailwindCSS v4
 **No backend** — fully static frontend

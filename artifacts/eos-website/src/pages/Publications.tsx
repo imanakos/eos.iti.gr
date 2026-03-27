@@ -729,14 +729,14 @@ const posterItems = [
 const videoItems = [
   {
     "title": "DigiCotton: sustainable cotton farming in Nestos valley, July 2025",
-    "url": "https://eos.iti.gr/videos/digicotton_ert_interview.mp4",
+    "url": "/videos/digicotton_ert_interview.mp4",
     "type": "local",
     "thumb": "/images/videos_start_image/digicotton_video_start_img.png",
     "note": "Greek National TV Interview"
   },
   {
     "title": "DigiRyzi: intelligent rice farming in Axios delta, June 2025",
-    "url": "https://eos.iti.gr/videos/digiryzi_ert_interview.mp4",
+    "url": "/videos/digiryzi_ert_interview.mp4",
     "type": "local",
     "thumb": "/images/videos_start_image/digiryzi_video_start_img.png",
     "note": "Greek National TV Interview"
