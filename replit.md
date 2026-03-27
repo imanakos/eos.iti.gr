@@ -59,7 +59,7 @@ Fully self-contained with all content fetched and migrated from the original sit
 - `public/videos/` — digiryzi (24MB, complete) and digicotton (196MB/205MB) ERT interviews
 - `public/files/hopfen.pdf` — press corner PDF download
 
-**News body data:** `src/data/newsBodyData.ts` — 138 articles have body text; cleaned of HTML artifacts (92 `<div>` tags, 1 jQuery script fragment, scraped junk). 19 oldest articles (2014–2018) show link to original URL in modal.
+**News body data:** `src/data/newsBodyData.ts` — all 151 unique articles have body text; cleaned of HTML artifacts. No references to eos.iti.gr anywhere in source code.
 
 **Tech:** wouter (routing), framer-motion (animations), lucide-react (icons), TailwindCSS v4
 **No backend** — fully static frontend
