@@ -1,20 +1,14 @@
 import { useState } from "react";
-import { Search, ChevronDown, X, ExternalLink, Calendar } from "lucide-react";
+import { Search, ChevronDown, X, Calendar } from "lucide-react";
 import { newsArticles } from "../data/newsData";
 import { newsBodyText } from "../data/newsBodyData";
 
 const PAGE_SIZE = 12;
 
-function getNewsId(originalUrl: string): string {
-  const match = originalUrl.match(/#(news\d+)$/);
-  return match ? match[1] : "";
-}
-
 type Article = typeof newsArticles[number];
 
 function ArticleModal({ article, onClose }: { article: Article; onClose: () => void }) {
-  const newsId = getNewsId(article.originalUrl);
-  const body = newsId ? newsBodyText[newsId] : undefined;
+  const body = article.newsId ? newsBodyText[article.newsId] : undefined;
 
   return (
     <div
@@ -57,19 +51,9 @@ function ArticleModal({ article, onClose }: { article: Article; onClose: () => v
             </div>
           ) : (
             <p className="text-muted-foreground italic text-sm">
-              Full article text is available on the original EOS website.
+              No article text is available for this entry.
             </p>
           )}
-          <div className="mt-6 pt-5 border-t border-border">
-            <a
-              href={article.originalUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
-            >
-              View original article <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          </div>
         </div>
       </div>
     </div>
@@ -83,7 +67,7 @@ export default function News() {
 
   const filtered = newsArticles.filter(a =>
     a.title.toLowerCase().includes(search.toLowerCase()) ||
-    (getNewsId(a.originalUrl) && (newsBodyText[getNewsId(a.originalUrl)] || "").toLowerCase().includes(search.toLowerCase()))
+    (a.newsId && (newsBodyText[a.newsId] || "").toLowerCase().includes(search.toLowerCase()))
   );
   const shown = filtered.slice(0, visible);
 
@@ -116,8 +100,7 @@ export default function News() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {shown.map((article, i) => {
-            const newsId = getNewsId(article.originalUrl);
-            const body = newsId ? newsBodyText[newsId] : undefined;
+            const body = article.newsId ? newsBodyText[article.newsId] : undefined;
             const excerpt = body ? body.slice(0, 200).replace(/\s\S*$/, "") + "…" : undefined;
             return (
               <button
