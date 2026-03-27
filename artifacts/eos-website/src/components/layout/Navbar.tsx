@@ -35,12 +35,17 @@ const navItems: NavItem[] = [
     isDropdown: true,
     items: [
       { label: "Overview", href: "/services" },
-      { label: "UAV Services", href: "/services/uav" },
+      { label: "Vegetation Indices", href: "/services/vegetation-indices" },
+      { label: "Inundation Maps", href: "/services/inundation-maps" },
+      { label: "Land Cover Maps (EODESM)", href: "/services/land-cover-maps" },
       { label: "Zenodo Products", href: "/services/zenodo" },
       { label: "crocoTile", href: "https://elter-crocotile.datalabs.ceh.ac.uk/", external: true },
+      { label: "Hyperspectral Cubes (Greek)", href: `${import.meta.env.BASE_URL}images/services/spectral-presentation.pdf`, external: true },
       { label: "WebGIS Tool", href: "http://web-gis-irrigation.iti.gr/", external: true },
+      { label: "LTER Products", href: "https://b2share.eudat.eu/records/?q=hydroperiod&sort=-&page=1&size=10", external: true },
       { label: "EO-4-WaterUtilities", href: "https://portal-wqems.iti.gr/", external: true },
       { label: "EO-4-ProtectedAreas", href: "https://ecosense.biosense.rs/#/home", external: true },
+      { label: "UAV Services", href: "/services/uav" },
     ]
   },
   {
@@ -48,9 +53,13 @@ const navItems: NavItem[] = [
     isDropdown: true,
     items: [
       { label: "PONTOS Web GIS", href: "http://labecolftp.env.duth.gr/PONTOS/", external: true },
+      { label: "Living Earth Wales", href: "https://wales.livingearth.online/", external: true },
       { label: "EcoSense", href: "https://ecosense.biosense.rs/#/home", external: true },
+      { label: "EarthTrack", href: "http://earthtrack.aber.ac.uk/", external: true },
       { label: "Openforis (On-Site)", href: "http://www.openforis.org/", external: true },
       { label: "Gap Light Analysis", href: "https://www.sci.muni.cz/botany/glama/", external: true },
+      { label: "Western Crete Data Cube", href: "http://datacube.iti.gr/", external: true },
+      { label: "PONTOS Data Cube", href: "http://160.40.53.201:8000/", external: true },
     ]
   },
   {
@@ -58,6 +67,7 @@ const navItems: NavItem[] = [
     isDropdown: true,
     items: [
       { label: "Earth Observation Training", href: "/e-learning" },
+      { label: "Ecosystem Services Training", href: "https://eotist-training.cbk.waw.pl/index.php", external: true },
       { label: "Waste Water Treatment", href: "https://etraining-aquacycle.eu/", external: true },
       { label: "Water Utilities Training", href: "https://training.wqems.eu/group/4?type=catalog", external: true },
     ]

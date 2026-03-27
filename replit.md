@@ -32,11 +32,14 @@ Fully self-contained with all content fetched and migrated from the original sit
 - `/our-work/publications` — Publications list with real DOI links
 - `/our-work/special-issues` — Journals: Remote Sensing, Land (MDPI)
 - `/our-work/workshops` — EARSeL/NASA LCLUC workshops 2014–2021 with reports
-- `/services` — Services overview
+- `/services` — Services overview (all products, + "Indicative Applications" algorithm module descriptions)
+- `/services/vegetation-indices` — Vegetation Indices region selector (9 regions with dates, matching original)
+- `/services/inundation-maps` — Inundation Maps region selector (9 regions with dates, matching original)
+- `/services/land-cover-maps` — EODESM tool description with official links
 - `/services/uav` — UAV services page (DJI Mini 3 Pro, Anafi AI Parrot, etc.)
 - `/services/zenodo` — Zenodo open data products
-- `/e-learning` — All 16 SEOS EU FP6 modules + 3 other platforms
-- `/about` — Background page
+- `/e-learning` — All 16 SEOS EU FP6 modules + 4 other platforms (EOTiST, Ecosystem Services Training, AQUACYCLE, WQeMS)
+- `/about` — Background page (Dr. Manakos' real biography from background.php, with 1993–2018 research domain timeline)
 - `/about/team` — Team with real photos (Dr. Ioannis Manakos, PhD candidates)
 - `/contact` — Contact with real director info + functional mailto form
 

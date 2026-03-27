@@ -22,8 +22,13 @@ const seosModules = [
 const otherPlatforms = [
   {
     name: "Earth Observation Training (EOTiST)",
-    desc: "Standard and Advanced courses on Remote Sensing, Ecosystem Research, Modelling and Computer Science. Developed within the EU EOTiST project and available on Zenodo.",
-    url: "https://zenodo.org/records/13712172",
+    desc: "Standard and Advanced courses on Remote Sensing, Ecosystem Research, Modelling and Computer Science. Developed within the EU EOTiST project.",
+    url: "https://eotist-training.cbk.waw.pl/index.php",
+  },
+  {
+    name: "Ecosystem Services Training (EOTiST / CBK PAN)",
+    desc: "Training on Ecosystem Services within the H2020 EOTiST Twinning project, hosted at the Space Research Centre of the Polish Academy of Sciences.",
+    url: "https://eotist-training.cbk.waw.pl/index.php",
   },
   {
     name: "Waste Water Treatment Training",

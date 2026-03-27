@@ -20,6 +20,9 @@ import Cooperations from "./pages/Cooperations";
 import UAV from "./pages/UAV";
 import ELearning from "./pages/ELearning";
 import ZenodoPage from "./pages/ZenodoPage";
+import VegetationIndices from "./pages/VegetationIndices";
+import InundationMaps from "./pages/InundationMaps";
+import LandCoverMaps from "./pages/LandCoverMaps";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +43,9 @@ function Router() {
         <Route path="/about/team" component={Team} />
         <Route path="/services/uav" component={UAV} />
         <Route path="/services/zenodo" component={ZenodoPage} />
+        <Route path="/services/vegetation-indices" component={VegetationIndices} />
+        <Route path="/services/inundation-maps" component={InundationMaps} />
+        <Route path="/services/land-cover-maps" component={LandCoverMaps} />
         <Route path="/e-learning" component={ELearning} />
         <Route path="/contact" component={Contact} />
         <Route component={NotFound} />
