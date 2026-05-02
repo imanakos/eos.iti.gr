@@ -37,7 +37,7 @@ export default function About() {
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Background</h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Eos.iti.gr builds on the background and experience that Dr. Ioannis Manakos accumulated by his interaction with all directly related or affiliated academics, researchers, and technicians, with whom he interacted and interacts within his studies and career.
+            The EOS team builds on the background and experience that Dr. Ioannis Manakos accumulated by his interaction with all directly related or affiliated academics, researchers, and technicians, with whom he interacted and interacts within his studies and career.
           </p>
         </div>
 
