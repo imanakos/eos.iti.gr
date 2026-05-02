@@ -33,6 +33,7 @@ export const projects: Project[] = [
     img: "/images/projects/medwaycap.png",
     description: "Mediterranean Water Capacity building project leveraging Earth Observation for water resource management across the Mediterranean basin.",
     status: "recent",
+    url: "https://medwaycap.eu/",
   },
   {
     name: "MedEOS",
@@ -86,24 +87,28 @@ export const projects: Project[] = [
     img: "/images/projects/eshape.jpg",
     description: "EuroGEOSS Showcases: Applications Powered by Europe initiative. Demonstrating Earth Observation pilot applications across multiple sectors.",
     status: "recent",
+    url: "https://e-shape.eu/",
   },
   {
     name: "ODYSSEUS",
     img: "/images/projects/odysseas.jpg",
     description: "Earth Observation project supporting biodiversity monitoring and ecosystem assessment with remote sensing methodologies.",
     status: "recent",
+    url: "https://odysseas.iti.gr/",
   },
   {
     name: "ECOPOTENTIAL",
     img: "/images/projects/ecop.jpg",
     description: "Improving future ecosystem benefits through Earth Observations (H2020). Combined satellite and in-situ data to improve modelling and management of protected areas.",
     status: "recent",
+    url: "https://cordis.europa.eu/project/id/641762",
   },
   {
     name: "eLTER PLUS",
     img: "/images/projects/eostis.png",
     description: "European Long-Term Ecosystem Research (H2020). EOS contributed through field surveys in Doñana National Park and development of EO-based monitoring tools.",
     status: "recent",
+    url: "https://elter-ri.eu/",
   },
   {
     name: "EcoSense",

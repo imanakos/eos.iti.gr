@@ -1,9 +1,9 @@
 import { ExternalLink, Layers } from "lucide-react";
 
 const links = [
-  { label: "Official Website", url: "https://ecopotential-project.eu/" },
-  { label: "Implementation", url: "https://www.grida.no/resources/12227" },
-  { label: "Short Presentation & Video", url: "https://ecopotential-project.eu/results/deliverables" },
+  { label: "Official Website (CORDIS)", url: "https://cordis.europa.eu/project/id/641762" },
+  { label: "Implementation", url: "https://www.grida.no/" },
+  { label: "Results & Deliverables (CORDIS)", url: "https://cordis.europa.eu/project/id/641762/results" },
   { label: "Related Publication", url: "https://www.mdpi.com/2072-4292/9/10/1065" },
 ];
 
@@ -30,7 +30,7 @@ export default function LandCoverMaps() {
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               The <strong className="text-foreground">EODESM tool</strong> ('Earth Observation Data for Ecosystem Monitoring') is a tool developed under the Horizon 2020{" "}
-              <a href="https://ecopotential-project.eu/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">
+              <a href="https://cordis.europa.eu/project/id/641762" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">
                 ECOPOTENTIAL project
               </a>
               .
