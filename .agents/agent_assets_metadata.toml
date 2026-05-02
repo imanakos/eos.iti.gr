@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "VLKCTfiW-ifZK9jVzzkOM"
+uri = "file://eos-website.zip"
+type = "unspecified"
+title = "EOS Website — complete built site (404 MB)"
