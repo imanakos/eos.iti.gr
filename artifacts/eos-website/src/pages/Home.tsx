@@ -1,7 +1,6 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, Globe, Layers, Map, Satellite } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { newsArticles } from "@/data/newsData";
 
 const featuredServices = [
@@ -33,96 +32,76 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[80vh] min-h-[560px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img 
+          <img
             src={`${import.meta.env.BASE_URL}images/hero-bg.png`}
-            alt="Earth Observation Satellite View" 
+            alt="Earth Observation Satellite View"
             className="w-full h-full object-cover"
           />
-          {/* Dark Wash Gradient for Text Readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-background dark:to-background"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/45 to-background dark:to-background"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-16">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-sm font-medium mb-8"
           >
             <Satellite className="w-4 h-4" />
             CERTH/ITI Remote Sensing Research Team
           </motion.div>
-          
-          <motion.h1 
+
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold text-white leading-tight mb-6 max-w-4xl mx-auto"
           >
-            Interfacing <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">Earth Observation</span> to the public.
+            Interfacing{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">
+              Earth Observation
+            </span>{" "}
+            to the public.
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed"
           >
             The EOS team develops innovative research, tools, and Earth Observation services for monitoring biodiversity, habitats, land cover changes, and water resources.
           </motion.p>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <Link href="/services">
-              <Button size="lg" className="w-full sm:w-auto text-base">
-                Explore Services
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </Link>
-            <Link href="/our-work">
-              <Button size="lg" variant="glass" className="w-full sm:w-auto text-base">
-                Discover Our Work
-              </Button>
-            </Link>
-          </motion.div>
-
-        </div>
-
-        {/* Copernicus Ambassador badge — absolutely anchored to bottom-right of hero */}
-        <div className="absolute bottom-8 right-8 z-10 flex items-center gap-3 px-4 py-3 rounded-2xl bg-black/40 backdrop-blur-md border border-white/20">
-          <img
-            src={`${import.meta.env.BASE_URL}images/logo/CopernicusAmbassador.svg`}
-            alt="Copernicus Academy Ambassador"
-            className="h-10 w-auto"
-          />
-          <div className="text-left">
-            <p className="text-white font-semibold text-sm leading-tight">Copernicus Academy</p>
-            <p className="text-white/70 text-xs">Ambassador Member</p>
-          </div>
         </div>
       </section>
 
       {/* Vision & Goals Section */}
       <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div className="space-y-8">
               <div>
                 <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">Our Vision</h2>
                 <div className="w-20 h-1.5 bg-secondary rounded-full mb-6"></div>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Earth Observation for peaceful purposes aims at the improvement of human life. Rational usage of natural resources, food security and climate change impacts' mitigation constitute core drivers for the development of sensors by Space Agencies worldwide.
+                  Earth Observation for peaceful purposes aims at the improvement of human life. Rational usage of natural resources, food security and climate change impacts' mitigation constitute core drivers for the development of sensors by the European (ESA), American (NASA) and other Space Agencies worldwide, as well as the design and development of remote sensing data processing chains.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-                  Eos team innovates in this research with the development of Earth Observation based products and services for monitoring and assessment of biodiversity, habitats, cultivations, resources, and land cover/use changes to support decisions, modeling and scenarios towards sustainability.
+                  <em>Eos</em> team innovates in this research with the development of Earth Observation based products and services for monitoring and assessment of biodiversity, habitats, cultivations, resources, and land cover/use changes to support decisions, modeling and scenarios towards sustainability.
                 </p>
+              </div>
+
+              {/* Copernicus Academy badge — placed inline as in the original site */}
+              <div className="flex flex-col items-center gap-3 pt-4">
+                <img
+                  src={`${import.meta.env.BASE_URL}images/logo/CopernicusAmbassador.svg`}
+                  alt="Copernicus Academy Ambassador Member"
+                  className="h-20 w-auto"
+                />
+                <p className="text-sm text-muted-foreground">Copernicus Academy Ambassador Member</p>
               </div>
             </div>
 
@@ -146,7 +125,7 @@ export default function Home() {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 shrink-0"></div>
-                  <span className="text-muted-foreground">Establish sustainable supply chains for Earth observation value added products</span>
+                  <span className="text-muted-foreground">Establish sustainable supply chains for Earth observation value added products and services</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 shrink-0"></div>
@@ -154,7 +133,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 shrink-0"></div>
-                  <span className="text-muted-foreground">Incorporation of Earth Observation into Earth System Science modelling</span>
+                  <span className="text-muted-foreground">Incorporation of Earth Observation into the Earth System Science modelling</span>
                 </li>
               </ul>
             </div>
@@ -192,10 +171,10 @@ export default function Home() {
               );
             })}
           </div>
-          
+
           <div className="mt-12 text-center">
-            <Link href="/services">
-              <Button variant="outline" size="lg">View All Products & Services</Button>
+            <Link href="/services" className="inline-flex items-center gap-2 font-semibold text-primary hover:text-primary/80 transition-colors">
+              View All Products &amp; Services <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
@@ -238,7 +217,7 @@ export default function Home() {
           </div>
           <div className="mt-8 text-center md:hidden">
             <Link href="/news">
-              <Button variant="outline" className="w-full">View All News</Button>
+              <span className="inline-flex items-center gap-2 font-semibold text-primary">View All News <ArrowRight className="w-4 h-4" /></span>
             </Link>
           </div>
         </div>
