@@ -1,3 +1,5 @@
+import { Link } from "wouter";
+
 const uavFleet = [
   {
     name: "DJI Mini 3 Pro",
@@ -73,12 +75,12 @@ export default function UAV() {
             We offer UAV-based data collection and analysis for research projects, environmental monitoring, and precision agriculture applications.
           </p>
           <div className="flex flex-wrap gap-3">
-            <a
+            <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors"
             >
               Contact us →
-            </a>
+            </Link>
           </div>
         </div>
 

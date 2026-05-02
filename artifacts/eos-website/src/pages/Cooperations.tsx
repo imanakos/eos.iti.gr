@@ -1,6 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import { Link } from "wouter";
 
+
 const cooperations = [
   {
     name: "NASA LCLUC",
@@ -98,7 +99,7 @@ export default function Cooperations() {
         </div>
 
         <p className="mt-8 text-center text-sm text-muted-foreground">
-          … and many others. <a href="/contact" className="text-primary hover:underline">Contact us</a> for more information on cooperations.
+          … and many others. <Link href="/contact" className="text-primary hover:underline">Contact us</Link> for more information on cooperations.
         </p>
 
       </div>
