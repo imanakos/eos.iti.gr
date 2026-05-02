@@ -519,7 +519,7 @@ const networkingPubs = [
   },
   {
     "text": "Mardirossian, G., Dimitrov, D., Manakos, I., 2019. Presentation of the EEOBSS tutorial contents at the Space Research and Technology Institute-Bulgarian Academy of Sciences, Sofia, Bulgaria, 22 February.",
-    "link": "https://eeobss.space/en/about-the-project/\n"
+    "link": "https://eeobss.space/"
   },
   {
     "text": "Manakos, I., Kordelas, G., Aragonés, D., Diaz-Delgado, R., Marini, K. & Bustamante, J., 2018. Benefits and challenges for Sentinel 1 & 2 supported hydroperiod estimation in wetland areas. Poster at the 38th EARSeL Symposium, Earth Observation Supporting Sustainability Research, Chania, Greece, 09-12 July.",

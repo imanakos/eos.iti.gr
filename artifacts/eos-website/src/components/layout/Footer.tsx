@@ -37,7 +37,7 @@ export function Footer() {
               <li><Link href="/services/uav" className="text-sm text-slate-400 hover:text-white transition-colors">UAV Services</Link></li>
               <li><Link href="/services/zenodo" className="text-sm text-slate-400 hover:text-white transition-colors">Zenodo Products</Link></li>
               <li><a href="https://portal-wqems.iti.gr/" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">EO-4-WaterUtilities <ExternalLink className="w-3 h-3 opacity-50" /></a></li>
-              <li><a href="https://ecosense.biosense.rs/#/home" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">EO-4-ProtectedAreas <ExternalLink className="w-3 h-3 opacity-50" /></a></li>
+              <li><a href="https://biosense.rs/" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">EO-4-ProtectedAreas <ExternalLink className="w-3 h-3 opacity-50" /></a></li>
               <li><a href="http://datacube.iti.gr/" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">Greek Data Cubes <ExternalLink className="w-3 h-3 opacity-50" /></a></li>
               <li><Link href="/services" className="text-sm text-slate-400 hover:text-white transition-colors">View All Services →</Link></li>
             </ul>

@@ -110,7 +110,7 @@ export const projects: Project[] = [
     img: "/images/projects/snapearth.jpg",
     description: "Earth Observation for Protected Areas (ESA). Provides monitoring capabilities for protected natural areas through the EcoSense platform.",
     status: "recent",
-    url: "https://ecosense.biosense.rs/#/home",
+    url: "https://biosense.rs/",
   },
   {
     name: "EEOBSS",

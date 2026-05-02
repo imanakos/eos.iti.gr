@@ -19,7 +19,7 @@ const cooperations = [
     name: "Copernicus Academy",
     img: "/images/cooperation/projects/cop-academy1.jpg",
     description: "Member of the Copernicus Academy Network, contributing to education and training in Earth Observation under the EU Copernicus programme.",
-    url: "https://www.copernicus.eu/en/opportunities/education/copernicus-academy",
+    url: "https://www.copernicus.eu/en/opportunities/education",
   },
   {
     name: "MEDRIN",

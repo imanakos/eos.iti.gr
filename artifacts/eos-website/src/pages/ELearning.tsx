@@ -65,7 +65,7 @@ export default function ELearning() {
               SEOS FP6 Space project
             </a>{" "}
             (Grant agreement ID: 30849). Also available in{" "}
-            <a href="https://www.seos-project.eu/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">other languages</a>.
+            <a href="https://seos-project.eu/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">other languages</a>.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {seosModules.map(mod => (
