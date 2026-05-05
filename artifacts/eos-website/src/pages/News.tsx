@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Search, ChevronDown, X, Calendar } from "lucide-react";
 import { newsArticles } from "../data/newsData";
 import { newsBodyText } from "../data/newsBodyData";
+import { assetUrl } from "@/lib/utils";
 
 const PAGE_SIZE = 12;
 
@@ -27,7 +28,7 @@ function ArticleModal({ article, onClose }: { article: Article; onClose: () => v
         {/* Image */}
         <div className="aspect-video overflow-hidden bg-muted">
           <img
-            src={article.img}
+            src={assetUrl(article.img)}
             alt={article.title}
             className="w-full h-full object-cover"
             onError={e => { (e.target as HTMLImageElement).style.display = "none"; }}
@@ -110,7 +111,7 @@ export default function News() {
               >
                 <div className="aspect-video overflow-hidden bg-muted flex-shrink-0">
                   <img
-                    src={article.img}
+                    src={assetUrl(article.img)}
                     alt={article.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     onError={e => {

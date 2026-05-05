@@ -12,9 +12,9 @@ const uavFleet = [
     description: "Advanced multi-rotor UAV equipped with a 48 Mpx sensor, ideal for high-resolution aerial photography, hyperspectral coupling, and detailed environmental monitoring.",
   },
   {
-    name: "Specialist UAV Platform",
-    specs: "Multi-purpose",
-    description: "Additional UAV platform for specialist deployments, enabling simultaneous multi-drone operations for large-area environmental surveys and multi-band data acquisition campaigns.",
+    name: "GEO690 with Micansense RedEdge-P",
+    specs: "Multispectral camera",
+    description: "Specialist UAV platform equipped with the MicaSense RedEdge-P multispectral camera, enabling detailed and accurate data collection for vegetation health, species-level discrimination, and environmental applications.",
   },
 ];
 
@@ -33,8 +33,8 @@ export default function UAV() {
         {/* Fleet photo */}
         <div className="rounded-2xl overflow-hidden border border-border shadow-md mb-10">
           <img
-            src="/images/news/drones.png"
-            alt="EOS UAV Fleet — DJI Mini 3 Pro, Anafi AI Parrot, and DJI Mavic 3 Multispectral"
+            src={`${import.meta.env.BASE_URL}images/news/drones.png`}
+            alt="EOS UAV Fleet — DJI Mini 3 Pro, Anafi AI Parrot, and GEO690 Multispectral"
             className="w-full object-cover"
           />
         </div>
@@ -68,6 +68,13 @@ export default function UAV() {
             ))}
           </div>
         </section>
+
+        <div className="bg-card rounded-2xl border border-border p-6 shadow-sm mb-8">
+          <h3 className="font-bold text-foreground mb-3">Software</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Complementary off-the-shelf UAV image analysis software is used, including <strong>Pix4DFields</strong> for precision agriculture mapping. In addition, own software modules are being developed to support research and application targets. Georeferenced mosaics can be generated, upon which environmental changes and trends may be monitored in tandem with timely equivalent cross-scale satellite and/or in-situ data.
+          </p>
+        </div>
 
         <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl border border-primary/20 p-6">
           <h3 className="font-bold text-foreground mb-2">Interested in UAV services?</h3>

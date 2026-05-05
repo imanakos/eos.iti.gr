@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { Link } from "wouter";
+import { assetUrl } from "@/lib/utils";
 
 
 const cooperations = [
@@ -12,7 +13,7 @@ const cooperations = [
   {
     name: "EARSeL",
     img: "/images/cooperation/projects/earsel-logo.gif",
-    description: "European Association of Remote Sensing Laboratories. Dr. Manakos served as Chairman of the Special Interest Group 'Remote Sensing in Land Use & Land Cover' (2011–2020) and Chairman of EARSeL (2012–2014).",
+    description: "European Association of Remote Sensing Laboratories. Dr. Manakos served as Chairman of the Special Interest Group 'Remote Sensing in Land Use & Land Cover' (2011–2021) and Chairman of EARSeL (2012–2014).",
     url: "http://lulc.earsel.org/",
   },
   {
@@ -76,7 +77,7 @@ export default function Cooperations() {
             <div key={i} className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
               <div className="h-32 bg-muted flex items-center justify-center p-6">
                 <img
-                  src={coop.img}
+                  src={assetUrl(coop.img)}
                   alt={coop.name}
                   className="max-h-full max-w-full object-contain"
                   onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}

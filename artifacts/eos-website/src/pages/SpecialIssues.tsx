@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import { assetUrl } from "@/lib/utils";
 
 const issues = [
   {
@@ -48,7 +49,7 @@ export default function SpecialIssues() {
               <div className="md:flex">
                 <div className="md:w-56 flex-shrink-0 bg-muted flex items-center justify-center p-6">
                   <img
-                    src={issue.img}
+                    src={assetUrl(issue.img)}
                     alt={issue.title}
                     className="max-w-full max-h-32 object-contain"
                     onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}

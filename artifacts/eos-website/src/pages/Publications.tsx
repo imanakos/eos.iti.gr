@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ExternalLink, MonitorPlay } from 'lucide-react';
+import { assetUrl } from '@/lib/utils';
 
 const tabs = [
   { id: 'journal', label: 'Journal Publications' },
@@ -927,7 +928,7 @@ export default function Publications() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {posterItems.map((p, i) => (
                 <div key={i} className="bg-card rounded-xl border border-border overflow-hidden shadow-sm">
-                  <img src={p.img} alt={p.caption}
+                  <img src={assetUrl(p.img)} alt={p.caption}
                     className="w-full h-48 object-cover"
                     onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                   <div className="p-3 text-center">
@@ -949,7 +950,7 @@ export default function Publications() {
                   {v.type === 'local' ? (
                     <a href={v.url} target="_blank" rel="noopener noreferrer" className="block">
                       {v.thumb ? (
-                        <img src={v.thumb} alt={v.title} className="w-full h-44 object-cover hover:opacity-90 transition-opacity" />
+                        <img src={assetUrl(v.thumb)} alt={v.title} className="w-full h-44 object-cover hover:opacity-90 transition-opacity" />
                       ) : (
                         <div className="w-full h-44 bg-muted flex items-center justify-center">
                           <MonitorPlay className="w-12 h-12 text-muted-foreground" />
@@ -986,12 +987,12 @@ export default function Publications() {
                 <div key={i} className="bg-card rounded-xl border border-border overflow-hidden shadow-sm">
                   {p.url ? (
                     <a href={p.url} target="_blank" rel="noopener noreferrer" className="block">
-                      <img src={p.img} alt={p.caption}
+                      <img src={assetUrl(p.img)} alt={p.caption}
                         className="w-full h-48 object-cover hover:opacity-90 transition-opacity"
                         onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                     </a>
                   ) : (
-                    <img src={p.img} alt={p.caption}
+                    <img src={assetUrl(p.img)} alt={p.caption}
                       className="w-full h-48 object-cover"
                       onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                   )}

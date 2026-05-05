@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, Globe, Layers, Map, Satellite } from "lucide-react";
 import { newsArticles } from "@/data/newsData";
+import { assetUrl } from "@/lib/utils";
 
 const featuredServices = [
   {
@@ -198,7 +199,7 @@ export default function Home() {
               <Link key={i} href="/news" className="group block">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-4 border border-border">
                   <img
-                    src={news.img}
+                    src={assetUrl(news.img)}
                     alt={news.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     onError={e => { (e.target as HTMLImageElement).src = `${import.meta.env.BASE_URL}images/structure/Plot_Final.png`; }}

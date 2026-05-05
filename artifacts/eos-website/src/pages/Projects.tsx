@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { projects } from "../data/projectsData";
+import { assetUrl } from "@/lib/utils";
 
 export default function Projects() {
   const recent = projects.filter(p => p.status === "recent");
@@ -23,7 +24,7 @@ export default function Projects() {
               <div key={i} className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
                 <div className="h-40 overflow-hidden bg-muted flex items-center justify-center p-4">
                   <img
-                    src={project.img}
+                    src={assetUrl(project.img)}
                     alt={project.name}
                     className="max-h-full max-w-full object-contain"
                     onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}
@@ -54,7 +55,7 @@ export default function Projects() {
             {past.map((project, i) => (
               <div key={i} className="bg-card rounded-2xl border border-border p-5 shadow-sm flex items-start gap-4">
                 <div className="w-16 h-16 flex-shrink-0 overflow-hidden rounded-lg bg-muted flex items-center justify-center">
-                  <img src={project.img} alt={project.name} className="max-h-full max-w-full object-contain p-1"
+                  <img src={assetUrl(project.img)} alt={project.name} className="max-h-full max-w-full object-contain p-1"
                     onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                 </div>
                 <div>

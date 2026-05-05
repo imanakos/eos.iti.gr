@@ -1,4 +1,5 @@
 import { ExternalLink, Users } from "lucide-react";
+import { assetUrl } from "@/lib/utils";
 
 const currentPersonnel = [
   {
@@ -61,7 +62,7 @@ export default function Team() {
               <div key={i} className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
                 <div className="aspect-square overflow-hidden bg-muted">
                   <img
-                    src={person.img}
+                    src={assetUrl(person.img)}
                     alt={person.name}
                     className="w-full h-full object-cover object-top"
                     onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}
@@ -95,7 +96,7 @@ export default function Team() {
             </div>
             <div className="flex items-center justify-center py-4">
               <img
-                src="/images/structure/Plot_Final.png"
+                src={assetUrl("/images/structure/Plot_Final.png")}
                 alt="EOS team personnel chart"
                 className="max-w-full rounded-xl"
                 onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}
