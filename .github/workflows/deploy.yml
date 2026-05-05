@@ -9,6 +9,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  issues: write
 
 concurrency:
   group: pages
@@ -61,6 +62,62 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  notify-success:
+    # Closes any open deployment-failure tracking issue when deployment succeeds.
+    needs: [build, deploy]
+    if: success()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close open deployment-failure issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const shortSha = context.sha.substring(0, 7);
+            const ref = context.ref.replace('refs/heads/', '');
+            const runUrl = `https://github.com/${owner}/${repo}/actions/runs/${context.runId}`;
+
+            const openIssues = await github.paginate(github.rest.issues.listForRepo, {
+              owner,
+              repo,
+              state: 'open',
+              labels: 'deployment-failure',
+              per_page: 100,
+            });
+
+            for (const issue of openIssues) {
+              // Skip pull requests — the issues API can return PRs when they carry the label.
+              if (issue.pull_request) {
+                console.log(`Skipping PR #${issue.number}`);
+                continue;
+              }
+
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: issue.number,
+                body: [
+                  '## Deployment Succeeded :white_check_mark:',
+                  '',
+                  'A subsequent deployment completed successfully — closing this issue.',
+                  '',
+                  `**Branch:** \`${ref}\``,
+                  `**Commit:** [\`${shortSha}\`](https://github.com/${owner}/${repo}/commit/${context.sha})`,
+                  `**Workflow run:** [View successful run](${runUrl})`,
+                ].join('\n'),
+              });
+
+              await github.rest.issues.update({
+                owner,
+                repo,
+                issue_number: issue.number,
+                state: 'closed',
+                state_reason: 'completed',
+              });
+
+              console.log(`Closed issue #${issue.number}`);
+            }
 
   notify-failure:
     # Runs whenever the build or deploy job fails.
