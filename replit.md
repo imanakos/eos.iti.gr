@@ -1,5 +1,7 @@
 # Workspace
 
+[![Deploy to GitHub Pages](https://github.com/imanakos/eos.iti.gr/actions/workflows/deploy.yml/badge.svg)](https://github.com/imanakos/eos.iti.gr/actions/workflows/deploy.yml)
+
 ## Overview
 
 pnpm workspace monorepo using TypeScript. Contains the EOS (CERTH/ITI Remote Sensing) website and shared backend infrastructure.
