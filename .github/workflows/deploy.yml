@@ -39,7 +39,7 @@ jobs:
         run: pnpm --filter @workspace/eos-website run build
         env:
           PORT: 3000
-          BASE_PATH: /${{ github.event.repository.name }}/
+          BASE_PATH: /
           NODE_ENV: production
 
       - name: Setup Pages
