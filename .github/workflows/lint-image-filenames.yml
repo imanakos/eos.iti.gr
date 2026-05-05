@@ -1,0 +1,91 @@
+name: Lint image filenames
+
+on:
+  push:
+    paths:
+      - 'artifacts/eos-website/public/images/**'
+  pull_request:
+    paths:
+      - 'artifacts/eos-website/public/images/**'
+
+jobs:
+  check-filenames:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check newly added image filenames
+        run: |
+          IMAGE_DIR="artifacts/eos-website/public/images"
+          FAILED=0
+
+          # Determine the base commit to diff against so we only examine
+          # files that are genuinely new in this push or pull request.
+          #
+          # pull_request: GitHub supplies the exact base SHA of the target branch.
+          # push (normal): compare against the previous HEAD on that branch.
+          # push (first push on a new branch): "before" is all zeros — fall back
+          #   to the merge-base with the default branch.  If merge-base cannot be
+          #   found either, use the default branch HEAD so we never silently skip.
+
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          else
+            BEFORE="${{ github.event.before }}"
+            if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+              # New branch: find the common ancestor with the default branch.
+              DEFAULT_BRANCH="${{ github.event.repository.default_branch }}"
+              git fetch origin "$DEFAULT_BRANCH" --depth=50 2>/dev/null || true
+              BASE_SHA=$(git merge-base HEAD "origin/$DEFAULT_BRANCH" 2>/dev/null || echo "")
+              if [ -z "$BASE_SHA" ]; then
+                # Could not find merge-base; fall back to the tip of the default
+                # branch so validation still runs rather than being skipped.
+                BASE_SHA=$(git rev-parse "origin/$DEFAULT_BRANCH" 2>/dev/null || echo "")
+              fi
+              if [ -z "$BASE_SHA" ]; then
+                echo "ERROR: Could not determine a base commit for comparison."
+                echo "       Push a commit to the default branch first, or open a pull request."
+                exit 1
+              fi
+            else
+              BASE_SHA="$BEFORE"
+            fi
+          fi
+
+          echo "Comparing against base commit: $BASE_SHA"
+
+          # Check files that were Added, Renamed, or Copied (A/R/C).
+          # Renamed/copied destinations can also introduce noncompliant names.
+          # git diff --name-only with -R/C prints destination paths for renames/copies.
+          while IFS= read -r filepath; do
+            # Skip paths outside the images directory.
+            case "$filepath" in
+              "$IMAGE_DIR"/*) ;;
+              *) continue ;;
+            esac
+
+            filename=$(basename "$filepath")
+            # Allow only: lowercase a-z, digits 0-9, hyphens, underscores, dots.
+            if echo "$filename" | grep -qP '[^a-z0-9._-]'; then
+              echo "ERROR: Invalid filename — '$filepath'"
+              echo "       Filenames must use only lowercase letters, digits, hyphens, underscores, and dots."
+              FAILED=1
+            fi
+          done < <(git diff --name-only --diff-filter=ARC "$BASE_SHA" HEAD)
+
+          if [ "$FAILED" -eq 1 ]; then
+            echo ""
+            echo "Rename the file(s) above to use only:"
+            echo "  - lowercase letters  (a-z)"
+            echo "  - digits             (0-9)"
+            echo "  - hyphens            (-)"
+            echo "  - underscores        (_)"
+            echo "  - dots               (.)"
+            echo "No spaces, uppercase letters, apostrophes, parentheses, or other special characters."
+            exit 1
+          fi
+
+          echo "All newly added image filenames are valid."
