@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail, MapPin, Phone, Globe, Printer } from "lucide-react";
+import { assetUrl } from "@/lib/utils";
 
 export default function Contact() {
   const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", subject: "", message: "" });
@@ -31,7 +32,7 @@ export default function Contact() {
 
             <div className="bg-card rounded-2xl border border-border p-6 shadow-sm flex items-start gap-5">
               <img
-                src="/images/structure/imanakos.jpg"
+                src={assetUrl("/images/structure/imanakos.jpg")}
                 alt="Dr. Ioannis Manakos"
                 className="w-20 h-20 rounded-xl object-cover object-top flex-shrink-0"
                 onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}

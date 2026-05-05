@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'wouter';
 import { ExternalLink, MonitorPlay } from 'lucide-react';
 import { assetUrl } from '@/lib/utils';
 
@@ -842,7 +843,19 @@ function PubItem({ text, link }: { text: string; link: string | null }) {
 }
 
 export default function Publications() {
-  const [activeTab, setActiveTab] = useState('journal');
+  const [location] = useLocation();
+  const validIds = tabs.map(t => t.id);
+
+  const getTabFromSearch = () => {
+    const p = new URLSearchParams(window.location.search).get('tab') ?? '';
+    return validIds.includes(p) ? p : 'journal';
+  };
+
+  const [activeTab, setActiveTab] = useState(getTabFromSearch);
+
+  useEffect(() => {
+    setActiveTab(getTabFromSearch());
+  }, [location]);
 
   return (
     <div className="pt-24 pb-20 min-h-screen bg-slate-50 dark:bg-background">
@@ -948,7 +961,7 @@ export default function Publications() {
               {videoItems.map((v, i) => (
                 <div key={i} className="bg-card rounded-xl border border-border overflow-hidden shadow-sm">
                   {v.type === 'local' ? (
-                    <a href={v.url} target="_blank" rel="noopener noreferrer" className="block">
+                    <a href={assetUrl(v.url)} target="_blank" rel="noopener noreferrer" className="block">
                       {v.thumb ? (
                         <img src={assetUrl(v.thumb)} alt={v.title} className="w-full h-44 object-cover hover:opacity-90 transition-opacity" />
                       ) : (
@@ -966,7 +979,7 @@ export default function Publications() {
                     <p className="text-sm font-medium text-foreground leading-snug">{v.title}</p>
                     {v.note && <p className="text-xs text-muted-foreground mt-1">{v.note}</p>}
                     {v.type === 'local' && (
-                      <a href={v.url} target="_blank" rel="noopener noreferrer"
+                      <a href={assetUrl(v.url)} target="_blank" rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 text-xs text-primary hover:underline mt-2">
                         Watch video <ExternalLink className="w-3 h-3" />
                       </a>
@@ -1010,7 +1023,7 @@ export default function Publications() {
             </div>
             <div className="mt-8 bg-amber-50 dark:bg-amber-950/20 rounded-xl border border-amber-200 dark:border-amber-800 p-4 text-sm text-amber-800 dark:text-amber-200">
               <strong>Note:</strong> The <em>Hopfen Rundschau</em> article (Bavaria regional journal, August 2024, in German) is available as a{' '}
-              <a href="/files/hopfen.pdf" download className="underline font-semibold">PDF download</a>.
+              <a href={assetUrl("/files/hopfen.pdf")} download className="underline font-semibold">PDF download</a>.
             </div>
           </section>
         )}
