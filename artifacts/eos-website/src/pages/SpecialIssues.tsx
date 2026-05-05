@@ -14,7 +14,7 @@ const issues = [
   {
     title: "Monitoring Land Cover Change: Towards Sustainability",
     journal: "Land | ISSN 2073-445X",
-    img: "/images/special-issues/EARSel-banner2.15.png",
+    img: "/images/special-issues/earsel-banner2.15.png",
     impact: "CiteScore 2018 (Scopus): 2.15 — rank 37/140 (Q2) in 'Nature and Landscape Conservation' and 90/336 (Q2) in 'Ecology'",
     links: [
       { label: "Special issue @ mdpi.com", url: "https://www.mdpi.com/journal/land/special_issues/EARSeL" },
@@ -23,7 +23,7 @@ const issues = [
   {
     title: "Sentinel Analysis Ready Data (Sentinel ARD)",
     journal: "Remote Sensing | ISSN 2072-4292",
-    img: "/images/special-issues/Remote_Sensing_SI_Banner_H.jpg",
+    img: "/images/special-issues/remote_sensing_si_banner_h.jpg",
     impact: "A special issue of Remote Sensing dedicated to Sentinel Analysis Ready Data methodologies.",
     links: [
       { label: "Special issue @ mdpi.com", url: "https://www.mdpi.com/journal/remotesensing/special_issues/ARD" },

@@ -148,7 +148,7 @@ export const newsArticles: NewsArticle[] = [
   { title: "ECOPOTENTIAL project at Researchers' Night 2019", img: "/images/news/researchers-night-2019/ecopotential/1.jpg", date: "", newsId: "news22" },
   { title: "ECOPOTENTIAL tools hands-on workshop", img: "/images/news/donana-2019.png", date: "", newsId: "news21" },
   { title: "International LCLUC Regional Science Joint Meeting for Central Asia and Caucasus: Water - Energy - Food and Sustainability", img: "/images/news/nur-sultan.png", date: "", newsId: "news20" },
-  { title: "Special Issue of \"Sentinel Analysis Ready Data (Sentinel ARD)\" @ Remote Sensing MDPI Journal", img: "/images/special-issues/Remote_Sensing_SI_Banner_H.jpg", date: "", newsId: "news18" },
+  { title: "Special Issue of \"Sentinel Analysis Ready Data (Sentinel ARD)\" @ Remote Sensing MDPI Journal", img: "/images/special-issues/remote_sensing_si_banner_h.jpg", date: "", newsId: "news18" },
   { title: "SCERIN-7 Capacity Building Workshop on Earth System Observations", img: "/images/news/scerin2.png", date: "", newsId: "news17" },
   { title: "EuroGEOSS Workshop 2019", img: "/images/news/eurogeoss2019.png", date: "", newsId: "news16" },
   { title: "Did you hear the news about our book?", img: "/images/news/book.png", date: "", newsId: "news15" },

@@ -98,7 +98,7 @@ export default function Home() {
               {/* Copernicus Academy badge — placed inline as in the original site */}
               <div className="flex flex-col items-center gap-3 pt-4">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/logo/CopernicusAmbassador.svg`}
+                  src={`${import.meta.env.BASE_URL}images/logo/copernicus_ambassador.svg`}
                   alt="Copernicus Academy Ambassador Member"
                   className="h-20 w-auto"
                 />
@@ -202,7 +202,7 @@ export default function Home() {
                     src={assetUrl(news.img)}
                     alt={news.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    onError={e => { (e.target as HTMLImageElement).src = `${import.meta.env.BASE_URL}images/structure/Plot_Final.png`; }}
+                    onError={e => { (e.target as HTMLImageElement).src = `${import.meta.env.BASE_URL}images/structure/plot_final.png`; }}
                   />
                   {news.date && (
                     <div className="absolute top-4 left-4 bg-background/90 backdrop-blur text-foreground text-xs font-bold px-3 py-1 rounded-full">

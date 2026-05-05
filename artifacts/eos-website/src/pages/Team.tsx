@@ -96,7 +96,7 @@ export default function Team() {
             </div>
             <div className="flex items-center justify-center py-4">
               <img
-                src={assetUrl("/images/structure/Plot_Final.png")}
+                src={assetUrl("/images/structure/plot_final.png")}
                 alt="EOS team personnel chart"
                 className="max-w-full rounded-xl"
                 onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}

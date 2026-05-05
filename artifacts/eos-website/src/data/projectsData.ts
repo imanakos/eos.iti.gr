@@ -44,7 +44,7 @@ export const projects: Project[] = [
   },
   {
     name: "WQeMS",
-    img: "/images/projects/WQEMS.jpg",
+    img: "/images/projects/wqems.jpg",
     description: "Water Quality Emergency Monitoring Service (H2020). An EO-based platform for water utilities providing early-warning capabilities. Featured in the Copernicus Observer newsletter.",
     status: "recent",
     url: "https://wqems.eu/",
@@ -64,7 +64,7 @@ export const projects: Project[] = [
   },
   {
     name: "PONTOS",
-    img: "/images/projects/PONTOS_logo.jpg",
+    img: "/images/projects/pontos_logo.jpg",
     description: "Copernicus-based services for the Black Sea basin (ENI CBC). Provides coastal and marine monitoring services through a dedicated Web GIS platform.",
     status: "recent",
     url: "http://labecolftp.env.duth.gr/PONTOS/",

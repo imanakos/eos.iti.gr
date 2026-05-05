@@ -663,7 +663,7 @@ const networkingPubs = [
 
 const pressItems = [
   {
-    "img": "/images/publishing/JOW_presscorner.png",
+    "img": "/images/publishing/jow_presscorner.png",
     "url": "https://www.karfitsa.gr/ekdiloseis/imerida-sti-thessaloniki-doryforikes-efarmoges-apo-ti-mavri-thalassa-sto-voreio-aigaio/",
     "caption": "PONTOS Joint Open Workshop 01/03/2022 (article in Greek)"
   },
@@ -707,7 +707,7 @@ const posterItems = [
     "caption": "Η φύση πέρα από την ανθρώπινη όραση.. Μια άλλη ματιά.. (in Greek), presented at the Researchers' Night 2019"
   },
   {
-    "img": "/images/publishing/EEOBSS.jpg",
+    "img": "/images/publishing/eeobss.jpg",
     "caption": "EEOBSS - EO Education for Bulgarian secondary schools (in English). Presented at UN/Romania International Conference on Space Solutions for Sustainable Agriculture and Precision Farming, 2019"
   },
   {
