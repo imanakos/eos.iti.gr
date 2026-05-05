@@ -197,6 +197,56 @@ jobs:
               return;
             }
 
+            // Fetch the 25 most-recently-updated closed deployment-failure issues.
+            // A match is accepted when the issue's title contains the short SHA AND
+            // it was closed/updated within the last 24 h OR is within the top-25
+            // window — whichever is wider — so a slow "fix → close → regress" cycle
+            // is still caught even if 24 h has elapsed.
+            const recentlyClosed = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: 'closed',
+              labels: 'deployment-failure',
+              per_page: 25,
+              sort: 'updated',
+              direction: 'desc',
+            });
+
+            const cutoff = Date.now() - 24 * 60 * 60 * 1000;
+            const closedMatch = recentlyClosed.data.find(i => {
+              if (!i.title.includes(shortSha)) return false;
+              // Accept if within the last 24 h OR within the top-25 window
+              const withinDay = new Date(i.updated_at).getTime() >= cutoff;
+              const withinTopN = recentlyClosed.data.indexOf(i) < 25;
+              return withinDay || withinTopN;
+            });
+
+            if (closedMatch) {
+              console.log(`Re-opening closed tracking issue #${closedMatch.number}`);
+              await github.rest.issues.update({
+                owner,
+                repo,
+                issue_number: closedMatch.number,
+                state: 'open',
+              });
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: closedMatch.number,
+                body: [
+                  '## Deployment Failed Again',
+                  '',
+                  `**Date:** ${date}`,
+                  `**Branch:** \`${ref}\``,
+                  `**Commit:** [\`${shortSha}\`](https://github.com/${owner}/${repo}/commit/${context.sha})`,
+                  `**Workflow run:** [View logs](${runUrl})`,
+                  '',
+                  '_This issue was re-opened because the same commit failed again after being closed._',
+                ].join('\n'),
+              });
+              return;
+            }
+
             await github.rest.issues.create({
               owner,
               repo,
