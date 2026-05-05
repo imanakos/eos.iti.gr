@@ -9,7 +9,7 @@ const featuredServices = [
     title: "EO-4-WaterUtilities",
     desc: "WQeMS platform providing Earth Observation services for water quality monitoring and early warning for water utilities.",
     icon: <Globe className="w-6 h-6 text-primary" />,
-    href: "https://portal-wqems.iti.gr/",
+    href: "https://wqems.eu/",
     external: true,
   },
   {

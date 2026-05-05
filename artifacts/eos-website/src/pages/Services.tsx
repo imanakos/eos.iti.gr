@@ -76,7 +76,7 @@ const services: ServiceItem[] = [
     title: "EO-4-WaterUtilities",
     desc: "WQeMS portal providing Earth Observation services for water quality monitoring and emergency response.",
     icon: <Droplet className="w-8 h-8 text-cyan-500" />,
-    href: "https://portal-wqems.iti.gr/",
+    href: "https://wqems.eu/",
     category: "Platforms",
     external: true,
   },

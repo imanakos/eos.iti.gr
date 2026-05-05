@@ -43,7 +43,7 @@ const navItems: NavItem[] = [
       { label: "Hyperspectral Cubes (Greek)", href: `${import.meta.env.BASE_URL}images/services/spectral-presentation.pdf`, external: true },
       { label: "WebGIS Tool", href: "http://web-gis-irrigation.iti.gr/", external: true },
       { label: "LTER Products", href: "https://b2find.eudat.eu/dataset?q=hydroperiod", external: true },
-      { label: "EO-4-WaterUtilities", href: "https://portal-wqems.iti.gr/", external: true },
+      { label: "EO-4-WaterUtilities", href: "https://wqems.eu/", external: true },
       { label: "EO-4-ProtectedAreas", href: "https://biosense.rs/", external: true },
       { label: "UAV Services", href: "/services/uav" },
     ]
@@ -85,6 +85,7 @@ const navItems: NavItem[] = [
 
 export function Navbar() {
   const [location] = useLocation();
+  const isHomePage = location === "/";
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -109,7 +110,7 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
+        (isScrolled || !isHomePage)
           ? "bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-b border-border shadow-sm py-2"
           : "bg-transparent py-4"
       )}
@@ -138,7 +139,7 @@ export function Navbar() {
                 {item.isDropdown ? (
                   <button className={cn(
                     "px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-1 transition-colors duration-200 whitespace-nowrap",
-                    isScrolled ? "text-foreground hover:bg-muted" : "text-white/90 hover:bg-white/10 hover:text-white"
+                    (isScrolled || !isHomePage) ? "text-foreground hover:bg-muted" : "text-white/90 hover:bg-white/10 hover:text-white"
                   )}>
                     {item.label}
                     <ChevronDown className={cn("w-3.5 h-3.5 opacity-60 transition-transform duration-200", activeDropdown === item.label && "rotate-180")} />
@@ -147,8 +148,8 @@ export function Navbar() {
                   <Link href={item.href!} className={cn(
                     "px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 whitespace-nowrap",
                     location === item.href
-                      ? (isScrolled ? "bg-primary/10 text-primary" : "bg-white/20 text-white")
-                      : (isScrolled ? "text-foreground hover:bg-muted" : "text-white/90 hover:bg-white/10 hover:text-white")
+                      ? ((isScrolled || !isHomePage) ? "bg-primary/10 text-primary" : "bg-white/20 text-white")
+                      : ((isScrolled || !isHomePage) ? "text-foreground hover:bg-muted" : "text-white/90 hover:bg-white/10 hover:text-white")
                   )}>
                     {item.label}
                   </Link>
@@ -201,7 +202,7 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className={cn("lg:hidden p-2 rounded-lg transition-colors", isScrolled ? "text-foreground hover:bg-muted" : "text-white hover:bg-white/10")}
+            className={cn("lg:hidden p-2 rounded-lg transition-colors", (isScrolled || !isHomePage) ? "text-foreground hover:bg-muted" : "text-white hover:bg-white/10")}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >

@@ -47,7 +47,7 @@ export const projects: Project[] = [
     img: "/images/projects/WQEMS.jpg",
     description: "Water Quality Emergency Monitoring Service (H2020). An EO-based platform for water utilities providing early-warning capabilities. Featured in the Copernicus Observer newsletter.",
     status: "recent",
-    url: "https://portal-wqems.iti.gr/",
+    url: "https://wqems.eu/",
   },
   {
     name: "EOTiST",
