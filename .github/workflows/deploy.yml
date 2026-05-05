@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master]
+    branches: [main, master]
   workflow_dispatch:
 
 permissions:
@@ -40,6 +40,7 @@ jobs:
         env:
           PORT: 3000
           BASE_PATH: /
+          BASE_URL: https://eos.iti.gr
           NODE_ENV: production
 
       - name: Setup Pages
