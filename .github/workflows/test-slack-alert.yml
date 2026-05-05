@@ -1,0 +1,70 @@
+name: Test Slack Failure Alert
+
+# Manually trigger this from GitHub → Actions → "Test Slack Failure Alert" → Run workflow.
+# It deliberately fails a dummy step so the notify-failure job fires and sends a real
+# Slack message, letting you confirm that SLACK_WEBHOOK_URL is wired up correctly.
+# No GitHub Issue is opened — this is a smoke-test only.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  forced-failure:
+    name: Deliberately fail (smoke test)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail intentionally to trigger the Slack alert
+        run: |
+          echo "This step fails on purpose to test the Slack notification."
+          exit 1
+
+  notify-failure:
+    name: Send Slack alert
+    needs: [forced-failure]
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Compute short SHA
+        run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
+
+      - name: Send Slack notification
+        uses: slackapi/slack-github-action@v2.1.0
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: incoming-webhook
+          payload: |
+            {
+              "text": ":rotating_light: *EOS deployment failed*",
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": ":rotating_light: EOS deployment failed"
+                  }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Branch:*\n`${{ github.ref_name }}`"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Commit:*\n<${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}|`${{ env.SHORT_SHA }}`>"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View failed run logs> _(smoke test — not a real deployment failure)_"
+                  }
+                }
+              ]
+            }
