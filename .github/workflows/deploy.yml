@@ -73,6 +73,9 @@ jobs:
     permissions:
       issues: write
     steps:
+      - name: Compute short SHA
+        run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
+
       - name: Send Slack notification
         continue-on-error: true
         uses: slackapi/slack-github-action@v2.1.0
@@ -99,7 +102,7 @@ jobs:
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*Commit:*\n<${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}|`${{ github.sha }}`>"
+                      "text": "*Commit:*\n<${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}|`${{ env.SHORT_SHA }}`>"
                     }
                   ]
                 },
