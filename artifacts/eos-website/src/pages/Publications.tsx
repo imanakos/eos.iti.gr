@@ -691,11 +691,11 @@ const pressItems = [
 
 const posterItems = [
   {
-    "img": "/images/news/Poster_CERTH_updated.jpg",
+    "img": "/images/news/poster_certh_updated.jpg",
     "caption": "ECOPOTENTIAL On Line Data Services, presented at the EuroGEOSS Workshop 2019"
   },
   {
-    "img": "/images/news/EUROGEOSS_2.png",
+    "img": "/images/news/eurogeoss_2.png",
     "caption": "MADE IN ECOPOTENTIAL: data portals and tools for natural ecosystems, presented at the EuroGEOSS Workshop 2019"
   },
   {
