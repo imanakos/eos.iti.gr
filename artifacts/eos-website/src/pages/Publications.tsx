@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { useLocation } from "wouter";
+import { useMemo } from "react";
+import { useLocation, useSearch } from "wouter";
 import { ExternalLink, MonitorPlay } from "lucide-react";
 import { assetUrl } from "@/lib/utils";
 
@@ -856,24 +856,16 @@ function PubItem({ text, link }: { text: string; link: string | null }) {
 }
 
 export default function Publications() {
-  const [location] = useLocation();
+  const [, navigate] = useLocation();
+  const search = useSearch();
   const validIds = tabs.map((t) => t.id);
 
-  const getTabFromSearch = () => {
-    const p = new URLSearchParams(window.location.search).get("tab") ?? "";
+  const activeTab = useMemo(() => {
+    const p = new URLSearchParams(search).get("tab") ?? "";
     return validIds.includes(p) ? p : "journal";
-  };
+  }, [search, validIds]);
 
-  const [activeTab, setActiveTab] = useState(getTabFromSearch);
-
-  useEffect(
-    () => {
-      setActiveTab(getTabFromSearch());
-    },
-    // getTabFromSearch is derived from location and intentionally not listed
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [location]
-  );
+  const setActiveTab = (id: string) => navigate(`?tab=${id}`);
 
   return (
     <div className="pt-24 pb-20 min-h-screen bg-slate-50 dark:bg-background">

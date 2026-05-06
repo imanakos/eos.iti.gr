@@ -27,9 +27,6 @@ function PreviewRenderer({
   useEffect(() => {
     let cancelled = false;
 
-    setComponent(null);
-    setError(null);
-
     async function loadComponent(): Promise<void> {
       const key = `./components/mockups/${componentPath}.tsx`;
       const loader = modules[key];
@@ -119,7 +116,7 @@ function App() {
   const previewPath = getPreviewPath();
 
   if (previewPath) {
-    return <PreviewRenderer componentPath={previewPath} modules={discoveredModules} />;
+    return <PreviewRenderer key={previewPath} componentPath={previewPath} modules={discoveredModules} />;
   }
 
   return <Gallery />;
