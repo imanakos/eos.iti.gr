@@ -17,7 +17,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Check all image filenames (full-tree scan)
+      - name: Check all image filenames and directory names (full-tree scan)
         run: |
           IMAGE_DIR="artifacts/eos-website/public/images"
           FAILED=0
@@ -32,16 +32,26 @@ jobs:
             fi
           done < <(find "$IMAGE_DIR" -type f -print0)
 
+          while IFS= read -r -d '' dirpath; do
+            dirname=$(basename "$dirpath")
+            # Allow only: lowercase a-z, digits 0-9, hyphens, underscores.
+            if echo "$dirname" | grep -qP '[^a-z0-9_-]'; then
+              echo "ERROR: Invalid directory name — '$dirpath'"
+              echo "       Directory names must use only lowercase letters, digits, hyphens, and underscores."
+              FAILED=1
+            fi
+          done < <(find "$IMAGE_DIR" -mindepth 1 -type d -print0)
+
           if [ "$FAILED" -eq 1 ]; then
             echo ""
-            echo "Rename the file(s) above to use only:"
+            echo "Rename the file(s)/directory(s) above to use only:"
             echo "  - lowercase letters  (a-z)"
             echo "  - digits             (0-9)"
             echo "  - hyphens            (-)"
             echo "  - underscores        (_)"
-            echo "  - dots               (.)"
+            echo "  - dots               (.) — files only"
             echo "No spaces, uppercase letters, apostrophes, parentheses, or other special characters."
             exit 1
           fi
 
-          echo "All image filenames are valid."
+          echo "All image filenames and directory names are valid."
