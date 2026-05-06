@@ -61,3 +61,7 @@ The workflow:
 When a deployment fails, the workflow opens a GitHub Issue labelled `deployment-failure` and (optionally) sends a Slack notification. The issue is automatically closed when the next deployment succeeds.
 
 You can view all workflow runs on the [Actions page](https://github.com/imanakos/eos.iti.gr/actions).
+
+## Contributing
+
+Contributions are welcome! Please read the [Contributing Guide](CONTRIBUTING.md) for details on how to fork and branch the repo, commit message conventions, the PR checklist, and how to report bugs.
