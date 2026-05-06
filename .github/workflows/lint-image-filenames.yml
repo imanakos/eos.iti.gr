@@ -5,8 +5,6 @@ on:
     paths:
       - "artifacts/eos-website/public/images/**"
   pull_request:
-    paths:
-      - "artifacts/eos-website/public/images/**"
 
 jobs:
   check-filenames:
