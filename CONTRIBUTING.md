@@ -114,7 +114,18 @@ Run `pnpm lint` and `pnpm format:check` before opening a PR. CI will reject PRs 
 
 A [Husky](https://typicode.github.io/husky/) pre-commit hook runs automatically on every `git commit`. It uses [lint-staged](https://github.com/lint-staged/lint-staged) to run `eslint --fix` and `prettier --write` on any staged `.ts`, `.tsx`, `.js`, `.jsx`, `.json`, and `.md` files. This means most style issues are fixed in place before the commit lands, and anything ESLint cannot auto-fix will abort the commit with an error message.
 
-The hook is installed automatically when you run `pnpm install` (via the `prepare` lifecycle script). No extra setup is needed. If you ever need to bypass it in an emergency, use `git commit --no-verify` — but do not make this a habit.
+### Commit-message hook
+
+A second Husky hook (`commit-msg`) validates your commit message against the [Conventional Commits](https://www.conventionalcommits.org/) format using [commitlint](https://commitlint.js.org/). If the message does not match the expected pattern — for example if the type is missing or not one of the allowed values — the commit is rejected immediately with a clear error.
+
+Allowed types: `feat`, `fix`, `content`, `style`, `refactor`, `chore`, `docs`, `test`, `ci`.
+
+```
+feat(team): add Dr. Smith to the team page   ✓ accepted
+wip: half-done change                         ✗ rejected (unknown type)
+```
+
+Both hooks are installed automatically when you run `pnpm install` (via the `prepare` lifecycle script). No extra setup is needed. If you ever need to bypass them in an emergency, use `git commit --no-verify` — but do not make this a habit.
 
 ### Configuration files
 
