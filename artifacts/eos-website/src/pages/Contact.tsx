@@ -3,7 +3,13 @@ import { Mail, MapPin, Phone, Globe, Printer } from "lucide-react";
 import { assetUrl } from "@/lib/utils";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", subject: "", message: "" });
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -12,36 +18,40 @@ export default function Contact() {
     window.location.href = `mailto:imanakos@iti.gr?subject=${encodeURIComponent(subject)}&body=${body}`;
   };
 
-  const update = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-    setFormData(prev => ({ ...prev, [field]: e.target.value }));
+  const update =
+    (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+      setFormData((prev) => ({ ...prev, [field]: e.target.value }));
 
   return (
     <div className="pt-24 pb-24 min-h-screen bg-slate-50 dark:bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-
         <div className="mb-10">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Contact</h1>
           <p className="text-xl text-muted-foreground">
-            Reach out for research collaborations, service enquiries, or any questions about our work.
+            Reach out for research collaborations, service enquiries, or any questions about our
+            work.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-
           <div className="space-y-6">
-
             <div className="bg-card rounded-2xl border border-border p-6 shadow-sm flex items-start gap-5">
               <img
                 src={assetUrl("/images/structure/imanakos.jpg")}
                 alt="Dr. Ioannis Manakos"
                 className="w-20 h-20 rounded-xl object-cover object-top flex-shrink-0"
-                onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = "none";
+                }}
               />
               <div>
                 <h2 className="text-lg font-bold text-foreground">Ioannis Manakos, Dr.</h2>
-                <p className="text-sm text-primary font-medium mb-3">Director of Research in Remote Sensing</p>
+                <p className="text-sm text-primary font-medium mb-3">
+                  Director of Research in Remote Sensing
+                </p>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Information Technologies Institute<br />
+                  Information Technologies Institute
+                  <br />
                   Centre for Research and Technology Hellas
                 </p>
               </div>
@@ -51,12 +61,22 @@ export default function Contact() {
               {
                 icon: <MapPin className="w-5 h-5 text-primary" />,
                 label: "Address",
-                content: <>6th km Harilaou - Thermi, 57001<br />Thessaloniki, Greece</>,
+                content: (
+                  <>
+                    6th km Harilaou - Thermi, 57001
+                    <br />
+                    Thessaloniki, Greece
+                  </>
+                ),
               },
               {
                 icon: <Mail className="w-5 h-5 text-secondary" />,
                 label: "Email",
-                content: <a href="mailto:imanakos@iti.gr" className="text-primary hover:underline">imanakos@iti.gr</a>,
+                content: (
+                  <a href="mailto:imanakos@iti.gr" className="text-primary hover:underline">
+                    imanakos@iti.gr
+                  </a>
+                ),
               },
               {
                 icon: <Phone className="w-5 h-5 text-accent" />,
@@ -71,15 +91,29 @@ export default function Contact() {
               {
                 icon: <Globe className="w-5 h-5 text-muted-foreground" />,
                 label: "Institution",
-                content: <a href="https://www.iti.gr/iti/en/people/ioannis-manakos/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.iti.gr</a>,
+                content: (
+                  <a
+                    href="https://www.iti.gr/iti/en/people/ioannis-manakos/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    www.iti.gr
+                  </a>
+                ),
               },
             ].map(({ icon, label, content }, i) => (
-              <div key={i} className="bg-card rounded-2xl border border-border p-5 shadow-sm flex items-center gap-4">
+              <div
+                key={i}
+                className="bg-card rounded-2xl border border-border p-5 shadow-sm flex items-center gap-4"
+              >
                 <div className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center flex-shrink-0">
                   {icon}
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-0.5">{label}</p>
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-0.5">
+                    {label}
+                  </p>
                   <div className="text-sm text-foreground">{content}</div>
                 </div>
               </div>
@@ -161,7 +195,6 @@ export default function Contact() {
               </p>
             </form>
           </div>
-
         </div>
       </div>
     </div>

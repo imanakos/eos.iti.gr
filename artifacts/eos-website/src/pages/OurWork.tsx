@@ -1,12 +1,21 @@
 import { Link } from "wouter";
-import { BookOpen, Users, Briefcase, FileText, GraduationCap, ArrowRight, Satellite } from "lucide-react";
+import {
+  BookOpen,
+  Users,
+  Briefcase,
+  FileText,
+  GraduationCap,
+  ArrowRight,
+  Satellite,
+} from "lucide-react";
 
 const sections = [
   {
     id: "projects",
     title: "Research Projects",
     icon: <Briefcase className="w-6 h-6" />,
-    description: "We lead and participate in numerous national and European research projects focusing on Earth Observation applications — from digital precision agriculture to water quality monitoring and biodiversity conservation.",
+    description:
+      "We lead and participate in numerous national and European research projects focusing on Earth Observation applications — from digital precision agriculture to water quality monitoring and biodiversity conservation.",
     highlights: [
       "MONALISA – Land Degradation Neutrality monitoring (EU Horizon Europe)",
       "DigiCotton – Digital solutions for cotton crop monitoring",
@@ -24,7 +33,8 @@ const sections = [
     id: "cooperations",
     title: "Cooperations",
     icon: <Users className="w-6 h-6" />,
-    description: "Strong and lasting partnerships with space agencies, international networks, and research institutions across Europe, America, Asia, and Africa.",
+    description:
+      "Strong and lasting partnerships with space agencies, international networks, and research institutions across Europe, America, Asia, and Africa.",
     highlights: [
       "NASA LCLUC – Land-Cover/Land-Use Change program",
       "EARSeL – European Association of Remote Sensing Labs (SIG Chair 2011–2020)",
@@ -41,7 +51,8 @@ const sections = [
     id: "publications",
     title: "Publications",
     icon: <BookOpen className="w-6 h-6" />,
-    description: "Our team regularly publishes in high-impact peer-reviewed journals in remote sensing, environmental science, and geospatial analysis — including Remote Sensing (MDPI), Land, Water, and more.",
+    description:
+      "Our team regularly publishes in high-impact peer-reviewed journals in remote sensing, environmental science, and geospatial analysis — including Remote Sensing (MDPI), Land, Water, and more.",
     highlights: [
       "Towards a comprehensive geodiversity - Biodiversity nexus (Earth-Science Reviews, 2025)",
       "3D-CNN detection of Potexvirus infections via hyperspectral imaging (Plant Methods, 2025)",
@@ -56,7 +67,8 @@ const sections = [
     id: "special-issues",
     title: "Special Issues",
     icon: <FileText className="w-6 h-6" />,
-    description: "Guest-edited special issues of prominent scientific journals, bringing together leading researchers on targeted topics in Earth Observation.",
+    description:
+      "Guest-edited special issues of prominent scientific journals, bringing together leading researchers on targeted topics in Earth Observation.",
     highlights: [
       "Remote Sensing in Ecosystem Modelling (Remote Sensing MDPI, Q1)",
       "Monitoring Land Cover Change: Towards Sustainability (Land MDPI)",
@@ -69,7 +81,8 @@ const sections = [
     id: "workshops",
     title: "Workshops",
     icon: <GraduationCap className="w-6 h-6" />,
-    description: "Co-organizing scientific workshops at major international conferences on land use, land cover change, and sustainability.",
+    description:
+      "Co-organizing scientific workshops at major international conferences on land use, land cover change, and sustainability.",
     highlights: [
       "EARSeL Joint Workshop 2021 – Liege, Belgium (with NASA LCLUC & Urban RS)",
       "3rd EARSeL LULC & NASA LCLUC Workshop 2018 – Chania, Greece",
@@ -85,14 +98,14 @@ export default function OurWork() {
   return (
     <div className="pt-24 pb-16 min-h-screen bg-background">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-
         <div className="mb-14">
           <div className="flex items-center gap-3 mb-4">
             <Satellite className="w-8 h-8 text-primary" />
             <h1 className="text-4xl md:text-5xl font-bold text-foreground">Our Work</h1>
           </div>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            The EOS team is dedicated to advancing Earth Observation science through rigorous research, strategic cooperations, and continuous knowledge dissemination.
+            The EOS team is dedicated to advancing Earth Observation science through rigorous
+            research, strategic cooperations, and continuous knowledge dissemination.
           </p>
         </div>
 
@@ -135,7 +148,6 @@ export default function OurWork() {
             </section>
           ))}
         </div>
-
       </div>
     </div>
   );

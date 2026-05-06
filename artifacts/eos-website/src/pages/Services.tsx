@@ -1,4 +1,14 @@
-import { ExternalLink, Layers, Map, Database, Box, Server, Droplet, TreePine, Plane } from "lucide-react";
+import {
+  ExternalLink,
+  Layers,
+  Map,
+  Database,
+  Box,
+  Server,
+  Droplet,
+  TreePine,
+  Plane,
+} from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 
@@ -103,19 +113,23 @@ export default function Services() {
     <div className="pt-24 pb-16 min-h-screen bg-slate-50 dark:bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
         <div className="mb-16">
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">Services & Products</h1>
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
+            Services & Products
+          </h1>
           <p className="text-xl text-muted-foreground max-w-3xl">
-            We develop operational tools, platforms, and datasets derived from Earth Observation technologies to support environmental monitoring, agriculture, and resource management.
+            We develop operational tools, platforms, and datasets derived from Earth Observation
+            technologies to support environmental monitoring, agriculture, and resource management.
           </p>
         </div>
 
         <div className="mb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <div key={index} className="bg-card rounded-2xl p-6 shadow-md border border-border hover:shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col">
+            <div
+              key={index}
+              className="bg-card rounded-2xl p-6 shadow-md border border-border hover:shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col"
+            >
               <div className="flex items-start justify-between mb-4">
-                <div className="p-3 bg-muted rounded-xl">
-                  {service.icon}
-                </div>
+                <div className="p-3 bg-muted rounded-xl">{service.icon}</div>
                 <span className="text-xs font-bold px-3 py-1 bg-background border border-border rounded-full text-muted-foreground uppercase tracking-wider">
                   {service.category}
                 </span>
@@ -127,7 +141,12 @@ export default function Services() {
               </p>
 
               {service.external ? (
-                <a href={service.href} target="_blank" rel="noopener noreferrer" className="mt-auto">
+                <a
+                  href={service.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto"
+                >
                   <Button variant="outline" className="w-full justify-between group">
                     Open Service
                     <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
@@ -137,14 +156,18 @@ export default function Services() {
                 <Link href={service.href} className="mt-auto">
                   <Button variant="outline" className="w-full justify-between group">
                     Request Access
-                    <span className="text-muted-foreground group-hover:text-primary transition-colors text-lg">→</span>
+                    <span className="text-muted-foreground group-hover:text-primary transition-colors text-lg">
+                      →
+                    </span>
                   </Button>
                 </Link>
               ) : (
                 <Link href={service.href} className="mt-auto">
                   <Button variant="outline" className="w-full justify-between group">
                     Learn More
-                    <span className="text-muted-foreground group-hover:text-primary transition-colors text-lg">→</span>
+                    <span className="text-muted-foreground group-hover:text-primary transition-colors text-lg">
+                      →
+                    </span>
                   </Button>
                 </Link>
               )}
@@ -154,7 +177,9 @@ export default function Services() {
         <div className="mt-4">
           <h2 className="text-2xl font-bold text-foreground mb-4">Indicative Applications</h2>
           <p className="text-muted-foreground mb-8 leading-relaxed max-w-3xl">
-            Indicative applications include, but are not limited to, the following EO-based workflows and analysis modules developed by the EOS team. You may find more information for each module by contacting the team.
+            Indicative applications include, but are not limited to, the following EO-based
+            workflows and analysis modules developed by the EOS team. You may find more information
+            for each module by contacting the team.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
@@ -195,14 +220,16 @@ export default function Services() {
                 desc: "Extraction of biodiversity indicators adopted by the European Union and international organizations through the use of remote sensing data.",
               },
             ].map((module, i) => (
-              <div key={i} className="bg-card rounded-xl border border-border p-5 hover:border-primary/30 transition-colors">
+              <div
+                key={i}
+                className="bg-card rounded-xl border border-border p-5 hover:border-primary/30 transition-colors"
+              >
                 <h4 className="font-bold text-foreground mb-2 text-sm">{module.name}</h4>
                 <p className="text-xs text-muted-foreground leading-relaxed">{module.desc}</p>
               </div>
             ))}
           </div>
         </div>
-
       </div>
     </div>
   );

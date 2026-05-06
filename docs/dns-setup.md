@@ -18,9 +18,9 @@ Since `eos.iti.gr` is a **subdomain** (not an apex/root domain), a CNAME record 
 
 At the registrar or DNS provider that manages `iti.gr`, add or update:
 
-| Type  | Name         | Value                 | TTL  |
-|-------|--------------|-----------------------|------|
-| CNAME | eos.iti.gr   | imanakos.github.io.   | 3600 |
+| Type  | Name       | Value               | TTL  |
+| ----- | ---------- | ------------------- | ---- |
+| CNAME | eos.iti.gr | imanakos.github.io. | 3600 |
 
 Remove the existing A record for `eos.iti.gr` (`160.40.50.179`) to avoid conflicts.
 
@@ -29,7 +29,7 @@ Remove the existing A record for `eos.iti.gr` (`160.40.50.179`) to avoid conflic
 If CNAME is not available, add all four GitHub Pages A records:
 
 | Type | Name       | Value           | TTL  |
-|------|------------|-----------------|------|
+| ---- | ---------- | --------------- | ---- |
 | A    | eos.iti.gr | 185.199.108.153 | 3600 |
 | A    | eos.iti.gr | 185.199.109.153 | 3600 |
 | A    | eos.iti.gr | 185.199.110.153 | 3600 |
@@ -49,12 +49,14 @@ The repository is fully configured for the custom domain:
 ## Verification Steps (after DNS propagates — up to 48 hours)
 
 1. Check propagation (CNAME option):
+
    ```
    curl -s "https://dns.google/resolve?name=eos.iti.gr&type=CNAME"
    # Should show: "data":"imanakos.github.io."
    ```
 
    Check propagation (A record option):
+
    ```
    curl -s "https://dns.google/resolve?name=eos.iti.gr&type=A"
    # Should show four answers with data: 185.199.108.153, .109, .110, .111
@@ -70,6 +72,7 @@ The repository is fully configured for the custom domain:
 ## GitHub Pages IPs (reference)
 
 `imanakos.github.io` currently resolves to:
+
 - 185.199.108.153
 - 185.199.109.153
 - 185.199.110.153

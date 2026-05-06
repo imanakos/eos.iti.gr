@@ -53,6 +53,7 @@ The production output is written to `artifacts/eos-website/dist/public/`.
 The site is deployed automatically to **GitHub Pages** on every push to `main` or `master` via the [Deploy to GitHub Pages](.github/workflows/deploy.yml) workflow.
 
 The workflow:
+
 1. Installs dependencies with `pnpm install --frozen-lockfile`
 2. Builds the site with `pnpm --filter @workspace/eos-website run build`
 3. Uploads the `artifacts/eos-website/dist/public/` directory as a Pages artifact

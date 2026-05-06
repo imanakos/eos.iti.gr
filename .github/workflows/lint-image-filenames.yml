@@ -3,10 +3,10 @@ name: Lint image filenames
 on:
   push:
     paths:
-      - 'artifacts/eos-website/public/images/**'
+      - "artifacts/eos-website/public/images/**"
   pull_request:
     paths:
-      - 'artifacts/eos-website/public/images/**'
+      - "artifacts/eos-website/public/images/**"
 
 jobs:
   check-filenames:

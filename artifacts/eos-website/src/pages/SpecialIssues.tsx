@@ -6,27 +6,39 @@ const issues = [
     title: "Remote Sensing in Ecosystem Modelling",
     journal: "Remote Sensing | ISSN 2072-4292",
     img: "/images/special-issues/remote-sensing.png",
-    impact: "Current Impact Factor: 4.118; 5-Year Impact Factor: 4.740; JCR category rank: 7/30 (Q1) in 'Remote Sensing'",
+    impact:
+      "Current Impact Factor: 4.118; 5-Year Impact Factor: 4.740; JCR category rank: 7/30 (Q1) in 'Remote Sensing'",
     links: [
-      { label: "Special issue @ mdpi.com", url: "https://www.mdpi.com/journal/remotesensing/special_issues/ecosystem_modelling_RS" },
+      {
+        label: "Special issue @ mdpi.com",
+        url: "https://www.mdpi.com/journal/remotesensing/special_issues/ecosystem_modelling_RS",
+      },
     ],
   },
   {
     title: "Monitoring Land Cover Change: Towards Sustainability",
     journal: "Land | ISSN 2073-445X",
     img: "/images/special-issues/earsel-banner2.15.png",
-    impact: "CiteScore 2018 (Scopus): 2.15 — rank 37/140 (Q2) in 'Nature and Landscape Conservation' and 90/336 (Q2) in 'Ecology'",
+    impact:
+      "CiteScore 2018 (Scopus): 2.15 — rank 37/140 (Q2) in 'Nature and Landscape Conservation' and 90/336 (Q2) in 'Ecology'",
     links: [
-      { label: "Special issue @ mdpi.com", url: "https://www.mdpi.com/journal/land/special_issues/EARSeL" },
+      {
+        label: "Special issue @ mdpi.com",
+        url: "https://www.mdpi.com/journal/land/special_issues/EARSeL",
+      },
     ],
   },
   {
     title: "Sentinel Analysis Ready Data (Sentinel ARD)",
     journal: "Remote Sensing | ISSN 2072-4292",
     img: "/images/special-issues/remote_sensing_si_banner_h.jpg",
-    impact: "A special issue of Remote Sensing dedicated to Sentinel Analysis Ready Data methodologies.",
+    impact:
+      "A special issue of Remote Sensing dedicated to Sentinel Analysis Ready Data methodologies.",
     links: [
-      { label: "Special issue @ mdpi.com", url: "https://www.mdpi.com/journal/remotesensing/special_issues/ARD" },
+      {
+        label: "Special issue @ mdpi.com",
+        url: "https://www.mdpi.com/journal/remotesensing/special_issues/ARD",
+      },
     ],
   },
 ];
@@ -35,29 +47,36 @@ export default function SpecialIssues() {
   return (
     <div className="pt-24 pb-20 min-h-screen bg-slate-50 dark:bg-background">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Special Issues</h1>
           <p className="text-xl text-muted-foreground">
-            Guest-edited special issues of international peer-reviewed scientific journals, organized and co-organized by the EOS team.
+            Guest-edited special issues of international peer-reviewed scientific journals,
+            organized and co-organized by the EOS team.
           </p>
         </div>
 
         <div className="space-y-8">
           {issues.map((issue, i) => (
-            <div key={i} className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
+            <div
+              key={i}
+              className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm"
+            >
               <div className="md:flex">
                 <div className="md:w-56 flex-shrink-0 bg-muted flex items-center justify-center p-6">
                   <img
                     src={assetUrl(issue.img)}
                     alt={issue.title}
                     className="max-w-full max-h-32 object-contain"
-                    onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).style.display = "none";
+                    }}
                   />
                 </div>
                 <div className="p-6 flex flex-col justify-between flex-1">
                   <div>
-                    <span className="text-xs font-medium text-primary uppercase tracking-wider">{issue.journal}</span>
+                    <span className="text-xs font-medium text-primary uppercase tracking-wider">
+                      {issue.journal}
+                    </span>
                     <h2 className="text-xl font-bold text-foreground mt-1 mb-3">{issue.title}</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed">{issue.impact}</p>
                   </div>
@@ -79,7 +98,6 @@ export default function SpecialIssues() {
             </div>
           ))}
         </div>
-
       </div>
     </div>
   );

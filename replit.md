@@ -22,10 +22,12 @@ pnpm workspace monorepo using TypeScript. Contains the EOS (CERTH/ITI Remote Sen
 ## Artifacts
 
 ### `artifacts/eos-website` — EOS Website (preview: `/`)
+
 Complete replacement website for eos.iti.gr — CERTH/ITI Remote Sensing research team.
 Fully self-contained with all content fetched and migrated from the original site.
 
 **Pages (all internal routes):**
+
 - `/` — Home
 - `/news` — All 157 news articles with search + pagination (all images locally hosted); clicking any card opens a full-article modal with body text, image, date, and original link
 - `/our-work` — Our Work hub linking to all sub-pages
@@ -46,12 +48,14 @@ Fully self-contained with all content fetched and migrated from the original sit
 - `/contact` — Contact with real director info + functional mailto form
 
 **Data files:**
+
 - `src/data/newsData.ts` — 157 news articles (complete) with images, dates, and original URLs
 - `src/data/projectsData.ts` — All projects (recent + past) with descriptions
 
 **Publications page** — 7 tabs: Journal (37), Books (6), Conference (21), Networking (95), Poster Corner (9), Video Corner (19), Press Corner (5)
 
 **Images & Videos:** All media self-hosted in `public/` — zero external requests to eos.iti.gr
+
 - `public/images/logo/logoeos8.png` — real EOS logo (matched to original site)
 - `public/images/news/` — all 157 news article images (all downloaded)
 - `public/images/cooperation/projects/` — all cooperation org logos
@@ -68,6 +72,7 @@ Fully self-contained with all content fetched and migrated from the original sit
 **Domain plan:** Once deployed, point eos.iti.gr DNS to this Replit app
 
 ### `artifacts/api-server` — API Server (preview: `/api`)
+
 Express 5 API server. Routes live in `src/routes/`.
 
 ## Structure

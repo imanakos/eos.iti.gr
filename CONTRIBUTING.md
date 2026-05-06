@@ -9,6 +9,7 @@ Thank you for your interest in contributing to the EOS Earth Observation Service
 - [Getting started](#getting-started)
 - [Branching](#branching)
 - [Commit message style](#commit-message-style)
+- [Code style and linting](#code-style-and-linting)
 - [Pull request checklist](#pull-request-checklist)
 - [Reporting bugs](#reporting-bugs)
 
@@ -49,12 +50,12 @@ Thank you for your interest in contributing to the EOS Earth Observation Service
 
 Create a new branch off `main` for every change. Use the following naming pattern:
 
-| Type | Pattern | Example |
-|---|---|---|
-| New feature | `feat/<short-description>` | `feat/add-team-member` |
-| Bug fix | `fix/<short-description>` | `fix/mobile-nav-overflow` |
-| Content update | `content/<short-description>` | `content/update-publications-2025` |
-| Chore / tooling | `chore/<short-description>` | `chore/upgrade-vite` |
+| Type            | Pattern                       | Example                            |
+| --------------- | ----------------------------- | ---------------------------------- |
+| New feature     | `feat/<short-description>`    | `feat/add-team-member`             |
+| Bug fix         | `fix/<short-description>`     | `fix/mobile-nav-overflow`          |
+| Content update  | `content/<short-description>` | `content/update-publications-2025` |
+| Chore / tooling | `chore/<short-description>`   | `chore/upgrade-vite`               |
 
 Keep branch names lowercase and use hyphens, not underscores or spaces.
 
@@ -80,9 +81,67 @@ chore: upgrade Vite to v6
 ```
 
 Rules:
+
 - Use the **imperative mood** in the summary ("add", not "added" or "adds").
 - Keep the first line to **72 characters or fewer**.
 - Add a blank line followed by a longer description if the change needs more context.
+
+---
+
+## Code style and linting
+
+This project uses **ESLint** for static analysis and **Prettier** for consistent formatting. Both tools are configured at the workspace root and run across all packages.
+
+### Running locally
+
+```bash
+# Check for lint errors (ESLint)
+pnpm lint
+
+# Auto-fix lint errors where possible
+pnpm lint:fix
+
+# Check formatting (Prettier)
+pnpm format:check
+
+# Auto-format all files
+pnpm format
+```
+
+Run `pnpm lint` and `pnpm format:check` before opening a PR. CI will reject PRs that fail either check.
+
+### Configuration files
+
+| File               | Purpose                                                            |
+| ------------------ | ------------------------------------------------------------------ |
+| `eslint.config.js` | ESLint rules (TypeScript + React Hooks)                            |
+| `.prettierrc`      | Prettier options (100-char lines, 2-space indent, trailing commas) |
+| `.prettierignore`  | Files excluded from Prettier formatting                            |
+
+### Key rules
+
+- **No unused variables** — prefix with `_` if a variable must be declared but not used (e.g. `_unused`).
+- **React Hooks rules** — hooks must follow the [Rules of Hooks](https://react.dev/reference/rules/rules-of-hooks); exhaustive-deps violations are flagged as warnings.
+- **No explicit `any`** — TypeScript `any` types are warnings; prefer proper types or `unknown`.
+- **No `console` in app code** — `console.*` calls are warnings in source files; they are permitted in server and script files.
+
+### Editor integration
+
+Most editors can apply ESLint and Prettier automatically on save. Install the [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) VS Code extensions and add to your workspace settings:
+
+```json
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  }
+}
+```
+
+### CI enforcement
+
+Every pull request and push to `main` runs the [Lint & Format check](.github/workflows/lint.yml) workflow, which executes `pnpm lint` and `pnpm format:check`. Both must pass before a PR can be merged.
 
 ---
 
@@ -93,6 +152,8 @@ Before marking your PR ready for review, confirm each item:
 - [ ] Branch is up to date with `main`
 - [ ] `pnpm --filter @workspace/eos-website build` completes without errors
 - [ ] No TypeScript errors (`pnpm --filter @workspace/eos-website tsc --noEmit`)
+- [ ] `pnpm lint` reports no errors or warnings
+- [ ] `pnpm format:check` reports no formatting issues
 - [ ] New UI components are responsive and tested at mobile, tablet, and desktop widths
 - [ ] Image files placed under `artifacts/eos-website/public/images/` use lowercase names
 - [ ] Commit messages follow the [Conventional Commits](#commit-message-style) style

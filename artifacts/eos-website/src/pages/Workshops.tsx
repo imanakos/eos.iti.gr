@@ -11,11 +11,13 @@ const workshops = [
   },
   {
     title: "3rd EARSeL LULC & NASA LCLUC Workshop",
-    subtitle: "Land-Use/Cover Change Drivers, Impacts and Sustainability within the Water-Energy-Food Nexus",
+    subtitle:
+      "Land-Use/Cover Change Drivers, Impacts and Sustainability within the Water-Energy-Food Nexus",
     date: "11–12 July, 2018",
     location: "Chania, Greece",
     url: "http://lulc.earsel.org/workshop/2018-lulc-ws/",
-    reportUrl: "http://lulc.earsel.org/wp-content/uploads/2018/09/Report_EARSeL-NASA_LCLUC_WS_Chania2018_f.pdf",
+    reportUrl:
+      "http://lulc.earsel.org/wp-content/uploads/2018/09/Report_EARSeL-NASA_LCLUC_WS_Chania2018_f.pdf",
   },
   {
     title: "2nd EARSeL LULC & NASA LCLUC Workshop",
@@ -31,7 +33,8 @@ const workshops = [
     date: "17–18 March, 2014",
     location: "Berlin, Germany",
     url: "https://www.geographie.hu-berlin.de/en/professorships/geomatics/backup-old-files/congress/earsel-en/workshop/home",
-    reportUrl: "http://old.earsel.org/SIG/LULC/data/EARSeL_NASA_1stjointLULC_Workshop_Report_Berlin.pdf",
+    reportUrl:
+      "http://old.earsel.org/SIG/LULC/data/EARSeL_NASA_1stjointLULC_Workshop_Report_Berlin.pdf",
   },
 ];
 
@@ -39,11 +42,11 @@ export default function Workshops() {
   return (
     <div className="pt-24 pb-20 min-h-screen bg-slate-50 dark:bg-background">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Workshops</h1>
           <p className="text-xl text-muted-foreground">
-            Co-organization of scientific workshops at major international remote sensing and GIS conferences.
+            Co-organization of scientific workshops at major international remote sensing and GIS
+            conferences.
           </p>
         </div>
 
@@ -93,7 +96,6 @@ export default function Workshops() {
             </div>
           ))}
         </div>
-
       </div>
     </div>
   );

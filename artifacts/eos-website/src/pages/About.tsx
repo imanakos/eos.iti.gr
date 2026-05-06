@@ -33,49 +33,91 @@ export default function About() {
   return (
     <div className="pt-24 pb-20 min-h-screen bg-slate-50 dark:bg-background">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Background</h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            The EOS team builds on the background and experience that Dr. Ioannis Manakos accumulated by his interaction with all directly related or affiliated academics, researchers, and technicians, with whom he interacted and interacts within his studies and career.
+            The EOS team builds on the background and experience that Dr. Ioannis Manakos
+            accumulated by his interaction with all directly related or affiliated academics,
+            researchers, and technicians, with whom he interacted and interacts within his studies
+            and career.
           </p>
         </div>
 
         <div className="space-y-8">
-
           <section className="bg-card rounded-2xl border border-border p-8 shadow-sm">
             <h2 className="text-2xl font-bold text-foreground mb-6">A Brief Overview</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Dr. Ioannis Manakos is cooperating with academics and researchers from Europe, America, Asia, and Africa in subjects relevant to research and development in Remote Sensing since 1996. He is{" "}
-                <strong className="text-foreground">Director of Research in 'Remote Sensing'</strong> at the{" "}
-                <a href="https://www.iti.gr/iti/en/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                Dr. Ioannis Manakos is cooperating with academics and researchers from Europe,
+                America, Asia, and Africa in subjects relevant to research and development in Remote
+                Sensing since 1996. He is{" "}
+                <strong className="text-foreground">
+                  Director of Research in 'Remote Sensing'
+                </strong>{" "}
+                at the{" "}
+                <a
+                  href="https://www.iti.gr/iti/en/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
                   Information Technologies Institute (ITI)
                 </a>{" "}
                 of the{" "}
-                <a href="https://www.certh.gr/root.en.aspx" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                <a
+                  href="https://www.certh.gr/root.en.aspx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
                   Centre for Research and Technology Hellas (CERTH)
                 </a>
                 .
               </p>
               <p>
-                He was elected <strong className="text-foreground">Chairman of the Special Interest Group 'Remote Sensing in Land Use &amp; Land Cover'</strong> of the European Association of Remote Sensing Laboratories (EARSeL) for the period 2011–2020, and <strong className="text-foreground">Chairman of the EARSeL</strong> from 2012 till 2014.
+                He was elected{" "}
+                <strong className="text-foreground">
+                  Chairman of the Special Interest Group 'Remote Sensing in Land Use &amp; Land
+                  Cover'
+                </strong>{" "}
+                of the European Association of Remote Sensing Laboratories (EARSeL) for the period
+                2011–2020, and <strong className="text-foreground">Chairman of the EARSeL</strong>{" "}
+                from 2012 till 2014.
               </p>
               <p>
-                He serves as a member of the <strong className="text-foreground">GEOBON Flagship</strong> within the Group on Earth Observations.
+                He serves as a member of the{" "}
+                <strong className="text-foreground">GEOBON Flagship</strong> within the Group on
+                Earth Observations.
               </p>
               <p>
-                He is an <strong className="text-foreground">Adjunct Professor in Remote Sensing</strong> at the International Centre for Advanced Mediterranean Agronomic Studies (CIHEAM), where he was leading the Geoinformation in Environmental Management Department for seven (7) years.
+                He is an{" "}
+                <strong className="text-foreground">Adjunct Professor in Remote Sensing</strong> at
+                the International Centre for Advanced Mediterranean Agronomic Studies (CIHEAM),
+                where he was leading the Geoinformation in Environmental Management Department for
+                seven (7) years.
               </p>
               <p>
                 His activity is also recognized at the{" "}
-                <strong className="text-foreground">South Central and Eastern European Regional Information Network (SCERIN)</strong>, regional network of the GOFC-GOLD (Global Observation of Forest and Land Cover Dynamics) and GTOS (Global Terrestrial Observing System), where he serves as Lead in relation with the 'Global/Continental land cover products validation and intercomparison in the SCERIN area'.
+                <strong className="text-foreground">
+                  South Central and Eastern European Regional Information Network (SCERIN)
+                </strong>
+                , regional network of the GOFC-GOLD (Global Observation of Forest and Land Cover
+                Dynamics) and GTOS (Global Terrestrial Observing System), where he serves as Lead in
+                relation with the 'Global/Continental land cover products validation and
+                intercomparison in the SCERIN area'.
               </p>
               <p>
-                He is a founding member of the <strong className="text-foreground">Mediterranean Regional Information Network (MEDRIN)</strong> and a member of the <strong className="text-foreground">Copernicus Academy</strong>.
+                He is a founding member of the{" "}
+                <strong className="text-foreground">
+                  Mediterranean Regional Information Network (MEDRIN)
+                </strong>{" "}
+                and a member of the <strong className="text-foreground">Copernicus Academy</strong>.
               </p>
               <p>
-                Dr. Ioannis Manakos coordinates and participates in European, bilateral, and national projects. The subjects of his research activities range from earth observation from space (remote sensing) to in situ measurements (proximal sensing), across a wide range of application fields.
+                Dr. Ioannis Manakos coordinates and participates in European, bilateral, and
+                national projects. The subjects of his research activities range from earth
+                observation from space (remote sensing) to in situ measurements (proximal sensing),
+                across a wide range of application fields.
               </p>
             </div>
           </section>
@@ -87,8 +129,13 @@ export default function About() {
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
               {domainTimeline.map((entry) => (
-                <div key={entry.year} className="flex items-start gap-2 py-2 border-b border-border/40">
-                  <span className="text-xs font-bold text-primary shrink-0 w-10 tabular-nums">{entry.year}</span>
+                <div
+                  key={entry.year}
+                  className="flex items-start gap-2 py-2 border-b border-border/40"
+                >
+                  <span className="text-xs font-bold text-primary shrink-0 w-10 tabular-nums">
+                    {entry.year}
+                  </span>
                   <span className="text-xs text-muted-foreground">{entry.domain}</span>
                 </div>
               ))}
@@ -99,9 +146,12 @@ export default function About() {
             <div className="bg-card rounded-2xl border border-border p-6 shadow-sm">
               <h3 className="text-lg font-bold text-foreground mb-3">Location</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Information Technologies Institute (ITI)<br />
-                Centre for Research and Technology Hellas (CERTH)<br />
-                6th km Harilaou – Thermi Road<br />
+                Information Technologies Institute (ITI)
+                <br />
+                Centre for Research and Technology Hellas (CERTH)
+                <br />
+                6th km Harilaou – Thermi Road
+                <br />
                 57001 Thermi, Thessaloniki, Greece
               </p>
             </div>
@@ -122,7 +172,6 @@ export default function About() {
               </a>
             </div>
           </div>
-
         </div>
       </div>
     </div>
