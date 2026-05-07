@@ -39,7 +39,7 @@ jobs:
         run: pnpm --filter @workspace/eos-website run build
         env:
           PORT: 3000
-          BASE_PATH: /
+          BASE_PATH: /eos.iti.gr/
           BASE_URL: https://eos.iti.gr
           NODE_ENV: production
 
