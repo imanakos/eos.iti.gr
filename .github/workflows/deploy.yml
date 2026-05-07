@@ -40,7 +40,7 @@ jobs:
         env:
           PORT: 3000
           BASE_PATH: /eos.iti.gr/
-          BASE_URL: https://eos.iti.gr
+          BASE_URL: https://imanakos.github.io/eos.iti.gr
           NODE_ENV: production
 
       - name: Setup Pages
