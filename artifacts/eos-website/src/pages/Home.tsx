@@ -276,10 +276,10 @@ export default function Home() {
                   key={i}
                   className="bg-card rounded-2xl border border-border overflow-hidden hover:shadow-md hover:border-primary/20 transition-all flex flex-col"
                 >
-                  {article.image && (
+                  {article.img && (
                     <div className="h-44 overflow-hidden">
                       <img
-                        src={assetUrl(article.image)}
+                        src={assetUrl(article.img)}
                         alt={article.title}
                         className="w-full h-full object-cover"
                         onError={(e) => {
@@ -295,12 +295,9 @@ export default function Home() {
                     <h3 className="font-display font-bold text-foreground mb-2 leading-snug">
                       {article.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed flex-1 line-clamp-3">
-                      {article.excerpt ?? article.content?.slice(0, 160)}
-                    </p>
                     <Link
                       href="/news"
-                      className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
+                      className="mt-auto pt-4 inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
                     >
                       Read more <ArrowRight className="w-3 h-3" />
                     </Link>

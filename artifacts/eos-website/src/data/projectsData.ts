@@ -45,7 +45,6 @@ export const projects: Project[] = [
     description:
       "Mediterranean Earth Observation Services project. Concluded with a key presentation at IEEE IGARSS 2024.",
     status: "recent",
-    url: "https://medeos.deimos.pt/",
   },
   {
     name: "WQeMS",
@@ -76,7 +75,7 @@ export const projects: Project[] = [
     description:
       "Copernicus-based services for the Black Sea basin (ENI CBC). Provides coastal and marine monitoring services through a dedicated Web GIS platform.",
     status: "recent",
-    url: "http://labecolftp.env.duth.gr/PONTOS/",
+    url: "https://pontos-eu.aua.am/",
   },
   {
     name: "SnapEarth",

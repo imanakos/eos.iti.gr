@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { ExternalLink, Calendar, BookOpen, FileText, Users, Microscope } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, assetUrl } from "@/lib/utils";
 import { projects } from "@/data/projectsData";
-import { assetUrl } from "@/lib/utils";
 
 const TABS = [
   { id: "projects", label: "Projects", icon: <Microscope className="w-4 h-4" /> },
