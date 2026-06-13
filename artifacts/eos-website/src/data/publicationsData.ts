@@ -180,7 +180,7 @@ export const bookPubs: PubEntry[] = [
   },
   {
     text: 'C. Kalaitzidis, I. Manakos, "Приложение на дистанционните изследвания и геоинформационните технологии в земеделието - Application of remote sensing and geoinformation technologies in agriculture", in Наблюдение на Земята от Космоса: Учебно помагало за самоподготовка в извънкласни дейности по природни науки/ Earth Observation from Space - Tutorial for individual work in extracurricular activities in natural sciences , 2018, L. Filchev Ed., Space Research and Technology Institute-Bulgarian Academy of Sciences, p. 190 ( ISBN 978-619-7490-03-9/ eISBN 978-619-7490-04-6, DOI :10.3897/9786197490046 ) http://space.bas.bg/BG/magasin/Lecture_Notes_EEOBSS.pdf',
-    link: "http://space.bas.bg/BG/magasin/Lecture_Notes_EEOBSS.pdf",
+    link: null,
   },
   {
     text: 'I. Manakos, S. Lavender, "Remote Sensing in Support of Geo-Information in Europe", Land Use and Land Cover Mapping in Europe - practices & trends, Remote Sensing and Digital Image Processing Book Series, 2014, Springer Verlag, 18, 3-10.',
@@ -231,7 +231,7 @@ export const conferencePubs: PubEntry[] = [
   },
   {
     text: "L. Alagialoglou, I. Manakos, M. Heurich, J. Červenka and A. Delopoulos, Canopy height estimation from spaceborne imagery using convolutional encoder-decoder, 27th International Conference on Multimedia Modeling , 22-24 June 2021, Prague, Czech Republic, doi: 10.1007/978-3-030-67835-7_26",
-    link: "https://mmm2021.cz/timetable/event/mmarsat/",
+    link: null,
   },
   {
     text: "R. Lucas, A. Mitchell, I. Manakos, P. Blonda, The Earth Obsevation Data Ecosystem Monitoring (Eodesm) System , IGARSS 2018 - 2018 IEEE International Geoscience and Remote Sensing Symposium, Valencia, 2018, 8985-8987, doi: 10.1109/IGARSS.2018.8519474",
@@ -294,7 +294,7 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "P. Ribeiro, C.-L. Pulido, O. Regniers, R. Budin, T. Voirand, A. Declerck, M. Delpey, E. Tsiros, I. Manakos, T. Habib, 2023. MedEOS - Earth observation for land-based pollution assessment & monitoring in the Mediterranean coastal waters, Earth System Science Initiative , Frascati (Rome), Italy, 24, November.",
-    link: "https://www.conftool.pro/earth-system-science-initiative2023/index.php?page=browseSessions&form_session=78",
+    link: null,
   },
   {
     text: "I. Manakos, 2023. Monitoring European water quality from space, CORDIS - Results in Brief , 20 November.",
@@ -306,11 +306,11 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "I. Manakos, E. Katsikis, S. Medinets, Y. Gazyetov, L. Alagialoglou, V. Medinets, 2023. Water emergent and floating aquatic vegetation mapping using Earth Observation data: An example at the Dniester Delta in Ukraine, SCERIN-10 Workshop on Earth System Observations and 10th Anniversary , Brno, Czech Republic, 27, June.",
-    link: "https://start.org/news/upcoming-scerin-10-workshop-on-earth-system-observations-and-10th-anniversary/",
+    link: null,
   },
   {
     text: "I. Manakos, 2023. Open surface water areas monitoring for the Black Sea and Greece, GEO organized Open Data/Open Knowledge Workshop , Geneva, Switzerland, 16, June.",
-    link: "https://www.earthobservations.org/odok2023.php",
+    link: null,
   },
   {
     text: "I. Manakos, G. Scarpino, 2023. The WQeMS Platform For Inland Surface Water Quality Monitoring: A Collaborative Tool For Drinking Water Managers And Innovators. Poster at the Sustainable Value Creation in Space, Land, and Green Economy , Lisbon, Portugal, 25, May.",
@@ -322,23 +322,23 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "G. Scarpino, M. Matera, G. Milis, P. Bauer, I. Manakos, 2023. The WQeMS platform for inland surface water bodies' monitoring: serving user communities and supporting experts' analyses, Ninth International Conference on Remote Sensing & Geoinformation of Environment , 04, April.",
-    link: "https://rscy2023.cyprusremotesensing.com/sites/default/files/docs/RSCy2023_Conference_program_0.pdf",
+    link: null,
   },
   {
     text: "G. Milis, A. Nicolaou, M. Matera, I. Serral, K. Sampsa, A. Kita, A. Bozas, K. Vlachos, I. Manakos, 2023. Capacity building for professionals towards the application of remote sensing in the monitoring of inland water sources, Ninth International Conference on Remote Sensing & Geoinformation of Environment , 04, April.",
-    link: "https://rscy2023.cyprusremotesensing.com/sites/default/files/docs/RSCy2023_Conference_program_0.pdf",
+    link: null,
   },
   {
     text: "I. Serral, J. Masó, I. Manakos, M. Matera, M. Basile, N. Julià, 2023. Harmonized and fair lake water quality datasets for a better policy decision making, Ninth International Conference on Remote Sensing & Geoinformation of Environment , 04, April.",
-    link: "https://rscy2023.cyprusremotesensing.com/sites/default/files/docs/RSCy2023_Conference_program_0.pdf",
+    link: null,
   },
   {
     text: "I. Manakos, A. Kita, S. Papadopoulou, I. Lioumpas, M. Katsiapi, E. Katsikis, L. Alagialoglou, A. Christodoulou, 2023. Land water transition zone mapping challenges in dynamically changing environments, Ninth International Conference on Remote Sensing & Geoinformation of Environment , 04, April.",
-    link: "https://rscy2023.cyprusremotesensing.com/sites/default/files/docs/RSCy2023_Conference_program_0.pdf",
+    link: null,
   },
   {
     text: "I. Manakos, 2023. Inundation mapping in service of land cover evidence-based change monitoring. Keynote speaker at the Ninth International Conference on Remote Sensing & Geoinformation of Environment , 04, April.",
-    link: "https://rscy2023.cyprusremotesensing.com/sites/default/files/docs/RSCy2023_Conference_program_0.pdf",
+    link: null,
   },
   {
     text: "I. Manakos, 2023. Water We Drink through WQeMS: A Copernicus Assisted Water Quality Monitoring Service, Water Market Europe , Brussels, Belgium, 15, March.",
@@ -382,7 +382,7 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "M. Sismanis, I. Manakos, 2021. Copernicus Sentinel-1 and Sentinel-2 data help create inundation maps . Sentinel Success Stories, The European Space Agency, 16, December.",
-    link: "https://sentinel.esa.int/ca/web/success-stories/-/copernicus-sentinel-1-sentinel-2-data-help-create-inundation-maps",
+    link: "https://sentinels.copernicus.eu/web/success-stories/-/copernicus-sentinel-1-sentinel-2-data-help-create-inundation-maps",
   },
   {
     text: "I. Manakos, 2021. A water quality emergency monitoring service evolution and the generation of a roadmap for future Copernicus water services: WQeMS meets Water-ForCE . GEO Week 2021, 26, November.",
@@ -394,7 +394,7 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "I. Manakos, 2021. CEMS possible evolution towards a Water Quality Emergency Monitoring Service add-on for the Water We Drink . CEMS Week 2021, 25, October.",
-    link: "https://emergency.copernicus.eu/mapping/ems/cems-week-2021",
+    link: null,
   },
   {
     text: "M. Banti, E. Katsikis, 2021. The PONTOS project, the Copernicus Earth Observation program and introduction to PONTOS platform and application tools. Online presentation at PONTOS' brainstorming event , Georgia , 22, July.",
@@ -422,11 +422,11 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "I. Manakos, 2020. Interview. Second edition of MedRIN's (Mediterranean Regional Information Network) newsletter , July.",
-    link: "https://gofcgold.org/sites/default/files/2020-06/MedRIN-NEWSLETTER-2020_Final3.pdf",
+    link: null,
   },
   {
     text: "A. Drosou, I. Manakos, 2020. Snapearth's (H2020 project) News announcement, Earth Observation data and Artificial Intelligence in support of Journalism , 31, March.",
-    link: "http://snapearth.eu/",
+    link: "https://snap.earth/",
   },
   {
     text: "J. Bustamante, I. Manakos, D. García, R. Díaz-Delgado, P. Méndez, G. Kordelas, 2019. CERTH's news announcement about the Copernicus Sentinels improve hydroperiod estimations of Mediterranean wetlands, ( Αξιοποίηση των δορυφορικών δεδομένων του δικτύου Copernicus στον υπολογισμό της εποχικής δυναμικότητας και της υδροπεριόδου των μεσογειακών υγρότοπων , article in Greek), 25, October.",
@@ -434,7 +434,7 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "J. Bustamante, I. Manakos, D. García, R. Díaz-Delgado, P. Méndez, G. Kordelas, 2019. ESA's Sentinel Online Journal news about Copernicus Sentinels improve hydroperiod estimations of Mediterranean wetlands , 17, October.",
-    link: "https://earth.esa.int/web/sentinel/news/-/article/copernicus-sentinels-improve-hydroperiod-estimations-of-mediterranean-wetlands",
+    link: null,
   },
   {
     text: "I. Manakos, 2019. How to incorporate Sentinel 1 to hydroperiod estimates in Doñana. Oral presentation at the ECOPOTENTIAL tools hands-on workshop, Doñana Biological Reserve, Spain, 1-2, October.",
@@ -446,11 +446,11 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "I. Manakos, 2019. Cooperation experiences and outlook with the Validation focus Working Group of SCERIN. Oral presentation at the International LCLUC Regional Science Joint Meeting for Central Asia and Caucasus: Water - Energy - Food and Sustainability , Nur Sultan, Kazakhstan, 16- 18, September.",
-    link: "https://gofcgold.org/meetings/international-meeting-land-coverland-use-changes",
+    link: null,
   },
   {
     text: "I. Manakos, 2019. Inundation mapping by fusing Sentinel-1 and Sentinel-2 images with machine learning techniques: the ECOPOTENTIAL legacy. Oral presentation at the International LCLUC Regional Science Joint Meeting for Central Asia and Caucasus: Water - Energy - Food and Sustainability , Nur Sultan, Kazakhstan, 16- 18, September.",
-    link: "https://gofcgold.org/meetings/international-meeting-land-coverland-use-changes",
+    link: null,
   },
   {
     text: "Manakos, I., Kordelas, G., Marini, K., Bakratsas, M., Chantziaras, G., Bonet-García, F., Gómez, M., Herrero, J., Suárez-Muñoz, M., Marangi, C., Martiradonna, A., Diele, F., Rinaldo, A., Pasetto, D., Giezendanner, J., Gonçalves, J., Honrado, J., Arenas-Castro, S., Cord, A., Bustamante, J., Garcia, D., Díaz-Delgado, R., 2019. ECOPOTENTIAL On Line Data Services. Poster at the EuroGEOSS Workshop, Lisbon, Portugal, 3-5 July.",
@@ -462,7 +462,7 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "Manakos, I., Kordelas, G., Bustamante, J., Marini, K., 2019. Derivation of inundation maps by fusing Sentinel-1 data with Sentinel-2 products to overcome cloudy conditions. Oral presentation at 2019 Living Planet Symposium , Milan, Italy, 13-17 May.",
-    link: "https://lps19.esa.int/NikalWebsitePortal/living-planet-symposium-2019/lps19",
+    link: null,
   },
   {
     text: "Filchev, L., Manakos, I., Reuter, R., Mardirossian, G., Dimitrov, D., Kraleva, L., Srebrova, T., 2019. EEOBSS - EO education for Bulgarian secondary schools. Presentation and poster at United Nations/Romania International Conference on Space Solutions for Sustainable Agriculture and Precision Farming, Cluj-Napoca, Romania, 06 - 10 May.",
@@ -474,11 +474,11 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "Manakos, I., Albrechtová, J., Campbell, P. & Kupková, L., 2019. The SCERIN network: Best practices and achievements. Oral presentation at the Mediterranean Regional Information Network (MedRIN) Meeting and Workshop , Paphos, Cyprus, 20 March.",
-    link: "https://gofcgoldvh1.umd.edu/sites/default/files/2019-04/MedRIN_SCERIN_Manakos.pdf",
+    link: null,
   },
   {
     text: "Manakos, I., Kordelas, G.A., Lefebvre, G., Poulin, B., Willm, L., Davranche, A. & Campagna, J., 2019. Automatic Thresholding Inundation Mapping Using Sentinel‐2 Data At The Camargue Wetlands. Oral presentation at the 7th International Conference on Remote Sensing and Geoinformation of Environment , Paphos, Cyprus, 18-21 March.",
-    link: "https://www.cyprusremotesensing.com/rscy2019/sites/default/files/docs/RSCy2019_conference_program.pdf",
+    link: null,
   },
   {
     text: "Mardirossian, G., Dimitrov, D., Manakos, I., 2019. Presentation of the EEOBSS tutorial contents at the Space Research and Technology Institute-Bulgarian Academy of Sciences, Sofia, Bulgaria, 22 February.",
@@ -538,7 +538,7 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "Manakos, I., 2016. Global land cover products validation and inter-comparison in the SCERIN area. Oral Presentation at SCERIN-4 Capacity Building Workshop , Faculty of Foresty, Technical University in Zvolen, Slovakia, 18 - 22 July.",
-    link: "http://csebr.cz/scerin2016/presentations.html",
+    link: null,
   },
   {
     text: "Lucas, R., Mitchell, A., Blonda, P., Tomaselli, V., Tarantino, C., Adamo, P., Marangi, C., Manakos, I., Kosmidou, V., Petrou, Z., Bunting, P., Scott, D., Horton, C., Scarth, P., 2017. 'Global to Local Land Cover and Habitat Mapping: The Ecopotential Approach. Oral presentation at the WorldCover 2017 Conference, Frascati, Italy, 14-16 March.",
