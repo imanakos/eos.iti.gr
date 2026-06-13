@@ -1,196 +1,116 @@
 import { Link } from "wouter";
-import { Mail, MapPin, Globe, ExternalLink, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-slate-900 pt-16 pb-8 border-t border-slate-800 text-slate-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          <div className="flex flex-col gap-5">
-            <Link href="/" className="flex items-center gap-3">
+    <footer className="bg-[hsl(222_56%_10%)] pt-14 pb-8 border-t border-white/8 text-white/70">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          <div className="flex flex-col gap-4 lg:col-span-1">
+            <Link href="/">
               <img
                 src={`${import.meta.env.BASE_URL}images/logo/logoeos8.png`}
                 alt="EOS Logo"
-                className="h-12 w-auto object-contain brightness-200"
+                className="h-10 w-auto object-contain brightness-200"
               />
             </Link>
-            <p className="text-sm leading-relaxed text-slate-400">
-              The EOS Remote Sensing team at CERTH/ITI develops Earth Observation services and
-              products for environmental monitoring and sustainability.
+            <p className="text-sm leading-relaxed text-white/50">
+              CERTH/ITI Remote Sensing Research Team — Earth Observation services and products
+              for environmental monitoring and sustainability.
             </p>
           </div>
 
           <div>
-            <h3 className="font-bold text-white mb-5 text-sm uppercase tracking-wider">Our Work</h3>
-            <ul className="flex flex-col gap-2.5">
-              <li>
-                <Link
-                  href="/our-work/projects"
-                  className="text-sm text-slate-400 hover:text-white transition-colors"
-                >
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/our-work/cooperations"
-                  className="text-sm text-slate-400 hover:text-white transition-colors"
-                >
-                  Cooperations
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/our-work/publications"
-                  className="text-sm text-slate-400 hover:text-white transition-colors"
-                >
-                  Publications
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/our-work/special-issues"
-                  className="text-sm text-slate-400 hover:text-white transition-colors"
-                >
-                  Special Issues
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/our-work/workshops"
-                  className="text-sm text-slate-400 hover:text-white transition-colors"
-                >
-                  Workshops
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-bold text-white mb-5 text-sm uppercase tracking-wider">
-              Services & Tools
+            <h3 className="font-semibold text-white mb-4 text-xs uppercase tracking-widest">
+              Research
             </h3>
             <ul className="flex flex-col gap-2.5">
-              <li>
-                <Link
-                  href="/services/uav"
-                  className="text-sm text-slate-400 hover:text-white transition-colors"
-                >
-                  UAV Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/zenodo"
-                  className="text-sm text-slate-400 hover:text-white transition-colors"
-                >
-                  Zenodo Products
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="https://wqems.eu/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5"
-                >
-                  EO-4-WaterUtilities <ExternalLink className="w-3 h-3 opacity-50" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://biosense.rs/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5"
-                >
-                  EO-4-ProtectedAreas <ExternalLink className="w-3 h-3 opacity-50" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://datacube.iti.gr/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5"
-                >
-                  Greek Data Cubes <ExternalLink className="w-3 h-3 opacity-50" />
-                </a>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-sm text-slate-400 hover:text-white transition-colors"
-                >
-                  View All Services →
-                </Link>
-              </li>
+              {[
+                ["Projects", "/research?tab=projects"],
+                ["Publications", "/research?tab=publications"],
+                ["Special Issues", "/research?tab=issues"],
+                ["Workshops", "/research?tab=workshops"],
+                ["Cooperations", "/research?tab=cooperations"],
+              ].map(([label, href]) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="text-sm text-white/50 hover:text-white transition-colors"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="font-bold text-white mb-5 text-sm uppercase tracking-wider">Contact</h3>
-            <ul className="flex flex-col gap-4">
+            <h3 className="font-semibold text-white mb-4 text-xs uppercase tracking-widest">
+              Tools & Data
+            </h3>
+            <ul className="flex flex-col gap-2.5">
+              {[
+                ["Vegetation Indices", "/tools"],
+                ["Inundation Maps", "/tools"],
+                ["Land Cover Maps", "/tools"],
+                ["UAV Services", "/tools"],
+                ["e-Learning", "/tools?tab=elearning"],
+              ].map(([label, href]) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="text-sm text-white/50 hover:text-white transition-colors"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-white mb-4 text-xs uppercase tracking-widest">
+              Contact
+            </h3>
+            <ul className="flex flex-col gap-3.5">
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                <span className="text-sm text-slate-400 leading-relaxed">
-                  6th km Harilaou - Thermi Road
+                <MapPin className="w-4 h-4 text-[hsl(37_80%_56%)] shrink-0 mt-0.5" />
+                <span className="text-sm text-white/50 leading-relaxed">
+                  6th km Harilaou–Thermi Rd
                   <br />
-                  57001 Thermi, Thessaloniki
-                  <br />
-                  Greece
+                  57001 Thermi, Thessaloniki, GR
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-primary shrink-0" />
+                <Mail className="w-4 h-4 text-[hsl(37_80%_56%)] shrink-0" />
                 <a
                   href="mailto:imanakos@iti.gr"
-                  className="text-sm text-slate-400 hover:text-white transition-colors"
+                  className="text-sm text-white/50 hover:text-white transition-colors"
                 >
                   imanakos@iti.gr
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-sm text-slate-400">+30 2311 257760</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Globe className="w-4 h-4 text-primary shrink-0" />
-                <a
-                  href="https://www.iti.gr/iti/en/people/ioannis-manakos/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-400 hover:text-white transition-colors"
-                >
-                  Dr. I. Manakos — ITI profile
-                </a>
+                <Phone className="w-4 h-4 text-[hsl(37_80%_56%)] shrink-0" />
+                <span className="text-sm text-white/50">+30 2311 257760</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-slate-500">
+        <div className="pt-8 border-t border-white/8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-white/30">
             © {new Date().getFullYear()} EOS – CERTH/ITI Remote Sensing Research Team. All rights
             reserved.
           </p>
           <div className="flex gap-5">
-            <Link
-              href="/about/team"
-              className="text-xs text-slate-500 hover:text-white transition-colors"
-            >
-              Team
+            <Link href="/research" className="text-xs text-white/30 hover:text-white transition-colors">
+              Research
             </Link>
-            <Link
-              href="/about"
-              className="text-xs text-slate-500 hover:text-white transition-colors"
-            >
-              Background
+            <Link href="/tools" className="text-xs text-white/30 hover:text-white transition-colors">
+              Tools & Data
             </Link>
-            <Link
-              href="/contact"
-              className="text-xs text-slate-500 hover:text-white transition-colors"
-            >
+            <Link href="/contact" className="text-xs text-white/30 hover:text-white transition-colors">
               Contact
             </Link>
           </div>
