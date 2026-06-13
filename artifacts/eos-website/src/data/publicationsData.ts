@@ -60,40 +60,52 @@ export const journalPubs: PubEntry[] = [
     link: "https://onlinelibrary.wiley.com/doi/10.1111/gcb.16346",
   },
   {
-    text: "L. Alagialoglou, I. Manakos, M. Heurich, J. Červenka, A. Delopoulos, A learnable model with calibrated uncertainty quantification for estimating canopy height from spaceborne sequential imagery , 2022, IEEE Transactions on Geoscience and Remote Sensing, DOI: 10.1109/TGRS.2022.3168703",
+    text: "L. Alagialoglou, I. Manakos, M. Heurich, J. Cervenka, A. Delopoulos, A learnable model with calibrated uncertainty quantification for estimating canopy height from spaceborne sequential imagery , 2022, IEEE Transactions on Geoscience and Remote Sensing, DOI: 10.1109/TGRS.2022.3171407",
     link: "https://ieeexplore.ieee.org/document/9768161",
   },
   {
-    text: "L. Filchev, I. Manakos, G. Jelev, L. Krajewski, E. Wozniak, E. Gromny, M. Ruciński, A Review of Earth Observation Resources for Secondary School Education - Part II , 2021, Aerospace Research in Bulgaria, 33, 158–185.",
+    text: "L. Filchev, I. Manakos, R. Reuter, G. Mardirossian, T. Srebrova, L. Kraleva, D. Dimitrov, K. Marini, A. Rienow, A Review of Earth Observation Resources for Secondary School Education - Part II , 2021, Aerospace Research in Bulgaria, DOI: https://doi.org/10.3897/arb.v33.e18",
     link: "http://journal.space.bas.bg/arhiv/n%2033/Articles/18_Filchev.pdf",
   },
   {
-    text: "I. Manakos, G. Gutman, C. Kalaitzidis, Monitoring Land Cover Change: Towards Sustainability , 2021, Land, DOI: 10.3390/land10121356.",
+    text: "I. Manakos, G. Gutman, C. Kalaitzidis, Monitoring Land Cover Change: Towards Sustainability , 2021, Multidisciplinary Digital Publishing Institute - Land, DOI: https://doi.org/10.3390/land10121356",
     link: "https://www.mdpi.com/2073-445X/10/12/1356",
   },
   {
-    text: "C. Boutsoukis, I. Manakos, M. Heurich, A. Delopoulos, Canopy height estimation from single multispectral 2D airborne imagery using texture analysis and machine learning in structurally rich temperate forests , 2019, Remote Sensing.",
+    text: "L. Filchev, I. Manakos, R. Reuter, G. Mardirossian, T. Srebrova, L. Kraleva, D. Dimitrov, K. Marini, A. Rienow, A Review of Earth Observation Resources for Secondary School Education - Part I , 2020, Aerospace Research in Bulgaria, DOI: https://doi.org/10.3897/arb.v32.e18",
+    link: "http://journal.space.bas.bg/arhiv/n%2032/Articles/18_Filchev.pdf",
+  },
+  {
+    text: "C. Kalaitzidis, I. Manakos, C. Jurgens, P. Wezyk, Introduction to the special issue: \"Earth observation supporting sustainability research\" , 2020, European Journal of Remote Sensing, DOI: https://doi.org/10.1080/22797254.2020.1784677",
     link: null,
   },
   {
-    text: "G. Kordelas, I. Manakos, J. Bustamante, R. Díaz-Delgado, J. Aragones, Automatic Inundation Mapping Using Sentinel-2 Data Applicable to Both Camargue and Doñana Biosphere Reserves , 2019, Remote Sensing, 11(19), 2251.",
+    text: "C. Boutsoukis, I. Manakos, M. Heurich, A. Delopoulos, Canopy height estimation from single multispectral 2D airborne imagery using texture analysis and machine learning in structurally rich temperate forests , 2019, Remote Sensing Journal, DOI: https://doi.org/10.3390/rs11232853",
+    link: null,
+  },
+  {
+    text: "G. Kordelas, I. Manakos, G. Lefebvre, B. Poulin, Automatic Inundation Mapping Using Sentinel-2 Data Applicable to Both Camargue and Doñana Biosphere Reserves , 2019, Remote Sensing Journal, 11(19), 2251, DOI: https://doi.org/10.3390/rs11192251",
     link: "https://www.mdpi.com/2072-4292/11/19/2251",
   },
   {
-    text: "I. Manakos, G. Kordelas, K. Marini, Fusion of Sentinel-1 data with Sentinel-2 products to overcome non-favourable atmospheric conditions for the delineation of inundation maps , 2019, European Journal of Remote Sensing.",
+    text: "I. Manakos, G. Kordelas, K. Marini, Fusion of Sentinel-1 data with Sentinel-2 products to overcome non-favourable atmospheric conditions for the delineation of inundation maps , 2019, European Journal of Remote Sensing, DOI: 10.1080/22797254.2019.1596757",
     link: "https://www.tandfonline.com/doi/full/10.1080/22797254.2019.1596757",
   },
   {
-    text: "I. Manakos, M. Tomaszewska, I. Gkinis, O. Brovkina, L. Filchev, L. Genc, A. Halabuk, M. Inalpulat, A. Irimescu, G. Jelev, T. Katagis, L. Kupková, M. Lavreniuk, M. Mesaroš, D. Mihailescu, M. Nita, T. Rusnak, F. Zemek, J. Albrechtová, P. Campbell, Comparison of Global and Continental Land Cover Products for selected study areas in South Central and Eastern European Region , 2018, Remote Sensing, 10(12), 1967.",
+    text: "I. Manakos, M. Tomaszewska, I. Gkinis, O. Brovkina, L. Filchev, L. Genc, I. Gitas, A. Halabuk, M. Inalpulat, A. Irimescu, G. Jelev, K. Karantzalos, T. Katagis, L. Kupkova, M. Lavreniuk, M. Mesaros, D. Mihailescu, M. Nita, T. Rusnak, P. Stych, F. Zemek, J. Albrechtova, P. Campbell, Comparison of Global and Continental Land Cover Products for selected study areas in South Central and Eastern European Region , 2018, Remote Sensing, 10(12), 1967, DOI: https://doi.org/10.3390/rs10121967",
     link: "https://www.mdpi.com/2072-4292/10/12/1967",
   },
   {
-    text: "G. Kordelas, I. Manakos, J. Bustamante, R. Díaz-Delgado, Fast and automatic data-driven thresholding for inundation mapping with Sentinel-2 data , 2018, Remote Sensing, 10, 910.",
+    text: "G. Kordelas, I. Manakos, D. Aragones, R. Diaz-Delgado, J. Bustamante, Fast and automatic data-driven thresholding for inundation mapping with Sentinel-2 data , 2018, Remote Sensing, 10, 910, DOI: 10.3390/rs10060910.",
     link: "https://www.mdpi.com/2072-4292/10/6/910",
   },
   {
-    text: "D. Pasetto, F. Arenas-Castro, J. Bustamante, L. Casagrandi, S. Chrysoulakis, F.A. Cord, R. Dittrich, G. Domingo-Marimon, G. El Serafy, D.P. Karnieli, C. Kordelas, A. Manakos, M.A. Mari, B. Moulaert, H. Myint, P. Paavola, S. Peltoniemi, C. Planque, M. Ronfort, T. Scharlemann, A. Steyaert, I. Tzanopoulos, M. van Oudenhoven, V. Wrbka, E. Ziemba, G. Ziv, I. Manakos, Integration of satellite remote sensing data in ecosystem modelling at local scales: practices and trends , 2018, Methods in Ecology and Evolution, 9, 1810–1821.",
+    text: "D. Pasetto, S. Arenas-Castro, J. Bustamante, R. Casagrandi, N. Chrysoulakis, A. Cord, A. Dittrich, C. Domingo, G. El Serafy, A. Karnieli, G. Kordelas, I. Manakos, L. Mari, A. Monteiro, E. Palazzi, D. Poursanidis, A. Rinaldo, S. Terzago, A. Ziemba, G. Ziv, Integration of satellite remote sensing data in ecosystem modelling at local scales: practices and trends , 2018, Methods in Ecology and Evolution, 9, 1810–1821.",
     link: "https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.13018",
+  },
+  {
+    text: "I. Manakos, K. Chatzopoulos-Vouzoglanis, I. Gkinis, Z. Petrou, E. Stylianidis, G. Pozoukidou, Assessing urban development trends in representative Local Administrative Units before and after the Greek economic crisis , 2017, Remote Sensing Applications: Society and Environment, 7, 49-56, DOI: 10.1016/j.rsase.2017.06.004.",
+    link: "https://www.sciencedirect.com/science/article/pii/S2352938517300678",
   },
   {
     text: "I. Manakos, C. Karakizi, I. Gkinis, K. Karantzalos, Validation and Inter-Comparison of Spaceborne Derived Global and Continental Land Cover Products for the Mediterranean Region: The Case of Thessaly , 2017, Land, 6(2), 34, DOI: 10.3390/land6020034.",
@@ -202,24 +214,36 @@ export const conferencePubs: PubEntry[] = [
     link: null,
   },
   {
-    text: "H. Linseisen, I. Manakos, Frühzeitige Kartierung von Hopfenanbauflächen in Deutschland - Eine Machbarkeitsstudie, Referate der 44. GIL-Jahrestagung \"Informatik in der Land-, Forst und Ernährungswirtschaft\" , 26-27 February 2024, Stuttgart, Germany, pp. 323-327.",
+    text: "H. Linseisen, I. Manakos, E. Katsikis, A. Delopoulos, Assimilation von satellitenbasierten Reflexionsmessungen in einem Informationssystem für einen modernen Hopfenbaubetrieb, Referate der 44. GIL-Jahrestagung, \"Informatik in der Land-, Forst und Ernährungswirtschaft\", C. Hoffmann et al. (Hrsg.), GI-Edition \"Lecture Notes in Informatics\" , 27-28 February 2024, Stuttgart-Hohenheim, Germany, pp. 323-327.",
+    link: "https://gil-net.de/wp-content/uploads/2024/02/GI_Proceedings_344-3.f.pdf",
+  },
+  {
+    text: "R.-T. Chadoulis, M. Ruciński, E. Katsikis, P. Archicinski, S. Sala, E. Gromny, E. Wozniak, I. Manakos, A. Affek, A. Foks-Ryznar, Phenological Metrics Derived From Sentinel-2 Data For Solidago Gigantea Mapping, IGARSS 2023 - 2023 IEEE International Geoscience and Remote Sensing Symposium , 16-21 July 2023, Pasadena, CA, USA, pp. 445-447, DOI: 10.1109/IGARSS52108.2023.10282732.",
+    link: "https://ieeexplore.ieee.org/document/10282732/",
+  },
+  {
+    text: "G. Scarpino, M. Matera, P. Bauer, I. Manakos, A. Kita, K. Vlachos, A. Bozas, I. Serral, A. Moumtzidou, I. Gialampoukidis, S. Vrochidis, WQEMS platform for inland surface water bodies' monitoring: serving user communities and supporting expert analyses, Proc. SPIE 12786 , Ninth International Conference on Remote Sensing and Geoinformation of the Environment (RSCy2023), 21 September 2023, DOI: https://doi.org/10.1117/12.2680817",
+    link: "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12786/1278615/WQEMS-platform-for-inland-surface-water-bodies-monitoring--serving/10.1117/12.2680817.short?SSO=1",
+  },
+  {
+    text: "Best Paper Award I. Manakos, E. Katsikis, S. Medinets, Y. Gazyetov, L. Alagialoglou, V. Medinets, Identification of Emergent and Floating Aquatic Vegetation Using an Unsupervised Thresholding Approach: A Case Study of the Dniester Delta in Ukraine , 9th International Conference on Geographical Information Systems Theory, Applications and Management, 25-27 April 2023, Prague, Czech Republic, DOI: 10.5220/0012024000003473",
     link: null,
   },
   {
-    text: "R.-T. Chadoulis, M. Ruciński, E. Katsikis, P. Archiciński, S. Sala, E. Gromny, E. Woźniak, I. Manakos, A. Affek, A. Foks-Ryznar, Phenological Metrics Derived From Sentinel-2 Data For Solidago Gigantea Mapping, IGARSS 2023 - 2023 IEEE International Geoscience and Remote Sensing Symposium , 16-21 July 2023, Pasadena, CA, USA, pp. 445-447, DOI: 10.1109/IGARSS52108.2023.10282732.",
-    link: "https://ieeexplore.ieee.org/document/10282732",
+    text: "G.-F. Angelis, A. Domi, A. Zamichos, M. Tsourma, I. Manakos, A. Drosou, D. Tzovaras, A Comparative Study on Vision Transformers in Remote Sensing Building Extraction , 14th International Conference on Information Visualization Theory and Applications, January 2023, Lisbon, Portugal, DOI:10.5220/0011787800003417.",
+    link: "https://www.researchgate.net/publication/369016090_A_Comparative_Study_on_Vision_Transformers_in_Remote_Sensing_Building_Extraction",
   },
   {
-    text: "G. Scarpino, I. Manakos, G.A. Kordelas, S.A.V. Cuomo, Unsupervised Water Body Detection Using Neural Networks, RSCy2023 - Ninth International Conference on Remote Sensing & Geoinformation of Environment , 4-5 April 2023, Paphos, Cyprus, Proc. SPIE 12786, DOI: 10.1117/12.2680817.",
-    link: "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12786/1278606/Unsupervised-Water-Body-Detection-Using-Neural-Networks/10.1117/12.2680817.short",
-  },
-  {
-    text: "I. Manakos, E. Katsikis, S. Medinets, Y. Gazyetov, L. Alagialoglou, V. Medinets, A. Delopoulos, Best Paper Award at the 9th International Conference on Geographical Information Systems Theory, Applications and Management , 23-25 April 2023, Prague, Czech Republic, doi: 10.5220/0012024000003473.",
+    text: "P. Archiciński, S. Sala, E. Katsikis, M. Ruciński, R. T. Chadoulis, A. Kita, E. Gromny, E. Woźniak, I. Manakos, Correlation of the flooding regime with the presence of solidago gigantea over the valley of Narew in Poland, IALE 2022 European Landscape Ecology Congress, making the future, learning from the past , 11-15 July 2022, Warsaw, Poland, pp. 140.",
     link: null,
   },
   {
-    text: "G.-F. Angelis, G. Domi, P.M. Trigeorgis, I. Manakos, Cross-domain Adaptation of a Semantic Segmentation Network for Flooded Region Mapping, Proceedings of the 14th International Conference on Information Visualization Theory and Applications, IVAPP 2023 , 19-21 February 2023, Lisbon, Portugal, doi: 10.5220/0011787800003417.",
-    link: "https://www.scitepress.org/PublicationsDetail.aspx?ID=cBPgCGi5Jdc=&t=1",
+    text: "M. Kanj, I. Manakos, I. Tsolakidis, N. Katselas, C. Kalaitzidis, Empirical estimation of surface water quality parameters in Lake Kerkini using Landsat ETM+/OLI, Eighth International Conference on Enviromental Management, Engineering, Planning and Economics (CEMEPE) and SECOTOX Conference , 20-24 July 2021, Thessaloniki, Greece pp. 110-121.",
+    link: null,
+  },
+  {
+    text: "I. Manakos, M. Kanj, M. Sismanis, I. Tsolakidis, C. Kalaitzidis, Multi-Temporal Inundated Areas Monitoring Made Easy: The Case of Kerkini Lake in Greece , 7th International Conference on Geographical Information Systems Theory, Applications and Management, 23-25 April 2021, Prague, Czech Republic, doi:10.5220/0010555700480055",
+    link: "https://www.scitepress.org/PublicationsDetail.aspx?ID=0uyhInZ1A8E=&t=1",
   },
   {
     text: "I. Soubry, I. Manakos, C. Kalaitzidis, Recent Advances in Land Surface Phenology Estimation with Multispectral Sensing , 7th International Conference on Geographical Information Systems Theory, Applications and Management, 23-25 April 2021, Prague, Czech Republic, doi: 10.5220/0010555801340145",
@@ -231,7 +255,7 @@ export const conferencePubs: PubEntry[] = [
   },
   {
     text: "L. Alagialoglou, I. Manakos, M. Heurich, J. Červenka and A. Delopoulos, Canopy height estimation from spaceborne imagery using convolutional encoder-decoder, 27th International Conference on Multimedia Modeling , 22-24 June 2021, Prague, Czech Republic, doi: 10.1007/978-3-030-67835-7_26",
-    link: null,
+    link: "https://mmm2021.cz/timetable/event/mmarsat/",
   },
   {
     text: "R. Lucas, A. Mitchell, I. Manakos, P. Blonda, The Earth Obsevation Data Ecosystem Monitoring (Eodesm) System , IGARSS 2018 - 2018 IEEE International Geoscience and Remote Sensing Symposium, Valencia, 2018, 8985-8987, doi: 10.1109/IGARSS.2018.8519474",
@@ -306,11 +330,15 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "I. Manakos, E. Katsikis, S. Medinets, Y. Gazyetov, L. Alagialoglou, V. Medinets, 2023. Water emergent and floating aquatic vegetation mapping using Earth Observation data: An example at the Dniester Delta in Ukraine, SCERIN-10 Workshop on Earth System Observations and 10th Anniversary , Brno, Czech Republic, 27, June.",
-    link: null,
+    link: "https://start.org/news/upcoming-scerin-10-workshop-on-earth-system-observations-and-10th-anniversary/",
+  },
+  {
+    text: "I. Manakos, 2023. WQeMS: A Copernicus assisted water quality monitoring service in support of the water utilities for drinking water production, SCERIN-10 Workshop on Earth System Observations and 10th Anniversary , Brno, Czech Republic, 26, June.",
+    link: "https://start.org/news/upcoming-scerin-10-workshop-on-earth-system-observations-and-10th-anniversary/",
   },
   {
     text: "I. Manakos, 2023. Open surface water areas monitoring for the Black Sea and Greece, GEO organized Open Data/Open Knowledge Workshop , Geneva, Switzerland, 16, June.",
-    link: null,
+    link: "https://www.earthobservations.org/odok2023.php",
   },
   {
     text: "I. Manakos, G. Scarpino, 2023. The WQeMS Platform For Inland Surface Water Quality Monitoring: A Collaborative Tool For Drinking Water Managers And Innovators. Poster at the Sustainable Value Creation in Space, Land, and Green Economy , Lisbon, Portugal, 25, May.",
@@ -459,6 +487,26 @@ export const networkingPubs: PubEntry[] = [
   {
     text: "Provenzale, A., Giamberini, S., Marangi, C., Masò, J., Domingo, C., Lucas, R., Peterseil, J., Poursanidis, D., Simoes, J., Manakos, I., Marini, K., Kordelas, G., Blonda, P., Adamo, M., Tarantino, C., Karnieli, A., Santoro, M., Roncella, R., Mazzetti, P., 2019. MADE IN ECOPOTENTIAL: data portals and tools for natural ecosystems. Poster at the EuroGEOSS Workshop, Lisbon, Portugal, 3-5 July.",
     link: "https://ec.europa.eu/easme/sites/easme-site/files/eurogeoss-workshop-posters.pdf",
+  },
+  {
+    text: "Mazzetti, P., Manakos, I., 2019. The ECOPOTENTIAL Virtual Laboratory (VLab): a tool to share and run scientific models on cloud platforms. Presentation at the EuroGEOSS workshop , Lisbon, Portugal, 3-5 July. Contributors for the data cube part: Aristeridou, D., Kordelas, G., Marini, K., Giuliani, G., Guigoz, Y., Chatenoux, B., Chrysoulakis, N., Poursanidis, D.",
+    link: "https://ec.europa.eu/easme/en/section/easme-home/eurogeoss-workshop-2019",
+  },
+  {
+    text: "Ambrosia, V., Hadjimitsis, D., Gitas, G., Manakos, I., Zalides, G., Kalaitzides, C., Brice, M., Albrechtova, J., Deodato, T., Chrysoulakis, N., Ben Dor, E., Karnielli, A., Kontoes, H., Genç, L., Koru, A. & Themistocleous, K., 2019. The benefits for joining forces in the Mediterranean region in earth observation: The Mediterranean Regional Information Network (MedRIN). Presentation at 39th Annual EARSeL Symposium , Salzburg, Austria, 1-4 July.",
+    link: "http://symposium.earsel.org/39th-symposium-Salzburg/",
+  },
+  {
+    text: 'Manakos, I., 2019. ECOPOTENTIAL online data services legacy and SCERIN applications. Presentation at SCERIN-7 Capacity Building Workshop on Earth System Observations, "Land Cover Dynamics in the Agricultural and Protected Natural Areas in the SCERIN Domain" , Novi Sad, Serbia, 24-27 June.',
+    link: "http://csebr.cz/scerin2019/index.html",
+  },
+  {
+    text: "Manakos, I., Aristeridou, D., Kordelas, G., Marini, K., Giuliani, G., Guigoz, Y., Chatenoux, B., Chrysoulakis, N., Poursanidis, D., 2019. Exploring the potential of Earth Observations Data Cube for monitoring a protected area. Presentation at ECOPOTENTIAL General Meeting , Rome, Italy, 20-24 May.",
+    link: "https://www.ecopotential-project.eu/",
+  },
+  {
+    text: "Manakos, I., Kordelas, G., Bustamante, J., Poulin, B., 2019. Copernicus assisted inundation mapping for wetland Protected Areas. Presentation at ECOPOTENTIAL General Meeting , Rome, Italy, 20-24 May.",
+    link: "https://www.ecopotential-project.eu/",
   },
   {
     text: "Manakos, I., Kordelas, G., Bustamante, J., Marini, K., 2019. Derivation of inundation maps by fusing Sentinel-1 data with Sentinel-2 products to overcome cloudy conditions. Oral presentation at 2019 Living Planet Symposium , Milan, Italy, 13-17 May.",
