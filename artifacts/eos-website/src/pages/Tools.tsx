@@ -164,6 +164,11 @@ const otherPlatforms = [
     desc: "e-Learning platform for waste water treatment operators, developed within the AQUACYCLE project.",
     url: "https://etraining-aquacycle.eu/",
   },
+  {
+    name: "Water Utilities Training (WQeMS)",
+    desc: "Training platform for water utility professionals on Copernicus-assisted lake water quality monitoring, developed within the WQeMS project.",
+    url: "https://training.wqems.eu/group/4?type=catalog",
+  },
 ];
 
 function ServicesTab() {
