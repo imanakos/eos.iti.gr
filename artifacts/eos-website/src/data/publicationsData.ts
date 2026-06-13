@@ -309,6 +309,30 @@ export const networkingPubs: PubEntry[] = [
     link: "https://start.org/news/upcoming-scerin-10-workshop-on-earth-system-observations-and-10th-anniversary/",
   },
   {
+    text: "I. Manakos, 2023. Open surface water areas monitoring for the Black Sea and Greece, GEO organized Open Data/Open Knowledge Workshop , Geneva, Switzerland, 16, June.",
+    link: "https://www.earthobservations.org/odok2023.php",
+  },
+  {
+    text: "I. Manakos, G. Scarpino, 2023. The WQeMS Platform For Inland Surface Water Quality Monitoring: A Collaborative Tool For Drinking Water Managers And Innovators. Poster at the Sustainable Value Creation in Space, Land, and Green Economy , Lisbon, Portugal, 25, May.",
+    link: null,
+  },
+  {
+    text: "I. Manakos, D. Ribeiro, T. Kauranne, J. Wilson, 2023. The specificities of providing EO services to agriculture and forestry and their added value according to customer needs, Sustainable Value Creation in Space, Land, and Green Economy , Lisbon, Portugal, 25, May.",
+    link: null,
+  },
+  {
+    text: "G. Scarpino, M. Matera, G. Milis, P. Bauer, I. Manakos, 2023. The WQeMS platform for inland surface water bodies' monitoring: serving user communities and supporting experts' analyses, Ninth International Conference on Remote Sensing & Geoinformation of Environment , 04, April.",
+    link: "https://rscy2023.cyprusremotesensing.com/sites/default/files/docs/RSCy2023_Conference_program_0.pdf",
+  },
+  {
+    text: "G. Milis, A. Nicolaou, M. Matera, I. Serral, K. Sampsa, A. Kita, A. Bozas, K. Vlachos, I. Manakos, 2023. Capacity building for professionals towards the application of remote sensing in the monitoring of inland water sources, Ninth International Conference on Remote Sensing & Geoinformation of Environment , 04, April.",
+    link: "https://rscy2023.cyprusremotesensing.com/sites/default/files/docs/RSCy2023_Conference_program_0.pdf",
+  },
+  {
+    text: "I. Serral, J. Masó, I. Manakos, M. Matera, M. Basile, N. Julià, 2023. Harmonized and fair lake water quality datasets for a better policy decision making, Ninth International Conference on Remote Sensing & Geoinformation of Environment , 04, April.",
+    link: "https://rscy2023.cyprusremotesensing.com/sites/default/files/docs/RSCy2023_Conference_program_0.pdf",
+  },
+  {
     text: "I. Manakos, A. Kita, S. Papadopoulou, I. Lioumpas, M. Katsiapi, E. Katsikis, L. Alagialoglou, A. Christodoulou, 2023. Land water transition zone mapping challenges in dynamically changing environments, Ninth International Conference on Remote Sensing & Geoinformation of Environment , 04, April.",
     link: "https://rscy2023.cyprusremotesensing.com/sites/default/files/docs/RSCy2023_Conference_program_0.pdf",
   },
