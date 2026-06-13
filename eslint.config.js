@@ -21,6 +21,7 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs["recommended-latest"].rules,
+      "react-hooks/no-deriving-state-in-effects": "error",
       "@typescript-eslint/no-unused-vars": [
         "error",
         { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },

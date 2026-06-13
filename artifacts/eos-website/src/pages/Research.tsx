@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ExternalLink, Calendar, BookOpen, FileText, Users, Microscope, Play } from "lucide-react";
 import { cn, assetUrl } from "@/lib/utils";
 import { projects } from "@/data/projectsData";
@@ -583,13 +583,10 @@ function CooperationsTab() {
 }
 
 export default function Research() {
-  const [activeTab, setActiveTab] = useState("projects");
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const tab = params.get("tab");
-    if (tab && TABS.find((t) => t.id === tab)) setActiveTab(tab);
-  }, []);
+  const [activeTab, setActiveTab] = useState(() => {
+    const tab = new URLSearchParams(window.location.search).get("tab");
+    return tab && TABS.find((t) => t.id === tab) ? tab : "projects";
+  });
 
   return (
     <div className="pt-24 pb-20 min-h-screen">

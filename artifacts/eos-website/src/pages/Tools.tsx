@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   ExternalLink,
   Layers,
@@ -326,13 +326,10 @@ function ELearningTab() {
 }
 
 export default function Tools() {
-  const [activeTab, setActiveTab] = useState("services");
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const tab = params.get("tab");
-    if (tab && TABS.find((t) => t.id === tab)) setActiveTab(tab);
-  }, []);
+  const [activeTab, setActiveTab] = useState(() => {
+    const tab = new URLSearchParams(window.location.search).get("tab");
+    return tab && TABS.find((t) => t.id === tab) ? tab : "services";
+  });
 
   return (
     <div className="pt-24 pb-20 min-h-screen">
