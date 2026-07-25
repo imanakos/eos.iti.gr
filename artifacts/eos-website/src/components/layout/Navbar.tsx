@@ -37,7 +37,7 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <img
-              src={`${import.meta.env.BASE_URL}images/logo/logoeos8.png`}
+              src={`${import.meta.env.BASE_URL}images/logo/logoeos_clean.png`}
               alt="EOS Logo"
               className="h-10 w-auto object-contain brightness-200"
             />
