@@ -30,11 +30,11 @@ const domainTimeline = [
   { year: 2019, domain: "Open Source Code Development" },
   { year: 2020, domain: "Open Data Cubes" },
   { year: 2021, domain: "Water Quality Monitoring" },
-  { year: 2022, domain: "Machine Learning" },
+  { year: 2022, domain: "GeoAI" },
   { year: 2023, domain: "Journalism" },
   { year: 2024, domain: "Unmanned Aerial Vehicles" },
   { year: 2025, domain: "Zero Pollution · Land Degradation Neutrality" },
-  { year: 2026, domain: "Research 2 Market · Events 2 Episodes" },
+  { year: 2026, domain: "Research 2 Market" },
 ];
 
 export default function About() {
