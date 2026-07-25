@@ -120,8 +120,10 @@ export const projects: Project[] = [
   {
     name: "EEOBSS",
     img: "/images/cooperation/projects/eeobss.png",
-    description: "European Earth Observation Biodiversity Support Service project.",
+    description:
+      "Education in Earth Observation for Bulgarian Secondary Schools, supported by ESA. The project promoted Earth Observation among Bulgarian pupils through adapted learning materials, educational events, and a summer school.",
     status: "past",
+    url: "https://www.iti.gr/iti/en/project/eeobss-en/",
   },
   {
     name: "TD1202",
