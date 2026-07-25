@@ -330,53 +330,86 @@ function PosterGrid() {
 function VideoGrid() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-      {videoItems.map((item, i) => (
-        <div
-          key={i}
-          className="bg-card rounded-xl border border-border overflow-hidden shadow-sm flex flex-col"
-        >
-          {item.type === "local" ? (
-            <div className="relative bg-muted aspect-video flex items-center justify-center">
-              {item.thumb ? (
-                <img
-                  src={assetUrl(item.thumb)}
-                  alt={item.title}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = "none";
-                  }}
+      {videoItems.map((item, i) => {
+        const youtubeId =
+          item.type === "youtube" ? item.url.match(/\/embed\/([^?]+)/)?.[1] : undefined;
+        const vimeoId =
+          item.type === "vimeo" ? item.url.match(/\/video\/([0-9]+)/)?.[1] : undefined;
+        const watchUrl =
+          item.type === "local"
+            ? assetUrl(item.url)
+            : item.type === "youtube" && youtubeId
+              ? `https://www.youtube.com/watch?v=${youtubeId}`
+              : item.type === "vimeo" && vimeoId
+                ? `https://vimeo.com/${vimeoId}`
+                : item.url;
+        const serviceName =
+          item.type === "youtube" ? "YouTube" : item.type === "vimeo" ? "Vimeo" : "video";
+        const embedUrl =
+          item.type === "youtube"
+            ? item.url.replace("www.youtube.com", "www.youtube-nocookie.com")
+            : item.url;
+
+        return (
+          <div
+            key={i}
+            className="bg-card rounded-xl border border-border overflow-hidden shadow-sm flex flex-col"
+          >
+            {item.type === "local" ? (
+              <div className="relative bg-muted aspect-video flex items-center justify-center">
+                {item.thumb ? (
+                  <img
+                    src={assetUrl(item.thumb)}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).style.display = "none";
+                    }}
+                  />
+                ) : (
+                  <Play className="w-10 h-10 text-muted-foreground" />
+                )}
+                <a
+                  href={watchUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 focus:opacity-100 transition-opacity"
+                  aria-label={`Open video: ${item.title}`}
+                >
+                  <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center">
+                    <Play className="w-6 h-6 text-primary fill-primary" />
+                  </div>
+                </a>
+              </div>
+            ) : (
+              <div className="aspect-video">
+                <iframe
+                  src={embedUrl}
+                  title={item.title}
+                  className="w-full h-full"
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
                 />
-              ) : (
-                <Play className="w-10 h-10 text-muted-foreground" />
-              )}
+              </div>
+            )}
+            <div className="p-4 flex-1 flex flex-col">
+              <p className="text-sm font-medium text-foreground leading-snug">{item.title}</p>
+              {item.note && <p className="text-xs text-muted-foreground mt-1">{item.note}</p>}
               <a
-                href={assetUrl(item.url)}
+                href={watchUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity"
+                className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline w-fit"
               >
-                <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center">
-                  <Play className="w-6 h-6 text-primary fill-primary" />
-                </div>
+                {item.type === "local" ? "Open video" : `Watch on ${serviceName}`}
+                <ExternalLink className="w-3 h-3" />
               </a>
             </div>
-          ) : (
-            <div className="aspect-video">
-              <iframe
-                src={item.url}
-                title={item.title}
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-          )}
-          <div className="p-4 flex-1">
-            <p className="text-sm font-medium text-foreground leading-snug">{item.title}</p>
-            {item.note && <p className="text-xs text-muted-foreground mt-1">{item.note}</p>}
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
