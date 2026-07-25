@@ -128,14 +128,14 @@ const cooperations = [
     img: "/images/cooperation/projects/sherin-medrin.png",
     description:
       "Mediterranean Regional Information Network — a regional network supporting land cover monitoring and Earth Observation capacity building in the Mediterranean area.",
-    url: "https://www.earthobservations.org/",
+    url: "https://gofcgold.org/regional-networks/mediterranean-regional-network-medrin",
   },
   {
     name: "SCERIN",
     img: "/images/cooperation/projects/sherin-medrin.png",
     description:
       "South Central and Eastern European Regional Information Network (GOFC-GOLD / GTOS). Dr. Manakos serves as Lead for 'Global/Continental land cover products validation and intercomparison in the SCERIN area'.",
-    url: "https://www.earthobservations.org/",
+    url: "https://gofcgold.org/regional-networks/south-central-european-regional-information-network-scerin",
   },
   {
     name: "CIHEAM Chania",
@@ -162,8 +162,8 @@ const cooperations = [
     name: "EnCeladus Hellenic Supersite",
     img: "/images/cooperation/projects/geo.png",
     description:
-      "Hellenic Supersite for Earth Observation and environmental monitoring in the EnCeladus framework.",
-    url: "https://www.earthobservations.org/",
+      "Historical GEO Hellenic Supersite for Earth Observation and environmental monitoring. The supersite concluded in 2024 and is retained here as a legacy cooperation.",
+    url: "https://geo-gsnl.org/supersites/permanent-supersites/enceladus-hellenic-supersite/",
   },
 ];
 
@@ -238,6 +238,16 @@ function ProjectsTab() {
                   <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                     {proj.description}
                   </p>
+                  {proj.url && (
+                    <a
+                      href={proj.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+                    >
+                      Visit project record <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
                 </div>
               </div>
             ))}

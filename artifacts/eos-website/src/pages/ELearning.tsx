@@ -83,12 +83,12 @@ const otherPlatforms = [
   {
     name: "Earth Observation Training (EOTiST)",
     desc: "Standard and Advanced courses on Remote Sensing, Ecosystem Research, Modelling and Computer Science. Developed within the EU EOTiST project.",
-    url: "https://eotist-training.cbk.waw.pl/index.php",
+    url: "https://eotist.cbk.waw.pl/",
   },
   {
     name: "Ecosystem Services Training (EOTiST / CBK PAN)",
     desc: "Training on Ecosystem Services within the H2020 EOTiST Twinning project, hosted at the Space Research Centre of the Polish Academy of Sciences.",
-    url: "https://eotist-training.cbk.waw.pl/index.php",
+    url: "https://eotist.cbk.waw.pl/",
   },
   {
     name: "Waste Water Treatment Training",
@@ -97,8 +97,8 @@ const otherPlatforms = [
   },
   {
     name: "Water Utilities Training (WQeMS)",
-    desc: "Training catalogue for water utility professionals in the context of the WQeMS (Water Quality Emergency Monitoring Service) project.",
-    url: "https://training.wqems.eu/group/4?type=catalog",
+    desc: "Training handbook, reports, and supporting resources for water utility professionals in the context of the WQeMS project.",
+    url: "https://cordis.europa.eu/project/id/101004157/results",
   },
 ];
 

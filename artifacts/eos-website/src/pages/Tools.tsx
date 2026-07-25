@@ -85,14 +85,6 @@ const liveServices = [
     url: "https://wqems.eu/",
     note: null,
   },
-  {
-    title: "EO-4-ProtectedAreas (EcoSense)",
-    desc: "EcoSense platform for monitoring and managing protected natural areas using Earth Observation.",
-    icon: <TreePine className="w-7 h-7 text-green-700" />,
-    category: "Platforms",
-    url: "https://biosense.rs/",
-    note: null,
-  },
 ];
 
 const eoModules = [
@@ -217,7 +209,7 @@ const otherPlatforms = [
   {
     name: "EOTiST Training",
     desc: "Standard and advanced courses on Remote Sensing, Ecosystem Research, Modelling and Computer Science. Produced within the EU EOTiST Twinning project.",
-    url: "https://eotist.cbk.waw.pl/index.html",
+    url: "https://eotist.cbk.waw.pl/",
   },
   {
     name: "AQUACYCLE e-Learning",
@@ -226,8 +218,9 @@ const otherPlatforms = [
   },
   {
     name: "Water Utilities Training (WQeMS)",
-    desc: "Training platform for water utility professionals on Copernicus-assisted lake water quality monitoring, developed within the WQeMS project.",
-    url: "https://training.wqems.eu/group/4?type=catalog",
+    desc: "Training handbook, reports, and supporting resources for water utility professionals, developed within the WQeMS project.",
+    url: "https://cordis.europa.eu/project/id/101004157/results",
+    linkLabel: "View training resources",
   },
 ];
 
@@ -375,7 +368,8 @@ function ELearningTab() {
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
               >
-                Go to platform <ExternalLink className="w-3 h-3" />
+                {"linkLabel" in p ? p.linkLabel : "Go to platform"}{" "}
+                <ExternalLink className="w-3 h-3" />
               </a>
             </div>
           ))}

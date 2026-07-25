@@ -445,7 +445,7 @@ const networkingPubs = [
   },
   {
     text: "A. Drosou, I. Manakos, 2020. Snapearth's (H2020 project) News announcement, Earth Observation data and Artificial Intelligence in support of Journalism , 31, March.",
-    link: "http://snapearth.eu/",
+    link: "https://cordis.europa.eu/project/id/870373",
   },
   {
     text: "J. Bustamante, I. Manakos, D. García, R. Díaz-Delgado, P. Méndez, G. Kordelas, 2019. CERTH's news announcement about the Copernicus Sentinels improve hydroperiod estimations of Mediterranean wetlands, ( Aξιοποίηση των δορυφορικών δεδομένων του δικτύου Copernicus στον υπολογισμό της εποχικής δυναμικότητας και της υδροπεριόδου των μεσογειακών υγρότοπων , article in Greek), 25, October.",
@@ -489,15 +489,15 @@ const networkingPubs = [
   },
   {
     text: 'Manakos, I., 2019. ECOPOTENTIAL online data services legacy and SCERIN applications. Presentation at SCERIN-7 Capacity Building Workshop on Earth System Observations, "Land Cover Dynamics in the Agricultural and Protected Natural Areas in the SCERIN Domain" , Novi Sad, Serbia, 24-27 June.',
-    link: "http://csebr.cz/scerin2019/index.html",
+    link: "https://www.scerin.eu/scerin2019/",
   },
   {
     text: "Manakos, I., Aristeridou, D., Kordelas, G., Marini, K., Giuliani, G., Guigoz, Y., Chatenoux, B., Chrysoulakis, N., Poursanidis, D., 2019. Exploring the potential of Earth Observations Data Cube for monitoring a protected area. Presentation at ECOPOTENTIAL General Meeting , Rome, Italy, 20-24 May.",
-    link: "https://www.ecopotential-project.eu/",
+    link: "https://cordis.europa.eu/project/id/641762/results",
   },
   {
     text: "Manakos, I., Kordelas, G., Bustamante, J., Poulin, B., 2019. Copernicus assisted inundation mapping for wetland Protected Areas. Presentation at ECOPOTENTIAL General Meeting , Rome, Italy, 20-24 May.",
-    link: "https://www.ecopotential-project.eu/",
+    link: "https://cordis.europa.eu/project/id/641762/results",
   },
   {
     text: "Manakos, I., Kordelas, G., Bustamante, J., Marini, K., 2019. Derivation of inundation maps by fusing Sentinel-1 data with Sentinel-2 products to overcome cloudy conditions. Oral presentation at 2019 Living Planet Symposium , Milan, Italy, 13-17 May.",
@@ -513,7 +513,7 @@ const networkingPubs = [
   },
   {
     text: "Manakos, I., Albrechtová, J., Campbell, P. & Kupková, L., 2019. The SCERIN network: Best practices and achievements. Oral presentation at the Mediterranean Regional Information Network (MedRIN) Meeting and Workshop , Paphos, Cyprus, 20 March.",
-    link: "https://gofcgoldvh1.umd.edu/sites/default/files/2019-04/MedRIN_SCERIN_Manakos.pdf",
+    link: "https://gofcgold.org/sites/default/files/2019-04/MedRIN_SCERIN_Manakos.pdf",
   },
   {
     text: "Manakos, I., Kordelas, G.A., Lefebvre, G., Poulin, B., Willm, L., Davranche, A. & Campagna, J., 2019. Automatic Thresholding Inundation Mapping Using Sentinel‐2 Data At The Camargue Wetlands. Oral presentation at the 7th International Conference on Remote Sensing and Geoinformation of Environment , Paphos, Cyprus, 18-21 March.",
@@ -521,7 +521,7 @@ const networkingPubs = [
   },
   {
     text: "Mardirossian, G., Dimitrov, D., Manakos, I., 2019. Presentation of the EEOBSS tutorial contents at the Space Research and Technology Institute-Bulgarian Academy of Sciences, Sofia, Bulgaria, 22 February.",
-    link: "https://eeobss.space/",
+    link: "https://www.iti.gr/iti/en/project/eeobss-en/",
   },
   {
     text: "Manakos, I., Kordelas, G., Aragonés, D., Diaz-Delgado, R., Marini, K. & Bustamante, J., 2018. Benefits and challenges for Sentinel 1 & 2 supported hydroperiod estimation in wetland areas. Poster at the 38th EARSeL Symposium, Earth Observation Supporting Sustainability Research, Chania, Greece, 09-12 July.",
@@ -577,7 +577,7 @@ const networkingPubs = [
   },
   {
     text: "Manakos, I., 2016. Global land cover products validation and inter-comparison in the SCERIN area. Oral Presenation at SCERIN-4 Capacity Building Workshop , Faculty of Foresty, Technical University in Zvolen, Slovakia, 18 - 22 July.",
-    link: "http://csebr.cz/scerin2016/presentations.html",
+    link: "https://gofcgold.org/regional-networks/south-central-european-regional-information-network-scerin",
   },
   {
     text: "Lucas, R., Mitchell, A., Blonda, P., Tomaselli, V., Tarantino, C., Adamo, P., Marangi, C., Manakos, I., Kosmidou, V., Petrou, Z., Bunting, P., Scott, D., Horton, C., Scarth, P., 2017. ‘Global to Local Land Cover and Habitat Mapping: The Ecopotential Approach. Oral presentation at the WorldCover 2017 Conference, Frascati, Italy, 14-16 March.",

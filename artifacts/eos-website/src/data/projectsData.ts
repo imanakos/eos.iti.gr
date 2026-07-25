@@ -45,6 +45,7 @@ export const projects: Project[] = [
     description:
       "Mediterranean Earth Observation Services project. Concluded with a key presentation at IEEE IGARSS 2024.",
     status: "recent",
+    url: "https://eo4society.esa.int/projects/medeos/",
   },
   {
     name: "WQeMS",
@@ -68,6 +69,7 @@ export const projects: Project[] = [
     description:
       "Next generation land monitoring project combining satellite data streams for comprehensive land cover change detection at multiple scales.",
     status: "recent",
+    url: "https://cordis.europa.eu/project/id/869520/results",
   },
   {
     name: "PONTOS",
@@ -130,6 +132,7 @@ export const projects: Project[] = [
     img: "/images/cooperation/projects/cost.png",
     description: "COST Action TD1202: Mapping and the Citizen Sensor.",
     status: "past",
+    url: "https://www.cost.eu/actions/TD1202/",
   },
   {
     name: "BIO_SOS",
@@ -137,5 +140,6 @@ export const projects: Project[] = [
     description:
       "FP7 BIO_SOS: BIOdiversity multi-SOurce monitoring System: from Space TO Species — integrated remote sensing approaches for biodiversity conservation.",
     status: "past",
+    url: "https://cordis.europa.eu/project/id/263435",
   },
 ];
