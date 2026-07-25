@@ -58,9 +58,9 @@ export const projects: Project[] = [
     name: "EOTiST",
     img: "/images/projects/eostis.png",
     description:
-      "Earth Observation Training in Ecosystem Services Technology. Produced standard and advanced training courses available on Zenodo.",
+      "Earth Observation Training in Science and Technology (H2020). Advanced training in remote sensing, ecosystem research, modelling, and computer science.",
     status: "recent",
-    url: "https://zenodo.org/records/13712172",
+    url: "https://eotist.cbk.waw.pl/",
   },
   {
     name: "NextLand",
@@ -81,8 +81,9 @@ export const projects: Project[] = [
     name: "SnapEarth",
     img: "/images/projects/snapearth.jpg",
     description:
-      "An Earth Observation marketplace connecting EO data providers and downstream service developers, facilitating innovation in the EO value chain.",
+      "EU-funded H2020 project using artificial intelligence and cloud technologies to unlock added value from Earth Observation data and accelerate EO market uptake.",
     status: "recent",
+    url: "https://cordis.europa.eu/project/id/870373",
   },
   {
     name: "AQUACYCLE",
