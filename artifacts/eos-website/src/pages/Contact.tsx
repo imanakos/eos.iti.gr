@@ -85,6 +85,7 @@ export default function Contact() {
                 </h2>
                 <p className="text-sm font-semibold text-primary mb-3">
                   Director of Research in Remote Sensing
+                  <span className="block mt-1 text-[hsl(37_80%_40%)]">Copernicus Ambassador</span>
                 </p>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Information Technologies Institute (ITI)
@@ -317,9 +318,10 @@ export default function Contact() {
                   years.
                 </p>
                 <p>
-                  He is a founding member of <strong className="text-foreground">MEDRIN</strong> and
-                  a member of the <strong className="text-foreground">Copernicus Academy</strong>.
-                  His research spans from space-borne Earth Observation to in-situ proximal sensing
+                  He is a founding member of <strong className="text-foreground">MEDRIN</strong>, a{" "}
+                  <strong className="text-foreground">Copernicus Ambassador</strong>, and a member
+                  of the <strong className="text-foreground">Copernicus Academy</strong>. His
+                  research spans from space-borne Earth Observation to in-situ proximal sensing
                   across a wide range of environmental application fields.
                 </p>
               </div>
