@@ -75,6 +75,20 @@ export default function About() {
                 .
               </p>
               <p>
+                His international academic engagement also extends to Geneva. In 2025, he joined the{" "}
+                <a
+                  href="https://www.unige.ch/envirospace/livingearth"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  Institute for Environmental Sciences at the University of Geneva
+                </a>{" "}
+                as <strong className="text-foreground">Visiting Faculty</strong>, contributing to
+                collaboration in Earth Observation data science, Digital Earth, and environmental
+                monitoring.
+              </p>
+              <p>
                 He was elected{" "}
                 <strong className="text-foreground">
                   Chairman of the Special Interest Group 'Remote Sensing in Land Use &amp; Land
