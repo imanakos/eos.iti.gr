@@ -151,7 +151,7 @@ assessing pollution in coastal regions using satellite data.
 
 MedEOS has greatly benefited from the involvement of its end-users throughout the project. The next steps will be dedicated to further improve the large-scale developed products to their local requirements.
 
-For more detailed information about the MedEOS project and its achievements, please visit the official project website at https://medeos.deimos.pt/`,
+For more detailed information about the MedEOS project and its achievements, please visit the ESA project record at https://eo4society.esa.int/projects/medeos/`,
   news132: `EOS team visited the offices of the Rural Corporate Partnership of Kavala (EAS Kavala) in the cities of Kavala and Chrysoupoli on June 28, 2024,
 for key technical meetings regarding the DigiCotton project.
 Representatives from all three partner organizations involved in the project were present
@@ -231,7 +231,7 @@ More information (https://cordis.europa.eu/article/id/447685-monitoring-european
   news124: `The NextLand H2020 project, an alliance of Earth observation providers, presented its groundbreaking
 technology for land management geoservices at the European Researchers’ Night in Thessaloniki (Greece) on September 29, 2023.
 
-More information (https://nextland.services4eo.com)`,
+More information and project results (https://cordis.europa.eu/project/id/869520/results)`,
   news123: `Results of the WQeMS project were presented at the European Researchers’ Night in Thessaloniki (Greece) on September 29, 2023.
 WQeMS captured attention for its mission to revolutionize water quality and environmental monitoring,
 demonstrating its groundbreaking results to an eager audience of local residents, students, and fellow researchers.
@@ -364,11 +364,11 @@ and Geoinformation of Environment in Cyprus, Ayia Napa an invited keynote speech
 More information (https://rscy2023.cyprusremotesensing.com/sites/default/files/docs/RSCy2023_Conference_program_0.pdf)`,
   news100: `The training platform of WQeMS is launched. It can be used by stakeholders for effective training and capacity building to enhance understanding
 about projects services, outputs and solutions. A set of five training pathways have been identified about the ways the training can be offered,
-through scenarios, planning of pilots, as well as assessment options and feedback collection mechanisms to record the training results. The complete
-WQeMS Curriculum (training modules and programme) is provided in https://training.wqems.eu/ (https://training.wqems.eu/) and can be used by experts/trainers beyond the project
+through scenarios, planning of pilots, as well as assessment options and feedback collection mechanisms to record the training results.
+The WQeMS curriculum, training handbook, reports, and supporting resources are available through the official CORDIS project results at https://cordis.europa.eu/project/id/101004157/results and can be used by experts and trainers beyond the project
 lifetime for the implementation of the defined training pathways.
 
-More information (https://training.wqems.eu/)`,
+More information (https://cordis.europa.eu/project/id/101004157/results)`,
   news99: `WQeMS provides an operational Water Quality Emergency Monitoring Service to the water utilities industry in relation with the quality of the “water we drink”.
 Exploiting Sentinel data (and in cases Very High Resolution data), it provides quality monitoring of open surface water reservoirs valorized for the delivery
 of drinking water at a fine spatial resolution. It focuses on slow and fast developing phenomena by offering Continuous Monitoring for a specified area;
@@ -425,7 +425,7 @@ Join our webinars and be the first to discover the NextLand online store to easi
 More information (https://info.vito.be/en/nextland-release-webinars)`,
   news89: `WQeMS contributed with an oral presentation "Observing potentially harmful algal blooms on waterbodies from space". - Presenter: Philipp Bauer, Data Analyst & Commercial Lead, (EOMAP).
 
-More information (https://snapearth.eu/blog/all/snapearth-final-conference-is-behind-us)`,
+More information and archived project results (https://cordis.europa.eu/project/id/870373)`,
   news88: `CERTH team developed The ‘WebGIS Irrigation Decision Support Tool’, an on-line GIS based tool allowing end-users
 (i.e., local authorities, stakeholders, decision- and policy-makers etc.) to apply custom filtering criteria related to irrigation,
 to a stack of raster data layers and produce a binary .tif layer containing the area that satisfies those criteria. The final output
@@ -445,7 +445,7 @@ More information (http://web-gis-irrigation.iti.gr/)`,
 
 • and numerous mentoring (research lines) meetings with colleagues from CBK PAN and the consortium.
 
-More information (https://eotist.cbk.waw.pl/index.html/)`,
+More information (https://eotist.cbk.waw.pl/)`,
   news86: `Dr. Ioannis Manakos participated in NASA LCLUC NASA LCLUC Annual Science Team Meeting and Silver Jubilee Celebration (10/18/2022 to 10/20/2022),
 and gave a presentation about “An Overview of European Research Directions in Land-Use Science” and a flash talk/ poster about
 “Land cover and land use products in service of agriculture and ecosystem monitoring EuroGEO showcases”.
@@ -502,7 +502,7 @@ society, universities, research centres, media and the society of entrepreneurs.
 More information (https://www.karfitsa.gr/ekdiloseis/imerida-sti-thessaloniki-doryforikes-efarmoges-apo-ti-mavri-thalassa-sto-voreio-aigaio/)`,
   news77: `The SnapEarth Consortium would like to invite you to the First International Development Workshop on January 25th (virtual meeting).
 
-SnapEarth (https://snapearth.eu/ (https://snapearth.eu/)) is an innovative project financed by the European Commission and run by a consortium consisting of CS GROUP, CERTH, Qwant, IsardSAT, Middle East Technical
+SnapEarth (https://cordis.europa.eu/project/id/870373) is an innovative project financed by the European Commission and run by a consortium consisting of CS GROUP, CERTH, Qwant, IsardSAT, Middle East Technical
 University (METU) and Absiskey Polska. SnapEarth is a EU H2020-funded project that to facilitate access to Earth Observation data from the general public thanks to EO data labelling and
 indexation innovations and access from the Qwant search engine. The SnapEarth project aims to bring out new values through large-scale earth observation data services and to anticipate future
 priorities by leveraging artificial intelligence and cloud computing technologies and tools.
@@ -511,7 +511,7 @@ The aim of the workshop is to present preliminary versions of the developed serv
 
 More information, agenda and the registration form can be found in the information button.
 
-More information ( https://snapearth.eu/blog/news)`,
+More information and archived project results (https://cordis.europa.eu/project/id/870373)`,
   news76: `AQUACYCLE, MENAWARA, MEDISS, NAWAMED, PROSIM and MAIATAQA projects launched the new MEDWAYCAP project to jointly supply solutions and methodologies contributing to the water shortage challenges at Mediterranean level.
 
 Partner organizations from Greece, Italy, Egypt, Malta, Tunisia, Palestine and Jordan, and many relevant stakeholders at National level together in Thessaloniki for the launching event of the project.
@@ -583,7 +583,7 @@ GEO Week 2021 schedule (https://earthobservations.org/geoweek2021.php?t=full_sch
   news66: `A. Drosou speaker at the GEO Week 2021 in the session “Fostering Earth Observation (EO) market uptake thanks to natural and
 holistic access to added value data generated through cutting-edge Artificial Intelligence technologies (SnapEarth) (https://www.youtube.com/watch?v=JWRSdAz1vqo&ab_channel=GrouponEarthObservations)”
 
-This session’s scope is to present the SnapEarth EU H2020 (https://snapearth.eu/)-funded project that aims to facilitate access to EO data and bring
+This session’s scope is to present the EU-funded SnapEarth H2020 project (https://cordis.europa.eu/project/id/870373), which aims to facilitate access to EO data and bring
 out new values through large-scale EO data services. This session will present the components of the SnapEarth project, conceptually, that:
 
 • provide satellite images based on text queries (integrated with Qwant’s search engine)
@@ -751,7 +751,7 @@ More information (https://newsroom.aua.am/2020/07/28/black-sea-project-pontos-la
 
 If you would like to participate with us in developing appropriate application solutions that could support your work, please let us know.
 
-Join us (https://snapearth.eu/blog/news/join-to-the-snapearth-user-community)`,
+More information and archived project results (https://cordis.europa.eu/project/id/870373)`,
   news44b: `Members of the EOS team, Ioannis Manakos, Christos Kalogeropoulos and Danai Aristeridou, performed proximal sensing measurements in cotton plantations, in the wider area of Epanomi, close to Thessaloniki (GR), by utilizing the hyperspectral imaging system Muses. Target is to identify the vitality status and/ or stress signs of the plants across the formed spectral cube. In addition, the team has the chance to test own or generate new automated (unsupervised as possible) processing workflows. Moreover, findings will be juxtaposed with relevant ones derived from timely parallel acquired high resolution satellite imagery for the same pixels in an effort to extrapolate the applicability of the workflows.
 
 The local farmer Mr Athanasios Gkaros (bottom left and upper right pictures on the tractor) kindly granted access to his plots for the experimentation, and shared with us applied cultivation practices, plot history conditions, and expected yields. Further in situ measurements are scheduled throughout the cultivation period.`,
@@ -773,7 +773,7 @@ Furthermore, in this newsletter the first two partners of the project are introd
 Centre for Research and Technology Hellas from Greece (CERTH)
 This is one of the largest research centres in Greece, founded in 2000. The mission of CERTH is to promote the triplet Research – Development – Innovation by conducting high quality scientific research and developing innovative products and services while building strong partnerships with industry and strong collaborations with research centres and universities in Greece and abroad. CERTH has participated successfully in more than 1,000 competitive research projects and is listed among the Top-20 Research Centres of the EU with the highest participation in FP7 competitive research grants for the period 2007-2012 and received numerous awards and distinctions...
 
-Read the newsletter (https://snapearth.eu/newsletter.php?id=6)`,
+Project information and archived results (https://cordis.europa.eu/project/id/870373)`,
   news41: `NextLand will develop 15 innovative and operational services, as shown in the picture above, to strengthen the entire
 value chain of the agricultural and forestry sector. These services could be use through 7 different scenarios:
 
@@ -808,7 +808,7 @@ The AQUACYCLE project is funded and supported by the European Union through the 
   news39: `SnapEarth project aims to initiate the creation of a virtuous circle of innovation by providing to
 EO data users an innovative platform with leading edge EO segmented datasets, Neural Networks models and Cloud computing ecosystem.
 
-More information available in the leaflet (https://snapearth.eu/upload/files/leaflets-scalone2.pdf)
+Project information and archived results (https://cordis.europa.eu/project/id/870373)
 
 This project has received funding from the European Unions' Horizon 2020 innovation action program, under Grant Agreement No 870373.`,
   news38: `CERTH is in service of the society. Since the outbreak of the pandemic virus SARS-CoV-2 (COVID-19) CERTH follows closely the developments.
@@ -818,7 +818,7 @@ You may find more information in the following article (written in Greek).
 Read the article (https://www.certh.gr/2727FEB9.el.aspx)`,
   news37: `Earth Observation data is valuable for journalist’s reports to the public. An example are the maps released in little time during or after the tsunami in Indian Ocean in 2004 or the Fukushima disaster in 2011, accompanying the verbal or text reports of theirs. Taking advantage of the improved temporal frequency and spatial cover of the Sentinel satellite sensors SnapEarth aims to assimilate latest spaceborne retrieved information to support journalists in their work in near real time...
 
-Read the article (https://snapearth.eu/blog/news/earth-observation-data-and-artificial-intelligence)`,
+Project information and archived results (https://cordis.europa.eu/project/id/870373)`,
   news36: `For more information about the project activities, visit the website https://e-shape.eu (https://e-shape.eu)
 or the helpdesk of E-shape https://helpdesk.e-shape.eu (https://helpdesk.e-shape.eu).`,
   news35: `An initial training of partners was organized on the occasion of the 2nd project meeting in Malta during 3 to 5 February 2020, which at the same time served to further develop the prototype webGIS.
@@ -834,8 +834,8 @@ SnapEarth will unlock new value, derive actionable service ideas on top of EO bi
 
 SnapEarth is funded under the European Union’s Horizon 2020 Programme (Innovation Action) | Grant agreement: 870373
 
-More information (https://www.iti.gr/iti/projects/SnapEarth.html)`,
-  news32: `Two invited seminars of 'Improving future ecosystem benefits through Earth Observations - from EO to ecosystem services modelling' are held by Dr. Ioannis Manakos at the International 'Multiple Purpose Forestry' (https://www.unitbv.ro/en/337-academic-programmes-catalogue-course/academic-programmes-subcategories/academic-programmes-in-foreign-languages/academic-programmes-in-foreign-languages-master/academic-programmes-in-foreign-languages-master-english/1655-multiple-purpose-forestry.html) 2 years MSc of the Transilvania University of Brasov, Romania (https://www.unitbv.ro/en/). Further dedicated technical meetings included familirization of the academic personnel with the results of ECOPOTENTIAL H2020 project (https://www.ecopotential-project.eu/), the ongoing E-SHAPE (https://e-shape.eu/) one, and the Open Data Cubes (http://datacube.iti.gr/). Forest Design Romania (http://forestdesign.ro/index.php/en-us/), a successful private sector company, is introduced to eos.iti.gr team work, and took part in the discussions.
+More information (https://cordis.europa.eu/project/id/870373)`,
+  news32: `Two invited seminars of 'Improving future ecosystem benefits through Earth Observations - from EO to ecosystem services modelling' are held by Dr. Ioannis Manakos at the International 'Multiple Purpose Forestry' (https://www.unitbv.ro/en/337-academic-programmes-catalogue-course/academic-programmes-subcategories/academic-programmes-in-foreign-languages/academic-programmes-in-foreign-languages-master/academic-programmes-in-foreign-languages-master-english/1655-multiple-purpose-forestry.html) 2 years MSc of the Transilvania University of Brasov, Romania (https://www.unitbv.ro/en/). Further dedicated technical meetings included familirization of the academic personnel with the results of ECOPOTENTIAL H2020 project (https://cordis.europa.eu/project/id/641762/results), the ongoing E-SHAPE (https://e-shape.eu/) one, and the Open Data Cubes (https://www.iti.gr/iti/projects/Datacube.html). Forest Design Romania (http://forestdesign.ro/index.php/en-us/), a successful private sector company, is introduced to eos.iti.gr team work, and took part in the discussions.
 
 Special thanks to the Dean, Prof. dr. ing. Lucian CURTU (https://www.unitbv.ro/contact/comunitatea-unitbv/2167-curtu-alexandru-lucian.html), and the Associate Professor Mihai NITA (https://www.unitbv.ro/contact/comunitatea-unitbv/2184-nita-mihai-daniel.html) for the invitation and fruitful discussions.
 
@@ -924,7 +924,7 @@ Dr. Manakos was speaker in the following sessions:
 
 He was also one of the instructors at the hands-on workshop for the Hydroperiod tool of Ecopotential Virtual lab.
 
-Ecopotential Virtual Lab (https://vlab.geodab.eu/)
+Ecopotential Virtual Lab (https://vlab.geodab.org/)
 
 The ECOPOTENTIAL project is funded and supported by the European Union’s Horizon 2020 Research and Innovation program under Grant Agreement No. 641762.`,
   news20: `International LCLUC Regional Science Joint Meeting for Central Asia and Caucasus
@@ -979,10 +979,10 @@ More information (https://www.mdpi.com/journal/remotesensing/special_issues/ARD#
 Oral presentation by Dr. I. Manakos about "The ECOPOTENTIAL online data services legacy and SCERIN
 applications".
 
-More information (http://csebr.cz/scerin2019/index.html)`,
+More information (https://www.scerin.eu/scerin2019/)`,
   news16: `Fruitful discussion took place last week at the EuroGEOSS Workshop in Lisbon where the ECOPOTENTIAL and the E-shape (http://www.earthobservations.org/geo_blog_obs.php?id=364) teams interacted with the rest of the EuroGEOSS community.
 
-More information (https://ec.europa.eu/easme/en/section/easme-home/eurogeoss-workshop-2019)`,
+More information and archived project results (https://cordis.europa.eu/project/id/641762/results)`,
   news15: `About the book:
 
 …the book provides a comprehensive view of various LULC activities focusing on European initiatives, such as the LUCAS surveys, the CORINE land covers, the ESA/EU GMES program and its resulting Fast-Track- and Downstream Services, the EU JRC Global Land Cover, the ESA GlobCover project as well as the ESA initiative on Essential Climate Variables.
@@ -996,7 +996,7 @@ Discover it here (https://www.springer.com/gp/book/9789400779686)
 Editors: Ioannis Manakos, Matthias Braun | eBook ISBN: 978-94-007-7969-3 | DOI: 10.1007/978-94-007-7969-3 | Publisher: Springer Netherlands | Copyright: 2014`,
   news14: `The legacy of Rome embraces the legacy of H2020 ECOPOTENTIAL at the final meeting of the project in Rome, 20-24.05.19, where representatives from 48 partner Entities discussed about joint past and future activities.
 
-Ecopotential's website ( https://www.ecopotential-project.eu/)`,
+ECOPOTENTIAL project information and archived results (https://cordis.europa.eu/project/id/641762/results)`,
   news13: `Poster (http://www.unoosa.org/documents/pdf/psa/activities/2019/UNRomania2019/UNRomania_Presentations/Filchev_L_et_al-EEOBSS-UNOOSA-ROSA-2019.pdf): EEOBSS - EO education for Bulgarian secondary schools`,
   news12: `Dr. Ioannis Manakos' oral presentation at 2019 Living Planet Symposium: Derivation of inundation maps by fusing Sentinel-1 data with Sentinel-2 products to overcome cloudy conditions.
 
@@ -1021,9 +1021,9 @@ For more information, visit the e-shape website (http://e-shape.eu/) or follow e
 Focus was a) on the use of fine resolution data for LCLUC, b) the preliminary results of the Multi-Source Land Imaging team making benefit of the complementary use of Copernicus and Landsat satellite data towards a Landsat-8 and Sentinel-2 harmonized surface reflectance product, c) LCLUC synthesis projects over the globe, and d) applications in Southeast Asia and Northern Eurasia.
 
 CERTH (Greece) was among the approximately 150 participants to present and highlight ECOPOTENTIAL achievements in LCLUC products generation, and, more specifically, about online monitoring data services (mounted on the Virtual Laboratory Platform) that promote repeatability of layers production; triggered by users. The flash talk was respectively about ‘Online monitoring data services for ecosystem indicators: an overview of ECOPOTENTIAL results’. Vivid discussions followed at the poster presentation.`,
-  news6: `The second Mediterranean Regional Information Network (MedRIN) meeting and workshop (https://gofcgoldvh1.umd.edu/meetings/mediterranean-regional-information-network-medrin-meeting-and-workshop) took place at the Aliathon Holiday Village, in Paphos, Cyprus as a component of the7th International Conference on Remote Sensing and Geoinformation of the Environment (RSCy2019) (http://www.cyprusremotesensing.com/rscy2019/).
+  news6: `The second Mediterranean Regional Information Network (MedRIN) meeting and workshop (https://gofcgold.org/regional-networks/mediterranean-regional-network-medrin) took place at the Aliathon Holiday Village, in Paphos, Cyprus as a component of the 7th International Conference on Remote Sensing and Geoinformation of the Environment (RSCy2019) (http://www.cyprusremotesensing.com/rscy2019/).
 
-In the link (https://gofcgoldvh1.umd.edu/sites/default/files/2019-04/MedRIN_SCERIN_Manakos.pdf)you may find the presentation of Dr. Ioannis Manakos on “The SCERIN network: Best practices and achievements”.`,
+In the link (https://gofcgold.org/sites/default/files/2019-04/MedRIN_SCERIN_Manakos.pdf) you may find the presentation of Dr. Ioannis Manakos on “The SCERIN network: Best practices and achievements”.`,
   news5: `3rd joint EARSeL LULC/NASA LCLUC Workshop
 
 Following the success of the two previous EARSeL Special Interest Group on Land Use and Land Cover (SIG LU/LC) and NASA Land-Cover/Land-Use Change (LCLUC) Program joint Workshops (Berlin 2014 and Prague 2016) with more than 270 participants from 4 continents, the 3rd EARSeL LULC and NASA LCLUC joint Workshop “Land-Use/Cover Change Drivers, Impacts and Sustainability within the Water-Energy-Food Nexus” set the questions towards and beyond the 2020 emerging challenges.

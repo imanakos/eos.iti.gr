@@ -432,7 +432,7 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "I. Manakos, 2021. MedRIN Remote Sensing hot-topics by Country. Online presentation of the Greek presence in MedRIN/ GOFC GOLD network at the Joint MedRIN and SCERIN Virtual Capacity Building Workshop , 15-17 June.",
-    link: "http://start.org/wp-content/uploads/news/Joint-MS-Capacity-Building-Workshop_Final-Agenda.pdf",
+    link: "https://gofcgold.org/node/1319",
   },
   {
     text: "I. Manakos, 2021. Earth Observation Data for Ecosystem Monitoring tool: an integrator of geospatial data towards policy implementation. Keynote speaker at the 40th EARSeL Symposium , 07-10, June.",
@@ -452,11 +452,11 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "I. Manakos, 2020. Interview. Second edition of MedRIN's (Mediterranean Regional Information Network) newsletter , July.",
-    link: null,
+    link: "https://gofcgold.org/sites/default/files/2020-06/MedRIN-NEWSLETTER-2020_Final3.pdf",
   },
   {
     text: "A. Drosou, I. Manakos, 2020. Snapearth's (H2020 project) News announcement, Earth Observation data and Artificial Intelligence in support of Journalism , 31, March.",
-    link: "https://snap.earth/",
+    link: "https://cordis.europa.eu/project/id/870373",
   },
   {
     text: "J. Bustamante, I. Manakos, D. García, R. Díaz-Delgado, P. Méndez, G. Kordelas, 2019. CERTH's news announcement about the Copernicus Sentinels improve hydroperiod estimations of Mediterranean wetlands, ( Αξιοποίηση των δορυφορικών δεδομένων του δικτύου Copernicus στον υπολογισμό της εποχικής δυναμικότητας και της υδροπεριόδου των μεσογειακών υγρότοπων , article in Greek), 25, October.",
@@ -492,7 +492,7 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "Mazzetti, P., Manakos, I., 2019. The ECOPOTENTIAL Virtual Laboratory (VLab): a tool to share and run scientific models on cloud platforms. Presentation at the EuroGEOSS workshop , Lisbon, Portugal, 3-5 July. Contributors for the data cube part: Aristeridou, D., Kordelas, G., Marini, K., Giuliani, G., Guigoz, Y., Chatenoux, B., Chrysoulakis, N., Poursanidis, D.",
-    link: "https://ec.europa.eu/easme/en/section/easme-home/eurogeoss-workshop-2019",
+    link: "https://vlab.geodab.org/",
   },
   {
     text: "Ambrosia, V., Hadjimitsis, D., Gitas, G., Manakos, I., Zalides, G., Kalaitzides, C., Brice, M., Albrechtova, J., Deodato, T., Chrysoulakis, N., Ben Dor, E., Karnielli, A., Kontoes, H., Genç, L., Koru, A. & Themistocleous, K., 2019. The benefits for joining forces in the Mediterranean region in earth observation: The Mediterranean Regional Information Network (MedRIN). Presentation at 39th Annual EARSeL Symposium , Salzburg, Austria, 1-4 July.",
@@ -500,15 +500,15 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: 'Manakos, I., 2019. ECOPOTENTIAL online data services legacy and SCERIN applications. Presentation at SCERIN-7 Capacity Building Workshop on Earth System Observations, "Land Cover Dynamics in the Agricultural and Protected Natural Areas in the SCERIN Domain" , Novi Sad, Serbia, 24-27 June.',
-    link: "http://csebr.cz/scerin2019/index.html",
+    link: "https://www.scerin.eu/scerin2019/",
   },
   {
     text: "Manakos, I., Aristeridou, D., Kordelas, G., Marini, K., Giuliani, G., Guigoz, Y., Chatenoux, B., Chrysoulakis, N., Poursanidis, D., 2019. Exploring the potential of Earth Observations Data Cube for monitoring a protected area. Presentation at ECOPOTENTIAL General Meeting , Rome, Italy, 20-24 May.",
-    link: "https://www.ecopotential-project.eu/",
+    link: "https://cordis.europa.eu/project/id/641762/results",
   },
   {
     text: "Manakos, I., Kordelas, G., Bustamante, J., Poulin, B., 2019. Copernicus assisted inundation mapping for wetland Protected Areas. Presentation at ECOPOTENTIAL General Meeting , Rome, Italy, 20-24 May.",
-    link: "https://www.ecopotential-project.eu/",
+    link: "https://cordis.europa.eu/project/id/641762/results",
   },
   {
     text: "Manakos, I., Kordelas, G., Bustamante, J., Marini, K., 2019. Derivation of inundation maps by fusing Sentinel-1 data with Sentinel-2 products to overcome cloudy conditions. Oral presentation at 2019 Living Planet Symposium , Milan, Italy, 13-17 May.",
@@ -524,7 +524,7 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "Manakos, I., Albrechtová, J., Campbell, P. & Kupková, L., 2019. The SCERIN network: Best practices and achievements. Oral presentation at the Mediterranean Regional Information Network (MedRIN) Meeting and Workshop , Paphos, Cyprus, 20 March.",
-    link: null,
+    link: "https://gofcgold.org/regional-networks/mediterranean-regional-network-medrin",
   },
   {
     text: "Manakos, I., Kordelas, G.A., Lefebvre, G., Poulin, B., Willm, L., Davranche, A. & Campagna, J., 2019. Automatic Thresholding Inundation Mapping Using Sentinel‐2 Data At The Camargue Wetlands. Oral presentation at the 7th International Conference on Remote Sensing and Geoinformation of Environment , Paphos, Cyprus, 18-21 March.",
@@ -532,7 +532,7 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "Mardirossian, G., Dimitrov, D., Manakos, I., 2019. Presentation of the EEOBSS tutorial contents at the Space Research and Technology Institute-Bulgarian Academy of Sciences, Sofia, Bulgaria, 22 February.",
-    link: "https://eeobss.space/",
+    link: "https://www.iti.gr/iti/en/project/eeobss-en/",
   },
   {
     text: "Manakos, I., Kordelas, G., Aragonés, D., Diaz-Delgado, R., Marini, K. & Bustamante, J., 2018. Benefits and challenges for Sentinel 1 & 2 supported hydroperiod estimation in wetland areas. Poster at the 38th EARSeL Symposium, Earth Observation Supporting Sustainability Research, Chania, Greece, 09-12 July.",
@@ -572,7 +572,7 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "Nativi, S., Mazzetti, P., Santoro, M., Manakos, I., Kordelas, G., Lucas, R., 2017. The GEO ECOPOTENTIAL Virtual Laboratory: a virtual research environment for ecosystem open science. Oral presentation at the Earth Observation Open Science 2017, Frascati, Italy, 25-28 September.",
-    link: null,
+    link: "https://vlab.geodab.org/",
   },
   {
     text: "Manakos, I., 2017. EOs improving ecosystem benefits: ECOPOTENTIAL Activities in the SCERIN Protected Areas. Oral presentation at the SCERIN-5 Capacity Building Workshop, University of Pecs, Hungary, 20-23 June.",
@@ -584,11 +584,11 @@ export const networkingPubs: PubEntry[] = [
   },
   {
     text: "Savvaidis, A., Chrysoulakis, N., Grammalidis, N., Lagios, E., Lykousis, V., Manakos, I., Nikolakopoulos, K., Papadimitriou, P., Papaioannou, C., Papatheodorou, G., Papazachos, C., Paradisis, D., Parcharidis, I., Pikridas, C., Sakellariou, D., Sarris, A., 'EnCeladus hellenIc Supersite (Evoikos, Corinth rift and Ionian Sea)', 2017. European Geosciences Union (EGU), General Assembly 2017, 23-28 April, Geophysical Research Abstracts, Vol. 19.",
-    link: null,
+    link: "https://geo-gsnl.org/supersites/permanent-supersites/enceladus-hellenic-supersite/",
   },
   {
     text: "Manakos, I., 2016. Global land cover products validation and inter-comparison in the SCERIN area. Oral Presentation at SCERIN-4 Capacity Building Workshop , Faculty of Foresty, Technical University in Zvolen, Slovakia, 18 - 22 July.",
-    link: null,
+    link: "https://gofcgold.org/regional-networks/south-central-european-regional-information-network-scerin",
   },
   {
     text: "Lucas, R., Mitchell, A., Blonda, P., Tomaselli, V., Tarantino, C., Adamo, P., Marangi, C., Manakos, I., Kosmidou, V., Petrou, Z., Bunting, P., Scott, D., Horton, C., Scarth, P., 2017. 'Global to Local Land Cover and Habitat Mapping: The Ecopotential Approach. Oral presentation at the WorldCover 2017 Conference, Frascati, Italy, 14-16 March.",

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { Search, ChevronDown, X, Calendar } from "lucide-react";
 import { newsArticles } from "../data/newsData";
 import { newsBodyText } from "../data/newsBodyData";
@@ -7,6 +7,47 @@ import { assetUrl } from "@/lib/utils";
 const PAGE_SIZE = 12;
 
 type Article = (typeof newsArticles)[number];
+
+function linkifyBodyText(text: string): ReactNode[] {
+  const urlPattern = /https?:\/\/[^\s<>"')]+/g;
+  const nodes: ReactNode[] = [];
+  let cursor = 0;
+
+  for (const match of text.matchAll(urlPattern)) {
+    const start = match.index ?? 0;
+    const rawUrl = match[0];
+    const url = rawUrl.replace(/[.,;:!?]+$/, "");
+    const trailingPunctuation = rawUrl.slice(url.length);
+
+    if (start > cursor) {
+      nodes.push(text.slice(cursor, start));
+    }
+
+    nodes.push(
+      <a
+        key={`${start}-${url}`}
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-primary underline underline-offset-2 hover:opacity-80 break-all"
+      >
+        {url}
+      </a>
+    );
+
+    if (trailingPunctuation) {
+      nodes.push(trailingPunctuation);
+    }
+
+    cursor = start + rawUrl.length;
+  }
+
+  if (cursor < text.length) {
+    nodes.push(text.slice(cursor));
+  }
+
+  return nodes;
+}
 
 function ArticleModal({ article, onClose }: { article: Article; onClose: () => void }) {
   const body = article.newsId ? newsBodyText[article.newsId] : undefined;
@@ -52,7 +93,7 @@ function ArticleModal({ article, onClose }: { article: Article; onClose: () => v
           </h2>
           {body ? (
             <div className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground leading-relaxed whitespace-pre-line">
-              {body}
+              {linkifyBodyText(body)}
             </div>
           ) : (
             <p className="text-muted-foreground italic text-sm">
