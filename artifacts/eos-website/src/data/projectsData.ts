@@ -118,7 +118,7 @@ export const projects: Project[] = [
   },
   {
     name: "eLTER PLUS",
-    img: "/images/projects/eostis.png",
+    img: "/images/projects/elter-plus-title.svg",
     description:
       "European Long-Term Ecosystem Research (H2020). EOS contributed through field surveys in Doñana National Park and development of EO-based monitoring tools.",
     status: "recent",
@@ -126,7 +126,7 @@ export const projects: Project[] = [
   },
   {
     name: "EcoSense",
-    img: "/images/projects/snapearth.jpg",
+    img: "/images/projects/ecosense-title.svg",
     description:
       "Earth Observation for Protected Areas (ESA). Provides monitoring capabilities for protected natural areas through the EcoSense platform.",
     status: "recent",

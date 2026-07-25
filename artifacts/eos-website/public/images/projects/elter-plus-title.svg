@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" role="img" aria-labelledby="title description">
+  <title id="title">eLTER PLUS</title>
+  <desc id="description">Neutral title artwork for the eLTER PLUS project</desc>
+  <rect width="800" height="320" rx="32" fill="#f8fafc"/>
+  <circle cx="150" cy="160" r="88" fill="#e2f5e9"/>
+  <path d="M112 194c56-4 99-43 110-105-61 9-103 48-110 105Z" fill="#23834b"/>
+  <path d="M118 190c31-31 60-55 92-78" fill="none" stroke="#f8fafc" stroke-width="9" stroke-linecap="round"/>
+  <text x="280" y="151" fill="#174b34" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700">eLTER PLUS</text>
+  <text x="283" y="205" fill="#52606d" font-family="Arial, Helvetica, sans-serif" font-size="24">Long-Term Ecosystem Research</text>
+</svg>
