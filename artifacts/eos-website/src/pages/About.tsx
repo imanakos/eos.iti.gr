@@ -31,8 +31,8 @@ const domainTimeline = [
   { year: 2022, domain: "Machine Learning" },
   { year: 2023, domain: "Journalism" },
   { year: 2024, domain: "Unmanned Aerial Vehicles" },
-  { year: 2025, domain: "Zero Pollution" },
-  { year: 2026, domain: "Research 2 Market" },
+  { year: 2025, domain: "Zero Pollution · Land Degradation Neutrality" },
+  { year: 2026, domain: "Research 2 Market · Events 2 Episodes" },
 ];
 
 export default function About() {
