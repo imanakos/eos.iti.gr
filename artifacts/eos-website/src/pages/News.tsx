@@ -59,6 +59,16 @@ function ArticleModal({ article, onClose }: { article: Article; onClose: () => v
               No article text is available for this entry.
             </p>
           )}
+          {article.url && (
+            <a
+              href={article.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Visit the official event page
+            </a>
+          )}
         </div>
       </div>
     </div>

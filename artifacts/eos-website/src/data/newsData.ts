@@ -3,9 +3,17 @@ export interface NewsArticle {
   img: string;
   date: string;
   newsId: string;
+  url?: string;
 }
 
 export const newsArticles: NewsArticle[] = [
+  {
+    title: "Ioannis Manakos co-chaired GISTAM 2026 in Benidorm, Spain",
+    img: "/images/news/gistam-2026-co-chair.svg",
+    date: "May 21–23, 2026",
+    newsId: "news158",
+    url: "https://gistam.scitevents.org/EventChairs.aspx?y=2026",
+  },
   {
     title: "DigiCotton platform promotes sustainable cotton farming in Nestos valley",
     img: "/images/news/afterautumn2024/digicotton_final_landscape.png",
