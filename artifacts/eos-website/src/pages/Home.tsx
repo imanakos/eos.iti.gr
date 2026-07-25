@@ -68,7 +68,7 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* ── Hero ── */}
-      <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[90svh] min-h-[700px] flex items-center justify-center overflow-hidden pt-24 pb-8 sm:pt-28 sm:pb-10">
         <div className="absolute inset-0 z-0">
           <img
             src={`${import.meta.env.BASE_URL}images/hero-bg.png`}
