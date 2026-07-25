@@ -140,19 +140,13 @@ export default function Home() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.7 }}
-            className="mt-7 inline-flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-white/90 hover:bg-white border border-white/60 shadow-lg transition-colors"
+            className="mt-7 inline-flex items-center px-4 py-2.5 rounded-2xl bg-white/90 hover:bg-white border border-white/60 shadow-lg transition-colors"
           >
             <img
               src={assetUrl("/images/logo/copernicus_ambassador.svg")}
               alt="Copernicus Ambassador"
               className="h-12 w-auto"
             />
-            <span className="text-left">
-              <span className="block text-sm font-bold text-[hsl(222_56%_20%)]">
-                Copernicus Ambassador
-              </span>
-              <span className="block text-xs text-slate-600">Dr. Ioannis Manakos</span>
-            </span>
           </motion.a>
         </div>
       </section>
