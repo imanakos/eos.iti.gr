@@ -11,6 +11,7 @@ export interface PressItem {
 
 export interface PosterItem {
   img: string;
+  thumb: string;
   caption: string;
 }
 
@@ -702,44 +703,53 @@ export const pressItems: PressItem[] = [
 export const posterItems: PosterItem[] = [
   {
     img: "/images/news/poster_certh_updated.jpg",
+    thumb: "/images/publishing/thumbnails/ecopotential_services.webp",
     caption: "ECOPOTENTIAL On Line Data Services, presented at the EuroGEOSS Workshop 2019",
   },
   {
     img: "/images/news/eurogeoss_2.png",
+    thumb: "/images/publishing/thumbnails/ecopotential_portals.webp",
     caption:
       "MADE IN ECOPOTENTIAL: data portals and tools for natural ecosystems, presented at the EuroGEOSS Workshop 2019",
   },
   {
     img: "/images/publishing/dc_poster.jpg",
+    thumb: "/images/publishing/thumbnails/bytes_from_space.webp",
     caption:
       "Bytes από το διάστημα παρακολουθούν τη γη (in Greek), presented at the Researchers' Night 2019",
   },
   {
     img: "/images/publishing/spectral_poster.jpg",
+    thumb: "/images/publishing/thumbnails/beyond_human_vision.webp",
     caption:
       "Η φύση πέρα από την ανθρώπινη όραση.. Μια άλλη ματιά.. (in Greek), presented at the Researchers' Night 2019",
   },
   {
     img: "/images/publishing/eeobss.jpg",
+    thumb: "/images/publishing/thumbnails/eeobss.webp",
     caption:
       "EEOBSS - EO Education for Bulgarian secondary schools (in English). Presented at UN/Romania International Conference on Space Solutions for Sustainable Agriculture and Precision Farming, 2019",
   },
   {
     img: "/images/publishing/nasa_eshape.png",
+    thumb: "/images/publishing/thumbnails/eurogeo_agriculture.webp",
     caption:
       "Land cover and land use products in service of agriculture and ecosystem monitoring EuroGEO showcases, 2022",
   },
   {
     img: "/images/publishing/esa_poster_2023.jpg",
+    thumb: "/images/publishing/thumbnails/wqems_introduction.webp",
     caption:
       "Introduction to the Copernicus Assisted Lake Water Quality Emergency Monitoring Service – WQeMS, 2022",
   },
   {
     img: "/images/publishing/nextland_2023_poster.jpg",
+    thumb: "/images/publishing/thumbnails/nextland_canopy_height.webp",
     caption: "Canopy Height Estimation including Calibrated Uncertainty - spatioTempCHM -, 2023",
   },
   {
     img: "/images/publishing/wqems_2023_poster.jpg",
+    thumb: "/images/publishing/thumbnails/wqems_platform.webp",
     caption:
       "The WQeMS Platform For Inland Surface Water Quality Monitoring: A Collaborative Tool For Drinking Water Managers And Innovators, 2023",
   },

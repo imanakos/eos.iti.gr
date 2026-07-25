@@ -300,21 +300,28 @@ function PosterGrid() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {posterItems.map((item, i) => (
-        <div key={i} className="bg-card rounded-xl border border-border overflow-hidden shadow-sm">
+        <a
+          key={i}
+          href={assetUrl(item.img)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group bg-card rounded-xl border border-border overflow-hidden shadow-sm hover:shadow-md hover:border-primary/20 transition-all"
+          aria-label={`Open full-size poster: ${item.caption}`}
+        >
           <div className="bg-muted h-52 flex items-center justify-center p-3">
             <img
-              src={assetUrl(item.img)}
+              src={assetUrl(item.thumb)}
               alt={item.caption}
-              className="max-h-full max-w-full object-contain"
-              onError={(e) => {
-                (e.target as HTMLImageElement).style.display = "none";
-              }}
+              loading="lazy"
+              decoding="async"
+              className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
             />
           </div>
-          <div className="p-4">
-            <p className="text-xs text-muted-foreground leading-relaxed">{item.caption}</p>
+          <div className="p-4 flex items-start justify-between gap-2">
+            <p className="text-xs text-muted-foreground leading-relaxed flex-1">{item.caption}</p>
+            <ExternalLink className="w-3.5 h-3.5 text-muted-foreground shrink-0 mt-0.5" />
           </div>
-        </div>
+        </a>
       ))}
     </div>
   );

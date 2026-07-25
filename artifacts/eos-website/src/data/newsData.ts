@@ -304,7 +304,7 @@ export const newsArticles: NewsArticle[] = [
   },
   {
     title: "WQeMS and NextLand Poster presentations at SVC Summit 2023 in Portugal",
-    img: "/images/news/nextland_poster.jpg",
+    img: "/images/news/svc_summit_2023_posters.webp",
     date: "May 25, 2023",
     newsId: "news111",
   },
