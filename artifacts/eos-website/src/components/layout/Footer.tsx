@@ -9,9 +9,9 @@ export function Footer() {
           <div className="flex flex-col gap-4 lg:col-span-1">
             <Link href="/">
               <img
-                src={`${import.meta.env.BASE_URL}images/logo/logoeos_clean.png`}
+                src={`${import.meta.env.BASE_URL}images/logo/logoeos_clean.svg`}
                 alt="EOS Logo"
-                className="h-10 w-auto object-contain brightness-200"
+                className="h-10 w-auto object-contain"
               />
             </Link>
             <p className="text-sm leading-relaxed text-white/50">
