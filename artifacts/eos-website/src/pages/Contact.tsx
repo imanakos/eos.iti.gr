@@ -94,7 +94,7 @@ export default function Contact() {
                 </p>
                 <div className="mt-4 flex flex-wrap gap-3">
                   <a
-                    href="https://www.linkedin.com/in/ioannis-manakos-59b9ba6/"
+                    href="https://www.linkedin.com/in/eoservices"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[hsl(210_90%_52%)]/10 text-[hsl(210_90%_42%)] text-xs font-semibold hover:bg-[hsl(210_90%_52%)]/20 transition-colors"
