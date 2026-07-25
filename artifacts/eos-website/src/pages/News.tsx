@@ -28,11 +28,11 @@ function ArticleModal({ article, onClose }: { article: Article; onClose: () => v
         </button>
 
         {/* Image */}
-        <div className="aspect-video overflow-hidden bg-muted">
+        <div className="aspect-video overflow-hidden bg-muted flex items-center justify-center p-2">
           <img
             src={assetUrl(article.img)}
             alt={article.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
             onError={(e) => {
               (e.target as HTMLImageElement).style.display = "none";
             }}
@@ -126,11 +126,11 @@ export default function News() {
                 onClick={() => setSelected(article)}
                 className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm flex flex-col hover:shadow-md hover:border-primary/30 transition-all text-left cursor-pointer group"
               >
-                <div className="aspect-video overflow-hidden bg-muted flex-shrink-0">
+                <div className="aspect-video overflow-hidden bg-muted flex-shrink-0 flex items-center justify-center p-2">
                   <img
                     src={assetUrl(article.img)}
                     alt={article.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-contain transition-opacity duration-300 group-hover:opacity-95"
                     onError={(e) => {
                       const img = e.target as HTMLImageElement;
                       img.style.display = "none";

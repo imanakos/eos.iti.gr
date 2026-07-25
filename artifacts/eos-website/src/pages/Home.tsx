@@ -293,11 +293,11 @@ export default function Home() {
                   className="bg-card rounded-2xl border border-border overflow-hidden hover:shadow-md hover:border-primary/20 transition-all flex flex-col"
                 >
                   {article.img && (
-                    <div className="h-44 overflow-hidden">
+                    <div className="h-44 overflow-hidden bg-muted flex items-center justify-center p-2">
                       <img
                         src={assetUrl(article.img)}
                         alt={article.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                         onError={(e) => {
                           (e.target as HTMLImageElement).parentElement!.style.display = "none";
                         }}
