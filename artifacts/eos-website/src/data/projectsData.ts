@@ -118,22 +118,6 @@ export const projects: Project[] = [
     url: "https://cordis.europa.eu/project/id/641762",
   },
   {
-    name: "eLTER PLUS",
-    img: "/images/projects/elter-plus-title.svg",
-    description:
-      "European Long-Term Ecosystem Research (H2020). EOS contributed through field surveys in Doñana National Park and development of EO-based monitoring tools.",
-    status: "recent",
-    url: "https://elter-ri.eu/",
-  },
-  {
-    name: "EcoSense",
-    img: "/images/projects/ecosense-title.svg",
-    description:
-      "Earth Observation for Protected Areas (ESA). Provides monitoring capabilities for protected natural areas through the EcoSense platform.",
-    status: "recent",
-    url: "https://biosense.rs/",
-  },
-  {
     name: "EEOBSS",
     img: "/images/cooperation/projects/eeobss.png",
     description: "European Earth Observation Biodiversity Support Service project.",
