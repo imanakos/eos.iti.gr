@@ -5,6 +5,7 @@ export interface PubEntry {
 
 export interface PressItem {
   img: string;
+  thumb: string;
   url: string;
   caption: string;
 }
@@ -674,27 +675,32 @@ export const networkingPubs: PubEntry[] = [
 export const pressItems: PressItem[] = [
   {
     img: "/images/publishing/jow_presscorner.png",
+    thumb: "/images/publishing/press_thumbnails/pontos_workshop.webp",
     url: "https://www.karfitsa.gr/ekdiloseis/imerida-sti-thessaloniki-doryforikes-efarmoges-apo-ti-mavri-thalassa-sto-voreio-aigaio/",
     caption: "PONTOS Joint Open Workshop 01/03/2022 (article in Greek)",
   },
   {
     img: "/images/publishing/certh_newsletter.png",
+    thumb: "/images/publishing/press_thumbnails/certh_newsletter.webp",
     url: "https://www.certh.gr/certh_newsletter.el.aspx",
     caption: "CERTH newsletter pages 19-20, 28/06/2021 (article in Greek)",
   },
   {
     img: "/images/publishing/nasa-maich.jpg",
+    thumb: "/images/publishing/press_thumbnails/nasa_maich.webp",
     url: "https://www.cretalive.gr/crete/synergasia-maich-me-th-nasa",
     caption: "Cooperation between MAICH and NASA 10/07/2018 (article in Greek)",
   },
   {
     img: "/images/news/newsletter-eshape1.jpg",
+    thumb: "/images/publishing/press_thumbnails/eshape_newsletter.webp",
     url: "http://e-shape.eu/images/newsletters/01_e-shape-newsletter.html",
     caption: "E-shape newsletter, issue #1 October 2019 (in English)",
   },
   {
     img: "/images/publishing/hopfen.png",
-    url: "",
+    thumb: "/images/publishing/press_thumbnails/hopfen_rundschau.webp",
+    url: "/files/hopfen.pdf",
     caption:
       "Hopfen Rundschau Article in a regional journal in Bavaria 15/08/2024 article in German",
   },

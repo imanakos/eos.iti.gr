@@ -418,15 +418,22 @@ function PressGrid() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {pressItems.map((item, i) => {
+        const articleUrl = item.url.startsWith("/") ? assetUrl(item.url) : item.url;
         const inner = (
           <>
             <div className="bg-muted h-48 flex items-center justify-center p-3">
               <img
-                src={assetUrl(item.img)}
+                src={assetUrl(item.thumb)}
                 alt={item.caption}
-                className="max-h-full max-w-full object-contain"
+                loading="lazy"
+                decoding="async"
+                className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = "none";
+                  const image = e.currentTarget;
+                  if (image.dataset.originalFallback !== "true") {
+                    image.dataset.originalFallback = "true";
+                    image.src = assetUrl(item.img);
+                  }
                 }}
               />
             </div>
@@ -441,10 +448,10 @@ function PressGrid() {
         return item.url ? (
           <a
             key={i}
-            href={item.url}
+            href={articleUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-card rounded-xl border border-border overflow-hidden shadow-sm hover:shadow-md hover:border-primary/20 transition-all block"
+            className="group bg-card rounded-xl border border-border overflow-hidden shadow-sm hover:shadow-md hover:border-primary/20 transition-all block"
           >
             {inner}
           </a>
