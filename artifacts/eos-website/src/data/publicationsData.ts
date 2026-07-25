@@ -5,12 +5,14 @@ export interface PubEntry {
 
 export interface PressItem {
   img: string;
+  thumb: string;
   url: string;
   caption: string;
 }
 
 export interface PosterItem {
   img: string;
+  thumb: string;
   caption: string;
 }
 
@@ -76,7 +78,7 @@ export const journalPubs: PubEntry[] = [
     link: "http://journal.space.bas.bg/arhiv/n%2032/Articles/18_Filchev.pdf",
   },
   {
-    text: "C. Kalaitzidis, I. Manakos, C. Jurgens, P. Wezyk, Introduction to the special issue: \"Earth observation supporting sustainability research\" , 2020, European Journal of Remote Sensing, DOI: https://doi.org/10.1080/22797254.2020.1784677",
+    text: 'C. Kalaitzidis, I. Manakos, C. Jurgens, P. Wezyk, Introduction to the special issue: "Earth observation supporting sustainability research" , 2020, European Journal of Remote Sensing, DOI: https://doi.org/10.1080/22797254.2020.1784677',
     link: null,
   },
   {
@@ -206,7 +208,7 @@ export const conferencePubs: PubEntry[] = [
     link: null,
   },
   {
-    text: "I. Manakos, H. Linseisen, E. Katsikis, A. Delopoulos, Hop yield forecast using Sentinel-2 images, Referate der 45. GIL-Jahrestagung, \"Informatik in der Land-, Forst und Ernährungswirtschaft\", J. Dörr et al. (Hrsg.), GI-Edition \"Lecture Notes in Informatics\" , 25-26 February 2025, Wieselburg, Austria, pp. 309-314.",
+    text: 'I. Manakos, H. Linseisen, E. Katsikis, A. Delopoulos, Hop yield forecast using Sentinel-2 images, Referate der 45. GIL-Jahrestagung, "Informatik in der Land-, Forst und Ernährungswirtschaft", J. Dörr et al. (Hrsg.), GI-Edition "Lecture Notes in Informatics" , 25-26 February 2025, Wieselburg, Austria, pp. 309-314.',
     link: null,
   },
   {
@@ -214,7 +216,7 @@ export const conferencePubs: PubEntry[] = [
     link: null,
   },
   {
-    text: "H. Linseisen, I. Manakos, E. Katsikis, A. Delopoulos, Assimilation von satellitenbasierten Reflexionsmessungen in einem Informationssystem für einen modernen Hopfenbaubetrieb, Referate der 44. GIL-Jahrestagung, \"Informatik in der Land-, Forst und Ernährungswirtschaft\", C. Hoffmann et al. (Hrsg.), GI-Edition \"Lecture Notes in Informatics\" , 27-28 February 2024, Stuttgart-Hohenheim, Germany, pp. 323-327.",
+    text: 'H. Linseisen, I. Manakos, E. Katsikis, A. Delopoulos, Assimilation von satellitenbasierten Reflexionsmessungen in einem Informationssystem für einen modernen Hopfenbaubetrieb, Referate der 44. GIL-Jahrestagung, "Informatik in der Land-, Forst und Ernährungswirtschaft", C. Hoffmann et al. (Hrsg.), GI-Edition "Lecture Notes in Informatics" , 27-28 February 2024, Stuttgart-Hohenheim, Germany, pp. 323-327.',
     link: "https://gil-net.de/wp-content/uploads/2024/02/GI_Proceedings_344-3.f.pdf",
   },
   {
@@ -250,7 +252,7 @@ export const conferencePubs: PubEntry[] = [
     link: "https://www.scitepress.org/PublicationsDetail.aspx?ID=wR+VR9FgAl8=&t=1",
   },
   {
-    text: "I. Manakos, A. Ledawi, A. Stergioudis, C. Kalaitzidis, Assessment of Texture Features' Contribution in Discriminating Natural Bare Areas vs. Artificially Covered Ones: Chania Case Study, Proceedings of the EARSeL Joint Workshop 2021 \"EO for sustainable cities and communities\" , 30 March - 1 April 2021, Liege, Belgium, pp. 126-127.",
+    text: 'I. Manakos, A. Ledawi, A. Stergioudis, C. Kalaitzidis, Assessment of Texture Features\' Contribution in Discriminating Natural Bare Areas vs. Artificially Covered Ones: Chania Case Study, Proceedings of the EARSeL Joint Workshop 2021 "EO for sustainable cities and communities" , 30 March - 1 April 2021, Liege, Belgium, pp. 126-127.',
     link: null,
   },
   {
@@ -309,7 +311,7 @@ export const networkingPubs: PubEntry[] = [
     link: "https://meetingorganizer.copernicus.org/EGU24/EGU24-17631.html",
   },
   {
-    text: "I. Manakos, 2024. Copernicus Assisted Lake Water Quality Emergency Monitoring Service, Invited lecture for the \"GEOG423/823 Remote Sensing Applications\" lecture series, University of Saskatchewan, Canada, 13, March.",
+    text: 'I. Manakos, 2024. Copernicus Assisted Lake Water Quality Emergency Monitoring Service, Invited lecture for the "GEOG423/823 Remote Sensing Applications" lecture series, University of Saskatchewan, Canada, 13, March.',
     link: null,
   },
   {
@@ -593,7 +595,7 @@ export const networkingPubs: PubEntry[] = [
     link: null,
   },
   {
-    text: "Manakos, I., Technitou, E., Petrou, Z., Karydas, C., Tomaselli, V., Veronico, G., Mountrakis, G., 2016. Multi-modal knowledge base generation from very high-resolution satellite imagery for habitat mapping. Poster presentation at the 2nd EARSeL SIG LU/LC and NASA LCLUC joint Workshop \"Advancing horizons for land cover services entering the big data era\", Prague, Czech Republic, 6-7 May.",
+    text: 'Manakos, I., Technitou, E., Petrou, Z., Karydas, C., Tomaselli, V., Veronico, G., Mountrakis, G., 2016. Multi-modal knowledge base generation from very high-resolution satellite imagery for habitat mapping. Poster presentation at the 2nd EARSeL SIG LU/LC and NASA LCLUC joint Workshop "Advancing horizons for land cover services entering the big data era", Prague, Czech Republic, 6-7 May.',
     link: null,
   },
   {
@@ -641,7 +643,7 @@ export const networkingPubs: PubEntry[] = [
     link: null,
   },
   {
-    text: "Kosmidou, V., Petrou, Z., Adamo, M., Manakos, I., Mücher, C.A., Lucas, R., Tarantino, C., Jongman, R.H.G, Bogers, M., Tomaselli, V., Bunce, R.G.H., & Blonda, P., 2013. Harmonizing the Land Cover Classification System (LCCS) and the General Habitat Categories (GHC) taxonomies. Oral presentation and Symposium abstracts \"Earth Observation for biodiversity surveillance: technology for policy implementation\", IALE EUROPE, Manchester, UK.",
+    text: 'Kosmidou, V., Petrou, Z., Adamo, M., Manakos, I., Mücher, C.A., Lucas, R., Tarantino, C., Jongman, R.H.G, Bogers, M., Tomaselli, V., Bunce, R.G.H., & Blonda, P., 2013. Harmonizing the Land Cover Classification System (LCCS) and the General Habitat Categories (GHC) taxonomies. Oral presentation and Symposium abstracts "Earth Observation for biodiversity surveillance: technology for policy implementation", IALE EUROPE, Manchester, UK.',
     link: null,
   },
   {
@@ -673,67 +675,89 @@ export const networkingPubs: PubEntry[] = [
 export const pressItems: PressItem[] = [
   {
     img: "/images/publishing/jow_presscorner.png",
+    thumb: "/images/publishing/press_thumbnails/pontos_workshop.webp",
     url: "https://www.karfitsa.gr/ekdiloseis/imerida-sti-thessaloniki-doryforikes-efarmoges-apo-ti-mavri-thalassa-sto-voreio-aigaio/",
     caption: "PONTOS Joint Open Workshop 01/03/2022 (article in Greek)",
   },
   {
     img: "/images/publishing/certh_newsletter.png",
+    thumb: "/images/publishing/press_thumbnails/certh_newsletter.webp",
     url: "https://www.certh.gr/certh_newsletter.el.aspx",
     caption: "CERTH newsletter pages 19-20, 28/06/2021 (article in Greek)",
   },
   {
     img: "/images/publishing/nasa-maich.jpg",
+    thumb: "/images/publishing/press_thumbnails/nasa_maich.webp",
     url: "https://www.cretalive.gr/crete/synergasia-maich-me-th-nasa",
     caption: "Cooperation between MAICH and NASA 10/07/2018 (article in Greek)",
   },
   {
     img: "/images/news/newsletter-eshape1.jpg",
+    thumb: "/images/publishing/press_thumbnails/eshape_newsletter.webp",
     url: "http://e-shape.eu/images/newsletters/01_e-shape-newsletter.html",
     caption: "E-shape newsletter, issue #1 October 2019 (in English)",
   },
   {
     img: "/images/publishing/hopfen.png",
-    url: "",
-    caption: "Hopfen Rundschau Article in a regional journal in Bavaria 15/08/2024 article in German",
+    thumb: "/images/publishing/press_thumbnails/hopfen_rundschau.webp",
+    url: "/files/hopfen.pdf",
+    caption:
+      "Hopfen Rundschau Article in a regional journal in Bavaria 15/08/2024 article in German",
   },
 ];
 
 export const posterItems: PosterItem[] = [
   {
     img: "/images/news/poster_certh_updated.jpg",
+    thumb: "/images/publishing/thumbnails/ecopotential_services.webp",
     caption: "ECOPOTENTIAL On Line Data Services, presented at the EuroGEOSS Workshop 2019",
   },
   {
     img: "/images/news/eurogeoss_2.png",
-    caption: "MADE IN ECOPOTENTIAL: data portals and tools for natural ecosystems, presented at the EuroGEOSS Workshop 2019",
+    thumb: "/images/publishing/thumbnails/ecopotential_portals.webp",
+    caption:
+      "MADE IN ECOPOTENTIAL: data portals and tools for natural ecosystems, presented at the EuroGEOSS Workshop 2019",
   },
   {
     img: "/images/publishing/dc_poster.jpg",
-    caption: "Bytes από το διάστημα παρακολουθούν τη γη (in Greek), presented at the Researchers' Night 2019",
+    thumb: "/images/publishing/thumbnails/bytes_from_space.webp",
+    caption:
+      "Bytes από το διάστημα παρακολουθούν τη γη (in Greek), presented at the Researchers' Night 2019",
   },
   {
     img: "/images/publishing/spectral_poster.jpg",
-    caption: "Η φύση πέρα από την ανθρώπινη όραση.. Μια άλλη ματιά.. (in Greek), presented at the Researchers' Night 2019",
+    thumb: "/images/publishing/thumbnails/beyond_human_vision.webp",
+    caption:
+      "Η φύση πέρα από την ανθρώπινη όραση.. Μια άλλη ματιά.. (in Greek), presented at the Researchers' Night 2019",
   },
   {
     img: "/images/publishing/eeobss.jpg",
-    caption: "EEOBSS - EO Education for Bulgarian secondary schools (in English). Presented at UN/Romania International Conference on Space Solutions for Sustainable Agriculture and Precision Farming, 2019",
+    thumb: "/images/publishing/thumbnails/eeobss.webp",
+    caption:
+      "EEOBSS - EO Education for Bulgarian secondary schools (in English). Presented at UN/Romania International Conference on Space Solutions for Sustainable Agriculture and Precision Farming, 2019",
   },
   {
     img: "/images/publishing/nasa_eshape.png",
-    caption: "Land cover and land use products in service of agriculture and ecosystem monitoring EuroGEO showcases, 2022",
+    thumb: "/images/publishing/thumbnails/eurogeo_agriculture.webp",
+    caption:
+      "Land cover and land use products in service of agriculture and ecosystem monitoring EuroGEO showcases, 2022",
   },
   {
     img: "/images/publishing/esa_poster_2023.jpg",
-    caption: "Introduction to the Copernicus Assisted Lake Water Quality Emergency Monitoring Service – WQeMS, 2022",
+    thumb: "/images/publishing/thumbnails/wqems_introduction.webp",
+    caption:
+      "Introduction to the Copernicus Assisted Lake Water Quality Emergency Monitoring Service – WQeMS, 2022",
   },
   {
     img: "/images/publishing/nextland_2023_poster.jpg",
+    thumb: "/images/publishing/thumbnails/nextland_canopy_height.webp",
     caption: "Canopy Height Estimation including Calibrated Uncertainty - spatioTempCHM -, 2023",
   },
   {
     img: "/images/publishing/wqems_2023_poster.jpg",
-    caption: "The WQeMS Platform For Inland Surface Water Quality Monitoring: A Collaborative Tool For Drinking Water Managers And Innovators, 2023",
+    thumb: "/images/publishing/thumbnails/wqems_platform.webp",
+    caption:
+      "The WQeMS Platform For Inland Surface Water Quality Monitoring: A Collaborative Tool For Drinking Water Managers And Innovators, 2023",
   },
 ];
 
@@ -776,7 +800,8 @@ export const videoItems: VideoItem[] = [
     note: "Open on YouTube",
   },
   {
-    title: "Towards a Pan-European perspective – challenges in monitoring cross-scale processes (2018)",
+    title:
+      "Towards a Pan-European perspective – challenges in monitoring cross-scale processes (2018)",
     url: "https://www.youtube.com/embed/JrJXan1O3S0",
     type: "youtube",
   },

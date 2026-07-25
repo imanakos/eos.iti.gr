@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
   { label: "Research", href: "/research" },
   { label: "Tools & Data", href: "/tools" },
   { label: "News", href: "/news" },
@@ -30,18 +31,16 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        solid
-          ? "bg-[hsl(222_56%_14%)] shadow-lg py-3"
-          : "bg-transparent py-5"
+        solid ? "bg-[hsl(222_56%_14%)] shadow-lg py-3" : "bg-transparent py-5"
       )}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <img
-              src={`${import.meta.env.BASE_URL}images/logo/logoeos8.png`}
+              src={`${import.meta.env.BASE_URL}images/logo/logoeos_clean.svg`}
               alt="EOS Logo"
-              className="h-10 w-auto object-contain brightness-200"
+              className="h-10 w-auto object-contain"
             />
           </Link>
 

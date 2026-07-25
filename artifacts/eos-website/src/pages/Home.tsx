@@ -132,6 +132,22 @@ export default function Home() {
               Tools & Data
             </Link>
           </motion.div>
+
+          <motion.a
+            href="https://www.copernicus.eu/en/opportunities/eu-space-networks"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.7 }}
+            className="mt-7 inline-flex items-center px-4 py-2.5 rounded-2xl bg-white/90 hover:bg-white border border-white/60 shadow-lg transition-colors"
+          >
+            <img
+              src={assetUrl("/images/logo/copernicus_ambassador.svg")}
+              alt="Copernicus Ambassador"
+              className="h-12 w-auto"
+            />
+          </motion.a>
         </div>
       </section>
 
@@ -317,7 +333,10 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
             {partners.map((p) => (
-              <div key={p.name} className="h-10 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+              <div
+                key={p.name}
+                className="h-10 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity"
+              >
                 <img
                   src={assetUrl(p.img)}
                   alt={p.name}
@@ -340,8 +359,8 @@ export default function Home() {
             Let's work together
           </h2>
           <p className="text-white/65 mb-8 leading-relaxed">
-            Interested in research collaboration, EO service development, or training? Reach out
-            to Dr. Manakos and the EOS team.
+            Interested in research collaboration, EO service development, or training? Reach out to
+            Dr. Manakos and the EOS team.
           </p>
           <Link
             href="/contact"

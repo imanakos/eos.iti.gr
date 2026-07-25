@@ -58,9 +58,9 @@ export const projects: Project[] = [
     name: "EOTiST",
     img: "/images/projects/eostis.png",
     description:
-      "Earth Observation Training in Ecosystem Services Technology. Produced standard and advanced training courses available on Zenodo.",
+      "Earth Observation Training in Science and Technology (H2020). Advanced training in remote sensing, ecosystem research, modelling, and computer science.",
     status: "recent",
-    url: "https://zenodo.org/records/13712172",
+    url: "https://eotist.cbk.waw.pl/",
   },
   {
     name: "NextLand",
@@ -81,8 +81,9 @@ export const projects: Project[] = [
     name: "SnapEarth",
     img: "/images/projects/snapearth.jpg",
     description:
-      "An Earth Observation marketplace connecting EO data providers and downstream service developers, facilitating innovation in the EO value chain.",
+      "EU-funded H2020 project using artificial intelligence and cloud technologies to unlock added value from Earth Observation data and accelerate EO market uptake.",
     status: "recent",
+    url: "https://cordis.europa.eu/project/id/870373",
   },
   {
     name: "AQUACYCLE",
@@ -117,26 +118,12 @@ export const projects: Project[] = [
     url: "https://cordis.europa.eu/project/id/641762",
   },
   {
-    name: "eLTER PLUS",
-    img: "/images/projects/eostis.png",
-    description:
-      "European Long-Term Ecosystem Research (H2020). EOS contributed through field surveys in Doñana National Park and development of EO-based monitoring tools.",
-    status: "recent",
-    url: "https://elter-ri.eu/",
-  },
-  {
-    name: "EcoSense",
-    img: "/images/projects/snapearth.jpg",
-    description:
-      "Earth Observation for Protected Areas (ESA). Provides monitoring capabilities for protected natural areas through the EcoSense platform.",
-    status: "recent",
-    url: "https://biosense.rs/",
-  },
-  {
     name: "EEOBSS",
     img: "/images/cooperation/projects/eeobss.png",
-    description: "European Earth Observation Biodiversity Support Service project.",
+    description:
+      "Education in Earth Observation for Bulgarian Secondary Schools, supported by ESA. The project promoted Earth Observation among Bulgarian pupils through adapted learning materials, educational events, and a summer school.",
     status: "past",
+    url: "https://www.iti.gr/iti/en/project/eeobss-en/",
   },
   {
     name: "TD1202",

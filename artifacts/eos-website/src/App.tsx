@@ -6,6 +6,7 @@ import NotFound from "@/pages/not-found";
 
 import { AppLayout } from "./components/layout/AppLayout";
 import Home from "./pages/Home";
+import About from "./pages/About";
 import Research from "./pages/Research";
 import Tools from "./pages/Tools";
 import News from "./pages/News";
@@ -18,6 +19,7 @@ function Router() {
     <AppLayout>
       <Switch>
         <Route path="/" component={Home} />
+        <Route path="/about" component={About} />
         <Route path="/research" component={Research} />
         <Route path="/tools" component={Tools} />
         <Route path="/news" component={News} />

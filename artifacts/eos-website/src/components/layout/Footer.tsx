@@ -9,14 +9,14 @@ export function Footer() {
           <div className="flex flex-col gap-4 lg:col-span-1">
             <Link href="/">
               <img
-                src={`${import.meta.env.BASE_URL}images/logo/logoeos8.png`}
+                src={`${import.meta.env.BASE_URL}images/logo/logoeos_clean.svg`}
                 alt="EOS Logo"
-                className="h-10 w-auto object-contain brightness-200"
+                className="h-10 w-auto object-contain"
               />
             </Link>
             <p className="text-sm leading-relaxed text-white/50">
-              CERTH/ITI Remote Sensing Research Team — Earth Observation services and products
-              for environmental monitoring and sustainability.
+              CERTH/ITI Remote Sensing Research Team — Earth Observation services and products for
+              environmental monitoring and sustainability.
             </p>
           </div>
 
@@ -104,13 +104,28 @@ export function Footer() {
             reserved.
           </p>
           <div className="flex gap-5">
-            <Link href="/research" className="text-xs text-white/30 hover:text-white transition-colors">
+            <Link
+              href="/about"
+              className="text-xs text-white/30 hover:text-white transition-colors"
+            >
+              About
+            </Link>
+            <Link
+              href="/research"
+              className="text-xs text-white/30 hover:text-white transition-colors"
+            >
               Research
             </Link>
-            <Link href="/tools" className="text-xs text-white/30 hover:text-white transition-colors">
+            <Link
+              href="/tools"
+              className="text-xs text-white/30 hover:text-white transition-colors"
+            >
               Tools & Data
             </Link>
-            <Link href="/contact" className="text-xs text-white/30 hover:text-white transition-colors">
+            <Link
+              href="/contact"
+              className="text-xs text-white/30 hover:text-white transition-colors"
+            >
               Contact
             </Link>
           </div>

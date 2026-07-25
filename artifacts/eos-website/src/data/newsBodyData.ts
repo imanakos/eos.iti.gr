@@ -1,4 +1,9 @@
 export const newsBodyText: Record<string, string> = {
+  news158: `Dr. Ioannis Manakos served as Conference Co-Chair of the 12th International Conference on Geographical Information Systems Theory, Applications and Management (GISTAM 2026), held in Benidorm, Spain, from 21 to 23 May 2026. He co-chaired the conference with Dr. Lemonia Ragia of the Hellenic Open University.
+
+GISTAM brings together researchers and practitioners working on new challenges in geospatial data sensing, Earth Observation, representation, processing, visualization, sharing, and management. The 2026 programme covered GIS theory and applications, spatial data analysis, GeoAI and machine learning, environmental monitoring, Digital Earth, and related geoinformation technologies.
+
+Dr. Manakos' co-chairmanship reflects his sustained contribution to the international geospatial and Earth Observation community and his active role in connecting scientific research with operational applications.`,
   news157: `A transformative digital farming platform, focused on cotton cultivation, is now supporting sustainable agricultural practices in the Nestos valley. The initiative was launched approximately three years ago and recently reached a major milestone with the official delivery and public presentation of its full operational services.
 
 DigiCotton platform was implemented by the Centre for Research and Technology Hellas (CERTH) in collaboration with EAS Kavala (Agricultural Corporate Partnership of Kavala) and foodStandard S.A. Tailored for the cotton sector, the system provides personalized, real-time guidance on best agricultural practices, drawing on a combination of satellite, telematics, and remote sensing data. The platform delivers actionable insights to farmers, helping them increase productivity, reduce input costs, and transition toward more climate-resilient and environmentally responsible farming systems.

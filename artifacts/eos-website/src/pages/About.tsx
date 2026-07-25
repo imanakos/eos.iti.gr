@@ -27,6 +27,14 @@ const domainTimeline = [
   { year: 2016, domain: "Physical Process Based Models" },
   { year: 2017, domain: "Marine Applications" },
   { year: 2018, domain: "Open Source Software Development for RS Applications" },
+  { year: 2019, domain: "Open Source Code Development" },
+  { year: 2020, domain: "Open Data Cubes" },
+  { year: 2021, domain: "Water Quality Monitoring" },
+  { year: 2022, domain: "GeoAI" },
+  { year: 2023, domain: "Journalism" },
+  { year: 2024, domain: "Unmanned Aerial Vehicles" },
+  { year: 2025, domain: "Land Degradation Neutrality" },
+  { year: 2026, domain: "Research 2 Market" },
 ];
 
 export default function About() {
@@ -34,7 +42,7 @@ export default function About() {
     <div className="pt-24 pb-20 min-h-screen bg-slate-50 dark:bg-background">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Background</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">About</h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             The EOS team builds on the background and experience that Dr. Ioannis Manakos
             accumulated by his interaction with all directly related or affiliated academics,
@@ -73,6 +81,20 @@ export default function About() {
                   Centre for Research and Technology Hellas (CERTH)
                 </a>
                 .
+              </p>
+              <p>
+                His international academic engagement also extends to Geneva. In 2025, he joined the{" "}
+                <a
+                  href="https://www.unige.ch/envirospace/livingearth"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  Institute for Environmental Sciences at the University of Geneva
+                </a>{" "}
+                as <strong className="text-foreground">Visiting Faculty</strong>, contributing to
+                collaboration in Earth Observation data science, Digital Earth, and environmental
+                monitoring.
               </p>
               <p>
                 He was elected{" "}

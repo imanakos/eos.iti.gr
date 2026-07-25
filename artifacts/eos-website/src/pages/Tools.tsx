@@ -135,22 +135,82 @@ const eoModules = [
 ];
 
 const seosModules = [
-  { num: 1, title: "A World of Images", url: "https://seos-project.eu/world-of-images/world-of-images-start-c00-p00.html" },
-  { num: 2, title: "Introduction to Remote Sensing", url: "https://seos-project.eu/remotesensing/remotesensing-c00-p01.html" },
-  { num: 3, title: "Natural and Cultural Heritages", url: "https://seos-project.eu/heritage-conservation/heritage-conservation-c00-p01.html" },
-  { num: 4, title: "Coral Reefs", url: "https://seos-project.eu/coralreefs/coralreefs-c00-p01.html" },
-  { num: 5, title: "Land Use and Land Use Change", url: "https://seos-project.eu/landuse/landuse-c00-p01.html" },
-  { num: 6, title: "Remote Sensing and GIS in Agriculture", url: "https://seos-project.eu/agriculture/agriculture-c00-p01.html" },
-  { num: 7, title: "Natural Resources Management", url: "https://seos-project.eu/resources/resources-c00-p01.html" },
-  { num: 8, title: "Ocean Currents", url: "https://seos-project.eu/oceancurrents/oceancurrents-c00-p01.html" },
-  { num: 9, title: "Ocean Colour", url: "https://seos-project.eu/oceancolour/oceancolour-c00-p01.html" },
-  { num: 10, title: "Marine Pollution", url: "https://seos-project.eu/marinepollution/marinepollution-c00-p00.html" },
-  { num: 11, title: "Understanding Spectra from the Earth", url: "https://seos-project.eu/earthspectra/earthspectra-c00-p01.html" },
-  { num: 12, title: "Remote Sensing Using Lasers", url: "https://seos-project.eu/laser-rs/laser-rs-c00-p01.html" },
+  {
+    num: 1,
+    title: "A World of Images",
+    url: "https://seos-project.eu/world-of-images/world-of-images-start-c00-p00.html",
+  },
+  {
+    num: 2,
+    title: "Introduction to Remote Sensing",
+    url: "https://seos-project.eu/remotesensing/remotesensing-c00-p01.html",
+  },
+  {
+    num: 3,
+    title: "Natural and Cultural Heritages",
+    url: "https://seos-project.eu/heritage-conservation/heritage-conservation-c00-p01.html",
+  },
+  {
+    num: 4,
+    title: "Coral Reefs",
+    url: "https://seos-project.eu/coralreefs/coralreefs-c00-p01.html",
+  },
+  {
+    num: 5,
+    title: "Land Use and Land Use Change",
+    url: "https://seos-project.eu/landuse/landuse-c00-p01.html",
+  },
+  {
+    num: 6,
+    title: "Remote Sensing and GIS in Agriculture",
+    url: "https://seos-project.eu/agriculture/agriculture-c00-p01.html",
+  },
+  {
+    num: 7,
+    title: "Natural Resources Management",
+    url: "https://seos-project.eu/resources/resources-c00-p01.html",
+  },
+  {
+    num: 8,
+    title: "Ocean Currents",
+    url: "https://seos-project.eu/oceancurrents/oceancurrents-c00-p01.html",
+  },
+  {
+    num: 9,
+    title: "Ocean Colour",
+    url: "https://seos-project.eu/oceancolour/oceancolour-c00-p01.html",
+  },
+  {
+    num: 10,
+    title: "Marine Pollution",
+    url: "https://seos-project.eu/marinepollution/marinepollution-c00-p00.html",
+  },
+  {
+    num: 11,
+    title: "Understanding Spectra from the Earth",
+    url: "https://seos-project.eu/earthspectra/earthspectra-c00-p01.html",
+  },
+  {
+    num: 12,
+    title: "Remote Sensing Using Lasers",
+    url: "https://seos-project.eu/laser-rs/laser-rs-c00-p01.html",
+  },
   { num: 13, title: "3D Models", url: "https://seos-project.eu/3d-models/3d-models-c00-p01.html" },
-  { num: 14, title: "Modelling of Environmental Processes", url: "https://seos-project.eu/modelling/modelling-c00-p01.html" },
-  { num: 15, title: "Classification", url: "https://seos-project.eu/classification/classification-c00-p01.html" },
-  { num: 16, title: "Satellite Navigation with GPS", url: "https://seos-project.eu/GPS/GPS-c00-p01.html" },
+  {
+    num: 14,
+    title: "Modelling of Environmental Processes",
+    url: "https://seos-project.eu/modelling/modelling-c00-p01.html",
+  },
+  {
+    num: 15,
+    title: "Classification",
+    url: "https://seos-project.eu/classification/classification-c00-p01.html",
+  },
+  {
+    num: 16,
+    title: "Satellite Navigation with GPS",
+    url: "https://seos-project.eu/GPS/GPS-c00-p01.html",
+  },
 ];
 
 const otherPlatforms = [
