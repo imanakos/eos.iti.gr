@@ -2,7 +2,8 @@
 
 [![Deploy to GitHub Pages](https://github.com/imanakos/eos.iti.gr/actions/workflows/deploy.yml/badge.svg)](https://github.com/imanakos/eos.iti.gr/actions/workflows/deploy.yml)
 
-Website for the CERTH/ITI Remote Sensing research team (EOS), available at [eos.iti.gr](https://eos.iti.gr).
+Website for the CERTH/ITI Remote Sensing research team (EOS), available at
+[imanakos.github.io/eos.iti.gr](https://imanakos.github.io/eos.iti.gr/).
 
 ---
 
@@ -10,7 +11,9 @@ Website for the CERTH/ITI Remote Sensing research team (EOS), available at [eos.
 
 EOS (Earth Observation Services) is the Remote Sensing research group of the Information Technologies Institute (ITI) at the Centre for Research and Technology Hellas (CERTH), led by Dr. Ioannis Manakos. The group specialises in satellite image analysis, land cover mapping, vegetation indices, inundation mapping, UAV services, and open Earth observation data products.
 
-This repository contains the source code for the [eos.iti.gr](https://eos.iti.gr) website — a fully static React application that presents the group's research, publications, projects, news, services, and team.
+This repository contains the source code for the
+[EOS website](https://imanakos.github.io/eos.iti.gr/) — a fully static React application that
+presents the group's research, publications, projects, news, services, and team.
 
 ## Tech Stack
 
