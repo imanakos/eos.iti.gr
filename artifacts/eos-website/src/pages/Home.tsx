@@ -100,7 +100,7 @@ export default function Home() {
               Earth Observation
             </span>
             <br />
-            to the public.
+            to the public
           </motion.h1>
 
           <motion.p
