@@ -43,9 +43,7 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const { firstName, lastName, email, subject, message } = formData;
-    const body = encodeURIComponent(
-      `From: ${firstName} ${lastName} <${email}>\n\n${message}`
-    );
+    const body = encodeURIComponent(`From: ${firstName} ${lastName} <${email}>\n\n${message}`);
     window.location.href = `mailto:imanakos@iti.gr?subject=${encodeURIComponent(subject)}&body=${body}`;
   };
 
@@ -122,7 +120,11 @@ export default function Contact() {
                 icon: <MapPin className="w-4 h-4 text-primary" />,
                 label: "Address",
                 content: (
-                  <>6th km Harilaou – Thermi Road, 57001<br />Thermi, Thessaloniki, Greece</>
+                  <>
+                    6th km Harilaou – Thermi Road, 57001
+                    <br />
+                    Thermi, Thessaloniki, Greece
+                  </>
                 ),
               },
               {
@@ -178,9 +180,7 @@ export default function Contact() {
 
           {/* Right: contact form */}
           <div className="bg-card rounded-2xl border border-border p-8 shadow-sm">
-            <h3 className="text-2xl font-display font-bold text-foreground mb-6">
-              Send a Message
-            </h3>
+            <h3 className="text-2xl font-display font-bold text-foreground mb-6">Send a Message</h3>
             <form className="space-y-5" onSubmit={handleSubmit}>
               <div className="grid grid-cols-2 gap-4">
                 {(["firstName", "lastName"] as const).map((field, i) => (
@@ -268,7 +268,9 @@ export default function Contact() {
                 <p>
                   Dr. Ioannis Manakos is cooperating with academics and researchers from Europe,
                   America, Asia, and Africa in subjects relevant to Remote Sensing since 1996. He is{" "}
-                  <strong className="text-foreground">Director of Research in 'Remote Sensing'</strong>{" "}
+                  <strong className="text-foreground">
+                    Director of Research in 'Remote Sensing'
+                  </strong>{" "}
                   at the{" "}
                   <a
                     href="https://www.iti.gr/iti/en/"
@@ -295,16 +297,13 @@ export default function Contact() {
                     Chairman of the SIG 'Remote Sensing in Land Use &amp; Land Cover'
                   </strong>{" "}
                   of EARSeL for 2011–2020, and{" "}
-                  <strong className="text-foreground">Chairman of EARSeL</strong> from 2012 to
-                  2014.
+                  <strong className="text-foreground">Chairman of EARSeL</strong> from 2012 to 2014.
                 </p>
                 <p>
                   He serves as a member of the{" "}
                   <strong className="text-foreground">GEOBON Flagship</strong> within the Group on
                   Earth Observations, and is an{" "}
-                  <strong className="text-foreground">
-                    Adjunct Professor in Remote Sensing
-                  </strong>{" "}
+                  <strong className="text-foreground">Adjunct Professor in Remote Sensing</strong>{" "}
                   at{" "}
                   <a
                     href="https://www.ciheam.org/"
@@ -314,15 +313,14 @@ export default function Contact() {
                   >
                     CIHEAM
                   </a>
-                  , where he led the Geoinformation in Environmental Management Department for
-                  seven years.
+                  , where he led the Geoinformation in Environmental Management Department for seven
+                  years.
                 </p>
                 <p>
-                  He is a founding member of{" "}
-                  <strong className="text-foreground">MEDRIN</strong> and a member of the{" "}
-                  <strong className="text-foreground">Copernicus Academy</strong>. His research
-                  spans from space-borne Earth Observation to in-situ proximal sensing across a
-                  wide range of environmental application fields.
+                  He is a founding member of <strong className="text-foreground">MEDRIN</strong> and
+                  a member of the <strong className="text-foreground">Copernicus Academy</strong>.
+                  His research spans from space-borne Earth Observation to in-situ proximal sensing
+                  across a wide range of environmental application fields.
                 </p>
               </div>
             </div>

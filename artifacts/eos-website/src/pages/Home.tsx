@@ -317,7 +317,10 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
             {partners.map((p) => (
-              <div key={p.name} className="h-10 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+              <div
+                key={p.name}
+                className="h-10 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity"
+              >
                 <img
                   src={assetUrl(p.img)}
                   alt={p.name}
@@ -340,8 +343,8 @@ export default function Home() {
             Let's work together
           </h2>
           <p className="text-white/65 mb-8 leading-relaxed">
-            Interested in research collaboration, EO service development, or training? Reach out
-            to Dr. Manakos and the EOS team.
+            Interested in research collaboration, EO service development, or training? Reach out to
+            Dr. Manakos and the EOS team.
           </p>
           <Link
             href="/contact"

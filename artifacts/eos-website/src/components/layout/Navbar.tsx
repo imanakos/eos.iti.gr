@@ -30,9 +30,7 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        solid
-          ? "bg-[hsl(222_56%_14%)] shadow-lg py-3"
-          : "bg-transparent py-5"
+        solid ? "bg-[hsl(222_56%_14%)] shadow-lg py-3" : "bg-transparent py-5"
       )}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

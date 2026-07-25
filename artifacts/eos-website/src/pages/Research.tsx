@@ -23,28 +23,43 @@ const TABS = [
 const recentProjects = projects.filter((p) => p.status === "recent");
 const pastProjects = projects.filter((p) => p.status === "past");
 
-
 const specialIssues = [
   {
     title: "Remote Sensing in Ecosystem Modelling",
     journal: "Remote Sensing | ISSN 2072-4292",
     img: "/images/special-issues/remote-sensing.png",
     impact: "Impact Factor: 4.118; 5-Year IF: 4.740; JCR rank Q1 in 'Remote Sensing'.",
-    links: [{ label: "Special issue @ MDPI", url: "https://www.mdpi.com/journal/remotesensing/special_issues/ecosystem_modelling_RS" }],
+    links: [
+      {
+        label: "Special issue @ MDPI",
+        url: "https://www.mdpi.com/journal/remotesensing/special_issues/ecosystem_modelling_RS",
+      },
+    ],
   },
   {
     title: "Monitoring Land Cover Change: Towards Sustainability",
     journal: "Land | ISSN 2073-445X",
     img: "/images/special-issues/earsel-banner2.15.png",
-    impact: "CiteScore 2018 (Scopus): 2.15 — rank 37/140 (Q2) in Nature and Landscape Conservation.",
-    links: [{ label: "Special issue @ MDPI", url: "https://www.mdpi.com/journal/land/special_issues/EARSeL" }],
+    impact:
+      "CiteScore 2018 (Scopus): 2.15 — rank 37/140 (Q2) in Nature and Landscape Conservation.",
+    links: [
+      {
+        label: "Special issue @ MDPI",
+        url: "https://www.mdpi.com/journal/land/special_issues/EARSeL",
+      },
+    ],
   },
   {
     title: "Sentinel Analysis Ready Data (Sentinel ARD)",
     journal: "Remote Sensing | ISSN 2072-4292",
     img: "/images/special-issues/remote_sensing_si_banner_h.jpg",
     impact: "A special issue of Remote Sensing dedicated to Sentinel ARD methodologies.",
-    links: [{ label: "Special issue @ MDPI", url: "https://www.mdpi.com/journal/remotesensing/special_issues/ARD" }],
+    links: [
+      {
+        label: "Special issue @ MDPI",
+        url: "https://www.mdpi.com/journal/remotesensing/special_issues/ARD",
+      },
+    ],
   },
 ];
 
@@ -59,11 +74,13 @@ const workshops = [
   },
   {
     title: "3rd EARSeL LULC & NASA LCLUC Workshop",
-    subtitle: "Land-Use/Cover Change Drivers, Impacts and Sustainability within the Water-Energy-Food Nexus",
+    subtitle:
+      "Land-Use/Cover Change Drivers, Impacts and Sustainability within the Water-Energy-Food Nexus",
     date: "11–12 July, 2018",
     location: "Chania, Greece",
     url: "http://lulc.earsel.org/workshop/2018-lulc-ws/",
-    reportUrl: "http://lulc.earsel.org/wp-content/uploads/2018/09/Report_EARSeL-NASA_LCLUC_WS_Chania2018_f.pdf",
+    reportUrl:
+      "http://lulc.earsel.org/wp-content/uploads/2018/09/Report_EARSeL-NASA_LCLUC_WS_Chania2018_f.pdf",
   },
   {
     title: "2nd EARSeL LULC & NASA LCLUC Workshop",
@@ -79,7 +96,8 @@ const workshops = [
     date: "17–18 March, 2014",
     location: "Berlin, Germany",
     url: "https://www.geographie.hu-berlin.de/en/professorships/geomatics/backup-old-files/congress/earsel-en/workshop/home",
-    reportUrl: "http://old.earsel.org/SIG/LULC/data/EARSeL_NASA_1stjointLULC_Workshop_Report_Berlin.pdf",
+    reportUrl:
+      "http://old.earsel.org/SIG/LULC/data/EARSeL_NASA_1stjointLULC_Workshop_Report_Berlin.pdf",
   },
 ];
 
@@ -87,55 +105,64 @@ const cooperations = [
   {
     name: "NASA LCLUC",
     img: "/images/cooperation/projects/lcluc.png",
-    description: "Land-Cover/Land-Use Change program. Joint workshops co-organized since 2014 on land use, land cover change, and sustainability within the Water-Energy-Food Nexus.",
+    description:
+      "Land-Cover/Land-Use Change program. Joint workshops co-organized since 2014 on land use, land cover change, and sustainability within the Water-Energy-Food Nexus.",
     url: "https://lcluc.umd.edu/",
   },
   {
     name: "EARSeL",
     img: "/images/cooperation/projects/earsel-logo.gif",
-    description: "European Association of Remote Sensing Laboratories. Dr. Manakos served as Chairman of the SIG 'Remote Sensing in Land Use & Land Cover' (2011–2021) and Chairman of EARSeL (2012–2014).",
+    description:
+      "European Association of Remote Sensing Laboratories. Dr. Manakos served as Chairman of the SIG 'Remote Sensing in Land Use & Land Cover' (2011–2021) and Chairman of EARSeL (2012–2014).",
     url: "http://lulc.earsel.org/",
   },
   {
     name: "Copernicus Academy",
     img: "/images/cooperation/projects/cop-academy1.jpg",
-    description: "Member of the Copernicus Academy Network, contributing to education and training in Earth Observation under the EU Copernicus programme.",
+    description:
+      "Member of the Copernicus Academy Network, contributing to education and training in Earth Observation under the EU Copernicus programme.",
     url: "https://www.copernicus.eu/en/opportunities/education",
   },
   {
     name: "MEDRIN",
     img: "/images/cooperation/projects/sherin-medrin.png",
-    description: "Mediterranean Regional Information Network — a regional network supporting land cover monitoring and Earth Observation capacity building in the Mediterranean area.",
+    description:
+      "Mediterranean Regional Information Network — a regional network supporting land cover monitoring and Earth Observation capacity building in the Mediterranean area.",
     url: "https://www.earthobservations.org/",
   },
   {
     name: "SCERIN",
     img: "/images/cooperation/projects/sherin-medrin.png",
-    description: "South Central and Eastern European Regional Information Network (GOFC-GOLD / GTOS). Dr. Manakos serves as Lead for 'Global/Continental land cover products validation and intercomparison in the SCERIN area'.",
+    description:
+      "South Central and Eastern European Regional Information Network (GOFC-GOLD / GTOS). Dr. Manakos serves as Lead for 'Global/Continental land cover products validation and intercomparison in the SCERIN area'.",
     url: "https://www.earthobservations.org/",
   },
   {
     name: "CIHEAM Chania",
     img: "/images/cooperation/projects/ciheam.png",
-    description: "International Centre for Advanced Mediterranean Agronomic Studies. Dr. Manakos is an Adjunct Professor in Remote Sensing and led the Geoinformation in Environmental Management Department for 7 years.",
+    description:
+      "International Centre for Advanced Mediterranean Agronomic Studies. Dr. Manakos is an Adjunct Professor in Remote Sensing and led the Geoinformation in Environmental Management Department for 7 years.",
     url: "https://www.ciheam.org/",
   },
   {
     name: "GEO Ecosystems",
     img: "/images/cooperation/projects/project.jpg",
-    description: "Group on Earth Observations Ecosystems Community of Practice. Contributing to Earth observation-based biodiversity and ecosystem monitoring frameworks.",
+    description:
+      "Group on Earth Observations Ecosystems Community of Practice. Contributing to Earth observation-based biodiversity and ecosystem monitoring frameworks.",
     url: "https://www.earthobservations.org/",
   },
   {
     name: "GEOBON ECOFUN",
     img: "/images/cooperation/projects/geobon.jpg",
-    description: "Global Biodiversity Observation Network — Ecosystem Functioning working group. Dr. Manakos serves as a member of the GEOBON Flagship within the Group on Earth Observations.",
+    description:
+      "Global Biodiversity Observation Network — Ecosystem Functioning working group. Dr. Manakos serves as a member of the GEOBON Flagship within the Group on Earth Observations.",
     url: "https://geobon.org/ebvs/working-groups/ecosystem-function/",
   },
   {
     name: "EnCeladus Hellenic Supersite",
     img: "/images/cooperation/projects/geo.png",
-    description: "Hellenic Supersite for Earth Observation and environmental monitoring in the EnCeladus framework.",
+    description:
+      "Hellenic Supersite for Earth Observation and environmental monitoring in the EnCeladus framework.",
     url: "https://www.earthobservations.org/",
   },
 ];
@@ -187,7 +214,8 @@ function ProjectsTab() {
       {pastProjects.length > 0 && (
         <div>
           <h3 className="text-xl font-display font-bold text-foreground mb-6 flex items-center gap-2">
-            <span className="w-2 h-6 rounded-full bg-muted-foreground/40 inline-block" /> Past Projects
+            <span className="w-2 h-6 rounded-full bg-muted-foreground/40 inline-block" /> Past
+            Projects
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {pastProjects.map((proj) => (
@@ -230,10 +258,18 @@ const PUB_SUB_TABS = [
   { id: "press", label: "Press" },
 ];
 
-function PubList({ pubs, label }: { pubs: { text: string; link: string | null }[]; label: string }) {
+function PubList({
+  pubs,
+  label,
+}: {
+  pubs: { text: string; link: string | null }[];
+  label: string;
+}) {
   return (
     <div>
-      <p className="text-xs text-muted-foreground mb-5">{pubs.length} {label} entries</p>
+      <p className="text-xs text-muted-foreground mb-5">
+        {pubs.length} {label} entries
+      </p>
       <ol className="space-y-4">
         {pubs.map((pub, i) => (
           <li key={i} className="flex gap-4 group">
@@ -270,7 +306,9 @@ function PosterGrid() {
               src={assetUrl(item.img)}
               alt={item.caption}
               className="max-h-full max-w-full object-contain"
-              onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+              onError={(e) => {
+                (e.target as HTMLImageElement).style.display = "none";
+              }}
             />
           </div>
           <div className="p-4">
@@ -286,7 +324,10 @@ function VideoGrid() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
       {videoItems.map((item, i) => (
-        <div key={i} className="bg-card rounded-xl border border-border overflow-hidden shadow-sm flex flex-col">
+        <div
+          key={i}
+          className="bg-card rounded-xl border border-border overflow-hidden shadow-sm flex flex-col"
+        >
           {item.type === "local" ? (
             <div className="relative bg-muted aspect-video flex items-center justify-center">
               {item.thumb ? (
@@ -294,7 +335,9 @@ function VideoGrid() {
                   src={assetUrl(item.thumb)}
                   alt={item.title}
                   className="w-full h-full object-cover"
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = "none";
+                  }}
                 />
               ) : (
                 <Play className="w-10 h-10 text-muted-foreground" />
@@ -323,9 +366,7 @@ function VideoGrid() {
           )}
           <div className="p-4 flex-1">
             <p className="text-sm font-medium text-foreground leading-snug">{item.title}</p>
-            {item.note && (
-              <p className="text-xs text-muted-foreground mt-1">{item.note}</p>
-            )}
+            {item.note && <p className="text-xs text-muted-foreground mt-1">{item.note}</p>}
           </div>
         </div>
       ))}
@@ -344,12 +385,16 @@ function PressGrid() {
                 src={assetUrl(item.img)}
                 alt={item.caption}
                 className="max-h-full max-w-full object-contain"
-                onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = "none";
+                }}
               />
             </div>
             <div className="p-4 flex items-start justify-between gap-2">
               <p className="text-xs text-muted-foreground leading-relaxed flex-1">{item.caption}</p>
-              {item.url && <ExternalLink className="w-3.5 h-3.5 text-muted-foreground shrink-0 mt-0.5" />}
+              {item.url && (
+                <ExternalLink className="w-3.5 h-3.5 text-muted-foreground shrink-0 mt-0.5" />
+              )}
             </div>
           </>
         );
@@ -364,7 +409,10 @@ function PressGrid() {
             {inner}
           </a>
         ) : (
-          <div key={i} className="bg-card rounded-xl border border-border overflow-hidden shadow-sm">
+          <div
+            key={i}
+            className="bg-card rounded-xl border border-border overflow-hidden shadow-sm"
+          >
             {inner}
           </div>
         );
@@ -418,12 +466,8 @@ function PublicationsTab() {
         ))}
       </div>
 
-      {activePubTab === "journal" && (
-        <PubList pubs={journalPubs} label="journal publication" />
-      )}
-      {activePubTab === "books" && (
-        <PubList pubs={bookPubs} label="book / book chapter" />
-      )}
+      {activePubTab === "journal" && <PubList pubs={journalPubs} label="journal publication" />}
+      {activePubTab === "books" && <PubList pubs={bookPubs} label="book / book chapter" />}
       {activePubTab === "conference" && (
         <PubList pubs={conferencePubs} label="conference publication" />
       )}

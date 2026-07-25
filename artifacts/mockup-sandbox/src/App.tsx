@@ -116,7 +116,9 @@ function App() {
   const previewPath = getPreviewPath();
 
   if (previewPath) {
-    return <PreviewRenderer key={previewPath} componentPath={previewPath} modules={discoveredModules} />;
+    return (
+      <PreviewRenderer key={previewPath} componentPath={previewPath} modules={discoveredModules} />
+    );
   }
 
   return <Gallery />;

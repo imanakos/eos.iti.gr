@@ -15,8 +15,8 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm leading-relaxed text-white/50">
-              CERTH/ITI Remote Sensing Research Team — Earth Observation services and products
-              for environmental monitoring and sustainability.
+              CERTH/ITI Remote Sensing Research Team — Earth Observation services and products for
+              environmental monitoring and sustainability.
             </p>
           </div>
 
@@ -104,13 +104,22 @@ export function Footer() {
             reserved.
           </p>
           <div className="flex gap-5">
-            <Link href="/research" className="text-xs text-white/30 hover:text-white transition-colors">
+            <Link
+              href="/research"
+              className="text-xs text-white/30 hover:text-white transition-colors"
+            >
               Research
             </Link>
-            <Link href="/tools" className="text-xs text-white/30 hover:text-white transition-colors">
+            <Link
+              href="/tools"
+              className="text-xs text-white/30 hover:text-white transition-colors"
+            >
               Tools & Data
             </Link>
-            <Link href="/contact" className="text-xs text-white/30 hover:text-white transition-colors">
+            <Link
+              href="/contact"
+              className="text-xs text-white/30 hover:text-white transition-colors"
+            >
               Contact
             </Link>
           </div>
