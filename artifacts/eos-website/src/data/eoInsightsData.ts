@@ -8,13 +8,6 @@ export interface EOInsightSource {
   publisher: string;
 }
 
-export interface EOInsightAnimation {
-  mp4: string;
-  poster: string;
-  caption: string;
-  description: string;
-}
-
 export interface EOInsight {
   slug: string;
   title: string;
@@ -27,7 +20,6 @@ export interface EOInsight {
   visual: InsightVisual;
   image: string;
   imageAlt: string;
-  animation?: EOInsightAnimation;
   tags: string[];
   keyPoint: string;
   paragraphs: string[];
