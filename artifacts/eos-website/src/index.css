@@ -32,18 +32,18 @@
   --background: 40 22% 97%;
   --foreground: 222 52% 11%;
 
-  /* Deep navy — primary brand */
+  /* Deep navy - primary brand */
   --primary: 222 56% 20%;
   --primary-foreground: 40 20% 97%;
 
-  /* Warm amber / ochre — earth accent */
+  /* Warm amber / ochre - earth accent */
   --secondary: 37 80% 46%;
   --secondary-foreground: 222 52% 11%;
 
   --muted: 40 14% 90%;
   --muted-foreground: 222 20% 45%;
 
-  /* Terracotta — warm highlight */
+  /* Terracotta - warm highlight */
   --accent: 16 62% 50%;
   --accent-foreground: 40 20% 97%;
 

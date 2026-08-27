@@ -1,0 +1,129 @@
+{
+  "seriesTitle": "EO Analysis Notes",
+  "seriesDescription": "Short, expert-led explanations of how satellite imagery becomes reliable environmental information.",
+  "visualDisclosure": "The concept illustrations in this series were created with a generative AI image tool under the editorial direction of Dr Ioannis Manakos. They are explanatory artwork, not satellite observations or analytical products.",
+  "author": {
+    "name": "Dr Ioannis Manakos",
+    "role": "Director of Research in Remote Sensing, CERTH/ITI",
+    "profilePath": "/about"
+  },
+  "articles": [
+    {
+      "slug": "why-does-healthy-vegetation-appear-red",
+      "title": "Why Does Healthy Vegetation Appear Red in a Satellite Image?",
+      "shortTitle": "Why healthy vegetation appears red",
+      "summary": "False colour is not decoration. It is an analytical language that reveals vegetation patterns invisible in an ordinary photograph.",
+      "seoDescription": "Learn why healthy vegetation often appears red in Sentinel-2 false-colour imagery and what must be checked before interpreting it.",
+      "publishedAt": "2026-08-27",
+      "modifiedAt": "2026-08-27",
+      "readingMinutes": 2,
+      "visual": "vegetation",
+      "image": "/images/eo-insights/vegetation-false-colour.jpg",
+      "imageAlt": "Concept illustration, not satellite data, of agricultural fields displayed in false-colour red and magenta.",
+      "tags": ["Sentinel-2", "False colour", "Vegetation"],
+      "keyPoint": "A vivid red tone is a useful clue, not proof of vegetation health.",
+      "paragraphs": [
+        "A satellite image is not always a photograph. Earth Observation sensors record reflected energy in several parts of the electromagnetic spectrum, including wavelengths that human eyes cannot see.",
+        "The Copernicus Sentinel-2 multispectral instrument observes Earth in 13 spectral bands. A natural-colour image assigns the visible red, green and blue bands to their familiar screen colours. In a commonly used false-colour infrared image, however, near-infrared information is displayed as red.",
+        "Healthy leaves absorb much of the visible red light used in photosynthesis but strongly reflect near-infrared radiation because of their internal structure. Consequently, actively growing vegetation often appears in vivid shades of red. Water generally appears dark, while bare soil and built-up surfaces produce different combinations of brown, grey or cyan.",
+        "False colour is therefore not decoration. It is an analytical language that can help reveal vegetation patterns, crop differences, burned areas, wetlands and changes that are difficult to recognise in natural colour.",
+        "Nevertheless, bright red does not automatically prove that vegetation is healthy. Season, crop type, leaf density, soil background, atmospheric conditions, shadows and image processing can all influence its appearance. Comparisons should use similarly processed observations from comparable periods. A useful first check is to view the same acquisition in natural and false colour before examining its behaviour through time. Important conclusions should also be supported by vegetation indices and, whenever possible, field observations."
+      ],
+      "sources": [
+        {
+          "label": "Explore imagery in the Copernicus Browser",
+          "url": "https://browser.dataspace.copernicus.eu/",
+          "publisher": "Copernicus Data Space Ecosystem"
+        },
+        {
+          "label": "Copernicus Browser guide",
+          "url": "https://www.esa.int/Education/Copernicus_Browser_guide",
+          "publisher": "European Space Agency"
+        },
+        {
+          "label": "Sentinel-2 mission overview",
+          "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2",
+          "publisher": "European Space Agency"
+        }
+      ]
+    },
+    {
+      "slug": "can-satellites-detect-water-pollution",
+      "title": "Can Satellites Detect Water Pollution?",
+      "shortTitle": "Can satellites detect water pollution?",
+      "summary": "Satellite observations can reveal water-quality patterns at remarkable scales, but their colours require careful interpretation and field validation.",
+      "seoDescription": "Discover what Sentinel satellite imagery can reveal about turbidity, algal blooms and water quality - and why field validation remains essential.",
+      "publishedAt": "2026-08-27",
+      "modifiedAt": "2026-08-27",
+      "readingMinutes": 2,
+      "visual": "water",
+      "image": "/images/eo-insights/water-quality-observation.jpg",
+      "imageAlt": "Concept illustration, not satellite data, of coastal water with teal and amber plume patterns viewed from above.",
+      "tags": ["Water quality", "Sentinel-2", "Ocean colour"],
+      "keyPoint": "Satellite monitoring is powerful for screening and early warning, but it does not replace laboratory analysis.",
+      "paragraphs": [
+        "Satellites do not observe “pollution” directly. Optical sensors measure sunlight reflected from the water surface and the water column. Substances suspended or growing in the water alter that reflected signal, allowing carefully designed algorithms to estimate selected water-quality indicators.",
+        "Copernicus Sentinel-2 can provide fine spatial detail for lakes, reservoirs and coastal zones. Its observations may help identify sediment plumes, changes in turbidity, surface algal blooms and variations associated with chlorophyll. Sentinel-3 complements this capability with an instrument specifically designed for ocean-colour observations across more spectral bands.",
+        "This makes satellite monitoring especially valuable for detecting spatial patterns and following changes through time. A conventional water sample represents one location and one moment; a satellite image can reveal how conditions vary across an entire water body.",
+        "There are, however, important limits. A green or brown area is not automatically evidence of contamination. Sediment, phytoplankton, dissolved organic matter, shallow bottoms and reflections from nearby land can produce similar signals. Sun glint, clouds and atmospheric effects can also distort the measurement. Many dissolved chemicals cannot be identified directly from optical imagery.",
+        "Reliable interpretation therefore requires atmospheric correction, an appropriate algorithm, quality flags and comparison with measurements collected in the water. Satellite observations are excellent tools for screening, early warning and directing field sampling - but they do not replace laboratory analysis. The strongest monitoring designs use the satellite view to decide where and when closer investigation is needed, then feed those field measurements back into the interpretation."
+      ],
+      "sources": [
+        {
+          "label": "Sentinel-2 observations of water bodies",
+          "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2/Water_bodies",
+          "publisher": "European Space Agency"
+        },
+        {
+          "label": "Satellite-derived water-quality products",
+          "url": "https://www.earthdata.nasa.gov/s3fs-public/2024-07/SNWG%20Water%20Quality%20Fact%20Sheet.pdf",
+          "publisher": "NASA Earthdata"
+        },
+        {
+          "label": "Operational marine and ocean-colour information",
+          "url": "https://marine.copernicus.eu/",
+          "publisher": "Copernicus Marine Service"
+        }
+      ]
+    },
+    {
+      "slug": "can-geoai-replace-the-earth-observation-expert",
+      "title": "Can GeoAI Replace the Earth Observation Expert?",
+      "shortTitle": "Can GeoAI replace the EO expert?",
+      "summary": "GeoAI can process immense volumes of satellite data, but trustworthy interpretation still depends on domain knowledge, validation and uncertainty.",
+      "seoDescription": "Explore what GeoAI foundation models can do with satellite imagery and why expert validation, physical reasoning and uncertainty still matter.",
+      "publishedAt": "2026-08-27",
+      "modifiedAt": "2026-08-27",
+      "readingMinutes": 2,
+      "visual": "geoai",
+      "image": "/images/eo-insights/geoai-earth-observation.jpg",
+      "imageAlt": "Concept illustration, not satellite data, of layered Earth Observation imagery and connected data patterns.",
+      "tags": ["GeoAI", "Foundation models", "Uncertainty"],
+      "keyPoint": "GeoAI changes the expert’s work; it does not remove the need for expert responsibility.",
+      "paragraphs": [
+        "GeoAI can analyse quantities of satellite data that would be impossible to inspect manually. It can classify land cover, locate objects, identify change and combine observations from different sensors. New Earth Observation foundation models are extending these capabilities by learning reusable representations from large, multimodal datasets.",
+        "TerraMind illustrates this shift. The ESA overview linked below describes a model developed from geographically varied examples across several observation types, among them Sentinel-1 radar and Sentinel-2 optical data. The objective is to learn patterns that can be adapted to different Earth Observation tasks instead of beginning every analysis from zero.",
+        "Does this make the Earth Observation specialist unnecessary? No. A model may perform impressively in its training regions but become unreliable in another climate, season, landscape or sensor configuration. Bright roofs can be confused with bare soil, seasonal flooding with permanent water, and sensor artefacts with genuine landscape change. Similar-looking signals may also arise from very different physical processes.",
+        "A confident prediction is not necessarily a correct prediction - and a probability score is not automatically a complete description of uncertainty. The specialist is needed to select suitable observations, recognise artefacts, design representative training data, test geographic and temporal transferability, quantify uncertainty and determine whether a result is physically plausible.",
+        "The most credible future is not automated mapping without scientists. It is collaboration between scalable GeoAI and accountable human interpretation. The algorithm can accelerate discovery, while the expert defines the question, tests the evidence and communicates what the resulting map can - and cannot - support. Responsibility for meaning and decisions remains with people."
+      ],
+      "sources": [
+        {
+          "label": "ESA and IBM collaboration on TerraMind",
+          "url": "https://www.esa.int/Applications/Observing_the_Earth/ESA_and_IBM_collaborate_on_TerraMind",
+          "publisher": "European Space Agency"
+        },
+        {
+          "label": "AI4EO and foundation-model initiatives",
+          "url": "https://philab.esa.int/flagship-programmes/",
+          "publisher": "ESA Φ-lab"
+        },
+        {
+          "label": "FAST-EO research programme",
+          "url": "https://eo4society.esa.int/projects/fast-eo/",
+          "publisher": "ESA EO Science for Society"
+        }
+      ]
+    }
+  ]
+}

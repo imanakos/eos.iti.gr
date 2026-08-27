@@ -138,7 +138,7 @@ export const projects: Project[] = [
     name: "BIO_SOS",
     img: "/images/cooperation/projects/biosos.png",
     description:
-      "FP7 BIO_SOS: BIOdiversity multi-SOurce monitoring System: from Space TO Species — integrated remote sensing approaches for biodiversity conservation.",
+      "FP7 BIO_SOS: BIOdiversity multi-SOurce monitoring System: from Space TO Species - integrated remote sensing approaches for biodiversity conservation.",
     status: "past",
     url: "https://cordis.europa.eu/project/id/263435",
   },
