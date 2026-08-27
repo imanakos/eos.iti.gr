@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#06142d" />
+      <stop offset="0.48" stop-color="#102b49" />
+      <stop offset="1" stop-color="#271c2e" />
+    </linearGradient>
+    <radialGradient id="hot-core" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffcf58" stop-opacity="0.95" />
+      <stop offset="0.36" stop-color="#f47b39" stop-opacity="0.72" />
+      <stop offset="0.72" stop-color="#bf3850" stop-opacity="0.34" />
+      <stop offset="1" stop-color="#bf3850" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="warm-zone" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ff9a3d" stop-opacity="0.75" />
+      <stop offset="0.55" stop-color="#db4d4b" stop-opacity="0.34" />
+      <stop offset="1" stop-color="#db4d4b" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#46e0d1" />
+      <stop offset="1" stop-color="#147ea1" />
+    </linearGradient>
+    <linearGradient id="park" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#53d5a3" />
+      <stop offset="1" stop-color="#187c71" />
+    </linearGradient>
+    <pattern id="fine-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#a8c5d4" stroke-opacity="0.12" stroke-width="1" />
+    </pattern>
+    <filter id="soft-glow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="16" />
+    </filter>
+    <filter id="small-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="7" />
+    </filter>
+    <clipPath id="map-area">
+      <path d="M0 126H1200V630H0Z" />
+    </clipPath>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#sky)" />
+  <g clip-path="url(#map-area)">
+    <path d="M-40 540C105 460 136 341 253 306C360 274 393 194 526 174C672 152 774 207 891 180C1015 152 1121 112 1248 136V682H-40Z" fill="#102c3f" />
+    <path d="M-20 589C112 510 145 377 262 343C371 311 421 226 543 209C672 191 778 243 902 214C1021 187 1125 152 1224 166" fill="none" stroke="#294d5c" stroke-width="3" />
+
+    <path d="M90 630C167 550 151 489 240 424C305 377 309 316 389 270C442 240 481 187 498 126H615C595 218 532 277 487 310C411 365 411 422 339 475C264 531 258 587 224 630Z" fill="url(#river)" opacity="0.78" />
+    <path d="M132 630C201 547 187 506 268 444C335 394 342 336 416 291C482 250 502 190 525 126" fill="none" stroke="#b8fff1" stroke-opacity="0.36" stroke-width="3" />
+
+    <g transform="translate(590 140) rotate(-8 300 220)">
+      <path d="M0 40H610M0 113H610M0 187H610M0 260H610M0 334H610M0 407H610" stroke="#d5e2e6" stroke-opacity="0.35" stroke-width="8" />
+      <path d="M58 0V470M151 0V470M246 0V470M341 0V470M437 0V470M532 0V470" stroke="#d5e2e6" stroke-opacity="0.35" stroke-width="8" />
+      <g stroke="#071525" stroke-width="3">
+        <rect x="12" y="51" width="34" height="50" rx="3" fill="#bd6f46" />
+        <rect x="69" y="51" width="69" height="50" rx="3" fill="#d98943" />
+        <rect x="163" y="51" width="70" height="50" rx="3" fill="#e49e42" />
+        <rect x="258" y="51" width="70" height="50" rx="3" fill="#d87842" />
+        <rect x="353" y="51" width="71" height="50" rx="3" fill="#b75a45" />
+        <rect x="449" y="51" width="70" height="50" rx="3" fill="#8f5148" />
+        <rect x="544" y="51" width="54" height="50" rx="3" fill="#70484c" />
+
+        <rect x="12" y="125" width="34" height="49" rx="3" fill="#a75d48" />
+        <rect x="69" y="125" width="69" height="49" rx="3" fill="#c87245" />
+        <rect x="163" y="125" width="70" height="49" rx="3" fill="#edaa44" />
+        <rect x="258" y="125" width="70" height="49" rx="3" fill="#f0b644" />
+        <rect x="353" y="125" width="71" height="49" rx="3" fill="#e8883f" />
+        <rect x="449" y="125" width="70" height="49" rx="3" fill="#b55d45" />
+        <rect x="544" y="125" width="54" height="49" rx="3" fill="#714b4e" />
+
+        <rect x="12" y="199" width="34" height="48" rx="3" fill="#59716b" />
+        <rect x="69" y="199" width="69" height="48" rx="3" fill="#a9694b" />
+        <rect x="163" y="199" width="70" height="48" rx="3" fill="#e18c3e" />
+        <rect x="258" y="199" width="70" height="48" rx="3" fill="#ffc44d" />
+        <rect x="353" y="199" width="71" height="48" rx="3" fill="#e6783c" />
+        <rect x="449" y="199" width="70" height="48" rx="3" fill="#9b5549" />
+        <rect x="544" y="199" width="54" height="48" rx="3" fill="#66505a" />
+
+        <rect x="12" y="272" width="34" height="49" rx="3" fill="#365f66" />
+        <rect x="69" y="272" width="69" height="49" rx="3" fill="#4f7d6e" />
+        <rect x="163" y="272" width="70" height="49" rx="3" fill="#bf7145" />
+        <rect x="258" y="272" width="70" height="49" rx="3" fill="#e99f43" />
+        <rect x="353" y="272" width="71" height="49" rx="3" fill="#ca6642" />
+        <rect x="449" y="272" width="70" height="49" rx="3" fill="#854f4e" />
+        <rect x="544" y="272" width="54" height="49" rx="3" fill="#554a58" />
+
+        <rect x="12" y="346" width="34" height="48" rx="3" fill="#315c68" />
+        <rect x="69" y="346" width="69" height="48" rx="3" fill="#3f7a70" />
+        <rect x="163" y="346" width="70" height="48" rx="3" fill="#8b7659" />
+        <rect x="258" y="346" width="70" height="48" rx="3" fill="#c56e45" />
+        <rect x="353" y="346" width="71" height="48" rx="3" fill="#a65848" />
+        <rect x="449" y="346" width="70" height="48" rx="3" fill="#6e4c50" />
+        <rect x="544" y="346" width="54" height="48" rx="3" fill="#464553" />
+      </g>
+      <rect x="68" y="198" width="164" height="123" rx="14" fill="url(#park)" stroke="#99f6d4" stroke-opacity="0.42" stroke-width="3" />
+      <path d="M95 230C127 205 165 222 180 248C201 281 164 303 135 292C101 279 73 253 95 230Z" fill="#b8ead0" opacity="0.2" />
+      <path d="M533 42V406" stroke="#eff7f7" stroke-opacity="0.58" stroke-width="13" />
+    </g>
+
+    <ellipse cx="893" cy="348" rx="250" ry="190" fill="url(#hot-core)" filter="url(#soft-glow)" />
+    <ellipse cx="1087" cy="247" rx="155" ry="122" fill="url(#warm-zone)" filter="url(#soft-glow)" />
+    <ellipse cx="724" cy="470" rx="145" ry="113" fill="url(#warm-zone)" filter="url(#soft-glow)" />
+    <ellipse cx="895" cy="348" rx="126" ry="91" fill="none" stroke="#ffd66e" stroke-opacity="0.58" stroke-width="3" />
+    <ellipse cx="895" cy="348" rx="179" ry="132" fill="none" stroke="#f48251" stroke-opacity="0.42" stroke-width="3" />
+    <ellipse cx="895" cy="348" rx="228" ry="171" fill="none" stroke="#d64c58" stroke-opacity="0.25" stroke-width="3" />
+    <circle cx="896" cy="349" r="11" fill="#fff1a6" filter="url(#small-glow)" />
+
+    <rect y="126" width="1200" height="504" fill="url(#fine-grid)" opacity="0.44" />
+    <path d="M0 570C211 520 353 542 512 513C721 474 942 497 1200 435" fill="none" stroke="#78c9d1" stroke-opacity="0.22" stroke-width="2" />
+    <path d="M0 590C230 542 375 563 534 533C729 496 965 520 1200 459" fill="none" stroke="#78c9d1" stroke-opacity="0.14" stroke-width="2" />
+  </g>
+
+  <g>
+    <rect x="190" y="28" width="586" height="64" rx="18" fill="#06152d" fill-opacity="0.9" stroke="#8bb1c4" stroke-opacity="0.35" />
+    <circle cx="223" cy="60" r="7" fill="#f5bc4f" />
+    <text x="245" y="68" fill="#f6f8fb" font-family="Arial, Helvetica, sans-serif" font-size="25" letter-spacing="1.1">CONCEPT ILLUSTRATION - NOT SATELLITE DATA</text>
+  </g>
+</svg>

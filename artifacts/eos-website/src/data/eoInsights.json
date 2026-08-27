@@ -1,13 +1,130 @@
 {
   "seriesTitle": "EO Analysis Notes",
   "seriesDescription": "Short, expert-led explanations of how satellite imagery becomes reliable environmental information.",
-  "visualDisclosure": "The concept illustrations in this series were created with a generative AI image tool under the editorial direction of Dr Ioannis Manakos. They are explanatory artwork, not satellite observations or analytical products.",
+  "visualDisclosure": "The concept illustrations in this series were created with generative AI and digital drawing tools under the editorial direction of Dr Ioannis Manakos. They are explanatory artwork, not satellite observations or analytical products.",
   "author": {
     "name": "Dr Ioannis Manakos",
     "role": "Director of Research in Remote Sensing, CERTH/ITI",
     "profilePath": "/about"
   },
   "articles": [
+    {
+      "slug": "can-radar-satellites-see-through-clouds",
+      "title": "Can Radar Satellites See Through Clouds?",
+      "shortTitle": "Can radar satellites see through clouds?",
+      "summary": "Radar uses microwaves to image the surface beneath most cloud and without sunlight, but rain, moisture, terrain and viewing geometry still shape the signal.",
+      "seoDescription": "Learn how Sentinel-1 radar observes Earth's surface through cloud and darkness, what controls radar brightness, and where interpretation can fail.",
+      "publishedAt": "2026-08-27",
+      "modifiedAt": "2026-08-27",
+      "readingMinutes": 2,
+      "visual": "radar",
+      "image": "/images/eo-insights/radar-through-clouds.jpg",
+      "imageAlt": "Concept illustration, not satellite data, of a radar satellite observing a coast through dense cloud.",
+      "tags": ["Sentinel-1", "Radar", "All-weather observation"],
+      "keyPoint": "Radar can observe through most cloud cover, but seeing the surface is not the same as understanding it.",
+      "paragraphs": [
+        "Visible and near-infrared imagers rely on reflected sunlight, so dense cloud can block their view of the ground. Synthetic aperture radar instead sends microwave pulses towards Earth and records the returning echoes. Because it supplies its own illumination and microwave wavelengths interact less with cloud droplets than visible light does, radar can observe the surface after dark and beneath most cloud cover.",
+        "The Copernicus Sentinel-1 mission uses C-band radar. Brightness in a radar image represents backscatter rather than visible colour. The echo depends on surface roughness, moisture, physical structure, viewing angle, wavelength and polarisation. On calm water, most energy is reflected away from the antenna, whereas rough terrain and many built surfaces return more energy.",
+        "This capability supports flood mapping beneath storm clouds, sea-ice monitoring, maritime surveillance and measurements of ground displacement. Interferometry estimates small surface displacements from phase differences between repeat acquisitions, making compatible geometry and careful processing essential.",
+        "Radar is not an unrestricted view through matter. Penetration into vegetation varies with wavelength and canopy moisture. Intense rain can affect shorter-wavelength signals; wet leaves and soils also alter the echo. Steep terrain produces shadow and layover, while coherent radar creates speckle. Wind-roughened water may look bright, so darkness alone is not proof of water.",
+        "Start by checking acquisition mode, orbit direction, polarisation, viewing angle and terrain correction. Compare compatible observations and, where possible, use a time series. Optical images, elevation data and field observations can then help identify the cause of a response. Radar fills gaps caused by cloud and darkness; it does not remove the need for interpretation."
+      ],
+      "sources": [
+        {
+          "label": "Introducing the Sentinel-1 mission",
+          "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Introducing_Sentinel-1",
+          "publisher": "European Space Agency"
+        },
+        {
+          "label": "The SAR Handbook",
+          "url": "https://www.earthdata.nasa.gov/s3fs-public/2025-04/SARHB_FullRes_2019.pdf",
+          "publisher": "NASA Earthdata"
+        },
+        {
+          "label": "How synthetic aperture radar works",
+          "url": "https://science.nasa.gov/mission/nisar/get-to-know-sar/",
+          "publisher": "NASA"
+        }
+      ]
+    },
+    {
+      "slug": "can-satellites-identify-urban-heat-islands",
+      "title": "Can Satellites Identify Urban Heat Islands?",
+      "shortTitle": "Can satellites identify urban heat islands?",
+      "summary": "Thermal satellites can map surface heat across a city, but land-surface temperature is not the air temperature or the full heat exposure that people experience.",
+      "seoDescription": "Discover how Landsat and ECOSTRESS map urban land-surface temperature, what heat-island patterns can show, and why ground context matters.",
+      "publishedAt": "2026-08-27",
+      "modifiedAt": "2026-08-27",
+      "readingMinutes": 2,
+      "visual": "heat",
+      "image": "/images/eo-insights/urban-heat-islands.jpg",
+      "imageAlt": "Concept illustration, not satellite data, of warmer urban surfaces and cooler parks and water viewed from above.",
+      "tags": ["Urban heat", "Thermal observation", "Land-surface temperature"],
+      "keyPoint": "Thermal satellites identify surface urban heat islands; estimating human exposure also requires air temperature, humidity and local context.",
+      "paragraphs": [
+        "Roofs, roads, trees, water and soil absorb, store and release heat differently. Thermal-infrared instruments measure the radiance emitted by those surfaces. Retrieval algorithms then account for atmospheric effects and emissivity to estimate land-surface temperature. The result describes pavement, vegetation, bare ground or a roof, not the air measured by a weather station.",
+        "Landsat supplies a multi-decade record that can show broad neighbourhood patterns. Its thermal measurement is coarser than the 30 m product grid, so a sharper-looking display does not create finer thermal detail. ECOSTRESS observes at varying local times from the International Space Station, although less regularly. With land-cover data, these records can associate warmer patterns with impervious surfaces and cooler ones with vegetation or water.",
+        "These maps can locate persistent surface hotspots, reveal unequal access to shade and green space, and guide closer study. Comparable observations before and after tree planting, cool-roof programmes or redevelopment can show whether the surface pattern changed, but not establish the cause by themselves.",
+        "One satellite heat map is not a complete risk map. Clouds block the surface, and overpasses sample only particular times; many miss the daily maximum or the night-time release of stored heat. Surface temperature also varies with season, rainfall, shade, wind and emissivity. Human exposure depends on air temperature, humidity, indoor conditions, activity and vulnerability. A hot roof does not identify who is at risk below it.",
+        "Use quality flags, compare similar seasons and local times, and examine several years where possible. Relate the surface pattern to land cover, weather stations, mobile measurements and local knowledge. Satellites provide broad spatial coverage, while ground observations supply air temperature and finer timing. Planning and public-health decisions need both."
+      ],
+      "sources": [
+        {
+          "label": "Landsat Surface Temperature",
+          "url": "https://www.usgs.gov/landsat-missions/landsat-surface-temperature",
+          "publisher": "U.S. Geological Survey"
+        },
+        {
+          "label": "ECOSTRESS data and land-surface temperature",
+          "url": "https://ecostress.jpl.nasa.gov/data/",
+          "publisher": "NASA Jet Propulsion Laboratory"
+        },
+        {
+          "label": "Monitoring urban heat-island variations",
+          "url": "https://pubs.usgs.gov/publication/fs20213031",
+          "publisher": "U.S. Geological Survey"
+        }
+      ]
+    },
+    {
+      "slug": "how-do-satellites-map-wildfire-damage",
+      "title": "How Do Satellites Map Wildfire Damage?",
+      "shortTitle": "How satellites map wildfire damage",
+      "summary": "Active-fire detections, burned-area maps and burn-severity estimates answer different questions before, during and after a wildfire.",
+      "seoDescription": "Learn how thermal, near-infrared and shortwave-infrared satellite observations support active-fire detection, burned-area mapping and recovery assessment.",
+      "publishedAt": "2026-08-27",
+      "modifiedAt": "2026-08-27",
+      "readingMinutes": 2,
+      "visual": "fire",
+      "image": "/images/eo-insights/wildfire-damage-mapping.jpg",
+      "imageAlt": "Concept illustration, not satellite data, of active fire hotspots, smoke and a post-fire burn scar viewed from above.",
+      "tags": ["Wildfire", "Burned area", "Burn severity"],
+      "keyPoint": "A hotspot, a fire perimeter and a burn-severity map are related products, but they are not interchangeable.",
+      "paragraphs": [
+        "There is no single universal wildfire map. Different sensors and methods answer different questions. During a fire, thermal instruments can flag unusually hot observations near the time of an overpass. Afterward, optical and radar imagery can help delineate the affected area, estimate environmental effects and follow recovery.",
+        "NASA FIRMS distributes active-fire detections from thermal observations. A detection means that a sensor registered unusual heat within a pixel; it is not an exact flame boundary. Small or short-lived fires may be missed between overpasses. Cloud, thick smoke, dense canopy, sensor resolution and fire intensity also influence what is recorded.",
+        "Burned landscapes change spectrally as well. Healthy vegetation reflects strongly in near infrared, while fire-affected surfaces respond differently in shortwave infrared. The Normalized Burn Ratio combines these regions. Comparing suitable pre-fire and post-fire observations can reveal change and support a severity estimate. Landsat time-series products also provide burn classification and probability.",
+        "Dark soil, harvest, shadows, moisture or an earlier disturbance can resemble fire effects. Clouds and smoke may delay a clear post-fire view, while vegetation type and season alter the comparison. Burn severity describes post-fire surface change, not the heat released during burning. Spectral severity is not automatically the same as ecological or soil damage measured in the field.",
+        "A defensible assessment combines active-fire information, quality-screened before-and-after imagery, known fire perimeters and local observations. Several dates are preferable to a single pair because they help separate persistent effects from temporary conditions. The same record can then follow revegetation, erosion risk and landscape recovery, provided uncertainty and data gaps remain visible in the final map."
+      ],
+      "sources": [
+        {
+          "label": "NASA FIRMS questions and guidance",
+          "url": "https://www.earthdata.nasa.gov/data/tools/firms/faq",
+          "publisher": "NASA Earthdata"
+        },
+        {
+          "label": "Landsat Normalized Burn Ratio",
+          "url": "https://www.usgs.gov/landsat-missions/landsat-normalized-burn-ratio",
+          "publisher": "U.S. Geological Survey"
+        },
+        {
+          "label": "Landsat burned-area science product",
+          "url": "https://www.usgs.gov/landsat-missions/landsat-collection-2-level-3-burned-area-science-product",
+          "publisher": "U.S. Geological Survey"
+        }
+      ]
+    },
     {
       "slug": "why-does-healthy-vegetation-appear-red",
       "title": "Why Does Healthy Vegetation Appear Red in a Satellite Image?",

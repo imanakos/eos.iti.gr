@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="fire-sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07162e" />
+      <stop offset="0.58" stop-color="#102a34" />
+      <stop offset="1" stop-color="#2d1b21" />
+    </linearGradient>
+    <linearGradient id="forest" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e695d" />
+      <stop offset="1" stop-color="#173c3c" />
+    </linearGradient>
+    <linearGradient id="burn" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6b3129" />
+      <stop offset="0.48" stop-color="#3a292b" />
+      <stop offset="1" stop-color="#171f29" />
+    </linearGradient>
+    <linearGradient id="fire-line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffcf58" />
+      <stop offset="0.5" stop-color="#ff7a32" />
+      <stop offset="1" stop-color="#d54137" />
+    </linearGradient>
+    <radialGradient id="hotspot" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#fff5b5" />
+      <stop offset="0.2" stop-color="#ffd052" />
+      <stop offset="0.52" stop-color="#f06b31" stop-opacity="0.75" />
+      <stop offset="1" stop-color="#d33c39" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="smoke" x1="0" y1="1" x2="0.6" y2="0">
+      <stop offset="0" stop-color="#e7e3d8" stop-opacity="0.54" />
+      <stop offset="0.6" stop-color="#a9b3b5" stop-opacity="0.3" />
+      <stop offset="1" stop-color="#71808c" stop-opacity="0" />
+    </linearGradient>
+    <pattern id="terrain-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0V60" fill="none" stroke="#b8ced5" stroke-opacity="0.1" stroke-width="1" />
+    </pattern>
+    <filter id="fire-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="9" />
+    </filter>
+    <filter id="smoke-soft" x="-30%" y="-40%" width="170%" height="190%">
+      <feGaussianBlur stdDeviation="20" />
+    </filter>
+    <clipPath id="fire-map">
+      <rect y="126" width="1200" height="504" />
+    </clipPath>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#fire-sky)" />
+  <g clip-path="url(#fire-map)">
+    <path d="M-40 183C140 125 240 151 383 196C518 238 627 221 731 177C859 124 1008 143 1240 204V666H-40Z" fill="url(#forest)" />
+    <path d="M0 255C133 184 255 204 385 254C512 303 600 289 731 235C887 170 1039 194 1200 246" fill="none" stroke="#65a783" stroke-opacity="0.35" stroke-width="3" />
+    <path d="M0 326C141 260 258 273 381 317C515 365 604 354 737 302C882 245 1030 262 1200 318" fill="none" stroke="#7ab18a" stroke-opacity="0.27" stroke-width="3" />
+    <path d="M0 402C154 333 269 347 396 394C516 438 620 424 751 376C888 326 1038 338 1200 396" fill="none" stroke="#88bc90" stroke-opacity="0.21" stroke-width="3" />
+    <path d="M0 489C160 415 290 433 421 478C548 521 637 511 776 462C908 416 1054 425 1200 482" fill="none" stroke="#8ec296" stroke-opacity="0.15" stroke-width="3" />
+
+    <path d="M376 630C414 566 397 518 450 479C513 434 482 384 532 345C589 300 563 249 631 201C680 167 751 155 828 172C791 215 811 258 772 291C729 327 752 380 694 423C638 465 669 520 607 558C568 583 553 607 548 630Z" fill="url(#burn)" />
+    <path d="M456 630C486 579 474 535 519 501C571 461 549 417 591 382C635 346 616 304 671 267C705 243 747 234 789 239C765 273 777 304 744 331C706 362 723 407 678 440C632 475 650 516 600 548C563 571 551 598 548 630Z" fill="#151d24" opacity="0.78" />
+
+    <path d="M372 632C409 568 392 520 446 476C501 431 482 383 529 342C583 295 559 246 626 201" fill="none" stroke="#5d2824" stroke-width="22" stroke-linecap="round" opacity="0.9" />
+    <path d="M372 632C409 568 392 520 446 476C501 431 482 383 529 342C583 295 559 246 626 201" fill="none" stroke="url(#fire-line)" stroke-width="7" stroke-linecap="round" />
+
+    <g opacity="0.92">
+      <circle cx="397" cy="568" r="39" fill="url(#hotspot)" filter="url(#fire-glow)" />
+      <circle cx="445" cy="476" r="44" fill="url(#hotspot)" filter="url(#fire-glow)" />
+      <circle cx="522" cy="352" r="47" fill="url(#hotspot)" filter="url(#fire-glow)" />
+      <circle cx="581" cy="274" r="39" fill="url(#hotspot)" filter="url(#fire-glow)" />
+      <circle cx="626" cy="204" r="35" fill="url(#hotspot)" filter="url(#fire-glow)" />
+      <circle cx="397" cy="568" r="6" fill="#fff5b5" />
+      <circle cx="445" cy="476" r="7" fill="#fff5b5" />
+      <circle cx="522" cy="352" r="7" fill="#fff5b5" />
+      <circle cx="581" cy="274" r="6" fill="#fff5b5" />
+      <circle cx="626" cy="204" r="6" fill="#fff5b5" />
+    </g>
+
+    <path d="M562 373C521 333 521 290 565 263C602 241 626 204 617 173C685 152 741 171 761 211C778 245 823 252 865 231C878 285 851 324 804 342C754 362 736 400 759 437C706 453 657 430 639 395C621 362 592 352 562 373Z" fill="url(#smoke)" filter="url(#smoke-soft)" />
+    <path d="M700 284C751 235 795 205 873 176C953 146 1024 143 1125 158C1043 184 995 217 960 265C916 324 840 343 767 327Z" fill="url(#smoke)" opacity="0.5" filter="url(#smoke-soft)" />
+
+    <g fill="#68ad82" opacity="0.55">
+      <circle cx="145" cy="249" r="6" /><circle cx="197" cy="280" r="5" /><circle cx="238" cy="222" r="7" />
+      <circle cx="291" cy="333" r="6" /><circle cx="168" cy="407" r="7" /><circle cx="267" cy="474" r="5" />
+      <circle cx="944" cy="237" r="6" /><circle cx="1018" cy="292" r="7" /><circle cx="1101" cy="222" r="5" />
+      <circle cx="906" cy="416" r="7" /><circle cx="1000" cy="492" r="5" /><circle cx="1097" cy="384" r="6" />
+    </g>
+
+    <path d="M880 630C911 570 942 544 988 519C1041 491 1085 458 1128 408C1148 386 1171 365 1200 349V630Z" fill="#17394a" />
+    <path d="M886 630C925 571 954 550 1000 527C1055 500 1095 466 1138 417C1157 395 1178 380 1200 367" fill="none" stroke="#3aa6b7" stroke-opacity="0.62" stroke-width="5" />
+
+    <rect y="126" width="1200" height="504" fill="url(#terrain-grid)" />
+    <path d="M720 590C781 555 820 515 841 461" fill="none" stroke="#efb04b" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="9 12" />
+    <path d="M747 603C814 567 858 520 880 464" fill="none" stroke="#efb04b" stroke-opacity="0.2" stroke-width="2" stroke-dasharray="9 12" />
+  </g>
+
+  <g>
+    <rect x="190" y="28" width="586" height="64" rx="18" fill="#06152d" fill-opacity="0.9" stroke="#8bb1c4" stroke-opacity="0.35" />
+    <circle cx="223" cy="60" r="7" fill="#f5bc4f" />
+    <text x="245" y="68" fill="#f6f8fb" font-family="Arial, Helvetica, sans-serif" font-size="25" letter-spacing="1.1">CONCEPT ILLUSTRATION - NOT SATELLITE DATA</text>
+  </g>
+</svg>
