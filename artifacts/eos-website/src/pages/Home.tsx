@@ -9,6 +9,8 @@ import {
   ExternalLink,
   BookOpen,
 } from "lucide-react";
+import { EOInsightCard } from "@/components/eo-insights/EOInsightCard";
+import { sortedEOInsights } from "@/data/eoInsightsData";
 import { newsArticles } from "@/data/newsData";
 import { projects } from "@/data/projectsData";
 import { assetUrl } from "@/lib/utils";
@@ -61,6 +63,7 @@ const partners = [
 ];
 
 const featuredProjects = projects.filter((p) => p.status === "recent").slice(0, 3);
+const featuredInsights = sortedEOInsights.slice(0, 3);
 
 export default function Home() {
   const newsPreview = newsArticles.slice(0, 3);
@@ -68,7 +71,7 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* ── Hero ── */}
-      <section className="relative h-[90svh] min-h-[700px] flex items-center justify-center overflow-hidden pt-24 pb-8 sm:pt-28 sm:pb-10">
+      <section className="relative flex min-h-[820px] items-center justify-center overflow-hidden pb-12 pt-28 sm:min-h-[760px] sm:pb-10 sm:pt-28 lg:h-[90svh] lg:min-h-[700px]">
         <div className="absolute inset-0 z-0">
           <img
             src={`${import.meta.env.BASE_URL}images/hero-bg.png`}
@@ -117,17 +120,23 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.55 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row sm:flex-wrap gap-4 justify-center"
           >
             <Link
+              href="/eo-insights/"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[hsl(37_80%_58%)] hover:bg-[hsl(37_80%_66%)] text-[hsl(222_56%_14%)] font-semibold text-sm transition-all shadow-lg shadow-[hsl(37_80%_46%)]/30"
+            >
+              <BookOpen className="w-4 h-4" /> EO Analysis Notes
+            </Link>
+            <Link
               href="/research"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[hsl(222_56%_20%)] hover:bg-[hsl(222_56%_28%)] text-white font-semibold text-sm transition-all shadow-lg shadow-[hsl(222_56%_20%)]/40"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[hsl(222_56%_20%)] hover:bg-[hsl(222_56%_28%)] text-white font-semibold text-sm transition-all shadow-lg shadow-[hsl(222_56%_20%)]/40"
             >
               Explore Research <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/tools"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold text-sm backdrop-blur-md transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold text-sm backdrop-blur-md transition-all"
             >
               Tools & Data
             </Link>
@@ -263,6 +272,38 @@ export default function Home() {
             >
               All projects <ArrowRight className="w-4 h-4" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── EO Analysis Notes ── */}
+      <section className="py-20 bg-[hsl(222_56%_12%)] text-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between mb-12">
+            <div className="max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[hsl(37_80%_62%)] mb-3">
+                Expert briefings
+              </p>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-3">
+                EO Analysis Notes
+              </h2>
+              <p className="text-white/60 leading-relaxed">
+                Short, expert-led explanations that connect satellite signals with sound
+                environmental interpretation.
+              </p>
+            </div>
+            <Link
+              href="/eo-insights/"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[hsl(37_80%_62%)] hover:text-white shrink-0 transition-colors"
+            >
+              Explore all notes <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            {featuredInsights.map((insight) => (
+              <EOInsightCard key={insight.slug} insight={insight} compact />
+            ))}
           </div>
         </div>
       </section>

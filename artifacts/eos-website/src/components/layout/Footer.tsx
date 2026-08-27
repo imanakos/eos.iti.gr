@@ -103,7 +103,13 @@ export function Footer() {
             © {new Date().getFullYear()} EOS – CERTH/ITI Remote Sensing Research Team. All rights
             reserved.
           </p>
-          <div className="flex gap-5">
+          <div className="flex flex-wrap justify-center gap-x-5 gap-y-3 md:justify-end">
+            <Link
+              href="/eo-insights/"
+              className="text-xs text-white/30 hover:text-white transition-colors"
+            >
+              EO Analysis Notes
+            </Link>
             <Link
               href="/about"
               className="text-xs text-white/30 hover:text-white transition-colors"

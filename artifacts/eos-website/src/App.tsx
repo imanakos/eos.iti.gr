@@ -10,6 +10,8 @@ import About from "./pages/About";
 import Research from "./pages/Research";
 import Tools from "./pages/Tools";
 import News from "./pages/News";
+import EOInsights from "./pages/EOInsights";
+import EOInsightArticle from "./pages/EOInsightArticle";
 import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
@@ -23,6 +25,8 @@ function Router() {
         <Route path="/research" component={Research} />
         <Route path="/tools" component={Tools} />
         <Route path="/news" component={News} />
+        <Route path="/eo-insights" component={EOInsights} />
+        <Route path="/eo-insights/:slug" component={EOInsightArticle} />
         <Route path="/contact" component={Contact} />
         <Route component={NotFound} />
       </Switch>
