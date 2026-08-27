@@ -9,7 +9,6 @@ export interface EOInsightSource {
 }
 
 export interface EOInsightAnimation {
-  webm: string;
   mp4: string;
   poster: string;
   caption: string;

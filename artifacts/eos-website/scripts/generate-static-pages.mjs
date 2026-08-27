@@ -159,13 +159,11 @@ function renderArticleMedia(article) {
   }
 
   const descriptionId = `animation-description-${article.slug}`;
-  const webmUrl = absoluteAssetUrl(article.animation.webm);
   const mp4Url = absoluteAssetUrl(article.animation.mp4);
   const posterUrl = absoluteAssetUrl(article.animation.poster);
 
   return `<figure>
-            <video controls playsinline preload="metadata" poster="${escapeHtml(posterUrl)}" aria-describedby="${escapeHtml(descriptionId)}" width="1200" height="672">
-              <source src="${escapeHtml(webmUrl)}" type="video/webm" />
+            <video controls playsinline preload="none" poster="${escapeHtml(posterUrl)}" aria-label="Thessaly optical, radar and flood extent animation" aria-describedby="${escapeHtml(descriptionId)}" width="960" height="538">
               <source src="${escapeHtml(mp4Url)}" type="video/mp4" />
               <a href="${escapeHtml(mp4Url)}">View the MP4 animation</a>
             </video>

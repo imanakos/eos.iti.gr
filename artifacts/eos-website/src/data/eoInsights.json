@@ -21,7 +21,6 @@
       "image": "/images/eo-insights/radar-through-clouds.jpg",
       "imageAlt": "Concept illustration, not satellite data, of a radar satellite observing a coast through dense cloud.",
       "animation": {
-        "webm": "/media/eo-insights/thessaly-flood-radar.webm",
         "mp4": "/media/eo-insights/thessaly-flood-radar.mp4",
         "poster": "/images/eo-insights/thessaly-flood-radar-poster.jpg",
         "caption": "Thessaly, Greece. Sentinel-2A true colour, 5 September 2023; Sentinel-1A VV amplitude with the CEMS observed flood extent, 7 September 2023 (EMSR692). Contains modified Copernicus Sentinel data (2023). Flood delineation © European Union, Copernicus Emergency Management Service.",

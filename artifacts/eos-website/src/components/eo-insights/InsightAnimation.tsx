@@ -13,12 +13,12 @@ export function InsightAnimation({
       <video
         controls
         playsInline
-        preload="metadata"
+        preload="none"
         poster={assetUrl(animation.poster)}
+        aria-label="Thessaly optical, radar and flood extent animation"
         aria-describedby={descriptionId}
         className="aspect-video w-full rounded-3xl bg-black object-contain shadow-xl"
       >
-        <source src={assetUrl(animation.webm)} type="video/webm" />
         <source src={assetUrl(animation.mp4)} type="video/mp4" />
         <a href={assetUrl(animation.mp4)}>View the MP4 animation</a>
       </video>
