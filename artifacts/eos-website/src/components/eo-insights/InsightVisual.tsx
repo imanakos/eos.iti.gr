@@ -1,4 +1,12 @@
-import { BrainCircuit, Leaf, Satellite, Waves } from "lucide-react";
+import {
+  BrainCircuit,
+  CloudRain,
+  Flame,
+  Leaf,
+  Satellite,
+  ThermometerSun,
+  Waves,
+} from "lucide-react";
 import type { InsightVisual as InsightVisualName } from "@/data/eoInsightsData";
 import { assetUrl, cn } from "@/lib/utils";
 
@@ -13,6 +21,30 @@ const visualStyles: Record<
     accent: string;
   }
 > = {
+  radar: {
+    Icon: CloudRain,
+    label: "Radar observation",
+    detail: "Microwaves • backscatter • geometry",
+    image: "/images/eo-insights/radar-through-clouds.jpg",
+    background: "from-[hsl(218_70%_12%)] via-[hsl(202_63%_27%)] to-[hsl(37_70%_42%)]",
+    accent: "bg-[hsl(183_76%_68%)]",
+  },
+  heat: {
+    Icon: ThermometerSun,
+    label: "Surface temperature",
+    detail: "Thermal signal • land cover • context",
+    image: "/images/eo-insights/urban-heat-islands.jpg",
+    background: "from-[hsl(222_68%_13%)] via-[hsl(15_66%_38%)] to-[hsl(39_82%_54%)]",
+    accent: "bg-[hsl(39_94%_66%)]",
+  },
+  fire: {
+    Icon: Flame,
+    label: "Fire impact",
+    detail: "Hotspots • burned area • recovery",
+    image: "/images/eo-insights/wildfire-damage-mapping.jpg",
+    background: "from-[hsl(221_63%_12%)] via-[hsl(11_58%_30%)] to-[hsl(31_82%_46%)]",
+    accent: "bg-[hsl(24_94%_63%)]",
+  },
   vegetation: {
     Icon: Leaf,
     label: "False-colour signal",
