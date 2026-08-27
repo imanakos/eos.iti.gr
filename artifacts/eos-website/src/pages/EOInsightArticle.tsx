@@ -1,6 +1,7 @@
 import { ArrowLeft, Calendar, Clock, ExternalLink, Share2 } from "lucide-react";
 import { Link, type RouteComponentProps } from "wouter";
 import { EOInsightCard } from "@/components/eo-insights/EOInsightCard";
+import { InsightAnimation } from "@/components/eo-insights/InsightAnimation";
 import { InsightVisual } from "@/components/eo-insights/InsightVisual";
 import {
   eoInsightsData,
@@ -144,16 +145,23 @@ export default function EOInsightArticle({ params }: RouteComponentProps<{ slug:
                 </p>
               </div>
 
-              <figure className="flex flex-col">
-                <InsightVisual
-                  visual={insight.visual}
-                  imageAlt={insight.imageAlt}
-                  className="min-h-72 flex-1 rounded-3xl shadow-xl"
+              {insight.animation ? (
+                <InsightAnimation
+                  animation={insight.animation}
+                  descriptionId={`animation-description-${insight.slug}`}
                 />
-                <figcaption className="mt-3 px-1 text-xs leading-relaxed text-muted-foreground">
-                  {eoInsightsData.visualDisclosure}
-                </figcaption>
-              </figure>
+              ) : (
+                <figure className="flex flex-col">
+                  <InsightVisual
+                    visual={insight.visual}
+                    imageAlt={insight.imageAlt}
+                    className="min-h-72 flex-1 rounded-3xl shadow-xl"
+                  />
+                  <figcaption className="mt-3 px-1 text-xs leading-relaxed text-muted-foreground">
+                    {eoInsightsData.visualDisclosure}
+                  </figcaption>
+                </figure>
+              )}
             </div>
           </div>
         </header>

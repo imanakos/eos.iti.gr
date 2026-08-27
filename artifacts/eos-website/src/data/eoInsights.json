@@ -20,6 +20,13 @@
       "visual": "radar",
       "image": "/images/eo-insights/radar-through-clouds.jpg",
       "imageAlt": "Concept illustration, not satellite data, of a radar satellite observing a coast through dense cloud.",
+      "animation": {
+        "webm": "/media/eo-insights/thessaly-flood-radar.webm",
+        "mp4": "/media/eo-insights/thessaly-flood-radar.mp4",
+        "poster": "/images/eo-insights/thessaly-flood-radar-poster.jpg",
+        "caption": "Thessaly, Greece. Sentinel-2A true colour, 5 September 2023; Sentinel-1A VV amplitude with the CEMS observed flood extent, 7 September 2023 (EMSR692). Contains modified Copernicus Sentinel data (2023). Flood delineation © European Union, Copernicus Emergency Management Service.",
+        "description": "Cloud-covered optical imagery changes to a radar view of the same area, followed by the observed flood extent in cyan."
+      },
       "tags": ["Sentinel-1", "Radar", "All-weather observation"],
       "keyPoint": "Radar can observe through most cloud cover, but seeing the surface is not the same as understanding it.",
       "paragraphs": [
@@ -44,6 +51,11 @@
           "label": "How synthetic aperture radar works",
           "url": "https://science.nasa.gov/mission/nisar/get-to-know-sar/",
           "publisher": "NASA"
+        },
+        {
+          "label": "Flood in Greece, EMSR692",
+          "url": "https://mapping.emergency.copernicus.eu/activations/EMSR692/",
+          "publisher": "Copernicus Emergency Management Service"
         }
       ]
     },

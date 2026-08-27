@@ -52,6 +52,14 @@ function safeJson(value) {
   return JSON.stringify(value).replaceAll("<", "\\u003c");
 }
 
+function absoluteAssetUrl(value) {
+  const assetPath = String(value);
+  if (!assetPath.startsWith("/") || assetPath.startsWith("//")) {
+    throw new Error(`Expected a local site asset path, received: ${assetPath}`);
+  }
+  return `${siteUrl}${assetPath}`;
+}
+
 function metadataBlock({
   title,
   description,
@@ -142,6 +150,30 @@ function renderCollectionBody() {
     </main>`;
 }
 
+function renderArticleMedia(article) {
+  if (!article.animation) {
+    return `<figure>
+            <img src="${escapeHtml(`${siteUrl}${article.image}`)}" alt="${escapeHtml(article.imageAlt)}" width="1200" height="630" />
+            <figcaption>${escapeHtml(data.visualDisclosure)}</figcaption>
+          </figure>`;
+  }
+
+  const descriptionId = `animation-description-${article.slug}`;
+  const webmUrl = absoluteAssetUrl(article.animation.webm);
+  const mp4Url = absoluteAssetUrl(article.animation.mp4);
+  const posterUrl = absoluteAssetUrl(article.animation.poster);
+
+  return `<figure>
+            <video controls playsinline preload="metadata" poster="${escapeHtml(posterUrl)}" aria-describedby="${escapeHtml(descriptionId)}" width="1200" height="672">
+              <source src="${escapeHtml(webmUrl)}" type="video/webm" />
+              <source src="${escapeHtml(mp4Url)}" type="video/mp4" />
+              <a href="${escapeHtml(mp4Url)}">View the MP4 animation</a>
+            </video>
+            <p id="${escapeHtml(descriptionId)}" class="sr-only">${escapeHtml(article.animation.description)}</p>
+            <figcaption>${escapeHtml(article.animation.caption)}</figcaption>
+          </figure>`;
+}
+
 function renderArticleBody(article) {
   return `<main>
       <article>
@@ -151,10 +183,7 @@ function renderArticleBody(article) {
           <p>${escapeHtml(article.summary)}</p>
           <time datetime="${escapeHtml(article.publishedAt)}">${escapeHtml(article.publishedAt)}</time>
           <p>By <a href="${escapeHtml(`${siteUrl}${data.author.profilePath}/`)}">${escapeHtml(data.author.name)}</a>, ${escapeHtml(data.author.role)}</p>
-          <figure>
-            <img src="${escapeHtml(`${siteUrl}${article.image}`)}" alt="${escapeHtml(article.imageAlt)}" width="1200" height="630" />
-            <figcaption>${escapeHtml(data.visualDisclosure)}</figcaption>
-          </figure>
+          ${renderArticleMedia(article)}
         </header>
         ${article.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("\n")}
         <aside>
