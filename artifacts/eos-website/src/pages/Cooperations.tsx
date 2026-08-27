@@ -28,7 +28,7 @@ const cooperations = [
     name: "MEDRIN",
     img: "/images/cooperation/projects/sherin-medrin.png",
     description:
-      "Mediterranean Regional Information Network — a regional network supporting land cover monitoring and Earth Observation capacity building in the Mediterranean area.",
+      "Mediterranean Regional Information Network - a regional network supporting land cover monitoring and Earth Observation capacity building in the Mediterranean area.",
     url: "https://gofcgold.org/regional-networks/mediterranean-regional-network-medrin",
   },
   {
@@ -56,7 +56,7 @@ const cooperations = [
     name: "GEOBON ECOFUN",
     img: "/images/cooperation/projects/geobon.jpg",
     description:
-      "Global Biodiversity Observation Network — Ecosystem Functioning working group. Dr. Manakos serves as a member of the GEOBON Flagship within the Group on Earth Observations.",
+      "Global Biodiversity Observation Network - Ecosystem Functioning working group. Dr. Manakos serves as a member of the GEOBON Flagship within the Group on Earth Observations.",
     url: "https://geobon.org/",
   },
   {

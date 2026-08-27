@@ -15,7 +15,7 @@ const sections = [
     title: "Research Projects",
     icon: <Briefcase className="w-6 h-6" />,
     description:
-      "We lead and participate in numerous national and European research projects focusing on Earth Observation applications — from digital precision agriculture to water quality monitoring and biodiversity conservation.",
+      "We lead and participate in numerous national and European research projects focusing on Earth Observation applications - from digital precision agriculture to water quality monitoring and biodiversity conservation.",
     highlights: [
       "MONALISA – Land Degradation Neutrality monitoring (EU Horizon Europe)",
       "DigiCotton – Digital solutions for cotton crop monitoring",
@@ -52,7 +52,7 @@ const sections = [
     title: "Publications",
     icon: <BookOpen className="w-6 h-6" />,
     description:
-      "Our team regularly publishes in high-impact peer-reviewed journals in remote sensing, environmental science, and geospatial analysis — including Remote Sensing (MDPI), Land, Water, and more.",
+      "Our team regularly publishes in high-impact peer-reviewed journals in remote sensing, environmental science, and geospatial analysis - including Remote Sensing (MDPI), Land, Water, and more.",
     highlights: [
       "Towards a comprehensive geodiversity - Biodiversity nexus (Earth-Science Reviews, 2025)",
       "3D-CNN detection of Potexvirus infections via hyperspectral imaging (Plant Methods, 2025)",

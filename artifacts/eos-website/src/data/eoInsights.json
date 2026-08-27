@@ -52,7 +52,7 @@
       "title": "Can Satellites Detect Water Pollution?",
       "shortTitle": "Can satellites detect water pollution?",
       "summary": "Satellite observations can reveal water-quality patterns at remarkable scales, but their colours require careful interpretation and field validation.",
-      "seoDescription": "Discover what Sentinel satellite imagery can reveal about turbidity, algal blooms and water quality—and why field validation remains essential.",
+      "seoDescription": "Discover what Sentinel satellite imagery can reveal about turbidity, algal blooms and water quality - and why field validation remains essential.",
       "publishedAt": "2026-08-27",
       "modifiedAt": "2026-08-27",
       "readingMinutes": 2,
@@ -66,7 +66,7 @@
         "Copernicus Sentinel-2 can provide fine spatial detail for lakes, reservoirs and coastal zones. Its observations may help identify sediment plumes, changes in turbidity, surface algal blooms and variations associated with chlorophyll. Sentinel-3 complements this capability with an instrument specifically designed for ocean-colour observations across more spectral bands.",
         "This makes satellite monitoring especially valuable for detecting spatial patterns and following changes through time. A conventional water sample represents one location and one moment; a satellite image can reveal how conditions vary across an entire water body.",
         "There are, however, important limits. A green or brown area is not automatically evidence of contamination. Sediment, phytoplankton, dissolved organic matter, shallow bottoms and reflections from nearby land can produce similar signals. Sun glint, clouds and atmospheric effects can also distort the measurement. Many dissolved chemicals cannot be identified directly from optical imagery.",
-        "Reliable interpretation therefore requires atmospheric correction, an appropriate algorithm, quality flags and comparison with measurements collected in the water. Satellite observations are excellent tools for screening, early warning and directing field sampling—but they do not replace laboratory analysis. The strongest monitoring designs use the satellite view to decide where and when closer investigation is needed, then feed those field measurements back into the interpretation."
+        "Reliable interpretation therefore requires atmospheric correction, an appropriate algorithm, quality flags and comparison with measurements collected in the water. Satellite observations are excellent tools for screening, early warning and directing field sampling - but they do not replace laboratory analysis. The strongest monitoring designs use the satellite view to decide where and when closer investigation is needed, then feed those field measurements back into the interpretation."
       ],
       "sources": [
         {
@@ -104,8 +104,8 @@
         "GeoAI can analyse quantities of satellite data that would be impossible to inspect manually. It can classify land cover, locate objects, identify change and combine observations from different sensors. New Earth Observation foundation models are extending these capabilities by learning reusable representations from large, multimodal datasets.",
         "TerraMind illustrates this shift. The ESA overview linked below describes a model developed from geographically varied examples across several observation types, among them Sentinel-1 radar and Sentinel-2 optical data. The objective is to learn patterns that can be adapted to different Earth Observation tasks instead of beginning every analysis from zero.",
         "Does this make the Earth Observation specialist unnecessary? No. A model may perform impressively in its training regions but become unreliable in another climate, season, landscape or sensor configuration. Bright roofs can be confused with bare soil, seasonal flooding with permanent water, and sensor artefacts with genuine landscape change. Similar-looking signals may also arise from very different physical processes.",
-        "A confident prediction is not necessarily a correct prediction—and a probability score is not automatically a complete description of uncertainty. The specialist is needed to select suitable observations, recognise artefacts, design representative training data, test geographic and temporal transferability, quantify uncertainty and determine whether a result is physically plausible.",
-        "The most credible future is not automated mapping without scientists. It is collaboration between scalable GeoAI and accountable human interpretation. The algorithm can accelerate discovery, while the expert defines the question, tests the evidence and communicates what the resulting map can—and cannot—support. Responsibility for meaning and decisions remains with people."
+        "A confident prediction is not necessarily a correct prediction - and a probability score is not automatically a complete description of uncertainty. The specialist is needed to select suitable observations, recognise artefacts, design representative training data, test geographic and temporal transferability, quantify uncertainty and determine whether a result is physically plausible.",
+        "The most credible future is not automated mapping without scientists. It is collaboration between scalable GeoAI and accountable human interpretation. The algorithm can accelerate discovery, while the expert defines the question, tests the evidence and communicates what the resulting map can - and cannot - support. Responsibility for meaning and decisions remains with people."
       ],
       "sources": [
         {

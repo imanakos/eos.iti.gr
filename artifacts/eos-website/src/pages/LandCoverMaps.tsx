@@ -27,7 +27,7 @@ export default function LandCoverMaps() {
             Land Cover Maps (EODESM)
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            The Earth Observation Data for Ecosystem Monitoring (EODESM) tool — a Horizon 2020
+            The Earth Observation Data for Ecosystem Monitoring (EODESM) tool - a Horizon 2020
             ECOPOTENTIAL project outcome for automated land cover classification and environmental
             change detection.
           </p>

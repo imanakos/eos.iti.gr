@@ -76,7 +76,7 @@ export default function EOInsights() {
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70 sm:text-xl">
               {eoInsightsData.seriesDescription} Concise enough to explore quickly, rigorous enough
-              to reveal where confident interpretation begins—and where caution is needed.
+              to reveal where confident interpretation begins - and where caution is needed.
             </p>
           </div>
         </div>

@@ -167,7 +167,7 @@ function renderArticleBody(article) {
             ${article.sources
               .map(
                 (source) =>
-                  `<li><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.label)}</a> — ${escapeHtml(source.publisher)}</li>`
+                  `<li><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.label)}</a> - ${escapeHtml(source.publisher)}</li>`
               )
               .join("\n")}
           </ul>

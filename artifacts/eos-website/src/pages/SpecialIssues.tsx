@@ -20,7 +20,7 @@ const issues = [
     journal: "Land | ISSN 2073-445X",
     img: "/images/special-issues/earsel-banner2.15.png",
     impact:
-      "CiteScore 2018 (Scopus): 2.15 — rank 37/140 (Q2) in 'Nature and Landscape Conservation' and 90/336 (Q2) in 'Ecology'",
+      "CiteScore 2018 (Scopus): 2.15 - rank 37/140 (Q2) in 'Nature and Landscape Conservation' and 90/336 (Q2) in 'Ecology'",
     links: [
       {
         label: "Special issue @ mdpi.com",

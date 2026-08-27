@@ -38,7 +38,7 @@ export default function UAV() {
         <div className="rounded-2xl overflow-hidden border border-border shadow-md mb-10">
           <img
             src={`${import.meta.env.BASE_URL}images/news/drones.png`}
-            alt="EOS UAV Fleet — DJI Mini 3 Pro, Anafi AI Parrot, and GEO690 Multispectral"
+            alt="EOS UAV Fleet - DJI Mini 3 Pro, Anafi AI Parrot, and GEO690 Multispectral"
             className="w-full object-cover"
           />
         </div>

@@ -15,7 +15,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm leading-relaxed text-white/50">
-              CERTH/ITI Remote Sensing Research Team — Earth Observation services and products for
+              CERTH/ITI Remote Sensing Research Team - Earth Observation services and products for
               environmental monitoring and sustainability.
             </p>
           </div>
