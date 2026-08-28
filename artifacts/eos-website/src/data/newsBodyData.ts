@@ -8,12 +8,12 @@ Dr. Manakos' co-chairmanship reflects his sustained contribution to the internat
 
 DigiCotton platform was implemented by the Centre for Research and Technology Hellas (CERTH) in collaboration with EAS Kavala (Agricultural Corporate Partnership of Kavala) and foodStandard S.A. Tailored for the cotton sector, the system provides personalized, real-time guidance on best agricultural practices, drawing on a combination of satellite, telematics, and remote sensing data. The platform delivers actionable insights to farmers, helping them increase productivity, reduce input costs, and transition toward more climate-resilient and environmentally responsible farming systems.
 
-Please watch the DigiCotton video interview (videos/digicotton_ert_interview.mp4) on Greek National Television to learn more about this innovative initiative.`,
+Please watch the DigiCotton video interview on Greek National Television (https://www.ertnews.gr/video/eketa-veltistes-georgikes-praktikes-me-xrisi-tis-texnologias-stin-koilada-tou-nestou/) to learn more about this innovative initiative.`,
   news156: `A pioneering digital farming initiative is reshaping rice cultivation practices in Greece through the integration of remote sensing and smart technologies. The project, known as DigiRyzi, was launched approximately three years ago and has now reached full operational maturity. Following intensive development and close collaboration among key partners, the platform and its complete suite of services were officially delivered and presented to the public in recent weeks
 
 DigiRyzi was developed by the Centre for Research and Technology Hellas (CERTH), in coordination with foodStandard S.A. and the Agricultural Corporate Partnership of Thessaloniki (EASTh). Designed specifically to support rice cultivation, the platform enables real-time monitoring of agricultural fields using satellite imagery, integrated weather data, and in situ observations. It empowers farmers to make data-driven decisions regarding irrigation and fertilization, contributing to reduced environmental pressures and the promotion of sustainable agriculture in ecologically sensitive areas such as the Axios River Delta.
 
-Please watch the DigiRyzi video interview (videos/digiryzi_ert_interview.mp4) on Greek National Television for more insights into the platform’s impact.`,
+Please watch the DigiRyzi video interview on Greek National Television (https://www.ertnews.gr/video/psifiako-ryzi-efarmogi-parakolouthisis-ton-kalliergeion-eks-apostaseos/) for more insights into the platform’s impact.`,
   news155: `As part of the EU Horizon Europe RIA MONALISA project, EOS is actively contributing to efforts aimed at monitoring and mitigating land degradation and desertification. Dr. Ioannis Manakos recently participated in a field visit to the Asterousia region in South Crete, where local environmental conditions were recorded in preparation for upcoming Earth Observation-based monitoring activities.
 
 The visit included fruitful discussions with local stakeholders on land use dynamics, landscape development, and the interplay of socioeconomic, geomorphological, and climatic factors contributing to soil loss in the area. The MONALISA team assessed the current situation and documented the complex interrelations behind the observed environmental impacts.`,
@@ -526,7 +526,7 @@ In this direction, the impact of the SnapEarth project will be enhanced through 
 In particular, the EarthPress pilot aims to tackle these issues by delivering value-added products to editors & journalists allowing them to enrich content of their publications & articles.
 These contents, tailored to specific user needs, will be notably based on EO data (e.g. disaster extent maps, background imagery, aggregated information from social media, blogs & websites, etc.) on a certain topic.
 
-More information (images/news/EarthPress.mp4)`,
+More information and archived project results (https://cordis.europa.eu/project/id/870373)`,
   news74: `The SnapEarth platform promotional video is out. SnapEarth is a EU H2020-funded project that aims to facilitate access to Earth Observation data from the general
 public thanks to EO data labelling and indexation innovations and access from the Qwant search engine. The SnapEarth project aims to bring out new values through large-scale
 earth observation data services and to anticipate future priorities by leveraging artificial intelligence and cloud computing technologies and tools.

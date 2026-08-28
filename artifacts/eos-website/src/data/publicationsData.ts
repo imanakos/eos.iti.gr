@@ -19,7 +19,8 @@ export interface PosterItem {
 export interface VideoItem {
   title: string;
   url: string;
-  type: "local" | "youtube" | "vimeo";
+  type: "local" | "youtube" | "vimeo" | "ert";
+  watchUrl?: string;
   thumb?: string;
   note?: string;
 }
@@ -764,23 +765,27 @@ export const posterItems: PosterItem[] = [
 export const videoItems: VideoItem[] = [
   {
     title: "DigiCotton: sustainable cotton farming in Nestos valley, July 2025",
-    url: "/videos/digicotton_ert_interview.mp4",
-    type: "local",
+    url: "https://www.ert.gr/webtv/live-uni/vod/dt-uni-vod.php?f=2025/ert3/themata-ert3/07/10-10-57-xrysoupoli-kavalas-manakos.mp4&bgimg=https://www.ertnews.gr/wp-content/uploads/2025/07/10-10-57-xrysoupoli-kavalas-manakos_2.jpg",
+    watchUrl:
+      "https://www.ertnews.gr/video/eketa-veltistes-georgikes-praktikes-me-xrisi-tis-texnologias-stin-koilada-tou-nestou/",
+    type: "ert",
     thumb: "/images/videos_start_image/digicotton_video_start_img.png",
-    note: "Greek National TV Interview",
+    note: "Greek National TV interview, hosted by ERT",
   },
   {
     title: "DigiRyzi: intelligent rice farming in Axios delta, June 2025",
-    url: "/videos/digiryzi_ert_interview.mp4",
-    type: "local",
+    url: "https://www.ert.gr/webtv/live-uni/vod/dt-uni-vod.php?f=2025/ert3/themata-ert3/07/01-17-04-psifiako-rizi.mp4&bgimg=https://www.ertnews.gr/wp-content/uploads/2025/07/01-17-04-psifiako-rizi_2.jpg",
+    watchUrl:
+      "https://www.ertnews.gr/video/psifiako-ryzi-efarmogi-parakolouthisis-ton-kalliergeion-eks-apostaseos/",
+    type: "ert",
     thumb: "/images/videos_start_image/digiryzi_video_start_img.png",
-    note: "Greek National TV Interview",
+    note: "Greek National TV interview, hosted by ERT",
   },
   {
     title: "Παρατήρηση γης από το Διάστημα: οφέλη και υπηρεσίες για τον άνθρωπο (2015)",
     url: "https://www.youtube.com/embed/WniWBZMRm9w",
     type: "youtube",
-    note: "Researchers' Night 2020",
+    note: "Researchers' Night 2015",
   },
   {
     title: "Life of a Researcher (in Greek, 2015)",
@@ -800,8 +805,7 @@ export const videoItems: VideoItem[] = [
     note: "Open on YouTube",
   },
   {
-    title:
-      "Towards a Pan-European perspective – challenges in monitoring cross-scale processes (2018)",
+    title: "EODESM: Towards a Pan-European perspective on cross-scale monitoring (2018)",
     url: "https://www.youtube.com/embed/JrJXan1O3S0",
     type: "youtube",
   },
@@ -846,17 +850,18 @@ export const videoItems: VideoItem[] = [
     type: "youtube",
   },
   {
-    title: "Land Cover Change and Land Degradation – Geo Week Canberra 2019",
+    title:
+      "GEO XVI Plenary, Session 5 – Land Cover Change and Land Degradation contribution (2019)",
     url: "https://www.youtube.com/embed/W-JQc3rjC7g",
     type: "youtube",
   },
   {
-    title: "Overview of the ECOPOTENTIAL project (2019)",
+    title: "EEOBSS project: Education in Earth Observation for Bulgarian Secondary Schools (2016)",
     url: "https://www.youtube.com/embed/8N6zObQFqd0",
     type: "youtube",
   },
   {
-    title: "EEOBSS Project: Earth Observation for Bulgarian Secondary Schools (2016)",
+    title: "EEOBSS lecture excerpt with Dr Ioannis Manakos (2017)",
     url: "https://www.youtube.com/embed/WnXH5erpY44",
     type: "youtube",
   },
