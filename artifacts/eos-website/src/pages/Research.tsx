@@ -356,15 +356,22 @@ function VideoGrid() {
         const vimeoId =
           item.type === "vimeo" ? item.url.match(/\/video\/([0-9]+)/)?.[1] : undefined;
         const watchUrl =
-          item.type === "local"
+          item.watchUrl ??
+          (item.type === "local"
             ? assetUrl(item.url)
             : item.type === "youtube" && youtubeId
               ? `https://www.youtube.com/watch?v=${youtubeId}`
               : item.type === "vimeo" && vimeoId
                 ? `https://vimeo.com/${vimeoId}`
-                : item.url;
+                : item.url);
         const serviceName =
-          item.type === "youtube" ? "YouTube" : item.type === "vimeo" ? "Vimeo" : "video";
+          item.type === "youtube"
+            ? "YouTube"
+            : item.type === "vimeo"
+              ? "Vimeo"
+              : item.type === "ert"
+                ? "ERT"
+                : "video";
         const embedUrl =
           item.type === "youtube"
             ? item.url.replace("www.youtube.com", "www.youtube-nocookie.com")
@@ -379,30 +386,18 @@ function VideoGrid() {
             className="bg-card rounded-xl border border-border overflow-hidden shadow-sm flex flex-col"
           >
             {item.type === "local" ? (
-              <div className="relative bg-muted aspect-video flex items-center justify-center">
-                {item.thumb ? (
-                  <img
-                    src={assetUrl(item.thumb)}
-                    alt={item.title}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).style.display = "none";
-                    }}
-                  />
-                ) : (
-                  <Play className="w-10 h-10 text-muted-foreground" />
-                )}
-                <a
-                  href={watchUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 focus:opacity-100 transition-opacity"
-                  aria-label={`Open video: ${item.title}`}
+              <div className="aspect-video bg-black">
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster={item.thumb ? assetUrl(item.thumb) : undefined}
+                  className="h-full w-full object-contain"
+                  aria-label={item.title}
                 >
-                  <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center">
-                    <Play className="w-6 h-6 text-primary fill-primary" />
-                  </div>
-                </a>
+                  <source src={watchUrl} type="video/mp4" />
+                  Your browser does not support embedded video. Use the open video link below.
+                </video>
               </div>
             ) : externalVideoLoaded ? (
               <div className="aspect-video">
@@ -417,18 +412,29 @@ function VideoGrid() {
                 />
               </div>
             ) : (
-              <div className="flex aspect-video flex-col items-center justify-center bg-[hsl(222_56%_14%)] px-6 text-center">
-                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-white/10">
+              <div className="relative flex aspect-video flex-col items-center justify-center overflow-hidden bg-[hsl(222_56%_14%)] px-6 text-center">
+                {item.thumb && (
+                  <img
+                    src={assetUrl(item.thumb)}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                )}
+                {item.thumb && <div className="absolute inset-0 bg-black/55" aria-hidden="true" />}
+                <div className="relative mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-black/35 backdrop-blur-sm">
                   <Play className="h-5 w-5 fill-white text-white" />
                 </div>
-                <p className="text-sm font-semibold text-white">External {serviceName} video</p>
-                <p className="mt-1 max-w-sm text-xs leading-relaxed text-white/60">
+                <p className="relative text-sm font-semibold text-white">
+                  External {serviceName} video
+                </p>
+                <p className="relative mt-1 max-w-sm text-xs leading-relaxed text-white/75">
                   The player connects to {serviceName} only after you choose to load it.
                 </p>
                 <button
                   type="button"
                   onClick={() => loadVideo(i)}
-                  className="mt-4 rounded-lg border border-white/35 bg-white/5 px-4 py-2 text-xs font-semibold text-white transition-colors hover:border-white/55 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(222_56%_14%)]"
+                  className="relative mt-4 rounded-lg border border-white/60 bg-black/35 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm transition-colors hover:border-white/80 hover:bg-black/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(222_56%_14%)]"
                 >
                   Load {serviceName} video
                 </button>

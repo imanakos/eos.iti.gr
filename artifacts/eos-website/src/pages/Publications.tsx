@@ -1,7 +1,8 @@
 import { useMemo } from "react";
 import { useLocation, useSearch } from "wouter";
-import { ExternalLink, MonitorPlay } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { assetUrl } from "@/lib/utils";
+import { videoItems } from "@/data/publicationsData";
 
 const tabs = [
   { id: "journal", label: "Journal Publications" },
@@ -736,107 +737,6 @@ const posterItems = [
   },
 ];
 
-const videoItems = [
-  {
-    title: "DigiCotton: sustainable cotton farming in Nestos valley, July 2025",
-    url: "/videos/digicotton_ert_interview.mp4",
-    type: "local",
-    thumb: "/images/videos_start_image/digicotton_video_start_img.png",
-    note: "Greek National TV Interview",
-  },
-  {
-    title: "DigiRyzi: intelligent rice farming in Axios delta, June 2025",
-    url: "/videos/digiryzi_ert_interview.mp4",
-    type: "local",
-    thumb: "/images/videos_start_image/digiryzi_video_start_img.png",
-    note: "Greek National TV Interview",
-  },
-  {
-    title: "Παρατήρηση γης από το Διάστημα: οφέλη και υπηρεσίες για τον άνθρωπο (2015)",
-    url: "https://www.youtube.com/embed/WniWBZMRm9w",
-    type: "youtube",
-    note: "Researchers' Night 2020",
-  },
-  {
-    title: "Life of a Researcher (in Greek, 2015)",
-    url: "https://www.youtube.com/embed/FketIn_fNHg",
-    type: "youtube",
-    note: "Researchers' Night 2015",
-  },
-  {
-    title: "Radio interview about Remote Sensing in water, energy and food (in Greek, 2018)",
-    url: "https://www.youtube.com/embed/4x1T2HcAN6c",
-    type: "youtube",
-  },
-  {
-    title: "PONTOS Project Public Launch Event, July 2020",
-    url: "https://www.youtube.com/embed/VA-Ia6okR3s",
-    type: "youtube",
-    note: "Open on YouTube",
-  },
-  {
-    title:
-      "Towards a Pan-European perspective – challenges in monitoring cross-scale processes (2018)",
-    url: "https://www.youtube.com/embed/JrJXan1O3S0",
-    type: "youtube",
-  },
-  {
-    title: "EODESM Product of ECOPOTENTIAL Project (2018)",
-    url: "https://player.vimeo.com/video/289580394",
-    type: "vimeo",
-  },
-  {
-    title: "AQUACYCLE Kick-off Meeting Photo Album (2019/2020)",
-    url: "https://www.youtube.com/embed/qmKrJLpRoXc",
-    type: "youtube",
-  },
-  {
-    title: "AQUACYCLE in Rolestorming Mode (in English, 2020)",
-    url: "https://www.youtube.com/embed/3ZmKoZxYoRg",
-    type: "youtube",
-  },
-  {
-    title: "ECOPOTENTIAL Project Presentation (in English, 2016)",
-    url: "https://www.youtube.com/embed/dytt5vmsIbw",
-    type: "youtube",
-  },
-  {
-    title: "ECOPOTENTIAL Virtual Laboratory Presentation (in English, 2017)",
-    url: "https://www.youtube.com/embed/SkmVmpYPvNY",
-    type: "youtube",
-  },
-  {
-    title: "9 ECOPOTENTIAL storylines (in English, 2018)",
-    url: "https://www.youtube.com/embed/bgg1CwmZgZQ",
-    type: "youtube",
-  },
-  {
-    title: "Earth observation to protect natural landscapes | ECOPOTENTIAL (2019)",
-    url: "https://www.youtube.com/embed/GeWf_IvXXdU",
-    type: "youtube",
-  },
-  {
-    title: "ECOPOTENTIAL EO resources for protected area management (2019)",
-    url: "https://www.youtube.com/embed/gpHqKHaB6a4",
-    type: "youtube",
-  },
-  {
-    title: "Land Cover Change and Land Degradation – Geo Week Canberra 2019",
-    url: "https://www.youtube.com/embed/W-JQc3rjC7g",
-    type: "youtube",
-  },
-  {
-    title: "Overview of the ECOPOTENTIAL project (2019)",
-    url: "https://www.youtube.com/embed/8N6zObQFqd0",
-    type: "youtube",
-  },
-  {
-    title: "EEOBSS Project: Earth Observation for Bulgarian Secondary Schools (2016)",
-    url: "https://www.youtube.com/embed/WnXH5erpY44",
-    type: "youtube",
-  },
-];
-
 function PubItem({ text, link }: { text: string; link: string | null }) {
   return (
     <li className="bg-card rounded-xl border border-border p-4 shadow-sm">
@@ -1002,24 +902,17 @@ export default function Publications() {
                   className="bg-card rounded-xl border border-border overflow-hidden shadow-sm"
                 >
                   {v.type === "local" ? (
-                    <a
-                      href={assetUrl(v.url)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block"
+                    <video
+                      controls
+                      playsInline
+                      preload="metadata"
+                      poster={v.thumb ? assetUrl(v.thumb) : undefined}
+                      className="aspect-video w-full bg-black object-contain"
+                      aria-label={v.title}
                     >
-                      {v.thumb ? (
-                        <img
-                          src={assetUrl(v.thumb)}
-                          alt={v.title}
-                          className="w-full h-44 object-cover hover:opacity-90 transition-opacity"
-                        />
-                      ) : (
-                        <div className="w-full h-44 bg-muted flex items-center justify-center">
-                          <MonitorPlay className="w-12 h-12 text-muted-foreground" />
-                        </div>
-                      )}
-                    </a>
+                      <source src={assetUrl(v.url)} type="video/mp4" />
+                      Your browser does not support embedded video. Use the watch video link below.
+                    </video>
                   ) : (
                     <div className="aspect-video">
                       <iframe
