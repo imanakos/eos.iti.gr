@@ -38,6 +38,12 @@ const pageMetadata: Record<string, PageMetadata> = {
       "Contact Dr Ioannis Manakos and the EOS CERTH/ITI Remote Sensing Research Team for research, services, training and collaboration.",
     path: "/contact/",
   },
+  "/privacy": {
+    title: "Privacy and Analytics Choices | EOS",
+    description:
+      "Learn how the EOS website handles optional aggregate analytics, privacy preferences, hosting and external media.",
+    path: "/privacy/",
+  },
 };
 
 export function RouteMetadata() {

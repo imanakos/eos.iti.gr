@@ -207,6 +207,12 @@ const staticRoutes = [
     description:
       "Contact Dr Ioannis Manakos and the EOS CERTH/ITI Remote Sensing Research Team for research, services, training and collaboration.",
   },
+  {
+    pathname: "/privacy/",
+    title: "Privacy and Analytics Choices | EOS",
+    description:
+      "Learn how the EOS website handles optional aggregate analytics, privacy preferences, hosting and external media.",
+  },
 ];
 
 const rootMetadata = metadataBlock({
