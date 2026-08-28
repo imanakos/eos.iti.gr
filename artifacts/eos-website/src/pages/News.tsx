@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from "react";
-import { Search, ChevronDown, X, Calendar } from "lucide-react";
+import { Search, ChevronDown, X, Calendar, ImageOff } from "lucide-react";
 import { newsArticles } from "../data/newsData";
 import { newsBodyText } from "../data/newsBodyData";
 import { assetUrl } from "@/lib/utils";
@@ -7,6 +7,32 @@ import { assetUrl } from "@/lib/utils";
 const PAGE_SIZE = 12;
 
 type Article = (typeof newsArticles)[number];
+
+function NewsImage({ article, className }: { article: Article; className: string }) {
+  const [unavailable, setUnavailable] = useState(false);
+
+  if (unavailable) {
+    return (
+      <div className="flex h-full w-full flex-col items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10 px-4 text-center">
+        <ImageOff className="h-9 w-9 text-primary/40" aria-hidden="true" />
+        <span className="mt-2 text-xs font-medium text-muted-foreground">
+          Archived image unavailable
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={assetUrl(article.img)}
+      alt={article.title}
+      className={className}
+      loading="lazy"
+      decoding="async"
+      onError={() => setUnavailable(true)}
+    />
+  );
+}
 
 function linkifyBodyText(text: string): ReactNode[] {
   const urlPattern = /https?:\/\/[^\s<>"')]+/g;
@@ -70,14 +96,7 @@ function ArticleModal({ article, onClose }: { article: Article; onClose: () => v
 
         {/* Image */}
         <div className="aspect-video overflow-hidden bg-muted flex items-center justify-center p-2">
-          <img
-            src={assetUrl(article.img)}
-            alt={article.title}
-            className="w-full h-full object-contain"
-            onError={(e) => {
-              (e.target as HTMLImageElement).style.display = "none";
-            }}
-          />
+          <NewsImage article={article} className="h-full w-full object-contain" />
         </div>
 
         {/* Content */}
@@ -168,23 +187,9 @@ export default function News() {
                 className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm flex flex-col hover:shadow-md hover:border-primary/30 transition-all text-left cursor-pointer group"
               >
                 <div className="aspect-video overflow-hidden bg-muted flex-shrink-0 flex items-center justify-center p-2">
-                  <img
-                    src={assetUrl(article.img)}
-                    alt={article.title}
-                    className="w-full h-full object-contain transition-opacity duration-300 group-hover:opacity-95"
-                    onError={(e) => {
-                      const img = e.target as HTMLImageElement;
-                      img.style.display = "none";
-                      const parent = img.parentElement;
-                      if (parent && !parent.querySelector(".img-fallback")) {
-                        const fb = document.createElement("div");
-                        fb.className =
-                          "img-fallback w-full h-full bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center";
-                        fb.innerHTML =
-                          '<svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-primary/40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>';
-                        parent.appendChild(fb);
-                      }
-                    }}
+                  <NewsImage
+                    article={article}
+                    className="h-full w-full object-contain transition-opacity duration-300 group-hover:opacity-95"
                   />
                 </div>
                 <div className="p-5 flex flex-col flex-1">
