@@ -3,6 +3,7 @@ import { useLocation } from "wouter";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { RouteMetadata } from "./RouteMetadata";
+import { PrivacyAnalytics } from "@/components/privacy/PrivacyAnalytics";
 import { motion } from "framer-motion";
 
 function ScrollToTop() {
@@ -32,6 +33,7 @@ export function AppLayout({ children }: { children: ReactNode }) {
         </motion.div>
       </main>
       <Footer />
+      <PrivacyAnalytics />
     </div>
   );
 }

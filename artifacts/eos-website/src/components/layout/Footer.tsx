@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { openPrivacySettings } from "@/lib/privacy";
 
 export function Footer() {
   return (
@@ -134,6 +135,19 @@ export function Footer() {
             >
               Contact
             </Link>
+            <Link
+              href="/privacy"
+              className="text-xs text-white/30 hover:text-white transition-colors"
+            >
+              Privacy
+            </Link>
+            <button
+              type="button"
+              onClick={openPrivacySettings}
+              className="text-xs text-white/30 hover:text-white transition-colors"
+            >
+              Privacy settings
+            </button>
           </div>
         </div>
       </div>

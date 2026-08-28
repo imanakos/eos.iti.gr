@@ -338,6 +338,16 @@ function PosterGrid() {
 }
 
 function VideoGrid() {
+  const [loadedVideos, setLoadedVideos] = useState<Set<number>>(() => new Set());
+
+  const loadVideo = (index: number) => {
+    setLoadedVideos((current) => {
+      const next = new Set(current);
+      next.add(index);
+      return next;
+    });
+  };
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
       {videoItems.map((item, i) => {
@@ -358,7 +368,10 @@ function VideoGrid() {
         const embedUrl =
           item.type === "youtube"
             ? item.url.replace("www.youtube.com", "www.youtube-nocookie.com")
-            : item.url;
+            : item.type === "vimeo"
+              ? `${item.url}${item.url.includes("?") ? "&" : "?"}dnt=1`
+              : item.url;
+        const externalVideoLoaded = loadedVideos.has(i);
 
         return (
           <div
@@ -391,7 +404,7 @@ function VideoGrid() {
                   </div>
                 </a>
               </div>
-            ) : (
+            ) : externalVideoLoaded ? (
               <div className="aspect-video">
                 <iframe
                   src={embedUrl}
@@ -402,6 +415,23 @@ function VideoGrid() {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
+              </div>
+            ) : (
+              <div className="flex aspect-video flex-col items-center justify-center bg-[hsl(222_56%_14%)] px-6 text-center">
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-white/10">
+                  <Play className="h-5 w-5 fill-white text-white" />
+                </div>
+                <p className="text-sm font-semibold text-white">External {serviceName} video</p>
+                <p className="mt-1 max-w-sm text-xs leading-relaxed text-white/60">
+                  The player connects to {serviceName} only after you choose to load it.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => loadVideo(i)}
+                  className="mt-4 rounded-lg border border-white/35 bg-white/5 px-4 py-2 text-xs font-semibold text-white transition-colors hover:border-white/55 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(222_56%_14%)]"
+                >
+                  Load {serviceName} video
+                </button>
               </div>
             )}
             <div className="p-4 flex-1 flex flex-col">
