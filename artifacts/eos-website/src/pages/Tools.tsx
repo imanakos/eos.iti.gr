@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Link, useLocation } from "wouter";
 import {
   ExternalLink,
   Layers,
@@ -15,10 +15,38 @@ import {
 import { cn } from "@/lib/utils";
 
 const TABS = [
-  { id: "services", label: "Live Services & Tools", icon: <Wrench className="w-4 h-4" /> },
-  { id: "modules", label: "EO Modules", icon: <Layers className="w-4 h-4" /> },
-  { id: "elearning", label: "e-Learning", icon: <GraduationCap className="w-4 h-4" /> },
-];
+  {
+    id: "services",
+    label: "Live Services & Tools",
+    href: "/tools",
+    icon: <Wrench className="w-4 h-4" />,
+  },
+  {
+    id: "modules",
+    label: "EO Modules",
+    href: "/tools/modules",
+    icon: <Layers className="w-4 h-4" />,
+  },
+  {
+    id: "elearning",
+    label: "e-Learning",
+    href: "/tools/elearning",
+    icon: <GraduationCap className="w-4 h-4" />,
+  },
+] as const;
+
+function toolsSectionFromLocation(location: string) {
+  const pathname = location.split(/[?#]/, 1)[0].replace(/\/$/, "") || "/";
+
+  if (pathname === "/tools") {
+    const legacyTab =
+      typeof window === "undefined" ? null : new URLSearchParams(window.location.search).get("tab");
+    if (legacyTab && TABS.some((tab) => tab.id === legacyTab)) return legacyTab;
+    return "services";
+  }
+
+  return TABS.find((tab) => tab.href === pathname)?.id ?? "services";
+}
 
 const liveServices = [
   {
@@ -226,41 +254,46 @@ const otherPlatforms = [
 
 function ServicesTab() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      {liveServices.map((svc, i) => (
-        <div
-          key={i}
-          className="bg-card rounded-2xl border border-border p-6 shadow-sm hover:shadow-md hover:border-primary/20 transition-all flex flex-col"
-        >
-          <div className="flex items-start justify-between mb-4">
-            <div className="p-2.5 bg-muted rounded-xl">{svc.icon}</div>
-            <span className="text-xs font-semibold px-2.5 py-1 bg-background border border-border rounded-full text-muted-foreground uppercase tracking-wider">
-              {svc.category}
-            </span>
+    <div>
+      <h2 className="mb-6 text-xl font-display font-bold text-foreground">
+        Live services and tools
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {liveServices.map((svc, i) => (
+          <div
+            key={i}
+            className="bg-card rounded-2xl border border-border p-6 shadow-sm hover:shadow-md hover:border-primary/20 transition-all flex flex-col"
+          >
+            <div className="flex items-start justify-between mb-4">
+              <div className="p-2.5 bg-muted rounded-xl">{svc.icon}</div>
+              <span className="text-xs font-semibold px-2.5 py-1 bg-background border border-border rounded-full text-muted-foreground uppercase tracking-wider">
+                {svc.category}
+              </span>
+            </div>
+            <h3 className="font-display font-bold text-foreground mb-2">{svc.title}</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed flex-1">{svc.desc}</p>
+            <div className="mt-5">
+              {svc.url ? (
+                <a
+                  href={svc.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+                >
+                  Open <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              ) : (
+                <a
+                  href="mailto:imanakos@iti.gr"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {svc.note}
+                </a>
+              )}
+            </div>
           </div>
-          <h3 className="font-display font-bold text-foreground mb-2">{svc.title}</h3>
-          <p className="text-sm text-muted-foreground leading-relaxed flex-1">{svc.desc}</p>
-          <div className="mt-5">
-            {svc.url ? (
-              <a
-                href={svc.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
-              >
-                Open <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            ) : (
-              <a
-                href="mailto:imanakos@iti.gr"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-              >
-                {svc.note}
-              </a>
-            )}
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
@@ -268,6 +301,9 @@ function ServicesTab() {
 function ModulesTab() {
   return (
     <div>
+      <h2 className="mb-3 text-xl font-display font-bold text-foreground">
+        Earth Observation processing modules
+      </h2>
       <p className="text-sm text-muted-foreground mb-8 leading-relaxed max-w-2xl">
         Indicative EO-based processing modules developed by the EOS team. Contact the team for
         details on availability, inputs, and outputs.
@@ -278,7 +314,7 @@ function ModulesTab() {
             key={i}
             className="bg-card rounded-xl border border-border p-5 hover:border-primary/20 transition-colors"
           >
-            <h4 className="font-display font-bold text-foreground mb-2 text-sm">{m.name}</h4>
+            <h3 className="font-display font-bold text-foreground mb-2 text-sm">{m.name}</h3>
             <p className="text-xs text-muted-foreground leading-relaxed">{m.desc}</p>
           </div>
         ))}
@@ -344,7 +380,7 @@ function ELearningTab() {
               <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors flex-1">
                 {mod.title}
               </span>
-              <ExternalLink className="w-3.5 h-3.5 text-muted-foreground ml-auto flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <ExternalLink className="w-3.5 h-3.5 text-muted-foreground ml-auto flex-shrink-0 opacity-70 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100" />
             </a>
           ))}
         </div>
@@ -380,10 +416,8 @@ function ELearningTab() {
 }
 
 export default function Tools() {
-  const [activeTab, setActiveTab] = useState(() => {
-    const tab = new URLSearchParams(window.location.search).get("tab");
-    return tab && TABS.find((t) => t.id === tab) ? tab : "services";
-  });
+  const [location] = useLocation();
+  const activeTab = toolsSectionFromLocation(location);
 
   return (
     <div className="pt-24 pb-20 min-h-screen">
@@ -403,11 +437,15 @@ export default function Tools() {
       {/* Tab bar */}
       <div className="sticky top-16 z-30 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex overflow-x-auto scrollbar-none gap-1 py-1">
+          <nav
+            className="flex overflow-x-auto scrollbar-none gap-1 py-1"
+            aria-label="Tools and data sections"
+          >
             {TABS.map((tab) => (
-              <button
+              <Link
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                href={tab.href}
+                aria-current={activeTab === tab.id ? "page" : undefined}
                 className={cn(
                   "flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all shrink-0",
                   activeTab === tab.id
@@ -417,9 +455,9 @@ export default function Tools() {
               >
                 {tab.icon}
                 {tab.label}
-              </button>
+              </Link>
             ))}
-          </div>
+          </nav>
         </div>
       </div>
 

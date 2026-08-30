@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { Link, useLocation } from "wouter";
 import { ExternalLink, Calendar, BookOpen, FileText, Users, Microscope, Play } from "lucide-react";
 import { cn, assetUrl } from "@/lib/utils";
-import { projects } from "@/data/projectsData";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { getProjectCaseStudyByProjectName } from "@/data/projectCaseStudiesData";
+import { projects, type Project } from "@/data/projectsData";
 import {
   journalPubs,
   bookPubs,
@@ -13,15 +16,82 @@ import {
 } from "@/data/publicationsData";
 
 const TABS = [
-  { id: "projects", label: "Projects", icon: <Microscope className="w-4 h-4" /> },
-  { id: "publications", label: "Publications", icon: <BookOpen className="w-4 h-4" /> },
-  { id: "issues", label: "Special Issues", icon: <FileText className="w-4 h-4" /> },
-  { id: "workshops", label: "Workshops", icon: <Calendar className="w-4 h-4" /> },
-  { id: "cooperations", label: "Cooperations", icon: <Users className="w-4 h-4" /> },
-];
+  {
+    id: "projects",
+    label: "Projects",
+    href: "/research",
+    icon: <Microscope className="w-4 h-4" />,
+  },
+  {
+    id: "publications",
+    label: "Publications",
+    href: "/research/publications",
+    icon: <BookOpen className="w-4 h-4" />,
+  },
+  {
+    id: "issues",
+    label: "Special Issues",
+    href: "/research/issues",
+    icon: <FileText className="w-4 h-4" />,
+  },
+  {
+    id: "workshops",
+    label: "Workshops",
+    href: "/research/workshops",
+    icon: <Calendar className="w-4 h-4" />,
+  },
+  {
+    id: "cooperations",
+    label: "Cooperations",
+    href: "/research/cooperations",
+    icon: <Users className="w-4 h-4" />,
+  },
+] as const;
+
+function researchSectionFromLocation(location: string) {
+  const pathname = location.split(/[?#]/, 1)[0].replace(/\/$/, "") || "/";
+
+  if (pathname === "/research") {
+    const legacyTab =
+      typeof window === "undefined" ? null : new URLSearchParams(window.location.search).get("tab");
+    if (legacyTab && TABS.some((tab) => tab.id === legacyTab)) return legacyTab;
+    return "projects";
+  }
+
+  return TABS.find((tab) => tab.href === pathname)?.id ?? "projects";
+}
 
 const recentProjects = projects.filter((p) => p.status === "recent");
 const pastProjects = projects.filter((p) => p.status === "past");
+
+function ProjectLinks({ project, officialLabel }: { project: Project; officialLabel: string }) {
+  const caseStudy = getProjectCaseStudyByProjectName(project.name);
+
+  if (!caseStudy && !project.url) return null;
+
+  return (
+    <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+      {caseStudy && (
+        <Link
+          href={`/research/projects/${caseStudy.slug}`}
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+        >
+          EOS case study
+        </Link>
+      )}
+      {project.url && (
+        <a
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-primary hover:underline"
+        >
+          {officialLabel} <ExternalLink className="w-3 h-3" />
+        </a>
+      )}
+    </div>
+  );
+}
 
 const specialIssues = [
   {
@@ -67,7 +137,7 @@ const workshops = [
   {
     title: "EARSeL Joint Workshop 2021",
     subtitle: "Earth Observation for sustainable cities and communities",
-    date: "30 March – 1 April, 2021",
+    date: "30 March - 1 April, 2021",
     location: "Liège, Belgium",
     note: "A combination of: 4th joint EARSeL LULC & NASA LCLUC Workshop; 6th EARSeL Joint Workshop Urban Remote Sensing; 1st EARSeL RS for UN SDGs Workshop.",
     url: "http://liege2020.earsel.org/",
@@ -76,7 +146,7 @@ const workshops = [
     title: "3rd EARSeL LULC & NASA LCLUC Workshop",
     subtitle:
       "Land-Use/Cover Change Drivers, Impacts and Sustainability within the Water-Energy-Food Nexus",
-    date: "11–12 July, 2018",
+    date: "11 - 12 July, 2018",
     location: "Chania, Greece",
     url: "http://lulc.earsel.org/workshop/2018-lulc-ws/",
     reportUrl:
@@ -85,7 +155,7 @@ const workshops = [
   {
     title: "2nd EARSeL LULC & NASA LCLUC Workshop",
     subtitle: "Advancing horizons for land cover services entering the big data era",
-    date: "6–7 May, 2016",
+    date: "6 - 7 May, 2016",
     location: "Prague, Czech Republic",
     url: "https://web.natur.cuni.cz/gis/lucc/",
     reportUrl: "http://old.earsel.org/SIG/LULC/data/LCLUC_WS_Prague_finalReport_sub.pdf",
@@ -93,7 +163,7 @@ const workshops = [
   {
     title: "1st EARSeL LULC & NASA LCLUC Workshop",
     subtitle: "Frontiers in Earth Observation for Land System Science",
-    date: "17–18 March, 2014",
+    date: "17 - 18 March, 2014",
     location: "Berlin, Germany",
     url: "https://www.geographie.hu-berlin.de/en/professorships/geomatics/backup-old-files/congress/earsel-en/workshop/home",
     reportUrl:
@@ -113,7 +183,7 @@ const cooperations = [
     name: "EARSeL",
     img: "/images/cooperation/projects/earsel-logo.gif",
     description:
-      "European Association of Remote Sensing Laboratories. Dr. Manakos served as Chairman of the SIG 'Remote Sensing in Land Use & Land Cover' (2011–2021) and Chairman of EARSeL (2012–2014).",
+      "European Association of Remote Sensing Laboratories. Dr. Manakos served as Chairman of the SIG 'Remote Sensing in Land Use & Land Cover' (2011 - 2021) and Chairman of EARSeL (2012 - 2014).",
     url: "http://lulc.earsel.org/",
   },
   {
@@ -171,9 +241,9 @@ function ProjectsTab() {
   return (
     <div className="space-y-12">
       <div>
-        <h3 className="text-xl font-display font-bold text-foreground mb-6 flex items-center gap-2">
+        <h2 className="text-xl font-display font-bold text-foreground mb-6 flex items-center gap-2">
           <span className="w-2 h-6 rounded-full bg-primary inline-block" /> Recent &amp; Ongoing
-        </h3>
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {recentProjects.map((proj) => (
             <div
@@ -185,26 +255,19 @@ function ProjectsTab() {
                   src={assetUrl(proj.img)}
                   alt={proj.name}
                   className="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = "none";
                   }}
                 />
               </div>
               <div className="p-5 flex flex-col flex-1">
-                <h4 className="font-display font-bold text-foreground mb-2">{proj.name}</h4>
+                <h3 className="font-display font-bold text-foreground mb-2">{proj.name}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                   {proj.description}
                 </p>
-                {proj.url && (
-                  <a
-                    href={proj.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
-                  >
-                    Visit project <ExternalLink className="w-3 h-3" />
-                  </a>
-                )}
+                <ProjectLinks project={proj} officialLabel="Official project" />
               </div>
             </div>
           ))}
@@ -213,41 +276,34 @@ function ProjectsTab() {
 
       {pastProjects.length > 0 && (
         <div>
-          <h3 className="text-xl font-display font-bold text-foreground mb-6 flex items-center gap-2">
+          <h2 className="text-xl font-display font-bold text-foreground mb-6 flex items-center gap-2">
             <span className="w-2 h-6 rounded-full bg-muted-foreground/40 inline-block" /> Past
             Projects
-          </h3>
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {pastProjects.map((proj) => (
               <div
                 key={proj.name}
-                className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col opacity-80 hover:opacity-100"
+                className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col"
               >
                 <div className="h-28 bg-muted flex items-center justify-center p-5">
                   <img
                     src={assetUrl(proj.img)}
                     alt={proj.name}
                     className="max-h-full max-w-full object-contain grayscale"
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = "none";
                     }}
                   />
                 </div>
                 <div className="p-5 flex flex-col flex-1">
-                  <h4 className="font-display font-bold text-foreground mb-2">{proj.name}</h4>
+                  <h3 className="font-display font-bold text-foreground mb-2">{proj.name}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                     {proj.description}
                   </p>
-                  {proj.url && (
-                    <a
-                      href={proj.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
-                    >
-                      Visit project record <ExternalLink className="w-3 h-3" />
-                    </a>
-                  )}
+                  <ProjectLinks project={proj} officialLabel="Official project record" />
                 </div>
               </div>
             ))}
@@ -293,7 +349,7 @@ function PubList({
                   href={pub.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-1 inline-flex items-center gap-1 text-xs text-primary hover:underline opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="mt-1 inline-flex items-center gap-1 text-xs text-primary hover:underline"
                 >
                   Open <ExternalLink className="w-3 h-3" />
                 </a>
@@ -519,6 +575,9 @@ function PublicationsTab() {
 
   return (
     <div>
+      <h2 className="mb-3 text-xl font-display font-bold text-foreground">
+        Publications and research outputs
+      </h2>
       <p className="text-sm text-muted-foreground mb-6 leading-relaxed max-w-2xl">
         Peer-reviewed articles, books, conference proceedings, networking events, posters, videos,
         and press items authored or co-authored by the EOS team.{" "}
@@ -542,132 +601,151 @@ function PublicationsTab() {
         .
       </p>
 
-      <div className="flex flex-wrap gap-1.5 mb-8 border-b border-border pb-4">
-        {PUB_SUB_TABS.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => setActivePubTab(tab.id)}
-            className={cn(
-              "px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all",
-              activePubTab === tab.id
-                ? "bg-primary text-primary-foreground shadow-sm"
-                : "bg-muted text-muted-foreground hover:text-foreground hover:bg-border"
-            )}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
+      <Tabs value={activePubTab} onValueChange={setActivePubTab}>
+        <TabsList
+          aria-label="Publication categories"
+          className="mb-8 h-auto w-full flex-wrap justify-start gap-1.5 rounded-none border-b border-border bg-transparent p-0 pb-4"
+        >
+          {PUB_SUB_TABS.map((tab) => (
+            <TabsTrigger
+              key={tab.id}
+              value={tab.id}
+              className="rounded-lg bg-muted px-3.5 py-1.5 text-xs font-semibold text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            >
+              {tab.label}
+            </TabsTrigger>
+          ))}
+        </TabsList>
 
-      {activePubTab === "journal" && <PubList pubs={journalPubs} label="journal publication" />}
-      {activePubTab === "books" && <PubList pubs={bookPubs} label="book / book chapter" />}
-      {activePubTab === "conference" && (
-        <PubList pubs={conferencePubs} label="conference publication" />
-      )}
-      {activePubTab === "networking" && (
-        <PubList pubs={networkingPubs} label="networking / communication" />
-      )}
-      {activePubTab === "posters" && <PosterGrid />}
-      {activePubTab === "videos" && <VideoGrid />}
-      {activePubTab === "press" && <PressGrid />}
+        <TabsContent value="journal" className="mt-0">
+          <PubList pubs={journalPubs} label="journal publication" />
+        </TabsContent>
+        <TabsContent value="books" className="mt-0">
+          <PubList pubs={bookPubs} label="book / book chapter" />
+        </TabsContent>
+        <TabsContent value="conference" className="mt-0">
+          <PubList pubs={conferencePubs} label="conference publication" />
+        </TabsContent>
+        <TabsContent value="networking" className="mt-0">
+          <PubList pubs={networkingPubs} label="networking / communication" />
+        </TabsContent>
+        <TabsContent value="posters" className="mt-0">
+          <PosterGrid />
+        </TabsContent>
+        <TabsContent value="videos" className="mt-0">
+          <VideoGrid />
+        </TabsContent>
+        <TabsContent value="press" className="mt-0">
+          <PressGrid />
+        </TabsContent>
+      </Tabs>
     </div>
   );
 }
 
 function SpecialIssuesTab() {
   return (
-    <div className="space-y-6">
-      {specialIssues.map((issue, i) => (
-        <div key={i} className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
-          <div className="md:flex">
-            <div className="md:w-52 flex-shrink-0 bg-muted flex items-center justify-center p-6">
-              <img
-                src={assetUrl(issue.img)}
-                alt={issue.title}
-                className="max-w-full max-h-28 object-contain"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = "none";
-                }}
-              />
-            </div>
-            <div className="p-6 flex flex-col justify-between flex-1">
-              <div>
-                <span className="text-xs font-semibold text-primary uppercase tracking-wider">
-                  {issue.journal}
-                </span>
-                <h3 className="text-xl font-display font-bold text-foreground mt-1 mb-3">
-                  {issue.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{issue.impact}</p>
+    <div>
+      <h2 className="mb-6 text-xl font-display font-bold text-foreground">Special Issues</h2>
+      <div className="space-y-6">
+        {specialIssues.map((issue, i) => (
+          <div
+            key={i}
+            className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm"
+          >
+            <div className="md:flex">
+              <div className="md:w-52 flex-shrink-0 bg-muted flex items-center justify-center p-6">
+                <img
+                  src={assetUrl(issue.img)}
+                  alt={issue.title}
+                  className="max-w-full max-h-28 object-contain"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = "none";
+                  }}
+                />
               </div>
-              <div className="mt-5 flex flex-wrap gap-3">
-                {issue.links.map((link, j) => (
-                  <a
-                    key={j}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary/10 text-primary text-xs font-semibold hover:bg-primary/20 transition-colors"
-                  >
-                    {link.label} <ExternalLink className="w-3 h-3" />
-                  </a>
-                ))}
+              <div className="p-6 flex flex-col justify-between flex-1">
+                <div>
+                  <span className="text-xs font-semibold text-primary uppercase tracking-wider">
+                    {issue.journal}
+                  </span>
+                  <h3 className="text-xl font-display font-bold text-foreground mt-1 mb-3">
+                    {issue.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{issue.impact}</p>
+                </div>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  {issue.links.map((link, j) => (
+                    <a
+                      key={j}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary/10 text-primary text-xs font-semibold hover:bg-primary/20 transition-colors"
+                    >
+                      {link.label} <ExternalLink className="w-3 h-3" />
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
 
 function WorkshopsTab() {
   return (
-    <div className="space-y-5">
-      {workshops.map((ws, i) => (
-        <div key={i} className="bg-card rounded-2xl border border-border p-6 shadow-sm">
-          <div className="flex items-start gap-4">
-            <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <Calendar className="w-5 h-5 text-primary" />
-            </div>
-            <div className="flex-1">
-              <h3 className="font-display font-bold text-foreground mb-1">{ws.title}</h3>
-              <p className="text-sm font-medium text-primary mb-2 italic">"{ws.subtitle}"</p>
-              <p className="text-sm text-muted-foreground mb-1">
-                <span className="font-medium">Date:</span> {ws.date}
-              </p>
-              <p className="text-sm text-muted-foreground mb-3">
-                <span className="font-medium">Location:</span> {ws.location}
-              </p>
-              {ws.note && (
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{ws.note}</p>
-              )}
-              <div className="flex flex-wrap gap-3">
-                {ws.url && (
-                  <a
-                    href={ws.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary/10 text-primary text-xs font-semibold hover:bg-primary/20 transition-colors"
-                  >
-                    Workshop website <ExternalLink className="w-3 h-3" />
-                  </a>
+    <div>
+      <h2 className="mb-6 text-xl font-display font-bold text-foreground">Workshops</h2>
+      <div className="space-y-5">
+        {workshops.map((ws, i) => (
+          <div key={i} className="bg-card rounded-2xl border border-border p-6 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <Calendar className="w-5 h-5 text-primary" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-display font-bold text-foreground mb-1">{ws.title}</h3>
+                <p className="text-sm font-medium text-primary mb-2 italic">"{ws.subtitle}"</p>
+                <p className="text-sm text-muted-foreground mb-1">
+                  <span className="font-medium">Date:</span> {ws.date}
+                </p>
+                <p className="text-sm text-muted-foreground mb-3">
+                  <span className="font-medium">Location:</span> {ws.location}
+                </p>
+                {ws.note && (
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{ws.note}</p>
                 )}
-                {ws.reportUrl && (
-                  <a
-                    href={ws.reportUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted border border-border text-foreground text-xs font-medium hover:bg-border transition-colors"
-                  >
-                    Workshop report <ExternalLink className="w-3 h-3" />
-                  </a>
-                )}
+                <div className="flex flex-wrap gap-3">
+                  {ws.url && (
+                    <a
+                      href={ws.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary/10 text-primary text-xs font-semibold hover:bg-primary/20 transition-colors"
+                    >
+                      Workshop website <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
+                  {ws.reportUrl && (
+                    <a
+                      href={ws.reportUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted border border-border text-foreground text-xs font-medium hover:bg-border transition-colors"
+                    >
+                      Workshop report <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
@@ -675,6 +753,9 @@ function WorkshopsTab() {
 function CooperationsTab() {
   return (
     <div>
+      <h2 className="mb-6 text-xl font-display font-bold text-foreground">
+        International cooperations
+      </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {cooperations.map((coop, i) => (
           <div
@@ -720,10 +801,8 @@ function CooperationsTab() {
 }
 
 export default function Research() {
-  const [activeTab, setActiveTab] = useState(() => {
-    const tab = new URLSearchParams(window.location.search).get("tab");
-    return tab && TABS.find((t) => t.id === tab) ? tab : "projects";
-  });
+  const [location] = useLocation();
+  const activeTab = researchSectionFromLocation(location);
 
   return (
     <div className="pt-24 pb-20 min-h-screen">
@@ -741,11 +820,15 @@ export default function Research() {
       {/* Tab bar */}
       <div className="sticky top-16 z-30 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex overflow-x-auto scrollbar-none gap-1 py-1">
+          <nav
+            className="flex overflow-x-auto scrollbar-none gap-1 py-1"
+            aria-label="Research sections"
+          >
             {TABS.map((tab) => (
-              <button
+              <Link
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                href={tab.href}
+                aria-current={activeTab === tab.id ? "page" : undefined}
                 className={cn(
                   "flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all shrink-0",
                   activeTab === tab.id
@@ -755,9 +838,9 @@ export default function Research() {
               >
                 {tab.icon}
                 {tab.label}
-              </button>
+              </Link>
             ))}
-          </div>
+          </nav>
         </div>
       </div>
 

@@ -28,7 +28,7 @@ export default function Contact() {
       <div className="bg-[hsl(222_56%_14%)] pt-16 pb-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-3">Contact</h1>
-          <p className="text-white/65 text-lg max-w-xl">
+          <p className="text-white/75 text-lg max-w-xl">
             Reach out for research collaborations, service enquiries, or any questions about our
             work.
           </p>
@@ -41,7 +41,7 @@ export default function Contact() {
           {/* Left: profile & contact info */}
           <div className="space-y-5">
             {/* Profile card */}
-            <div className="bg-card rounded-2xl border border-border p-6 shadow-sm flex items-start gap-5">
+            <div className="bg-card rounded-2xl border border-border p-6 shadow-sm flex flex-col items-start gap-5 sm:flex-row">
               <img
                 src={assetUrl("/images/structure/imanakos.jpg")}
                 alt="Dr. Ioannis Manakos"
@@ -93,7 +93,7 @@ export default function Contact() {
                 label: "Address",
                 content: (
                   <>
-                    6th km Harilaou – Thermi Road, 57001
+                    6th km Harilaou - Thermi Road, 57001
                     <br />
                     Thermi, Thessaloniki, Greece
                   </>
@@ -151,17 +151,20 @@ export default function Contact() {
           </div>
 
           {/* Right: contact form */}
-          <div className="bg-card rounded-2xl border border-border p-8 shadow-sm">
-            <h3 className="text-2xl font-display font-bold text-foreground mb-6">Send a Message</h3>
+          <div className="bg-card rounded-2xl border border-border p-5 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-display font-bold text-foreground mb-6">Send a Message</h2>
             <form className="space-y-5" onSubmit={handleSubmit}>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {(["firstName", "lastName"] as const).map((field, i) => (
                   <div key={field} className="space-y-1.5">
-                    <label className="text-sm font-medium text-foreground">
+                    <label htmlFor={field} className="text-sm font-medium text-foreground">
                       {i === 0 ? "First Name" : "Last Name"}
                     </label>
                     <input
                       type="text"
+                      id={field}
+                      name={field}
+                      autoComplete={field === "firstName" ? "given-name" : "family-name"}
                       required
                       value={formData[field]}
                       onChange={update(field)}
@@ -173,9 +176,14 @@ export default function Contact() {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-sm font-medium text-foreground">Email Address</label>
+                <label htmlFor="email" className="text-sm font-medium text-foreground">
+                  Email Address
+                </label>
                 <input
                   type="email"
+                  id="email"
+                  name="email"
+                  autoComplete="email"
                   required
                   value={formData.email}
                   onChange={update("email")}
@@ -185,9 +193,13 @@ export default function Contact() {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-sm font-medium text-foreground">Subject</label>
+                <label htmlFor="subject" className="text-sm font-medium text-foreground">
+                  Subject
+                </label>
                 <input
                   type="text"
+                  id="subject"
+                  name="subject"
                   required
                   value={formData.subject}
                   onChange={update("subject")}
@@ -197,8 +209,12 @@ export default function Contact() {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-sm font-medium text-foreground">Message</label>
+                <label htmlFor="message" className="text-sm font-medium text-foreground">
+                  Message
+                </label>
                 <textarea
+                  id="message"
+                  name="message"
                   rows={5}
                   required
                   value={formData.message}

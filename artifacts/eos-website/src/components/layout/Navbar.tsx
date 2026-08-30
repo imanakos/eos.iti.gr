@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { BookOpen, ChevronDown, Menu, Newspaper, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "framer-motion";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -74,7 +73,7 @@ export function Navbar() {
             />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1" aria-label="Primary navigation">
             {navItems.map((item) => {
               if (item.type === "group") {
                 const childIsActive = item.children.some((child) => isActive(child.href));
@@ -84,6 +83,7 @@ export function Navbar() {
                     <DropdownMenuTrigger asChild>
                       <button
                         type="button"
+                        aria-current={childIsActive ? "page" : undefined}
                         className={cn(
                           "inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-white/60",
                           childIsActive
@@ -108,7 +108,10 @@ export function Navbar() {
                             asChild
                             className="cursor-pointer rounded-lg px-3 py-2.5 text-white/75 focus:bg-white/10 focus:text-white"
                           >
-                            <Link href={child.href}>
+                            <Link
+                              href={child.href}
+                              aria-current={isActive(child.href) ? "page" : undefined}
+                            >
                               <Icon className="h-4 w-4 text-[hsl(37_80%_62%)]" />
                               {child.label}
                             </Link>
@@ -124,6 +127,7 @@ export function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
+                  aria-current={isActive(item.href) ? "page" : undefined}
                   className={cn(
                     "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
                     isActive(item.href)
@@ -140,7 +144,7 @@ export function Navbar() {
           <button
             className="lg:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-controls="mobile-navigation"
             aria-expanded={isMobileMenuOpen}
           >
@@ -149,67 +153,65 @@ export function Navbar() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            id="mobile-navigation"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="lg:hidden bg-[hsl(222_56%_14%)] border-t border-white/10 overflow-hidden"
-          >
-            <div className="max-h-[calc(100svh-4.5rem)] overflow-y-auto px-4 py-3 flex flex-col gap-1">
-              {navItems.map((item) => {
-                if (item.type === "group") {
-                  return (
-                    <div key={item.label} className="py-1">
-                      <p className="px-4 pb-1 pt-2 text-xs font-semibold uppercase tracking-widest text-white/40">
-                        {item.label}
-                      </p>
-                      {item.children.map((child) => {
-                        const Icon = child.icon;
-                        return (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            className={cn(
-                              "flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-colors",
-                              isActive(child.href)
-                                ? "bg-white/15 text-white"
-                                : "text-white/75 hover:bg-white/10 hover:text-white"
-                            )}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            <Icon className="h-4 w-4 text-[hsl(37_80%_62%)]" />
-                            {child.label}
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  );
-                }
-
+      {isMobileMenuOpen && (
+        <div
+          id="mobile-navigation"
+          role="navigation"
+          aria-label="Mobile navigation"
+          className="lg:hidden bg-[hsl(222_56%_14%)] border-t border-white/10 overflow-hidden"
+        >
+          <div className="max-h-[calc(100svh-4.5rem)] overflow-y-auto px-4 py-3 flex flex-col gap-1">
+            {navItems.map((item) => {
+              if (item.type === "group") {
                 return (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className={cn(
-                      "block px-4 py-3 rounded-lg text-sm font-medium transition-colors",
-                      isActive(item.href)
-                        ? "bg-white/15 text-white"
-                        : "text-white/75 hover:text-white hover:bg-white/10"
-                    )}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
+                  <div key={item.label} className="py-1">
+                    <p className="px-4 pb-1 pt-2 text-xs font-semibold uppercase tracking-widest text-white/70">
+                      {item.label}
+                    </p>
+                    {item.children.map((child) => {
+                      const Icon = child.icon;
+                      return (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          aria-current={isActive(child.href) ? "page" : undefined}
+                          className={cn(
+                            "flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-colors",
+                            isActive(child.href)
+                              ? "bg-white/15 text-white"
+                              : "text-white/75 hover:bg-white/10 hover:text-white"
+                          )}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          <Icon className="h-4 w-4 text-[hsl(37_80%_62%)]" />
+                          {child.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
                 );
-              })}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              }
+
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  className={cn(
+                    "block px-4 py-3 rounded-lg text-sm font-medium transition-colors",
+                    isActive(item.href)
+                      ? "bg-white/15 text-white"
+                      : "text-white/75 hover:text-white hover:bg-white/10"
+                  )}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </header>
   );
 }

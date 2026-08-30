@@ -47,7 +47,7 @@ export const journalPubs: PubEntry[] = [
     link: "https://www.mdpi.com/2072-4292/15/16/4001",
   },
   {
-    text: "A. Kita, I. Manakos, S. Papadopoulou, I. Lioumbas, L. Alagialoglou, M. Katsiapi, A. Christodoulou, Land–Water Transition Zone Monitoring in Support of Drinking Water Production , 2023, Water MDPI, DOI: 10.3390/w15142596",
+    text: "A. Kita, I. Manakos, S. Papadopoulou, I. Lioumbas, L. Alagialoglou, M. Katsiapi, A. Christodoulou, Land - Water Transition Zone Monitoring in Support of Drinking Water Production , 2023, Water MDPI, DOI: 10.3390/w15142596",
     link: "https://www.mdpi.com/2073-4441/15/14/2596",
   },
   {
@@ -59,7 +59,7 @@ export const journalPubs: PubEntry[] = [
     link: "https://www.mdpi.com/2073-445X/12/2/379",
   },
   {
-    text: "R. M. Lucas, S. German, G. Metternicht, R. K. Schmidt, C. J. Owers, S. M. Prober, A. E. Richards, S. Tetreault-Campbell, K. J. Williams, N. Mueller, B. Tissott, S. M. T. Chua, A. Cowood, T. Hills, D. Gunawardana, A. McIntyre, S. Chognard, C. Hurford, C. Planque, S. Punalekar, D. Clewley, R. Sonnenschein, N. J. Murray, I. Manakos, P. Blonda, K. Owers, S. Roxburgh, H. Kay, P. Bunting, C. Horton, A globally relevant change taxonomy and evidence-based change framework for land monitoring , 2022, Global Change Biology, 00, 1–25, DOI: https://onlinelibrary.wiley.com/doi/10.1111/gcb.16346",
+    text: "R. M. Lucas, S. German, G. Metternicht, R. K. Schmidt, C. J. Owers, S. M. Prober, A. E. Richards, S. Tetreault-Campbell, K. J. Williams, N. Mueller, B. Tissott, S. M. T. Chua, A. Cowood, T. Hills, D. Gunawardana, A. McIntyre, S. Chognard, C. Hurford, C. Planque, S. Punalekar, D. Clewley, R. Sonnenschein, N. J. Murray, I. Manakos, P. Blonda, K. Owers, S. Roxburgh, H. Kay, P. Bunting, C. Horton, A globally relevant change taxonomy and evidence-based change framework for land monitoring , 2022, Global Change Biology, 00, 1 - 25, DOI: https://onlinelibrary.wiley.com/doi/10.1111/gcb.16346",
     link: "https://onlinelibrary.wiley.com/doi/10.1111/gcb.16346",
   },
   {
@@ -103,7 +103,7 @@ export const journalPubs: PubEntry[] = [
     link: "https://www.mdpi.com/2072-4292/10/6/910",
   },
   {
-    text: "D. Pasetto, S. Arenas-Castro, J. Bustamante, R. Casagrandi, N. Chrysoulakis, A. Cord, A. Dittrich, C. Domingo, G. El Serafy, A. Karnieli, G. Kordelas, I. Manakos, L. Mari, A. Monteiro, E. Palazzi, D. Poursanidis, A. Rinaldo, S. Terzago, A. Ziemba, G. Ziv, Integration of satellite remote sensing data in ecosystem modelling at local scales: practices and trends , 2018, Methods in Ecology and Evolution, 9, 1810–1821.",
+    text: "D. Pasetto, S. Arenas-Castro, J. Bustamante, R. Casagrandi, N. Chrysoulakis, A. Cord, A. Dittrich, C. Domingo, G. El Serafy, A. Karnieli, G. Kordelas, I. Manakos, L. Mari, A. Monteiro, E. Palazzi, D. Poursanidis, A. Rinaldo, S. Terzago, A. Ziemba, G. Ziv, Integration of satellite remote sensing data in ecosystem modelling at local scales: practices and trends , 2018, Methods in Ecology and Evolution, 9, 1810 - 1821.",
     link: "https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.13018",
   },
   {
@@ -131,7 +131,7 @@ export const journalPubs: PubEntry[] = [
     link: "https://link.springer.com/article/10.1007/s10531-015-0947-z",
   },
   {
-    text: "Z. Petrou, I. Manakos, T. Stathaki, C. A. Mücher, M. Adamo, Discrimination of vegetation height categories with passive satellite sensor imagery using texture analysis , 2015, IEEE Journal of Selected Topics in Applied Earth Observation and Remote Sensing, 8(4), 1442–1455.",
+    text: "Z. Petrou, I. Manakos, T. Stathaki, C. A. Mücher, M. Adamo, Discrimination of vegetation height categories with passive satellite sensor imagery using texture analysis , 2015, IEEE Journal of Selected Topics in Applied Earth Observation and Remote Sensing, 8(4), 1442 - 1455.",
     link: "https://ieeexplore.ieee.org/document/7061969/?reload=true&arnumber=7061969&abstractAccess=no&userType=inst",
   },
   {
@@ -139,7 +139,7 @@ export const journalPubs: PubEntry[] = [
     link: "https://www.mdpi.com/2073-445X/4/1/1",
   },
   {
-    text: "R. Lucas, P. Blonda, P. Bunting, G. Jones, J. Inglada, M. Arias, V. Kosmidou, Z. Petrou, I. Manakos, M. Adamo, R. Charnock, C. Tarantino, C. A. Mücher, R. Jongman, H. Kramer, D. Arvor, J. P. Honrado, P. Mairota, The Earth Observation Data for Habitat Monitoring (EODHAM) System , 2015, International Journal of Applied Earth Observation and Geoinformation 37, 17–28.",
+    text: "R. Lucas, P. Blonda, P. Bunting, G. Jones, J. Inglada, M. Arias, V. Kosmidou, Z. Petrou, I. Manakos, M. Adamo, R. Charnock, C. Tarantino, C. A. Mücher, R. Jongman, H. Kramer, D. Arvor, J. P. Honrado, P. Mairota, The Earth Observation Data for Habitat Monitoring (EODHAM) System , 2015, International Journal of Applied Earth Observation and Geoinformation 37, 17 - 28.",
     link: "https://www.sciencedirect.com/science/article/pii/S0303243414002347",
   },
   {
@@ -147,7 +147,7 @@ export const journalPubs: PubEntry[] = [
     link: "https://www.sciencedirect.com/science/article/pii/S0303243414002335",
   },
   {
-    text: "C. A. Mücher, L. Roupioz, H. Kramer, M. M. B. Bogers, R. H. G. Jongman, R. M. Lucas, V. Kosmidou, Z. Petrou, I. Manakos, E. Padoa-Schioppa, M. Adamo, P. Blonda, Synergy of Airborne LiDAR and Worldview-2 satellite imagery for land cover and habitat mapping: a BIOSOS-EODHAM case study for the Netherlands , 2015, International Journal of Applied Earth Observation and Geoinformation 37, 48–55.",
+    text: "C. A. Mücher, L. Roupioz, H. Kramer, M. M. B. Bogers, R. H. G. Jongman, R. M. Lucas, V. Kosmidou, Z. Petrou, I. Manakos, E. Padoa-Schioppa, M. Adamo, P. Blonda, Synergy of Airborne LiDAR and Worldview-2 satellite imagery for land cover and habitat mapping: a BIOSOS-EODHAM case study for the Netherlands , 2015, International Journal of Applied Earth Observation and Geoinformation 37, 48 - 55.",
     link: "https://www.sciencedirect.com/science/article/pii/S0303243414001950?via%3Dihub",
   },
   {
@@ -159,7 +159,7 @@ export const journalPubs: PubEntry[] = [
     link: "https://link.springer.com/article/10.1007/s10980-014-0028-9",
   },
   {
-    text: "V. Kosmidou, Z. Petrou, R.G.H. Bunce, C.A. Mucher, R.H.G. Jongman, M.M. Bogers, R.M. Lucas, V. Tomaselli, P. Blonda, E. Padoa-Schioppa, I. Manakos, M. Petrou, Harmonization of the Land Cover Classification System (LCCS) with the General Habitat Categories (GHC) classification system , 2014, Ecol. Indic. 36, 290–300.",
+    text: "V. Kosmidou, Z. Petrou, R.G.H. Bunce, C.A. Mucher, R.H.G. Jongman, M.M. Bogers, R.M. Lucas, V. Tomaselli, P. Blonda, E. Padoa-Schioppa, I. Manakos, M. Petrou, Harmonization of the Land Cover Classification System (LCCS) with the General Habitat Categories (GHC) classification system , 2014, Ecol. Indic. 36, 290 - 300.",
     link: "https://www.sciencedirect.com/science/article/pii/S1470160X13002951",
   },
   {
@@ -265,7 +265,7 @@ export const conferencePubs: PubEntry[] = [
     link: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8519474&isnumber=8517275&tag=1",
   },
   {
-    text: "Z. Petrou, T. Stathaki, I. Manakos, M. Adamo, C. Tarantino, P. Blonda, Land cover to habitat map conversion using remote sensing data: a supervised learning approach , in: IEEE Int. Geoscience and Remote Sensing Symp., IEEE, Quebec City, 2014, pp. 4683–4686.",
+    text: "Z. Petrou, T. Stathaki, I. Manakos, M. Adamo, C. Tarantino, P. Blonda, Land cover to habitat map conversion using remote sensing data: a supervised learning approach , in: IEEE Int. Geoscience and Remote Sensing Symp., IEEE, Quebec City, 2014, pp. 4683 - 4686.",
     link: "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6947538",
   },
   {
@@ -273,15 +273,15 @@ export const conferencePubs: PubEntry[] = [
     link: "https://iopscience.iop.org/article/10.1088/1755-1315/17/1/012210/meta",
   },
   {
-    text: "S. Mucher, L. Roupioz, H. Kramer, M. Wolters, M. Bogers, R. Lucas, P. Bunting, Z. Petrou, V. Kosmidou, I. Manakos, E. Padoa-Schioppa, G.F. Ficetola, A. Bonardi, M. Adamo, P. Blonda, LIDAR as a valuable information source for habitat mapping , GI_Forum conference, 2-5 July 2013, Salzburg, Austria, pp. 520–523.",
+    text: "S. Mucher, L. Roupioz, H. Kramer, M. Wolters, M. Bogers, R. Lucas, P. Bunting, Z. Petrou, V. Kosmidou, I. Manakos, E. Padoa-Schioppa, G.F. Ficetola, A. Bonardi, M. Adamo, P. Blonda, LIDAR as a valuable information source for habitat mapping , GI_Forum conference, 2-5 July 2013, Salzburg, Austria, pp. 520 - 523.",
     link: "https://gispoint.de/fileadmin/user_upload/paper_gis_open/537532044.pdf",
   },
   {
-    text: "M. Adamo, C. Tarantino, V. Kosmidou, Z. Petrou, I. Manakos, V. Tomaselli, R. Lucas, S. Muncher, P. Blonda, Disambiguation rules based on Earth Observation data for Land Cover to habitat map translation: a case study, GI_Forum conference, 2-5 July 2013, Salzburg, Austria, pp. 487–491.",
+    text: "M. Adamo, C. Tarantino, V. Kosmidou, Z. Petrou, I. Manakos, V. Tomaselli, R. Lucas, S. Muncher, P. Blonda, Disambiguation rules based on Earth Observation data for Land Cover to habitat map translation: a case study, GI_Forum conference, 2-5 July 2013, Salzburg, Austria, pp. 487 - 491.",
     link: null,
   },
   {
-    text: "M. Adamo, C. Tarantino, V. Kosmidou, Z. Petrou, I. Manakos, R. M. Lucas, V. Tomaselli, C. A. Mucher, P. Blonda, Land cover to habitat map translation: Disambiguation rules based on Earth Observation data , in: IEEE Int. Geoscience and Remote Sensing Symp., IEEE, Melbourne, 2013. pp. 3817–3820.",
+    text: "M. Adamo, C. Tarantino, V. Kosmidou, Z. Petrou, I. Manakos, R. M. Lucas, V. Tomaselli, C. A. Mucher, P. Blonda, Land cover to habitat map translation: Disambiguation rules based on Earth Observation data , in: IEEE Int. Geoscience and Remote Sensing Symp., IEEE, Melbourne, 2013. pp. 3817 - 3820.",
     link: "https://ieeexplore.ieee.org/document/6723663/",
   },
   {
@@ -308,7 +308,7 @@ export const networkingPubs: PubEntry[] = [
     link: null,
   },
   {
-    text: "I. Serral, P. Bauer, A. Kita, K. Vlachos, M. Matera, M. Basile, R.T. Chadoulis, J. Masó, I. Manakos, 2024. An innovative Drinking Water Data Space in times of water scarcity and extreme events: the WQeMS platform , EGU General Assembly, Vienna, Austria, 14–19, April, EGU24-17631.",
+    text: "I. Serral, P. Bauer, A. Kita, K. Vlachos, M. Matera, M. Basile, R.T. Chadoulis, J. Masó, I. Manakos, 2024. An innovative Drinking Water Data Space in times of water scarcity and extreme events: the WQeMS platform , EGU General Assembly, Vienna, Austria, 14 - 19, April, EGU24-17631.",
     link: "https://meetingorganizer.copernicus.org/EGU24/EGU24-17631.html",
   },
   {
@@ -400,11 +400,11 @@ export const networkingPubs: PubEntry[] = [
     link: "https://www.iale2022.eu/home.html",
   },
   {
-    text: "A. Kita, M. Sismanis, I. Manakos, C. Kalogeropoulos, C. Christodoulou, J. S. Lioumbas, 2022. Fusion of Sentinel-1 and Sentinel-2 data for inundation mapping in service of the water utilities, ESA Living Planet Symposium , Bonn, Germany, 23–27, May.",
+    text: "A. Kita, M. Sismanis, I. Manakos, C. Kalogeropoulos, C. Christodoulou, J. S. Lioumbas, 2022. Fusion of Sentinel-1 and Sentinel-2 data for inundation mapping in service of the water utilities, ESA Living Planet Symposium , Bonn, Germany, 23 - 27, May.",
     link: "https://www.esa.int/Applications/Observing_the_Earth/Save_the_date_Living_Planet_Symposium_2022",
   },
   {
-    text: "I. Serral, J. Masó, N. Julià, I. Manakos, G. Milis, L. Pesquer, 2022. Applying water requirements into metadata in the era of SDGs and Essential Variables: semantics, quality parameters and discoverability in the GEM+ , EGU General Assembly, Vienna, Austria, Doi: 10.5194/egusphere-egu22-5490, 23–27, May.",
+    text: "I. Serral, J. Masó, N. Julià, I. Manakos, G. Milis, L. Pesquer, 2022. Applying water requirements into metadata in the era of SDGs and Essential Variables: semantics, quality parameters and discoverability in the GEM+ , EGU General Assembly, Vienna, Austria, Doi: 10.5194/egusphere-egu22-5490, 23 - 27, May.",
     link: "https://meetingorganizer.copernicus.org/EGU22/EGU22-5490.html",
   },
   {
@@ -636,7 +636,7 @@ export const networkingPubs: PubEntry[] = [
     link: null,
   },
   {
-    text: "'From Space to Species: The BIO_SOS European initiative for habitat monitoring', 1st International Conference on Remote Sensing and Geoinformation in Pafos, 8th – 10th April, Cyprus.",
+    text: "'From Space to Species: The BIO_SOS European initiative for habitat monitoring', 1st International Conference on Remote Sensing and Geoinformation in Pafos, 8th - 10th April, Cyprus.",
     link: null,
   },
   {
@@ -747,7 +747,7 @@ export const posterItems: PosterItem[] = [
     img: "/images/publishing/esa_poster_2023.jpg",
     thumb: "/images/publishing/thumbnails/wqems_introduction.webp",
     caption:
-      "Introduction to the Copernicus Assisted Lake Water Quality Emergency Monitoring Service – WQeMS, 2022",
+      "Introduction to the Copernicus Assisted Lake Water Quality Emergency Monitoring Service - WQeMS, 2022",
   },
   {
     img: "/images/publishing/nextland_2023_poster.jpg",
@@ -851,7 +851,7 @@ export const videoItems: VideoItem[] = [
   },
   {
     title:
-      "GEO XVI Plenary, Session 5 – Land Cover Change and Land Degradation contribution (2019)",
+      "GEO XVI Plenary, Session 5 - Land Cover Change and Land Degradation contribution (2019)",
     url: "https://www.youtube.com/embed/W-JQc3rjC7g",
     type: "youtube",
   },

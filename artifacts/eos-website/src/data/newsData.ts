@@ -10,7 +10,7 @@ export const newsArticles: NewsArticle[] = [
   {
     title: "Ioannis Manakos co-chaired GISTAM 2026 in Benidorm, Spain",
     img: "/images/news/gistam-2026-co-chair.svg",
-    date: "May 21–23, 2026",
+    date: "May 21 - 23, 2026",
     newsId: "news158",
     url: "https://gistam.scitevents.org/EventChairs.aspx?y=2026",
   },
@@ -571,7 +571,7 @@ export const newsArticles: NewsArticle[] = [
     newsId: "news73",
   },
   {
-    title: "MEDWAYCAP Kick – off Meeting",
+    title: "MEDWAYCAP Kick - off Meeting",
     img: "/images/news/kom_medwaycap.jpeg",
     date: "December 17, 2021",
     newsId: "news72",

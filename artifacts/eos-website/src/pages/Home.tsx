@@ -1,5 +1,4 @@
 import { Link } from "wouter";
-import { motion } from "framer-motion";
 import {
   ArrowRight,
   Satellite,
@@ -9,10 +8,11 @@ import {
   ExternalLink,
   BookOpen,
 } from "lucide-react";
+import { NewsImage } from "@/components/news/NewsImage";
 import { EOInsightCard } from "@/components/eo-insights/EOInsightCard";
 import { sortedEOInsights } from "@/data/eoInsightsData";
-import { newsArticles } from "@/data/newsData";
 import { projects } from "@/data/projectsData";
+import { newsEntries } from "@/lib/newsIndex";
 import { assetUrl } from "@/lib/utils";
 
 const pillars = [
@@ -22,6 +22,7 @@ const pillars = [
     desc: "Land cover classification, habitat mapping, and change detection at local-to-continental scales using Sentinel and very-high-resolution imagery.",
     color: "text-[hsl(222_56%_55%)]",
     bg: "bg-[hsl(222_56%_20%)]/10",
+    href: "/tools/modules",
   },
   {
     icon: <Droplets className="w-7 h-7" />,
@@ -29,6 +30,7 @@ const pillars = [
     desc: "EO-based surface water monitoring for drinking-water utilities, inundation mapping, and hydroperiod estimation across dynamic water bodies.",
     color: "text-[hsl(199_80%_45%)]",
     bg: "bg-[hsl(199_80%_45%)]/10",
+    href: "/research/projects/wqems-water-quality-monitoring",
   },
   {
     icon: <TreePine className="w-7 h-7" />,
@@ -36,6 +38,7 @@ const pillars = [
     desc: "Biodiversity indicator extraction, ecosystem function monitoring, and habitat characterisation aligned with EU and international policy targets.",
     color: "text-[hsl(140_50%_38%)]",
     bg: "bg-[hsl(140_50%_38%)]/10",
+    href: "/research/projects/ecopotential-biodiversity-monitoring",
   },
   {
     icon: <Satellite className="w-7 h-7" />,
@@ -43,85 +46,103 @@ const pillars = [
     desc: "Crop monitoring, yield forecasting, and precision agriculture solutions integrating satellite imagery, telematics, and in-situ measurements.",
     color: "text-[hsl(37_80%_46%)]",
     bg: "bg-[hsl(37_80%_46%)]/10",
+    href: "/research/projects/digicotton-precision-agriculture",
   },
 ];
 
 const stats = [
-  { value: "35+", label: "Research Projects" },
-  { value: "150+", label: "Publications" },
-  { value: "30+", label: "Years of EO research" },
-  { value: "4", label: "Continents of impact" },
+  { value: "35+", label: "Research Projects", href: "/research" },
+  { value: "150+", label: "Publications", href: "/research/publications" },
+  { value: "30+", label: "Years of EO research", href: "/about" },
+  { value: "4", label: "Continents of cooperation", href: "/research/cooperations" },
 ];
 
 const partners = [
-  { name: "NASA LCLUC", img: "/images/cooperation/projects/lcluc.png" },
-  { name: "EARSeL", img: "/images/cooperation/projects/earsel-logo.gif" },
-  { name: "Copernicus Academy", img: "/images/cooperation/projects/cop-academy1.jpg" },
-  { name: "GEOBON", img: "/images/cooperation/projects/geobon.jpg" },
-  { name: "GEO", img: "/images/cooperation/projects/geo.png" },
-  { name: "CIHEAM", img: "/images/cooperation/projects/ciheam.png" },
+  {
+    name: "Copernicus Ambassador",
+    img: "/images/logo/copernicus_ambassador.svg",
+    url: "https://www.copernicus.eu/en/opportunities/eu-space-networks",
+  },
+  {
+    name: "NASA LCLUC",
+    img: "/images/cooperation/projects/lcluc.png",
+    url: "https://lcluc.umd.edu/",
+  },
+  {
+    name: "EARSeL",
+    img: "/images/cooperation/projects/earsel-logo.gif",
+    url: "http://lulc.earsel.org/",
+  },
+  {
+    name: "Copernicus Academy",
+    img: "/images/cooperation/projects/cop-academy1.jpg",
+    url: "https://www.copernicus.eu/en/opportunities/education",
+  },
+  {
+    name: "GEOBON",
+    img: "/images/cooperation/projects/geobon.jpg",
+    url: "https://geobon.org/",
+  },
+  {
+    name: "GEO",
+    img: "/images/cooperation/projects/geo.png",
+    url: "https://earthobservations.org/",
+  },
+  {
+    name: "CIHEAM",
+    img: "/images/cooperation/projects/ciheam.png",
+    url: "https://www.ciheam.org/",
+  },
 ];
 
-const featuredProjects = projects.filter((p) => p.status === "recent").slice(0, 3);
+const featuredProjectSlugs: Record<string, string> = {
+  MONALISA: "monalisa-land-degradation",
+  DigiCotton: "digicotton-precision-agriculture",
+  WQeMS: "wqems-water-quality-monitoring",
+};
+const featuredProjects = projects.filter((project) => project.name in featuredProjectSlugs);
 const featuredInsights = sortedEOInsights.slice(0, 3);
 
 export default function Home() {
-  const newsPreview = newsArticles.slice(0, 3);
+  const newsPreview = newsEntries.slice(0, 3);
 
   return (
     <div className="w-full">
       {/* ── Hero ── */}
-      <section className="relative flex min-h-[820px] items-center justify-center overflow-hidden pb-12 pt-28 sm:min-h-[760px] sm:pb-10 sm:pt-28 lg:h-[90svh] lg:min-h-[700px]">
+      <section className="relative flex min-h-[680px] items-center justify-center overflow-hidden pb-12 pt-28 sm:min-h-[700px] sm:pb-10 sm:pt-28 lg:min-h-[660px] lg:h-[82svh]">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${import.meta.env.BASE_URL}images/hero-bg.png`}
+            src={`${import.meta.env.BASE_URL}images/hero-bg.webp`}
             alt="Earth Observation satellite view"
             className="w-full h-full object-cover"
+            width={1408}
+            height={768}
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[hsl(222_56%_10%)]/80 via-[hsl(222_56%_12%)]/60 to-background" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/85 text-sm font-medium mb-8"
-          >
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/85 text-sm font-medium mb-8">
             <Satellite className="w-4 h-4 text-[hsl(37_80%_65%)]" />
             CERTH/ITI Remote Sensing Research Team
-          </motion.div>
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-white leading-tight mb-6"
-          >
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-white leading-tight mb-6">
             Interfacing{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(16_62%_65%)] to-[hsl(37_80%_65%)]">
               Earth Observation
             </span>
             <br />
             to the public
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-white/75 max-w-2xl mx-auto leading-relaxed mb-10"
-          >
-            The EOS team develops innovative research, tools, and Earth Observation services for
-            monitoring biodiversity, habitats, land cover, and water resources.
-          </motion.p>
+          <p className="text-lg md:text-xl text-white/75 max-w-2xl mx-auto leading-relaxed mb-10">
+            Turning satellite observations into practical evidence for land, water, ecosystems, and
+            agriculture.
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.55 }}
-            className="flex flex-col sm:flex-row sm:flex-wrap gap-4 justify-center"
-          >
+          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 justify-center">
             <Link
               href="/eo-insights/"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[hsl(37_80%_58%)] hover:bg-[hsl(37_80%_66%)] text-[hsl(222_56%_14%)] font-semibold text-sm transition-all shadow-lg shadow-[hsl(37_80%_46%)]/30"
@@ -134,43 +155,28 @@ export default function Home() {
             >
               Explore Research <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link
-              href="/tools"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold text-sm backdrop-blur-md transition-all"
-            >
-              Tools & Data
-            </Link>
-          </motion.div>
-
-          <motion.a
-            href="https://www.copernicus.eu/en/opportunities/eu-space-networks"
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.7 }}
-            className="mt-7 inline-flex items-center px-4 py-2.5 rounded-2xl bg-white/90 hover:bg-white border border-white/60 shadow-lg transition-colors"
-          >
-            <img
-              src={assetUrl("/images/logo/copernicus_ambassador.svg")}
-              alt="Copernicus Ambassador"
-              className="h-12 w-auto"
-            />
-          </motion.a>
+          </div>
         </div>
       </section>
 
       {/* ── Stats bar ── */}
       <section className="bg-[hsl(222_56%_15%)] py-10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <p className="mb-6 text-center text-xs font-semibold uppercase tracking-[0.16em] text-white/70">
+            Selected indicators, as of 2026
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {stats.map((s) => (
-              <div key={s.label} className="text-center">
+              <Link
+                key={s.label}
+                href={s.href}
+                className="rounded-xl p-3 text-center transition-colors hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(37_80%_60%)]"
+              >
                 <p className="text-3xl md:text-4xl font-display font-extrabold text-[hsl(37_80%_60%)]">
                   {s.value}
                 </p>
-                <p className="text-sm text-white/60 mt-1">{s.label}</p>
-              </div>
+                <p className="text-sm text-white/75 mt-1">{s.label}</p>
+              </Link>
             ))}
           </div>
         </div>
@@ -190,20 +196,24 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {pillars.map((p) => (
-              <div
+              <Link
                 key={p.title}
-                className="bg-card rounded-2xl border border-border p-6 hover:shadow-md hover:border-primary/20 transition-all"
+                href={p.href}
+                className="group bg-card rounded-2xl border border-border p-6 hover:shadow-md hover:border-primary/30 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
                 <div
                   className={`w-12 h-12 rounded-xl ${p.bg} flex items-center justify-center mb-5 ${p.color}`}
                 >
                   {p.icon}
                 </div>
-                <h3 className="font-display font-bold text-foreground mb-3 leading-snug">
+                <h3 className="font-display font-bold text-foreground mb-3 leading-snug group-hover:text-primary transition-colors">
                   {p.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
-              </div>
+                <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-primary">
+                  See related work <ArrowRight className="h-3 w-3" />
+                </span>
+              </Link>
             ))}
           </div>
         </div>
@@ -240,6 +250,8 @@ export default function Home() {
                     src={assetUrl(proj.img)}
                     alt={proj.name}
                     className="max-h-full max-w-full object-contain"
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = "none";
                     }}
@@ -250,16 +262,24 @@ export default function Home() {
                   <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                     {proj.description}
                   </p>
-                  {proj.url && (
-                    <a
-                      href={proj.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+                  <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+                    <Link
+                      href={`/research/projects/${featuredProjectSlugs[proj.name]}`}
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
                     >
-                      Visit project <ExternalLink className="w-3 h-3" />
-                    </a>
-                  )}
+                      View EOS case study <ArrowRight className="w-3 h-3" />
+                    </Link>
+                    {proj.url && (
+                      <a
+                        href={proj.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-primary hover:underline"
+                      >
+                        Official project <ExternalLink className="w-3 h-3" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
@@ -335,14 +355,7 @@ export default function Home() {
                 >
                   {article.img && (
                     <div className="h-44 overflow-hidden bg-muted flex items-center justify-center p-2">
-                      <img
-                        src={assetUrl(article.img)}
-                        alt={article.title}
-                        className="w-full h-full object-contain"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).parentElement!.style.display = "none";
-                        }}
-                      />
+                      <NewsImage article={article} className="w-full h-full object-contain" />
                     </div>
                   )}
                   <div className="p-5 flex flex-col flex-1">
@@ -353,7 +366,7 @@ export default function Home() {
                       {article.title}
                     </h3>
                     <Link
-                      href="/news"
+                      href={`/news/${article.slug}`}
                       className="mt-auto pt-4 inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
                     >
                       Read more <ArrowRight className="w-3 h-3" />
@@ -374,19 +387,25 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
             {partners.map((p) => (
-              <div
+              <a
                 key={p.name}
-                className="h-10 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity"
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-12 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
+                aria-label={`${p.name} website`}
               >
                 <img
                   src={assetUrl(p.img)}
                   alt={p.name}
-                  className="max-h-full max-w-[120px] object-contain grayscale hover:grayscale-0 transition-all"
+                  className="max-h-full max-w-[130px] object-contain grayscale hover:grayscale-0 transition-all"
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = "none";
                   }}
                 />
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -405,7 +424,7 @@ export default function Home() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[hsl(37_80%_46%)] hover:bg-[hsl(37_80%_52%)] text-white font-semibold text-sm transition-all shadow-lg shadow-[hsl(37_80%_46%)]/30"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[hsl(37_80%_58%)] hover:bg-[hsl(37_80%_66%)] text-[hsl(222_56%_14%)] font-semibold text-sm transition-all shadow-lg shadow-[hsl(37_80%_46%)]/30"
           >
             Get in touch <ArrowRight className="w-4 h-4" />
           </Link>
