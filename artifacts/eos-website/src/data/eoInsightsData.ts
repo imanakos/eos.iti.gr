@@ -1,6 +1,15 @@
 import rawData from "./eoInsights.json";
 
-export type InsightVisual = "radar" | "heat" | "fire" | "vegetation" | "water" | "geoai";
+export type InsightVisual =
+  | "radar"
+  | "heat"
+  | "fire"
+  | "vegetation"
+  | "water"
+  | "geoai"
+  | "landcover"
+  | "geobiodiversity"
+  | "taxonomy";
 
 export interface EOInsightSource {
   label: string;

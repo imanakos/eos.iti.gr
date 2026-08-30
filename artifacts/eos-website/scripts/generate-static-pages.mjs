@@ -45,17 +45,25 @@ async function loadTypeScriptData(relativePath) {
   return import(moduleUrl);
 }
 
-const [newsDataModule, newsBodyModule, projectCaseStudiesModule] = await Promise.all([
-  loadTypeScriptData("src/data/newsData.ts"),
-  loadTypeScriptData("src/data/newsBodyData.ts"),
-  loadTypeScriptData("src/data/projectCaseStudiesData.ts"),
-]);
+const [newsDataModule, newsBodyModule, projectCaseStudiesModule, eoEvidenceModule] =
+  await Promise.all([
+    loadTypeScriptData("src/data/newsData.ts"),
+    loadTypeScriptData("src/data/newsBodyData.ts"),
+    loadTypeScriptData("src/data/projectCaseStudiesData.ts"),
+    loadTypeScriptData("src/data/eoEvidenceData.ts"),
+  ]);
 const newsArticles = newsDataModule.newsArticles;
 const newsBodyText = newsBodyModule.newsBodyText;
 const projectCaseStudies = projectCaseStudiesModule.projectCaseStudies;
+const eosEvidence = eoEvidenceModule.eosEvidence;
 
-if (!Array.isArray(newsArticles) || !Array.isArray(projectCaseStudies)) {
-  throw new Error("The news or project case-study data could not be loaded.");
+if (
+  !Array.isArray(newsArticles) ||
+  !Array.isArray(projectCaseStudies) ||
+  typeof eosEvidence !== "object" ||
+  eosEvidence === null
+) {
+  throw new Error("The news, project case-study, or EO evidence data could not be loaded.");
 }
 
 function slugify(value) {
@@ -102,80 +110,6 @@ const latestModifiedAt = sortedArticles.reduce(
   (latest, article) => (article.modifiedAt > latest ? article.modifiedAt : latest),
   sortedArticles[0]?.modifiedAt || new Date().toISOString().slice(0, 10)
 );
-const eosConnections = {
-  "can-radar-satellites-see-through-clouds": [
-    {
-      label: "EO processing modules",
-      description: "Explore EOS radar, water, land, and vegetation processing capabilities.",
-      href: "/tools/modules/",
-    },
-    {
-      label: "EOS publications",
-      description: "Continue into peer-reviewed methods, conference work, posters, and media.",
-      href: "/research/publications/",
-    },
-  ],
-  "can-satellites-identify-urban-heat-islands": [
-    {
-      label: "EOS publications",
-      description: "Find related environmental monitoring and land analysis research.",
-      href: "/research/publications/",
-    },
-    {
-      label: "Discuss a monitoring need",
-      description: "Contact EOS about combining satellite observations with local evidence.",
-      href: "/contact/",
-    },
-  ],
-  "how-do-satellites-map-wildfire-damage": [
-    {
-      label: "SnapEarth case study",
-      description: "See how EOS connected GeoAI, cloud services, and EO information access.",
-      href: "/research/projects/snapearth-geoai/",
-    },
-    {
-      label: "EO processing modules",
-      description: "Explore the team's land, vegetation, radar, and change-analysis capabilities.",
-      href: "/tools/modules/",
-    },
-  ],
-  "why-does-healthy-vegetation-appear-red": [
-    {
-      label: "DigiCotton case study",
-      description: "See how EOS connects satellite, UAV, weather, and farm observations.",
-      href: "/research/projects/digicotton-precision-agriculture/",
-    },
-    {
-      label: "EO processing modules",
-      description: "Explore vegetation, phenology, land, and habitat analysis capabilities.",
-      href: "/tools/modules/",
-    },
-  ],
-  "can-satellites-detect-water-pollution": [
-    {
-      label: "WQeMS case study",
-      description: "See how EOS supported water-quality services, demonstrations, and training.",
-      href: "/research/projects/wqems-water-quality-monitoring/",
-    },
-    {
-      label: "Water services and tools",
-      description: "Explore EOS water, inundation, and open-data resources.",
-      href: "/tools/",
-    },
-  ],
-  "can-geoai-replace-the-earth-observation-expert": [
-    {
-      label: "SnapEarth case study",
-      description: "Explore a real EOS project connecting GeoAI, EO search, and journalism.",
-      href: "/research/projects/snapearth-geoai/",
-    },
-    {
-      label: "EOS publications",
-      description: "Review the wider scientific record behind the team's methods and applications.",
-      href: "/research/publications/",
-    },
-  ],
-};
 const defaultSocialImage = {
   path: "/images/eo-insights/eo-analysis-notes.jpg",
   alt: "Three concept illustrations, not satellite data, of vegetation, water and Earth Observation data analysis.",
@@ -559,7 +493,7 @@ function renderCollectionBody() {
 }
 
 function renderArticleBody(article) {
-  const connections = eosConnections[article.slug] || [];
+  const evidence = eosEvidence[article.slug] || [];
 
   return `<main>
       <article>
@@ -580,15 +514,28 @@ function renderArticleBody(article) {
           <p>${escapeHtml(article.keyPoint)}</p>
         </aside>
         ${
-          connections.length
+          evidence.length
             ? `<section aria-labelledby="eos-practice-heading">
-          <h2 id="eos-practice-heading">EOS in practice</h2>
-          <p>Continue from the concept to related EOS projects, methods, and research material.</p>
-          <ul>${connections
-            .map(
-              (connection) =>
-                `<li><a href="${escapeHtml(internalUrl(connection.href))}">${escapeHtml(connection.label)}</a> - ${escapeHtml(connection.description)}</li>`
-            )
+          <h2 id="eos-practice-heading">EOS evidence in practice</h2>
+          <p>The relationship between this topic and selected EOS work, outcomes, and publications is stated explicitly.</p>
+          <ul>${evidence
+            .map((item) => {
+              const label = escapeHtml(item.label);
+              const kind = escapeHtml(item.kind);
+              const description = escapeHtml(item.description);
+
+              if (!item.href) {
+                return `<li><strong>${kind}: ${label}</strong> - ${description}</li>`;
+              }
+
+              const isExternal = item.href.startsWith("http");
+              const href = isExternal ? item.href : internalUrl(item.href);
+              const externalAttributes = isExternal
+                ? ' target="_blank" rel="noopener noreferrer"'
+                : "";
+
+              return `<li><strong>${kind}:</strong> <a href="${escapeHtml(href)}"${externalAttributes}>${label}</a> - ${description}</li>`;
+            })
             .join("\n")}</ul>
         </section>`
             : ""
