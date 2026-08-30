@@ -3,7 +3,10 @@ import {
   CloudRain,
   Flame,
   Leaf,
+  Layers3,
+  Mountain,
   Satellite,
+  Tags,
   ThermometerSun,
   Waves,
 } from "lucide-react";
@@ -68,6 +71,30 @@ const visualStyles: Record<
     image: "/images/eo-insights/geoai-earth-observation.jpg",
     background: "from-[hsl(222_66%_14%)] via-[hsl(249_55%_34%)] to-[hsl(16_62%_48%)]",
     accent: "bg-[hsl(37_85%_62%)]",
+  },
+  landcover: {
+    Icon: Layers3,
+    label: "Land-cover change",
+    detail: "Comparable dates • classes • evidence",
+    image: "/images/eo-insights/land-cover-change.jpg",
+    background: "from-[hsl(218_66%_13%)] via-[hsl(154_44%_27%)] to-[hsl(36_62%_44%)]",
+    accent: "bg-[hsl(43_87%_64%)]",
+  },
+  geobiodiversity: {
+    Icon: Mountain,
+    label: "Physical + living diversity",
+    detail: "Terrain • water • habitat",
+    image: "/images/eo-insights/geodiversity-biodiversity.jpg",
+    background: "from-[hsl(220_66%_14%)] via-[hsl(177_49%_28%)] to-[hsl(38_62%_45%)]",
+    accent: "bg-[hsl(166_66%_66%)]",
+  },
+  taxonomy: {
+    Icon: Tags,
+    label: "Shared change language",
+    detail: "Impact • pressure • evidence",
+    image: "/images/eo-insights/global-change-taxonomy.jpg",
+    background: "from-[hsl(221_69%_13%)] via-[hsl(195_55%_28%)] to-[hsl(33_68%_45%)]",
+    accent: "bg-[hsl(39_90%_65%)]",
   },
 };
 

@@ -241,6 +241,123 @@
           "publisher": "ESA EO Science for Society"
         }
       ]
+    },
+    {
+      "slug": "when-has-the-land-really-changed",
+      "title": "When Has the Land Really Changed?",
+      "shortTitle": "When has the land really changed?",
+      "summary": "Satellite maps can reveal land-cover transitions, but a change of colour between two maps is only a candidate change until dates, definitions, scale and evidence have been checked.",
+      "seoDescription": "Learn how satellites detect land-cover change, why maps can disagree and what evidence is needed before a visible difference becomes a defensible result.",
+      "publishedAt": "2026-08-30",
+      "modifiedAt": "2026-08-30",
+      "readingMinutes": 2,
+      "visual": "landcover",
+      "image": "/images/eo-insights/land-cover-change.jpg",
+      "imageAlt": "Concept illustration, not satellite data, of a river landscape observed across changing wetland, forest, farmland and settlement patterns.",
+      "tags": ["Land cover", "Change detection", "Map validation"],
+      "keyPoint": "A difference between two classified maps is only a candidate change until comparable observations, class definitions, scale, uncertainty and independent evidence support it.",
+      "paragraphs": [
+        "A new road, a burned patch, a receding wetland or a harvested field can all appear as change from space. Land cover describes the physical surface, such as trees, water, crops or buildings. Land use describes what people do there. The two are related, but they are not interchangeable.",
+        "A satellite does not record a ready-made label. It measures reflected or emitted energy, or a radar echo. Analysts correct the observations, combine suitable dates, derive informative features and classify the surface using a chosen legend. A single pixel may still contain several materials.",
+        "Two credible maps can disagree because they use different seasons, spatial resolutions, class definitions, training samples, reference data, algorithms or minimum mapping units. A dry grassland may resemble bare ground, while a harvested field may briefly lose its vegetation signal. Disagreement is therefore not automatic proof of environmental change.",
+        "A defensible workflow compares similarly processed observations and harmonised legends. It checks clouds, shadows and quality flags, uses several dates where possible, identifies the precise transition and reports class-specific uncertainty. Field records, statistics, weather, permits and local knowledge can then test possible explanations. The statement should say what changed, when, at what scale and with what confidence.",
+        "Satellite time series provide repeatable spatial evidence over large areas. Their real value appears when observation, interpretation and cause remain separate. That discipline turns a visual difference into land information that can support planning, restoration, conservation and transparent public discussion."
+      ],
+      "sources": [
+        {
+          "label": "International standards for land-cover information",
+          "url": "https://www.fao.org/geospatial/data-and-tools/international-standards/en",
+          "publisher": "Food and Agriculture Organization of the United Nations"
+        },
+        {
+          "label": "Guidance on CORINE status and change layers",
+          "url": "https://land.copernicus.eu/en/faq/products/corine-land-cover",
+          "publisher": "Copernicus Land Monitoring Service"
+        },
+        {
+          "label": "Land Change Monitoring, Assessment and Projection products",
+          "url": "https://www.usgs.gov/data/land-change-monitoring-assessment-and-projection-science-products",
+          "publisher": "U.S. Geological Survey"
+        }
+      ]
+    },
+    {
+      "slug": "can-satellites-reveal-the-link-between-geodiversity-and-biodiversity",
+      "title": "Can Satellites Reveal the Link Between Geodiversity and Biodiversity?",
+      "shortTitle": "Can satellites connect geodiversity and biodiversity?",
+      "summary": "Earth Observation can map parts of the physical landscape and living cover together, but understanding their relationship still requires field evidence, scale awareness and interdisciplinary interpretation.",
+      "seoDescription": "Learn how Earth Observation combines terrain, soil, water and vegetation evidence to study links between geodiversity and biodiversity.",
+      "publishedAt": "2026-08-30",
+      "modifiedAt": "2026-08-30",
+      "readingMinutes": 2,
+      "visual": "geobiodiversity",
+      "image": "/images/eo-insights/geodiversity-biodiversity.jpg",
+      "imageAlt": "Concept illustration, not satellite data, of mountains, rocks, soils, rivers, wetlands and vegetation communities forming one connected landscape.",
+      "tags": ["Geodiversity", "Biodiversity", "Habitat monitoring"],
+      "keyPoint": "Earth Observation can reveal spatial relationships between physical diversity and biological patterns. It cannot turn a spectral map into a species inventory or establish causality by itself.",
+      "paragraphs": [
+        "Geodiversity is the variety of rocks, landforms, soils, water systems and physical processes that shape a landscape. Biodiversity is the variety of living organisms, communities and ecosystems. They are connected: terrain, geology, moisture and soils create different settings for life, while organisms can also modify soils, water movement and surface processes.",
+        "Earth Observation can place several parts of this relationship on the same map. Elevation models describe terrain and landforms. Multispectral, hyperspectral, thermal and radar observations can provide evidence about surface materials, moisture, water dynamics, vegetation structure, seasonal activity and disturbance. Repeated acquisitions reveal change, while field observations give ecological and geological meaning to the signal.",
+        "For biodiversity, satellites are especially useful for monitoring habitat extent and condition, fragmentation, connectivity, vegetation phenology, productivity, fire, flooding and land-cover change. In suitable settings they may also help distinguish plant communities, traits or particular species. Most such products remain indicators or proxies rather than direct inventories of genes and species.",
+        "The same caution applies to geodiversity. A terrain model can show a landform, and imaging spectroscopy may help distinguish some exposed minerals, but satellites do not reveal every rock, soil property or subsurface process. A spatial association between physical diversity and biological patterns is not proof that one caused the other. Resolution, season, classification scheme and scale can all alter the pattern.",
+        "A defensible assessment combines complementary sensors, geological and soil information, ecological surveys, local expertise and uncertainty reporting. It asks a specific question, such as whether habitat diversity follows terrain and hydrological variation, then tests that relationship at suitable scales. Earth Observation makes the connection visible across large areas and through time; understanding it remains an interdisciplinary scientific task."
+      ],
+      "sources": [
+        {
+          "label": "Essential Biodiversity Variables",
+          "url": "https://geobon.org/ebvs/what-are-ebvs/",
+          "publisher": "Group on Earth Observations Biodiversity Observation Network"
+        },
+        {
+          "label": "Geodiversity and its links with biodiversity",
+          "url": "https://www.unesco.org/en/days/geodiversity",
+          "publisher": "UNESCO"
+        },
+        {
+          "label": "How space supports ecosystem monitoring",
+          "url": "https://www.esa.int/Enabling_Support/Preparing_for_the_Future/Space_for_Earth/Four_ways_that_space_is_changing_ecosystem_monitoring",
+          "publisher": "European Space Agency"
+        }
+      ]
+    },
+    {
+      "slug": "why-does-a-global-land-change-taxonomy-matter",
+      "title": "Why Does a Global Land-Change Taxonomy Matter?",
+      "shortTitle": "Why a global change taxonomy matters",
+      "summary": "A shared, evidence-based vocabulary helps Earth Observation teams describe what changed, examine possible pressures and compare findings across places and times.",
+      "seoDescription": "Learn how a global land-change taxonomy helps satellite monitoring distinguish observed impacts from possible pressures while keeping evidence comparable.",
+      "publishedAt": "2026-08-30",
+      "modifiedAt": "2026-08-30",
+      "readingMinutes": 2,
+      "visual": "taxonomy",
+      "image": "/images/eo-insights/global-change-taxonomy.jpg",
+      "imageAlt": "Concept illustration, not satellite data, of forest, wetland, farmland, dryland and coast organised with consistent visual frames across Earth.",
+      "tags": ["Land-cover change", "Global Change Taxonomy", "Land monitoring"],
+      "keyPoint": "A taxonomy does not replace evidence. It makes evidence easier to test and compare by separating the observed impact from the pressure proposed to explain it.",
+      "paragraphs": [
+        "When two monitoring teams describe the same landscape change with different words, their maps may look compatible while meaning different things. One may record vegetation loss, another deforestation, and a third a transition from woodland to bare ground. A shared taxonomy helps prevent those labels from drifting apart.",
+        "The Global Change Taxonomy, published in 2022 by an international team that included Ioannis Manakos, links an observed impact with a possible pressure. Its initial 246 combinations are supported by measurable environmental descriptors, such as canopy cover, water extent, species, temperature or height, compared through time.",
+        "This matters because a satellite image rarely explains a change on its own. A time series may show that vegetation cover decreased, while field observations, climate records or management information are needed to judge why. Keeping the impact separate from the proposed pressure makes the reasoning transparent and allows evidence from satellites, aircraft, ground measurements and models to be combined.",
+        "The practical benefit is comparability. Local studies can speak the same language as national or global monitoring, and results can be revisited when better evidence becomes available. The framework can support work on land degradation, restoration and ecosystem condition without forcing every landscape into one rigid map legend.",
+        "A taxonomy is not an automatic truth machine. Sensor resolution, observation frequency, validation quality and uncertainty still limit what can be concluded, and causes may remain ambiguous. Its value is more modest but important: it makes claims about change clearer, testable and easier to compare across places, sectors and time."
+      ],
+      "sources": [
+        {
+          "label": "ISO 19144-2 Land Cover Meta Language",
+          "url": "https://www.iso.org/standard/81259.html",
+          "publisher": "International Organization for Standardization"
+        },
+        {
+          "label": "The DPSIR analytical framework",
+          "url": "https://www.eea.europa.eu/en/analysis/publications/europes-environment-aoa/chapter1.xhtml",
+          "publisher": "European Environment Agency"
+        },
+        {
+          "label": "Land Degradation Neutrality principles",
+          "url": "https://www.unccd.int/land-and-life/land-degradation-neutrality/ldn-principles",
+          "publisher": "United Nations Convention to Combat Desertification"
+        }
+      ]
     }
   ]
 }
