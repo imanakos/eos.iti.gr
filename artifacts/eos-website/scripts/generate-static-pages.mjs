@@ -541,7 +541,8 @@ function renderArticleBody(article) {
             : ""
         }
         <section aria-labelledby="references-heading">
-          <h2 id="references-heading">Explore the evidence</h2>
+          <h2 id="references-heading">International and independent references</h2>
+          <p>Authoritative sources from missions, international institutions and standards bodies, kept separate from EOS work above.</p>
           <ul>
             ${article.sources
               .map(

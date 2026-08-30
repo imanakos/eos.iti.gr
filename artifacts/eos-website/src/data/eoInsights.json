@@ -265,19 +265,19 @@
       ],
       "sources": [
         {
-          "label": "Comparing land-cover products across nine countries",
-          "url": "https://doi.org/10.3390/rs10121967",
-          "publisher": "Remote Sensing"
+          "label": "International standards for land-cover information",
+          "url": "https://www.fao.org/geospatial/data-and-tools/international-standards/en",
+          "publisher": "Food and Agriculture Organization of the United Nations"
         },
         {
-          "label": "A global taxonomy and evidence framework for land change",
-          "url": "https://doi.org/10.1111/gcb.16346",
-          "publisher": "Global Change Biology"
+          "label": "Guidance on CORINE status and change layers",
+          "url": "https://land.copernicus.eu/en/faq/products/corine-land-cover",
+          "publisher": "Copernicus Land Monitoring Service"
         },
         {
-          "label": "EODESM evidence-based land monitoring",
-          "url": "https://doi.org/10.1109/IGARSS.2018.8519474",
-          "publisher": "IEEE IGARSS"
+          "label": "Land Change Monitoring, Assessment and Projection products",
+          "url": "https://www.usgs.gov/data/land-change-monitoring-assessment-and-projection-science-products",
+          "publisher": "U.S. Geological Survey"
         }
       ]
     },
@@ -304,19 +304,19 @@
       ],
       "sources": [
         {
-          "label": "Towards a comprehensive geodiversity-biodiversity nexus",
-          "url": "https://doi.org/10.1016/j.earscirev.2025.105075",
-          "publisher": "Earth-Science Reviews"
+          "label": "Essential Biodiversity Variables",
+          "url": "https://geobon.org/ebvs/what-are-ebvs/",
+          "publisher": "Group on Earth Observations Biodiversity Observation Network"
         },
         {
-          "label": "Remote sensing for biodiversity monitoring",
-          "url": "https://doi.org/10.1007/s10531-015-0947-z",
-          "publisher": "Biodiversity and Conservation"
+          "label": "Geodiversity and its links with biodiversity",
+          "url": "https://www.unesco.org/en/days/geodiversity",
+          "publisher": "UNESCO"
         },
         {
-          "label": "The EODHaM habitat-monitoring system",
-          "url": "https://doi.org/10.1016/j.jag.2014.10.011",
-          "publisher": "International Journal of Applied Earth Observation and Geoinformation"
+          "label": "How space supports ecosystem monitoring",
+          "url": "https://www.esa.int/Enabling_Support/Preparing_for_the_Future/Space_for_Earth/Four_ways_that_space_is_changing_ecosystem_monitoring",
+          "publisher": "European Space Agency"
         }
       ]
     },
@@ -343,19 +343,19 @@
       ],
       "sources": [
         {
-          "label": "A globally relevant change taxonomy and evidence-based framework",
-          "url": "https://doi.org/10.1111/gcb.16346",
-          "publisher": "Global Change Biology"
+          "label": "ISO 19144-2 Land Cover Meta Language",
+          "url": "https://www.iso.org/standard/81259.html",
+          "publisher": "International Organization for Standardization"
         },
         {
-          "label": "Living Earth System and Global Change Framework",
-          "url": "https://doi.org/10.5281/zenodo.6884999",
-          "publisher": "Zenodo"
+          "label": "The DPSIR analytical framework",
+          "url": "https://www.eea.europa.eu/en/analysis/publications/europes-environment-aoa/chapter1.xhtml",
+          "publisher": "European Environment Agency"
         },
         {
-          "label": "EODESM evidence-based land monitoring",
-          "url": "https://doi.org/10.1109/IGARSS.2018.8519474",
-          "publisher": "IEEE IGARSS"
+          "label": "Land Degradation Neutrality principles",
+          "url": "https://www.unccd.int/land-and-life/land-degradation-neutrality/ldn-principles",
+          "publisher": "United Nations Convention to Combat Desertification"
         }
       ]
     }

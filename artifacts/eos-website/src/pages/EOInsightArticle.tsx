@@ -287,10 +287,11 @@ export default function EOInsightArticle({ params }: RouteComponentProps<{ slug:
             className="mt-12 border-t border-border pt-10"
           >
             <h2 id="references-heading" className="text-2xl font-bold text-foreground">
-              Explore the evidence
+              International and independent references
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Selected institutional resources providing further context and technical detail.
+              Authoritative sources from missions, international institutions and standards bodies,
+              kept separate from EOS work above.
             </p>
             <ul className="mt-6 space-y-3">
               {insight.sources.map((source) => (
