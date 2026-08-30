@@ -386,12 +386,12 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     programme: "European Union Horizon 2020",
     periodLabel: "Completed project with a substantial research legacy",
     summary:
-      "ECOPOTENTIAL connected satellite and in-situ observations with ecosystem research and protected-area management. EOS contributed to online data services, land-cover and habitat information, data-cube work, and methods for monitoring wetland inundation.",
+      "ECOPOTENTIAL connected satellite and in-situ observations with ecosystem research and protected-area management. Within CERTH, EOS contributed online workflows for inundation, vegetation phenology, and landscape indicators, alongside wetland-mapping research and product-quality assessment.",
     challenge:
       "Protected areas need repeated, comparable information about land cover, habitats, water regimes, and ecosystem change. The scientific difficulty is to combine observations from different sensors and scales without losing the ecological meaning required by researchers and managers.",
     eosContribution: [
-      "EOS researchers contributed to the project's online monitoring services and to workflows that translate Earth Observation data into ecosystem indicators. Documented work includes protected-area data cubes, land-cover and habitat mapping, and inundation mapping for wetland areas.",
-      "The publication archive records methods using Sentinel-1 and Sentinel-2, including optical inundation mapping and radar-optical fusion for conditions where cloud limits visible imagery. It also records EOS participation in the ECOPOTENTIAL Virtual Laboratory and service demonstrations.",
+      "ECOPOTENTIAL deliverable D6.3 identifies CERTH as the partner responsible for the online-service report and documents six CERTH-team workflows: HydroMap, WaterMasks, SpeckleRemoval, PhenologyMetrics, PhenologyChanges, and LandMetrics. These turn satellite observations into water, seasonal-vegetation, change, and landscape information.",
+      "The scientific record includes Sentinel-2 inundation mapping and Sentinel-1/Sentinel-2 fusion for less favourable atmospheric conditions. Deliverable D4.6 also records a CERTH quality assessment of Doñana inundation products, with results stated for the particular site, dates, reference maps, and validation design.",
     ],
     methodsAndData: [
       "Sentinel-1 radar and Sentinel-2 multispectral observations",
@@ -404,7 +404,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       {
         title: "Online ecosystem monitoring services",
         detail:
-          "EOS co-authored and presented an overview of online services designed to provide ecosystem indicators across project protected areas.",
+          "Ioannis Manakos was a main author and editor of D6.3, while its service catalogue distinguishes the workflows contributed by CERTH and by other consortium partners.",
         status: "Documented output",
       },
       {
@@ -414,9 +414,9 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
         status: "Documented output",
       },
       {
-        title: "EODESM and data access",
+        title: "Quality-assessed inundation products",
         detail:
-          "The EOS site retains an ECOPOTENTIAL-derived land-cover mapping service and material about project portals, data cubes, and the Virtual Laboratory.",
+          "A quality assessment covered 23 CERTH Sentinel-2 inundation maps. For seven dates with Landsat references, mean overall accuracy was 97.69% without class-boundary pixels and 96.40% with them; the report cautions against generalising beyond that validation design.",
         status: "Documented output",
       },
       {
@@ -437,6 +437,18 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
         label: "ECOPOTENTIAL project record and results",
         url: "https://cordis.europa.eu/project/id/641762",
         publisher: "European Commission CORDIS",
+        kind: "Official project record",
+      },
+      {
+        label: "Online monitoring data services for ecosystem indicators, D6.3",
+        url: "https://ecopotential-project.eu/wp-content/uploads/2026/07/D6.3.pdf",
+        publisher: "ECOPOTENTIAL consortium",
+        kind: "Official project record",
+      },
+      {
+        label: "EO data quality elicitation and documentation, D4.6",
+        url: "https://ecopotential-project.eu/wp-content/uploads/2026/07/D4.6.pdf",
+        publisher: "ECOPOTENTIAL consortium",
         kind: "Official project record",
       },
       {
@@ -483,7 +495,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     metadata: {
       title: "ECOPOTENTIAL Biodiversity Monitoring Case Study | EOS",
       description:
-        "EOS contributions to ECOPOTENTIAL in protected-area monitoring, inundation mapping, data cubes, and ecosystem information services.",
+        "Documented EOS and CERTH contributions to ECOPOTENTIAL in inundation mapping, vegetation phenology, landscape indicators, and ecosystem information services.",
       keywords: [
         "ECOPOTENTIAL",
         "biodiversity monitoring",

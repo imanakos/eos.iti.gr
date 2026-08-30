@@ -11,80 +11,193 @@ import {
 import { SITE_URL, usePageMetadata } from "@/lib/seo";
 import NotFound from "./not-found";
 
-const eosConnections: Record<string, { label: string; description: string; href: string }[]> = {
+type EOSEvidenceKind =
+  | "Documented EOS outcome"
+  | "Documented EOS workflow"
+  | "Peer-reviewed publication"
+  | "Applied EOS outcome"
+  | "Related EOS project"
+  | "Ongoing exploration";
+
+interface EOSEvidenceItem {
+  kind: EOSEvidenceKind;
+  label: string;
+  description: string;
+  href?: string;
+}
+
+const eosEvidence: Record<string, EOSEvidenceItem[]> = {
   "can-radar-satellites-see-through-clouds": [
     {
-      label: "EO processing modules",
-      description: "Explore EOS radar, water, land, and vegetation processing capabilities.",
-      href: "/tools/modules/",
+      kind: "Documented EOS outcome",
+      label: "Quality assessment of Doñana inundation maps",
+      description:
+        "ECOPOTENTIAL assessed 23 CERTH Sentinel-2 inundation maps. Across seven dates with Landsat reference maps, mean overall accuracy was 97.69% without boundary pixels and 96.40% with them; these figures apply to this site and validation design.",
+      href: "https://ecopotential-project.eu/wp-content/uploads/2026/07/D4.6.pdf",
     },
     {
-      label: "EOS publications",
-      description: "Continue into peer-reviewed methods, conference work, posters, and media.",
-      href: "/research/publications/",
+      kind: "Peer-reviewed publication",
+      label: "Radar-optical fusion for inundation mapping",
+      description:
+        "Manakos, Kordelas and Marini combined Sentinel-1 radar with Sentinel-2 products to delineate inundation when atmospheric conditions limited optical observations.",
+      href: "https://doi.org/10.1080/22797254.2019.1596757",
+    },
+    {
+      kind: "Documented EOS workflow",
+      label: "SpeckleRemoval workflow",
+      description:
+        "ECOPOTENTIAL D6.3 documents a CERTH workflow for preparing Sentinel-1 GRD data with guided filtering. It reduces speckle but does not remove the need to interpret moisture, terrain and viewing geometry.",
+      href: "https://ecopotential-project.eu/wp-content/uploads/2026/07/D6.3.pdf",
     },
   ],
   "can-satellites-identify-urban-heat-islands": [
     {
-      label: "EOS publications",
-      description: "Find related environmental monitoring and land analysis research.",
-      href: "/research/publications/",
-    },
-    {
-      label: "Discuss a monitoring need",
-      description: "Contact EOS about combining satellite observations with local evidence.",
-      href: "/contact/",
+      kind: "Ongoing exploration",
+      label: "Urban heat as an emerging direction",
+      description:
+        "EOS is beginning to examine how thermal observations, land cover and local measurements might support urban-heat assessment. This is exploratory work, not yet a completed EOS service or validated result.",
     },
   ],
   "how-do-satellites-map-wildfire-damage": [
     {
-      label: "SnapEarth case study",
-      description: "See how EOS connected GeoAI, cloud services, and EO information access.",
-      href: "/research/projects/snapearth-geoai/",
+      kind: "Peer-reviewed publication",
+      label: "Automatic Sentinel-2 burned-area mapping",
+      description:
+        "An EOS-co-authored study developed an unsupervised method using pre- and post-fire Sentinel-2 observations, then compared the resulting burn-scar maps with reference information.",
+      href: "https://doi.org/10.3390/land12020379",
     },
     {
-      label: "EO processing modules",
-      description: "Explore the team's land, vegetation, radar, and change-analysis capabilities.",
-      href: "/tools/modules/",
+      kind: "Peer-reviewed publication",
+      label: "Object- and pixel-based burn-scar mapping",
+      description:
+        "EOS researchers helped compare two Sentinel-2 approaches across different European biogeographical settings, documenting the advantages and limitations of each method.",
+      href: "https://doi.org/10.3390/land12051087",
     },
   ],
   "why-does-healthy-vegetation-appear-red": [
     {
-      label: "DigiCotton case study",
-      description: "See how EOS connects satellite, UAV, weather, and farm observations.",
+      kind: "Applied EOS outcome",
+      label: "DigiCotton crop-monitoring demonstration",
+      description:
+        "EOS combined Sentinel-2 observations with UAV surveys and supporting weather and field information to analyse cotton development. Demonstrations covered crop stages, harvest timing and within-field variability in the Nestos valley.",
       href: "/research/projects/digicotton-precision-agriculture/",
     },
     {
-      label: "EO processing modules",
-      description: "Explore vegetation, phenology, land, and habitat analysis capabilities.",
-      href: "/tools/modules/",
+      kind: "Applied EOS outcome",
+      label: "DigiRyzi rice-monitoring demonstration",
+      description:
+        "EOS used Sentinel-2 observations supported by UAV, weather and in-situ data to develop rice-field monitoring analyses. Demonstrations covered crop stages, harvest timing and within-field variability in the Axios Delta.",
+      href: "/news/digiryzi-platform-supports-rice-farming-in-axios-delta/",
+    },
+    {
+      kind: "Documented EOS workflow",
+      label: "PhenologyMetrics and PhenologyChanges",
+      description:
+        "ECOPOTENTIAL D6.3 documents CERTH workflows for seasonal vegetation timing and abrupt breaks in NDVI time series. They show how spectral signals become measurements over time, rather than simply a coloured display.",
+      href: "https://ecopotential-project.eu/wp-content/uploads/2026/07/D6.3.pdf",
     },
   ],
   "can-satellites-detect-water-pollution": [
     {
-      label: "WQeMS case study",
-      description: "See how EOS supported water-quality services, demonstrations, and training.",
+      kind: "Applied EOS outcome",
+      label: "WQeMS water-monitoring platform",
+      description:
+        "EOS contributed water-monitoring research, service demonstrations and training that connected Copernicus observations with utility workflows and expert interpretation.",
       href: "/research/projects/wqems-water-quality-monitoring/",
     },
     {
-      label: "Water services and tools",
-      description: "Explore EOS water, inundation, and open-data resources.",
-      href: "/tools/",
+      kind: "Peer-reviewed publication",
+      label: "Land-water transition monitoring for drinking-water production",
+      description:
+        "EOS researchers used satellite time series to examine change at the margins of inland waters in support of drinking-water production.",
+      href: "https://doi.org/10.3390/w15142596",
+    },
+    {
+      kind: "Peer-reviewed publication",
+      label: "WQeMS platform for inland surface waters",
+      description:
+        "This consortium publication documents how the platform served user communities and supported expert analysis of inland water bodies.",
+      href: "https://doi.org/10.1117/12.2680817",
     },
   ],
   "can-geoai-replace-the-earth-observation-expert": [
     {
-      label: "SnapEarth case study",
-      description: "Explore a real EOS project connecting GeoAI, EO search, and journalism.",
+      kind: "Related EOS project",
+      label: "SnapEarth and the EarthPress pilot",
+      description:
+        "EOS introduced SnapEarth service concepts to journalism communities and gathered feedback on the EarthPress pilot. This is an example of experts shaping how GeoAI is used, not AI replacing them.",
       href: "/research/projects/snapearth-geoai/",
     },
     {
-      label: "EOS publications",
-      description: "Review the wider scientific record behind the team's methods and applications.",
-      href: "/research/publications/",
+      kind: "Peer-reviewed publication",
+      label: "Foundation models for underwater vegetation",
+      description:
+        "EOS researchers examined foundation-model approaches with aerial and satellite imagery for mapping underwater vegetation, a case where training evidence, scale and domain knowledge remain decisive.",
+      href: "https://doi.org/10.3390/rs15164001",
+    },
+    {
+      kind: "Peer-reviewed publication",
+      label: "Calibrated uncertainty in canopy-height estimation",
+      description:
+        "An EOS-co-authored spaceborne time-series model reports calibrated uncertainty alongside canopy-height estimates, making uncertainty part of the result rather than hiding it.",
+      href: "https://doi.org/10.1109/TGRS.2022.3171407",
+    },
+    {
+      kind: "Documented EOS outcome",
+      label: "Fine-tuned canopy-height mapping",
+      description:
+        "At GISTAM 2025, EOS reported that fine-tuning reduced mean absolute error from 4.26 m to 2.74 m in the primary Czech test area, while also examining species-specific uncertainty.",
+      href: "/news/eos-team-at-gistam-2025-in-porto-portugal/",
     },
   ],
 };
+
+function EOSEvidenceCard({ item }: { item: EOSEvidenceItem }) {
+  const isExternal = item.href?.startsWith("http") ?? false;
+  const cardClassName =
+    "rounded-2xl border border-border bg-card p-5 transition-colors " +
+    (item.href
+      ? "group hover:border-primary/35 hover:bg-muted/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+      : "border-l-4 border-l-secondary");
+  const content = (
+    <>
+      <span className="inline-flex rounded-full bg-primary/10 px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-primary">
+        {item.kind}
+      </span>
+      <span className="mt-3 flex items-start justify-between gap-3 font-semibold leading-snug text-foreground group-hover:text-primary">
+        {item.label}
+        {item.href &&
+          (isExternal ? (
+            <ExternalLink className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+          ) : (
+            <ArrowRight className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+          ))}
+      </span>
+      <span className="mt-2 block text-sm leading-relaxed text-muted-foreground">
+        {item.description}
+      </span>
+      {isExternal && <span className="sr-only">Opens in a new tab</span>}
+    </>
+  );
+
+  if (!item.href) {
+    return <div className={cardClassName}>{content}</div>;
+  }
+
+  if (isExternal) {
+    return (
+      <a href={item.href} target="_blank" rel="noopener noreferrer" className={cardClassName}>
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={item.href} className={cardClassName}>
+      {content}
+    </Link>
+  );
+}
 
 const relatedInsightSlugs: Record<string, string[]> = {
   "can-radar-satellites-see-through-clouds": [
@@ -194,7 +307,7 @@ export default function EOInsightArticle({ params }: RouteComponentProps<{ slug:
   const relatedInsights = preferredRelatedSlugs
     .map((slug) => sortedEOInsights.find((item) => item.slug === slug))
     .filter((item): item is (typeof sortedEOInsights)[number] => Boolean(item));
-  const connections = eosConnections[insight.slug] ?? [];
+  const evidence = eosEvidence[insight.slug] ?? [];
   const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(canonicalUrl)}`;
 
   return (
@@ -280,29 +393,18 @@ export default function EOInsightArticle({ params }: RouteComponentProps<{ slug:
             </p>
           </aside>
 
-          {connections.length > 0 && (
+          {evidence.length > 0 && (
             <section aria-labelledby="eos-practice-heading" className="mt-12">
               <h2 id="eos-practice-heading" className="text-2xl font-bold text-foreground">
-                EOS in practice
+                EOS evidence in practice
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Continue from the concept to related EOS projects, methods, and research material.
+                The relationship between this topic and selected EOS work, outcomes, and
+                publications is stated explicitly.
               </p>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                {connections.map((connection) => (
-                  <Link
-                    key={connection.href}
-                    href={connection.href}
-                    className="group rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary/35 hover:bg-muted/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                  >
-                    <span className="flex items-center justify-between gap-3 font-semibold text-foreground group-hover:text-primary">
-                      {connection.label}
-                      <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
-                    </span>
-                    <span className="mt-2 block text-sm leading-relaxed text-muted-foreground">
-                      {connection.description}
-                    </span>
-                  </Link>
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
+                {evidence.map((item) => (
+                  <EOSEvidenceCard key={`${item.kind}-${item.label}`} item={item} />
                 ))}
               </div>
             </section>
