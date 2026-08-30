@@ -11,7 +11,7 @@ export const projects: Project[] = [
     name: "MONALISA",
     img: "/images/projects/monalisa.png",
     description:
-      "Land Degradation Neutrality monitoring under EU Horizon Europe RIA. EOS contributes to monitoring and mitigating land degradation and desertification across Mediterranean areas.",
+      "Land Degradation Neutrality monitoring under an EU Horizon Europe Innovation Action. EOS contributes to monitoring and mitigating land degradation and desertification across Mediterranean areas.",
     status: "recent",
     url: "https://monalisa4land.eu/",
   },

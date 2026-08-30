@@ -14,7 +14,7 @@ Please watch the DigiCotton video interview on Greek National Television (https:
 DigiRyzi was developed by the Centre for Research and Technology Hellas (CERTH), in coordination with foodStandard S.A. and the Agricultural Corporate Partnership of Thessaloniki (EASTh). Designed specifically to support rice cultivation, the platform enables real-time monitoring of agricultural fields using satellite imagery, integrated weather data, and in situ observations. It empowers farmers to make data-driven decisions regarding irrigation and fertilization, contributing to reduced environmental pressures and the promotion of sustainable agriculture in ecologically sensitive areas such as the Axios River Delta.
 
 Please watch the DigiRyzi video interview on Greek National Television (https://www.ertnews.gr/video/psifiako-ryzi-efarmogi-parakolouthisis-ton-kalliergeion-eks-apostaseos/) for more insights into the platform’s impact.`,
-  news155: `As part of the EU Horizon Europe RIA MONALISA project, EOS is actively contributing to efforts aimed at monitoring and mitigating land degradation and desertification. Dr. Ioannis Manakos recently participated in a field visit to the Asterousia region in South Crete, where local environmental conditions were recorded in preparation for upcoming Earth Observation-based monitoring activities.
+  news155: `As part of the EU Horizon Europe Innovation Action MONALISA project, EOS is actively contributing to efforts aimed at monitoring and mitigating land degradation and desertification. Dr. Ioannis Manakos recently participated in a field visit to the Asterousia region in South Crete, where local environmental conditions were recorded in preparation for upcoming Earth Observation-based monitoring activities.
 
 The visit included fruitful discussions with local stakeholders on land use dynamics, landscape development, and the interplay of socioeconomic, geomorphological, and climatic factors contributing to soil loss in the area. The MONALISA team assessed the current situation and documented the complex interrelations behind the observed environmental impacts.`,
   news154: `The EOS team participated in the 11th International Conference on Geographical Information Systems Theory, Applications and Management (GISTAM 2025), held in Porto, Portugal. The event brought together leading researchers and professionals in geoinformatics, remote sensing, and environmental monitoring.
@@ -486,7 +486,7 @@ More information (files/PR_aber.pdf)`,
 canopy height from spaceborne sequential imagery (https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9768161), 2022, IEEE Transactions on Geoscience and Remote Sensing, DOI: 10.1109/TGRS.2022.3171407
 
 More information (https://ieeexplore.ieee.org/document/9768161)`,
-  news79: `Within the framework of the EU-funded “Copernicus Assisted Environmental Monitoring Across the Black Sea Basin – PONTOS” project,
+  news79: `Within the framework of the EU-funded “Copernicus Assisted Environmental Monitoring Across the Black Sea Basin - PONTOS” project,
 the Joint Open Workshop “Satellite Applications: From the Black Sea to the North Aegean Sea” was held on March 11, 2022 in Thessaloniki, Greece.
 The event was organized by the Centre for Research and Technology Hellas (CERTH) with the overall aim to inform the Public and the Authorities
 of Central Macedonia about PONTOS contribution in Environmental Remote Monitoring and the benefits from the data provided.
@@ -538,7 +538,7 @@ More information (https://www.youtube.com/watch?v=Q4yy2XS3ptU&ab_channel=Absiske
   news73: `The third newsletter of the PONTOS’ research project is out! The newsletter is available in five languages - English, Greek, Armenian, Georgian, and Ukrainian.
 
 More information (https://pontos-eu.aua.am/wp-content/uploads/2021/12/BSB-PONTOS-Newsletter-3-ENG-web.pdf)`,
-  news72: `The MEDWAYCAP Kick – off Meeting was held at the Mediterranean Palace Hotel of Thessaloniki on 16 – 17 December 2021.
+  news72: `The MEDWAYCAP Kick - off Meeting was held at the Mediterranean Palace Hotel of Thessaloniki on 16 - 17 December 2021.
 MEDWAYCAP ‘The MEDiterranean pathWAY for innovation CAPitalisation toward an urban-rural integrated development of non-conventional
 water resources' is a strategic project in the framework of ENI CBC Sea Basin 2014-2020. It aims to challenge the paradigm in
 non-conventional water reuse and management in the Mediterranean region through the promotion of sustainable strategies and technological innovations.
@@ -612,7 +612,7 @@ CERTH presented the WQeMS project the first day of the workshop.
 
 More information (https://emergency.copernicus.eu/mapping/ems/cems-week-2021)`,
   news61: `The Information Technology Institute of CERTH in cooperation with Democritus University of Thrace organized and conducted the first set of training sessions
-in the context of the project "Copernicus assisted environmental monitoring across the Black Sea Basin – PONTOS". The main topics were:
+in the context of the project "Copernicus assisted environmental monitoring across the Black Sea Basin - PONTOS". The main topics were:
 
 • Management and analysis of Earth Observation data
 
@@ -642,7 +642,7 @@ Read the newsletter (files/WQeMS_newsletter_I.pdf)`,
 in the wider area of Epanomi, close to Thessaloniki (GR), by utilizing drone and hyperspectral imaging system. The measurements were carried out
 from April to June 2021 for the needs of a new research line of the EOS team.`,
   news56: `The Information Technology Institute of CERTH in cooperation with Democritus University of Thrace organized and conducted an online
-brainstorming event in the context of the project "Copernicus assisted environmental monitoring across the Black Sea Basin – PONTOS". The main purposes were to:
+brainstorming event in the context of the project "Copernicus assisted environmental monitoring across the Black Sea Basin - PONTOS". The main purposes were to:
 
 • Introduce PONTOS project and its goals
 
@@ -771,7 +771,7 @@ In this newsletter, the progress, the key outcomes and the events within the fra
 Furthermore, in this newsletter the first two partners of the project are introduced: Qwant - the coordinator of SnapEarth consortium and Centre for Research and Technology Hellas from Greece
 
 Centre for Research and Technology Hellas from Greece (CERTH)
-This is one of the largest research centres in Greece, founded in 2000. The mission of CERTH is to promote the triplet Research – Development – Innovation by conducting high quality scientific research and developing innovative products and services while building strong partnerships with industry and strong collaborations with research centres and universities in Greece and abroad. CERTH has participated successfully in more than 1,000 competitive research projects and is listed among the Top-20 Research Centres of the EU with the highest participation in FP7 competitive research grants for the period 2007-2012 and received numerous awards and distinctions...
+This is one of the largest research centres in Greece, founded in 2000. The mission of CERTH is to promote the triplet Research - Development - Innovation by conducting high quality scientific research and developing innovative products and services while building strong partnerships with industry and strong collaborations with research centres and universities in Greece and abroad. CERTH has participated successfully in more than 1,000 competitive research projects and is listed among the Top-20 Research Centres of the EU with the highest participation in FP7 competitive research grants for the period 2007-2012 and received numerous awards and distinctions...
 
 Project information and archived results (https://cordis.europa.eu/project/id/870373)`,
   news41: `NextLand will develop 15 innovative and operational services, as shown in the picture above, to strengthen the entire
@@ -1029,7 +1029,7 @@ In the link (https://gofcgold.org/sites/default/files/2019-04/MedRIN_SCERIN_Mana
 Following the success of the two previous EARSeL Special Interest Group on Land Use and Land Cover (SIG LU/LC) and NASA Land-Cover/Land-Use Change (LCLUC) Program joint Workshops (Berlin 2014 and Prague 2016) with more than 270 participants from 4 continents, the 3rd EARSeL LULC and NASA LCLUC joint Workshop “Land-Use/Cover Change Drivers, Impacts and Sustainability within the Water-Energy-Food Nexus” set the questions towards and beyond the 2020 emerging challenges.
 
 Workshop report released here (http://lulc.earsel.org/wp-content/uploads/2018/09/Report_EARSeL-NASA_LCLUC_WS_Chania2018_f.pdf)`,
-  news4: `The science-policy briefing event “Science for Post 2020 Environmental Targets – Insights from Earth Observation of Protected Areas” for the EU Parliament will take place on the 27th of September 2018 (09:00-11:00). At the event, the most relevant ECOPOTENTIAL key findings for post 2020 environmental strategies will be presented.
+  news4: `The science-policy briefing event “Science for Post 2020 Environmental Targets - Insights from Earth Observation of Protected Areas” for the EU Parliament will take place on the 27th of September 2018 (09:00-11:00). At the event, the most relevant ECOPOTENTIAL key findings for post 2020 environmental strategies will be presented.
 
 The event will be chaired by MEPs Ricardo Serrão Santos and Sirpa Pietikäinen and is organized in cooperation with EBCD which serves as the secretariat of the European Parliament Intergroup on Climate Change, Biodiversity and Sustainable Development.`,
   news3: `Topics include:
@@ -1050,7 +1050,7 @@ The event will be chaired by MEPs Ricardo Serrão Santos and Sirpa Pietikäinen 
 
 • Synergy of remote sensing technologies for land-use change monitoring
 
-• The role of earth observations within the Water–Energy–Food nexus
+• The role of earth observations within the Water - Energy - Food nexus
 
 • Social and behavioral aspects of land use supported by remote sensing observations
 

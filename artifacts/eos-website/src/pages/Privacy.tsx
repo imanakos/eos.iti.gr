@@ -51,7 +51,7 @@ export default function Privacy() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-4xl space-y-8 px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-4xl space-y-8 px-4 py-12 sm:px-6 lg:px-8">
         <section className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
           <div className="flex items-start gap-3">
             <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
@@ -206,7 +206,7 @@ export default function Privacy() {
           </p>
           <p className="text-sm text-muted-foreground">Last updated: 28 August 2026.</p>
         </section>
-      </main>
+      </div>
     </div>
   );
 }

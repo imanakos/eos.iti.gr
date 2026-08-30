@@ -102,12 +102,12 @@ export function PrivacyAnalytics() {
 
   return (
     <aside
-      className="fixed inset-x-4 bottom-4 z-[100] mx-auto max-w-5xl rounded-2xl border border-white/15 bg-[hsl(222_56%_12%)] p-5 text-white shadow-2xl sm:p-6"
+      className="fixed inset-x-3 bottom-3 z-[100] mx-auto max-h-[calc(100svh-1.5rem)] max-w-5xl overflow-y-auto rounded-2xl border border-white/15 bg-[hsl(222_56%_12%)] p-4 text-white shadow-2xl sm:inset-x-4 sm:bottom-4 sm:max-h-[calc(100svh-2rem)] sm:p-6"
       role="region"
       aria-labelledby="privacy-choice-title"
       aria-describedby="privacy-choice-description"
     >
-      <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex max-w-3xl items-start gap-3">
           <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[hsl(37_80%_56%)]" />
           <div>
@@ -118,10 +118,9 @@ export function PrivacyAnalytics() {
               id="privacy-choice-description"
               className="mt-1 text-sm leading-relaxed text-white/70"
             >
-              May we use GoatCounter to understand how this site is used? It sets no analytics
-              cookies and uses no persistent visitor identifiers. If allowed, limited visit and
-              technical information is reported in aggregate, never for advertising or cross-site
-              profiling.{" "}
+              With your permission, privacy-friendly GoatCounter records page visits and limited
+              technical details in aggregate. It uses no analytics cookies, persistent visitor
+              identifiers, advertising, or cross-site profiling.{" "}
               <Link
                 href="/privacy"
                 className="font-semibold text-white underline underline-offset-4"

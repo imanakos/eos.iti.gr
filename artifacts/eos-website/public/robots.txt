@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://imanakos.github.io/eos.iti.gr/sitemap.xml

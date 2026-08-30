@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react";
+import { Building2, ExternalLink, Globe2, GraduationCap, Network } from "lucide-react";
 
 const domainTimeline = [
   { year: 1993, domain: "Remote Sensing & Geology" },
@@ -43,22 +43,66 @@ export default function About() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">About</h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            The EOS team builds on the background and experience that Dr. Ioannis Manakos
-            accumulated by his interaction with all directly related or affiliated academics,
-            researchers, and technicians, with whom he interacted and interacts within his studies
-            and career.
+          <p className="max-w-[68ch] text-xl leading-relaxed text-muted-foreground">
+            EOS brings together more than three decades of Earth Observation research led by Dr.
+            Ioannis Manakos, shaped through long-standing cooperation with academic, technical, and
+            professional communities across four continents.
           </p>
         </div>
 
         <div className="space-y-8">
+          <section aria-label="Profile highlights" className="grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                icon: Building2,
+                title: "CERTH/ITI",
+                detail: "Director of Research in Remote Sensing",
+              },
+              {
+                icon: GraduationCap,
+                title: "University of Geneva",
+                detail: "Visiting Faculty since 2025",
+              },
+              {
+                icon: Network,
+                title: "EARSeL",
+                detail: "Chairman from 2012 to 2014",
+              },
+              {
+                icon: Globe2,
+                title: "International engagement",
+                detail: "GEO, GEOBON, Copernicus, CIHEAM, MEDRIN and SCERIN",
+              },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.title}
+                  className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <div>
+                    <h2 className="font-display text-base font-bold text-foreground">
+                      {item.title}
+                    </h2>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                      {item.detail}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </section>
+
           <section className="bg-card rounded-2xl border border-border p-8 shadow-sm">
             <h2 className="text-2xl font-bold text-foreground mb-6">A Brief Overview</h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <div className="max-w-[72ch] space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Dr. Ioannis Manakos is cooperating with academics and researchers from Europe,
-                America, Asia, and Africa in subjects relevant to research and development in Remote
-                Sensing since 1996. He is{" "}
+                Dr. Ioannis Manakos has cooperated with academics and researchers from Europe,
+                America, Asia, and Africa on Remote Sensing research and development since 1996. He
+                is{" "}
                 <strong className="text-foreground">
                   Director of Research in 'Remote Sensing'
                 </strong>{" "}
@@ -103,8 +147,8 @@ export default function About() {
                   Cover'
                 </strong>{" "}
                 of the European Association of Remote Sensing Laboratories (EARSeL) for the period
-                2011–2020, and <strong className="text-foreground">Chairman of the EARSeL</strong>{" "}
-                from 2012 till 2014.
+                2011 - 2020, and <strong className="text-foreground">Chairman of EARSeL</strong>{" "}
+                from 2012 to 2014.
               </p>
               <p>
                 He serves as a member of the{" "}
@@ -115,25 +159,26 @@ export default function About() {
                 He is an{" "}
                 <strong className="text-foreground">Adjunct Professor in Remote Sensing</strong> at
                 the International Centre for Advanced Mediterranean Agronomic Studies (CIHEAM),
-                where he was leading the Geoinformation in Environmental Management Department for
-                seven (7) years.
+                where he led the Geoinformation in Environmental Management Department for seven
+                years.
               </p>
               <p>
-                His activity is also recognized at the{" "}
+                His activity is also recognized through the{" "}
                 <strong className="text-foreground">
                   South Central and Eastern European Regional Information Network (SCERIN)
                 </strong>
-                , regional network of the GOFC-GOLD (Global Observation of Forest and Land Cover
-                Dynamics) and GTOS (Global Terrestrial Observing System), where he serves as Lead in
-                relation with the 'Global/Continental land cover products validation and
-                intercomparison in the SCERIN area'.
+                , a regional network of GOFC-GOLD (Global Observation of Forest and Land Cover
+                Dynamics) and GTOS (Global Terrestrial Observing System). He serves as Lead for
+                global and continental land-cover product validation and intercomparison in the
+                SCERIN area.
               </p>
               <p>
                 He is a founding member of the{" "}
                 <strong className="text-foreground">
                   Mediterranean Regional Information Network (MEDRIN)
-                </strong>{" "}
-                and a member of the <strong className="text-foreground">Copernicus Academy</strong>.
+                </strong>
+                , a <strong className="text-foreground">Copernicus Ambassador</strong>, and a member
+                of the <strong className="text-foreground">Copernicus Academy</strong>.
               </p>
               <p>
                 Dr. Ioannis Manakos coordinates and participates in European, bilateral, and
@@ -145,11 +190,13 @@ export default function About() {
           </section>
 
           <section className="bg-card rounded-2xl border border-border p-8 shadow-sm">
-            <h2 className="text-2xl font-bold text-foreground mb-2">Research Domain Timeline</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-2">
+              Research topics engaged with over time
+            </h2>
             <p className="text-muted-foreground mb-6 text-sm">
               Evolution of research domains addressed over the years.
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            <div className="grid grid-cols-1 gap-x-5 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
               {domainTimeline.map((entry) => (
                 <div
                   key={entry.year}
@@ -158,7 +205,7 @@ export default function About() {
                   <span className="text-xs font-bold text-primary shrink-0 w-10 tabular-nums">
                     {entry.year}
                   </span>
-                  <span className="text-xs text-muted-foreground">{entry.domain}</span>
+                  <span className="text-sm leading-snug text-muted-foreground">{entry.domain}</span>
                 </div>
               ))}
             </div>
@@ -166,32 +213,47 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-card rounded-2xl border border-border p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-foreground mb-3">Location</h3>
+              <h2 className="text-lg font-bold text-foreground mb-3">Location</h2>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Information Technologies Institute (ITI)
                 <br />
                 Centre for Research and Technology Hellas (CERTH)
                 <br />
-                6th km Harilaou – Thermi Road
+                6th km Harilaou - Thermi Road
                 <br />
                 57001 Thermi, Thessaloniki, Greece
               </p>
             </div>
             <div className="bg-card rounded-2xl border border-border p-6 shadow-sm flex flex-col justify-between">
               <div>
-                <h3 className="text-lg font-bold text-foreground mb-3">Dr. Manakos' Profile</h3>
+                <h2 className="text-lg font-bold text-foreground mb-3">Professional profiles</h2>
                 <p className="text-muted-foreground text-sm mb-4">
-                  Full profile and publication record available at the ITI website.
+                  Institutional, professional, and open research records.
                 </p>
               </div>
-              <a
-                href="https://www.iti.gr/iti/en/people/ioannis-manakos/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
-              >
-                View Profile <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+              <div className="flex flex-wrap gap-x-4 gap-y-2">
+                {[
+                  {
+                    label: "ITI profile",
+                    href: "https://www.iti.gr/iti/en/people/ioannis-manakos/",
+                  },
+                  { label: "LinkedIn", href: "https://www.linkedin.com/in/eoservices" },
+                  {
+                    label: "Zenodo",
+                    href: "https://zenodo.org/search?q=manakos&sort=bestmatch",
+                  },
+                ].map((profile) => (
+                  <a
+                    key={profile.label}
+                    href={profile.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+                  >
+                    {profile.label} <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { ArrowLeft, Calendar, Clock, ExternalLink, Share2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar, Clock, ExternalLink, Share2 } from "lucide-react";
 import { Link, type RouteComponentProps } from "wouter";
 import { EOInsightCard } from "@/components/eo-insights/EOInsightCard";
 import { InsightVisual } from "@/components/eo-insights/InsightVisual";
@@ -10,6 +10,108 @@ import {
 } from "@/data/eoInsightsData";
 import { SITE_URL, usePageMetadata } from "@/lib/seo";
 import NotFound from "./not-found";
+
+const eosConnections: Record<string, { label: string; description: string; href: string }[]> = {
+  "can-radar-satellites-see-through-clouds": [
+    {
+      label: "EO processing modules",
+      description: "Explore EOS radar, water, land, and vegetation processing capabilities.",
+      href: "/tools/modules/",
+    },
+    {
+      label: "EOS publications",
+      description: "Continue into peer-reviewed methods, conference work, posters, and media.",
+      href: "/research/publications/",
+    },
+  ],
+  "can-satellites-identify-urban-heat-islands": [
+    {
+      label: "EOS publications",
+      description: "Find related environmental monitoring and land analysis research.",
+      href: "/research/publications/",
+    },
+    {
+      label: "Discuss a monitoring need",
+      description: "Contact EOS about combining satellite observations with local evidence.",
+      href: "/contact/",
+    },
+  ],
+  "how-do-satellites-map-wildfire-damage": [
+    {
+      label: "SnapEarth case study",
+      description: "See how EOS connected GeoAI, cloud services, and EO information access.",
+      href: "/research/projects/snapearth-geoai/",
+    },
+    {
+      label: "EO processing modules",
+      description: "Explore the team's land, vegetation, radar, and change-analysis capabilities.",
+      href: "/tools/modules/",
+    },
+  ],
+  "why-does-healthy-vegetation-appear-red": [
+    {
+      label: "DigiCotton case study",
+      description: "See how EOS connects satellite, UAV, weather, and farm observations.",
+      href: "/research/projects/digicotton-precision-agriculture/",
+    },
+    {
+      label: "EO processing modules",
+      description: "Explore vegetation, phenology, land, and habitat analysis capabilities.",
+      href: "/tools/modules/",
+    },
+  ],
+  "can-satellites-detect-water-pollution": [
+    {
+      label: "WQeMS case study",
+      description: "See how EOS supported water-quality services, demonstrations, and training.",
+      href: "/research/projects/wqems-water-quality-monitoring/",
+    },
+    {
+      label: "Water services and tools",
+      description: "Explore EOS water, inundation, and open-data resources.",
+      href: "/tools/",
+    },
+  ],
+  "can-geoai-replace-the-earth-observation-expert": [
+    {
+      label: "SnapEarth case study",
+      description: "Explore a real EOS project connecting GeoAI, EO search, and journalism.",
+      href: "/research/projects/snapearth-geoai/",
+    },
+    {
+      label: "EOS publications",
+      description: "Review the wider scientific record behind the team's methods and applications.",
+      href: "/research/publications/",
+    },
+  ],
+};
+
+const relatedInsightSlugs: Record<string, string[]> = {
+  "can-radar-satellites-see-through-clouds": [
+    "how-do-satellites-map-wildfire-damage",
+    "can-satellites-detect-water-pollution",
+  ],
+  "can-satellites-identify-urban-heat-islands": [
+    "why-does-healthy-vegetation-appear-red",
+    "how-do-satellites-map-wildfire-damage",
+  ],
+  "how-do-satellites-map-wildfire-damage": [
+    "can-radar-satellites-see-through-clouds",
+    "can-geoai-replace-the-earth-observation-expert",
+  ],
+  "why-does-healthy-vegetation-appear-red": [
+    "can-satellites-detect-water-pollution",
+    "can-satellites-identify-urban-heat-islands",
+  ],
+  "can-satellites-detect-water-pollution": [
+    "why-does-healthy-vegetation-appear-red",
+    "can-radar-satellites-see-through-clouds",
+  ],
+  "can-geoai-replace-the-earth-observation-expert": [
+    "how-do-satellites-map-wildfire-damage",
+    "can-radar-satellites-see-through-clouds",
+  ],
+};
 
 export default function EOInsightArticle({ params }: RouteComponentProps<{ slug: string }>) {
   const insight = getEOInsight(params.slug);
@@ -49,7 +151,7 @@ export default function EOInsightArticle({ params }: RouteComponentProps<{ slug:
             },
             publisher: {
               "@type": "Organization",
-              name: "EOS – CERTH/ITI Remote Sensing Research Team",
+              name: "EOS - CERTH/ITI Remote Sensing Research Team",
               url: SITE_URL,
             },
             keywords: insight.tags.join(", "),
@@ -88,7 +190,11 @@ export default function EOInsightArticle({ params }: RouteComponentProps<{ slug:
     return <NotFound />;
   }
 
-  const relatedInsights = sortedEOInsights.filter((item) => item.slug !== insight.slug).slice(0, 2);
+  const preferredRelatedSlugs = relatedInsightSlugs[insight.slug] ?? [];
+  const relatedInsights = preferredRelatedSlugs
+    .map((slug) => sortedEOInsights.find((item) => item.slug === slug))
+    .filter((item): item is (typeof sortedEOInsights)[number] => Boolean(item));
+  const connections = eosConnections[insight.slug] ?? [];
   const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(canonicalUrl)}`;
 
   return (
@@ -173,6 +279,34 @@ export default function EOInsightArticle({ params }: RouteComponentProps<{ slug:
               {insight.keyPoint}
             </p>
           </aside>
+
+          {connections.length > 0 && (
+            <section aria-labelledby="eos-practice-heading" className="mt-12">
+              <h2 id="eos-practice-heading" className="text-2xl font-bold text-foreground">
+                EOS in practice
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                Continue from the concept to related EOS projects, methods, and research material.
+              </p>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {connections.map((connection) => (
+                  <Link
+                    key={connection.href}
+                    href={connection.href}
+                    className="group rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary/35 hover:bg-muted/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  >
+                    <span className="flex items-center justify-between gap-3 font-semibold text-foreground group-hover:text-primary">
+                      {connection.label}
+                      <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+                    </span>
+                    <span className="mt-2 block text-sm leading-relaxed text-muted-foreground">
+                      {connection.description}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
 
           <section
             aria-labelledby="references-heading"
