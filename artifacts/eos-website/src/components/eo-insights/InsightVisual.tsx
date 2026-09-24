@@ -22,6 +22,7 @@ const visualStyles: Record<
     image: string;
     background: string;
     accent: string;
+    fullFrame?: boolean;
   }
 > = {
   radar: {
@@ -96,19 +97,111 @@ const visualStyles: Record<
     background: "from-[hsl(221_69%_13%)] via-[hsl(195_55%_28%)] to-[hsl(33_68%_45%)]",
     accent: "bg-[hsl(39_90%_65%)]",
   },
+  foreststructure: {
+    fullFrame: true,
+    Icon: Layers3,
+    label: "Forest structure",
+    detail: "Canopy height • vertical layers • context",
+    image: "/images/eo-insights/forest-structure.jpg",
+    background: "from-[hsl(218_66%_13%)] via-[hsl(154_44%_27%)] to-[hsl(36_62%_44%)]",
+    accent: "bg-[hsl(166_66%_66%)]",
+  },
+  shoreline: {
+    fullFrame: true,
+    Icon: Waves,
+    label: "Shoreline dynamics",
+    detail: "Water levels • sediment • repeated views",
+    image: "/images/eo-insights/shoreline-dynamics.jpg",
+    background: "from-[hsl(222_60%_16%)] via-[hsl(202_72%_34%)] to-[hsl(177_58%_42%)]",
+    accent: "bg-[hsl(177_72%_68%)]",
+  },
+  condition: {
+    fullFrame: true,
+    Icon: Leaf,
+    label: "Ecological condition",
+    detail: "Habitat • function • reference conditions",
+    image: "/images/eo-insights/ecological-condition.jpg",
+    background: "from-[hsl(220_66%_14%)] via-[hsl(177_49%_28%)] to-[hsl(38_62%_45%)]",
+    accent: "bg-[hsl(166_66%_66%)]",
+  },
+  forestchange: {
+    fullFrame: true,
+    Icon: Leaf,
+    label: "Seasonal forest change",
+    detail: "Phenology • disturbance • recovery",
+    image: "/images/eo-insights/seasonal-forest-change.jpg",
+    background: "from-[hsl(218_66%_13%)] via-[hsl(154_44%_27%)] to-[hsl(36_62%_44%)]",
+    accent: "bg-[hsl(43_87%_64%)]",
+  },
+  watermanagement: {
+    fullFrame: true,
+    Icon: Waves,
+    label: "Water-quality decisions",
+    detail: "Satellite signals • sampling • action",
+    image: "/images/eo-insights/water-quality-management.jpg",
+    background: "from-[hsl(222_60%_16%)] via-[hsl(202_72%_34%)] to-[hsl(177_58%_42%)]",
+    accent: "bg-[hsl(177_72%_68%)]",
+  },
+  uncertainty: {
+    fullFrame: true,
+    Icon: BrainCircuit,
+    label: "Model uncertainty",
+    detail: "Confidence • validation • human judgment",
+    image: "/images/eo-insights/model-uncertainty.jpg",
+    background: "from-[hsl(222_66%_14%)] via-[hsl(249_55%_34%)] to-[hsl(16_62%_48%)]",
+    accent: "bg-[hsl(37_85%_62%)]",
+  },
 };
+
+export function isFullFrameInsightVisual(visual: InsightVisualName): boolean {
+  return visualStyles[visual].fullFrame === true;
+}
 
 export function InsightVisual({
   visual,
   className,
   imageAlt,
+  loading = "eager",
 }: {
   visual: InsightVisualName;
   className?: string;
   imageAlt?: string;
+  loading?: "eager" | "lazy";
 }) {
   const style = visualStyles[visual];
   const Icon = style.Icon;
+
+  if (style.fullFrame) {
+    return (
+      <div className={cn("overflow-hidden bg-[hsl(222_56%_13%)] text-white", className)}>
+        <div className="aspect-[40/21] w-full">
+          <img
+            src={assetUrl(style.image)}
+            alt={imageAlt ?? ""}
+            width={1200}
+            height={630}
+            loading={loading}
+            decoding="async"
+            className="block h-full w-full object-contain"
+          />
+        </div>
+        <div className="flex items-start gap-3 px-5 py-4">
+          <div
+            aria-hidden="true"
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/20 bg-white/10"
+          >
+            <Icon className="h-4 w-4" />
+          </div>
+          <div className="min-w-0">
+            <p className="text-xs font-semibold uppercase leading-relaxed tracking-[0.12em] text-white/90">
+              {style.label}
+            </p>
+            <p className="mt-1 text-sm leading-relaxed text-white/75">{style.detail}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div

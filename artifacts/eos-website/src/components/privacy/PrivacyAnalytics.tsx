@@ -56,7 +56,9 @@ export function PrivacyAnalytics() {
   }, []);
 
   useEffect(() => {
-    if (choice !== "accepted") return;
+    // Local development and production previews must not reach analytics.
+    const isLocalPreview = ["localhost", "127.0.0.1", "[::1]"].includes(window.location.hostname);
+    if (import.meta.env.DEV || isLocalPreview || choice !== "accepted") return;
 
     const path = normalisePath(location);
     if (lastTrackedPath.current === path) return;

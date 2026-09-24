@@ -103,12 +103,16 @@ function addNewsSlugs(articles) {
 }
 
 const newsEntries = addNewsSlugs(newsArticles);
-const sortedArticles = [...data.articles].sort((left, right) =>
-  right.publishedAt.localeCompare(left.publishedAt)
-);
+const sortedArticles = [...data.articles].sort((left, right) => {
+  if (!left.publishedAt && !right.publishedAt) return 0;
+  if (!left.publishedAt) return -1;
+  if (!right.publishedAt) return 1;
+  return right.publishedAt.localeCompare(left.publishedAt);
+});
 const latestModifiedAt = sortedArticles.reduce(
-  (latest, article) => (article.modifiedAt > latest ? article.modifiedAt : latest),
-  sortedArticles[0]?.modifiedAt || new Date().toISOString().slice(0, 10)
+  (latest, article) =>
+    article.modifiedAt && article.modifiedAt > latest ? article.modifiedAt : latest,
+  ""
 );
 const defaultSocialImage = {
   path: "/images/eo-insights/eo-analysis-notes.jpg",
@@ -483,7 +487,8 @@ function renderCollectionBody() {
             (article) => `<article>
           <img src="${escapeHtml(`${siteUrl}${article.image}`)}" alt="${escapeHtml(article.imageAlt)}" width="1200" height="630" />
           <h3><a href="${escapeHtml(`${siteUrl}/eo-insights/${article.slug}/`)}">${escapeHtml(article.title)}</a></h3>
-          <time datetime="${escapeHtml(article.publishedAt)}">${escapeHtml(article.publishedAt)}</time>
+          ${article.publishedAt ? `<time datetime="${escapeHtml(article.publishedAt)}">${escapeHtml(article.publishedAt)}</time>` : ""}
+          <p>${escapeHtml(article.readingMinutes)} min read</p>
           <p>${escapeHtml(article.summary)}</p>
         </article>`
           )
@@ -492,8 +497,18 @@ function renderCollectionBody() {
     </main>`;
 }
 
+function renderReferenceLink({ label, url }) {
+  const isExternal = url.startsWith("http");
+  const href = isExternal ? url : internalUrl(url);
+  const externalAttributes = isExternal ? ' target="_blank" rel="noopener noreferrer"' : "";
+  return `<a href="${escapeHtml(href)}"${externalAttributes}>${escapeHtml(label)}</a>`;
+}
+
 function renderArticleBody(article) {
-  const evidence = eosEvidence[article.slug] || [];
+  const evidence = article.evidence ?? eosEvidence[article.slug] ?? [];
+  const relatedArticles = (article.relatedSlugs ?? [])
+    .map((slug) => data.articles.find((candidate) => candidate.slug === slug))
+    .filter(Boolean);
 
   return `<main>
       <article>
@@ -501,14 +516,25 @@ function renderArticleBody(article) {
           <p><a href="${escapeHtml(`${siteUrl}/eo-insights/`)}">${escapeHtml(data.seriesTitle)}</a></p>
           <h1>${escapeHtml(article.title)}</h1>
           <p>${escapeHtml(article.summary)}</p>
-          <time datetime="${escapeHtml(article.publishedAt)}">${escapeHtml(article.publishedAt)}</time>
+          ${article.publishedAt ? `<time datetime="${escapeHtml(article.publishedAt)}">${escapeHtml(article.publishedAt)}</time>` : ""}
+          <p>${escapeHtml(article.readingMinutes)} min read</p>
           <p>By <a href="${escapeHtml(`${siteUrl}${data.author.profilePath}/`)}">${escapeHtml(data.author.name)}</a>, ${escapeHtml(data.author.role)}</p>
           <figure>
             <img src="${escapeHtml(`${siteUrl}${article.image}`)}" alt="${escapeHtml(article.imageAlt)}" width="1200" height="630" />
             <figcaption>${escapeHtml(data.visualDisclosure)}</figcaption>
           </figure>
         </header>
-        ${article.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("\n")}
+        ${article.paragraphs
+          .map((paragraph, paragraphIndex) => {
+            const references = (article.paragraphLinks ?? []).filter(
+              (link) => link.paragraphIndex === paragraphIndex
+            );
+            const referenceList = references.length
+              ? `<ul aria-label="References for paragraph ${paragraphIndex + 1}">${references.map((reference) => `<li>${renderReferenceLink(reference)}</li>`).join("\n")}</ul>`
+              : "";
+            return `<div><p>${escapeHtml(paragraph)}</p>${referenceList}</div>`;
+          })
+          .join("\n")}
         <aside>
           <h2>Key point</h2>
           <p>${escapeHtml(article.keyPoint)}</p>
@@ -524,17 +550,13 @@ function renderArticleBody(article) {
               const kind = escapeHtml(item.kind);
               const description = escapeHtml(item.description);
 
-              if (!item.href) {
-                return `<li><strong>${kind}: ${label}</strong> - ${description}</li>`;
-              }
-
-              const isExternal = item.href.startsWith("http");
-              const href = isExternal ? item.href : internalUrl(item.href);
-              const externalAttributes = isExternal
-                ? ' target="_blank" rel="noopener noreferrer"'
+              const title = item.href
+                ? `<strong>${kind}:</strong> ${renderReferenceLink({ label: item.label, url: item.href })}`
+                : `<strong>${kind}: ${label}</strong>`;
+              const extraLinks = item.additionalLinks?.length
+                ? `<ul aria-label="${escapeHtml(`More evidence for ${item.label}`)}">${item.additionalLinks.map((link) => `<li>${renderReferenceLink(link)}</li>`).join("\n")}</ul>`
                 : "";
-
-              return `<li><strong>${kind}:</strong> <a href="${escapeHtml(href)}"${externalAttributes}>${label}</a> - ${description}</li>`;
+              return `<li>${title} - ${description}${extraLinks}</li>`;
             })
             .join("\n")}</ul>
         </section>`
@@ -547,11 +569,19 @@ function renderArticleBody(article) {
             ${article.sources
               .map(
                 (source) =>
-                  `<li><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.label)}</a> - ${escapeHtml(source.publisher)}</li>`
+                  `<li>${renderReferenceLink(source)} - ${escapeHtml(source.publisher)}${source.description ? `<p>${escapeHtml(source.description)}</p>` : ""}</li>`
               )
               .join("\n")}
           </ul>
         </section>
+        ${
+          relatedArticles.length
+            ? `<nav aria-labelledby="related-notes-heading">
+          <h2 id="related-notes-heading">Continue exploring</h2>
+          <ul>${relatedArticles.map((related) => `<li>${renderReferenceLink({ label: related.title, url: `/eo-insights/${related.slug}/` })}</li>`).join("\n")}</ul>
+        </nav>`
+            : ""
+        }
       </article>
     </main>`;
 }
@@ -936,8 +966,8 @@ for (const article of sortedArticles) {
           "@type": "BlogPosting",
           headline: article.title,
           description: article.seoDescription,
-          datePublished: article.publishedAt,
-          dateModified: article.modifiedAt,
+          ...(article.publishedAt ? { datePublished: article.publishedAt } : {}),
+          ...(article.modifiedAt ? { dateModified: article.modifiedAt } : {}),
           mainEntityOfPage: canonicalUrl,
           url: canonicalUrl,
           image: `${siteUrl}${article.image}`,
@@ -1197,14 +1227,14 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
     <atom:link href="${escapeXml(`${siteUrl}/eo-insights.xml`)}" rel="self" type="application/rss+xml" />
     <description>${escapeXml(data.seriesDescription)}</description>
     <language>en</language>
-    <lastBuildDate>${new Date(`${latestModifiedAt}T12:00:00Z`).toUTCString()}</lastBuildDate>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
 ${sortedArticles
   .map(
     (article) => `    <item>
       <title>${escapeXml(article.title)}</title>
       <link>${escapeXml(`${siteUrl}/eo-insights/${article.slug}/`)}</link>
       <guid isPermaLink="true">${escapeXml(`${siteUrl}/eo-insights/${article.slug}/`)}</guid>
-      <pubDate>${new Date(`${article.publishedAt}T12:00:00Z`).toUTCString()}</pubDate>
+      ${article.publishedAt ? `<pubDate>${new Date(`${article.publishedAt}T12:00:00Z`).toUTCString()}</pubDate>` : ""}
       <description>${escapeXml(article.summary)}</description>
       <author>imanakos@iti.gr (${escapeXml(data.author.name)})</author>
     </item>`

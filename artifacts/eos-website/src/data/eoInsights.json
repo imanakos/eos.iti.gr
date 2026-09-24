@@ -9,6 +9,543 @@
   },
   "articles": [
     {
+      "slug": "can-satellites-reveal-forest-structure-beyond-canopy-greenness",
+      "title": "Can Satellites Reveal Forest Structure Beyond Canopy Greenness?",
+      "shortTitle": "Can satellites reveal forest structure?",
+      "summary": "Two forests can look equally green from above and offer very different habitats. Height, canopy gaps and the arrangement of vegetation help explain why.",
+      "seoDescription": "Discover how satellite observations and suitable reference measurements help estimate canopy height, and why forest structure is more than greenness.",
+      "visual": "foreststructure",
+      "image": "/images/eo-insights/forest-structure.jpg",
+      "imageAlt": "Concept illustration, not satellite data, of a forest with varied canopy heights, gaps and layers of vegetation.",
+      "readingMinutes": 3,
+      "tags": ["Forest structure", "Canopy height", "Validation"],
+      "keyPoint": "Canopy height adds a useful dimension to forest monitoring, but inferred height must be read with its reference data, validation and uncertainty.",
+      "paragraphs": [
+        "Walk from a young woodland into a mature forest. Both may appear as a continuous green patch on a satellite image, yet the experience beneath the trees is quite different. One has low, tightly packed crowns; the other has tall trees, openings and several layers of vegetation. A map of greenness leaves much of that difference unexplained.",
+        "Forest structure describes how vegetation occupies space. Canopy height tells us about its vertical reach. Crown cover describes how much ground the crowns cover when viewed from above. The distribution of foliage through different heights adds another dimension. These measurements help us interpret habitat and forest development, although none alone provides a complete account of species diversity or carbon storage. Copernicus tree cover density, for example, measures proportional crown coverage, not tree height.",
+        "Different instruments contribute different evidence. NASA's GEDI instrument sends laser pulses towards the surface and records the returning energy. Returns from foliage and the ground provide information about vertical structure within each sampled footprint. Its observations are samples along orbital tracks, rather than a continuous survey of every tree. Optical satellites such as Sentinel-2 provide much broader image coverage, but their multispectral measurements do not directly measure height.",
+        "This is where a carefully tested model can help. Repeated optical observations capture patterns associated with vegetation type, seasonal behaviour and canopy properties. When paired with suitable height measurements, they can support estimates for places between those measurements. The result remains an estimate whose reliability depends on the reference data and the forests represented during model development.",
+        "A published EOS example makes that dependence tangible. In a 2025 study, Leonidas Alagialoglou, Ioannis Manakos and colleagues assessed Sentinel-2 canopy height estimates in three Czech test areas. Adapting a previously trained model with local airborne laser scanning data reduced the average absolute height error in Test Area 2 from 4.26 m to 2.74 m. Performance also varied between deciduous and coniferous forests. The improvement in that test area shows why suitable local reference data can matter.",
+        "The practical lesson is to read a height map together with its validation and uncertainty information. A smooth, detailed image can still contain substantial error. Mixed pixels, differences between acquisition dates, steep terrain and unfamiliar forest types all deserve attention. Even accurate canopy height cannot reveal every understory layer or identify all the organisms using the habitat.",
+        "For a forest manager or ecologist, the useful question becomes specific: is the map reliable enough to distinguish the height differences relevant to this decision? A regional inventory, a habitat assessment and an individual tree survey demand different evidence. Choosing the measurement to match the question gives the green patch a much more informative third dimension."
+      ],
+      "paragraphLinks": [
+        {
+          "paragraphIndex": 1,
+          "label": "Copernicus product description",
+          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover?tab=tree_cover_density"
+        },
+        {
+          "paragraphIndex": 2,
+          "label": "GEDI instrument overview",
+          "url": "https://gedi.umd.edu/instrument/instrument-overview/"
+        },
+        {
+          "paragraphIndex": 4,
+          "label": "Czech Republic study",
+          "url": "https://doi.org/10.5220/0013475200003935"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NASA and University of Maryland: GEDI instrument overview",
+          "url": "https://gedi.umd.edu/instrument/instrument-overview/",
+          "publisher": "NASA and University of Maryland",
+          "description": "Explains how laser waveforms support canopy height, crown cover and vertical structure measurements."
+        },
+        {
+          "label": "Copernicus Land Monitoring Service: High Resolution Layer Tree Cover and Forests",
+          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover?tab=tree_cover_density",
+          "publisher": "Copernicus Land Monitoring Service",
+          "description": "Defines tree cover density and provides the product context needed to distinguish crown coverage from height."
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Alagialoglou, L., Manakos, I., Brovkina, O., Novotný, J. and Delopoulos, A. (2025). Assessment of Fine-Tuned Canopy Height Maps from Satellite Imagery: A Case Study in the Czech Republic",
+          "description": "GISTAM 2025, pp. 236-243. Czech Test Area 2 showed a reduction in average absolute height error from 4.26 m to 2.74 m after local adaptation; the study also examined differences in uncertainty between tree groups.",
+          "href": "https://doi.org/10.5220/0013475200003935"
+        },
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Boutsoukis, C., Manakos, I., Heurich, M. and Delopoulos, A. (2019). Canopy Height Estimation from Single Multispectral 2D Airborne Imagery Using Texture Analysis and Machine Learning in Structurally Rich Temperate Forests",
+          "description": "Remote Sensing, 11(23), 2853. The study classified vegetation into height classes from image texture and evaluated the results against a LiDAR canopy height model. Its Sentinel-2 experiment used simulated imagery, extending the analysis beyond the original airborne measurements.",
+          "href": "https://doi.org/10.3390/rs11232853"
+        },
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Alagialoglou, L., Manakos, I., Heurich, M., Červenka, J. and Delopoulos, A. (2022). A Learnable Model With Calibrated Uncertainty Quantification for Estimating Canopy Height From Spaceborne Sequential Imagery",
+          "description": "IEEE Transactions on Geoscience and Remote Sensing, 60, article 4410913. The work combined height estimation from sequential satellite images with calibrated uncertainty, giving users information about confidence alongside the map.",
+          "href": "https://doi.org/10.1109/TGRS.2022.3171407",
+          "additionalLinks": [
+            {
+              "label": "Authors' institutional repository record",
+              "url": "https://freidok.uni-freiburg.de/data/245616"
+            },
+            {
+              "label": "EOS explanatory poster",
+              "url": "https://eos.iti.gr/files/posters_SVC.pdf"
+            }
+          ]
+        }
+      ],
+      "relatedSlugs": [
+        "can-satellites-reveal-the-link-between-geodiversity-and-biodiversity",
+        "can-geoai-replace-the-earth-observation-expert",
+        "how-can-we-separate-seasonal-forest-change-from-disturbance"
+      ]
+    },
+    {
+      "slug": "why-do-shorelines-move-between-satellite-observations",
+      "title": "Why Do Shorelines Move Between Satellite Observations?",
+      "shortTitle": "Why do shorelines move?",
+      "summary": "A shifted water edge may record a real hydrological change, a temporary fluctuation or a difference in how the sensor saw the surface. A time series helps separate these possibilities.",
+      "seoDescription": "Learn how water levels, terrain, vegetation and observation conditions move satellite-mapped shorelines, and how time series help explain the changes.",
+      "visual": "shoreline",
+      "image": "/images/eo-insights/shoreline-dynamics.jpg",
+      "imageAlt": "Concept illustration, not satellite data, of changing water boundaries along a reservoir shoreline.",
+      "readingMinutes": 3,
+      "tags": ["Water extent", "Inundation", "Time series"],
+      "keyPoint": "A moving water edge may reflect hydrology or observation conditions; repeated observations help distinguish temporary variation from persistent change.",
+      "paragraphs": [
+        "Suppose a reservoir is observed on a calm April morning and again after a wet week in May. In the second image, the water edge reaches farther into the surrounding grassland. Has the shoreline permanently changed? Perhaps, but the water level may simply have risen for a few days.",
+        "A shoreline is the meeting point between a water surface and the shape of the land. On a shallow bank, a small vertical change in water level can move that meeting point many metres sideways. On a steep bank, the same rise may barely shift it. Rainfall, snowmelt, river inflow, dam releases, water abstraction and evaporation all alter inland water levels. Wind can temporarily push water towards one shore. Along coasts, tides, waves, sediment movement and storm surge add further motion. Aquatic plants also expand and retreat through the seasons, making the transition less like a line and more like a zone.",
+        "The satellite adds another layer of variation. A medium-resolution pixel near the margin may contain water, wet soil and vegetation together. A classification has to decide where that mixed pixel belongs. In optical imagery, cloud shadow can resemble water, while sediment-rich shallows or sun glint can make water harder to recognise. Radar supplies its own illumination and can observe through most cloud, but smooth open water, wind-roughened water, flooded vegetation and dry ground do not always produce simple, separable signals. Small geolocation differences and different viewing geometries can also make two edges appear misaligned.",
+        "This is why one boundary from one date should not automatically be called erosion, expansion or loss. Repeated observations reveal whether a location is usually dry, seasonally flooded or persistently under water. EOS research at the Polyphytos reservoir tested land-water transition methods for operational drinking-water support. Some site-specific classifications exceeded 98 percent overall accuracy, and observations from September 2017 to August 2021 were used to map hydroperiod, the estimated duration of inundation, and changes in water extent. The work also documented practical limits caused by image frequency, spatial resolution and the surrounding landscape. The outcome was a repeatable way to describe when and how often water occupied the margin.",
+        "A defensible interpretation therefore keeps the observation conditions attached to the line. Useful companions include acquisition date and season, sensor type, pixel size, cloud and wind conditions, classification confidence, water-level records, rainfall, reservoir operations and local topography. Optical and radar time series can complement one another, especially when clouds interrupt an optical record. Comparisons should also use equivalent seasons where possible.",
+        "For ecology and water management, the moving edge is often the signal rather than the problem. The pattern of wetting and drying shapes vegetation, habitat access, sediment exposure and water-quality processes. The better question is not, \"Which shoreline is the true one?\" It is, \"Which movements are temporary, which persist, and what hydrological or observational process best explains them?\""
+      ],
+      "paragraphLinks": [
+        {
+          "paragraphIndex": 1,
+          "label": "Surface-water variability study",
+          "url": "https://doi.org/10.1038/s41586-021-03262-3"
+        },
+        {
+          "paragraphIndex": 2,
+          "label": "USGS water-extent monitoring",
+          "url": "https://www.usgs.gov/special-topics/saline-lake-ecosystems-integrated-water-availability-assessment/science/remote"
+        },
+        {
+          "paragraphIndex": 3,
+          "label": "Polyphytos reservoir study",
+          "url": "https://doi.org/10.3390/w15142596"
+        },
+        {
+          "paragraphIndex": 4,
+          "label": "Global surface-water record",
+          "url": "https://doi.org/10.1038/nature20584"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Pekel et al. (2016), High-resolution mapping of global surface water and its long-term changes",
+          "url": "https://doi.org/10.1038/nature20584",
+          "publisher": "Nature",
+          "description": "More than three million Landsat images were used to describe surface-water occurrence, seasonality, persistence and change at 30 metre resolution over 32 years."
+        },
+        {
+          "label": "Cooley, Ryan and Smith (2021), Human alteration of global surface water storage variability",
+          "url": "https://doi.org/10.1038/s41586-021-03262-3",
+          "publisher": "Nature",
+          "description": "Satellite altimetry and surface-area observations showed that human-managed reservoirs contribute disproportionately to global surface-water storage variability."
+        },
+        {
+          "label": "U.S. Geological Survey (2026), Remote Sensing in the Great Basin",
+          "url": "https://www.usgs.gov/special-topics/saline-lake-ecosystems-integrated-water-availability-assessment/science/remote",
+          "publisher": "U.S. Geological Survey",
+          "description": "The public programme uses Dynamic Surface Water Extent products to distinguish open water from mixed water, vegetation and soil observations and to build inundation-frequency time series."
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Kita, Manakos et al. (2023), Land-Water Transition Zone Monitoring in Support of Drinking Water Production",
+          "description": "At Polyphytos reservoir, the study tested operational inundation mapping, reported site-specific overall accuracies above 98 percent in some cases and used observations from September 2017 to August 2021 to derive hydroperiod information, meaning the estimated duration of inundation.",
+          "href": "https://doi.org/10.3390/w15142596"
+        },
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Manakos, Kordelas and Marini (2020), Fusion of Sentinel-1 data with Sentinel-2 products to overcome non-favourable atmospheric conditions for the delineation of inundation maps",
+          "description": "Locally trained models linked optical inundation maps with radar observations, producing eight radar-based maps and demonstrating an approach to filling gaps in the optical record.",
+          "href": "https://doi.org/10.1080/22797254.2019.1596757"
+        },
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Manakos et al. (2021), Multi-Temporal Inundated Areas Monitoring Made Easy: The Case of Kerkini Lake in Greece",
+          "description": "The workflow produced and evaluated repeated Sentinel-2 inundation maps, then used them to assess same-date Sentinel-1 maps. The latter comparison measures consistency between the products, rather than accuracy against independent ground observations.",
+          "href": "https://doi.org/10.5220/0010555700480055"
+        }
+      ],
+      "relatedSlugs": [
+        "can-radar-satellites-see-through-clouds",
+        "when-is-a-water-quality-indicator-ready-to-support-management",
+        "when-has-the-land-really-changed"
+      ]
+    },
+    {
+      "slug": "can-earth-observation-describe-ecological-condition",
+      "title": "Can Earth Observation Describe Ecological Condition, Not Only Surface Appearance?",
+      "shortTitle": "Can EO describe ecological condition?",
+      "summary": "A satellite can show where an ecosystem is and how its surface changes. Describing ecological condition requires a further step: connecting those observations to composition, structure and function, with an explicit reference and evidence on the ground.",
+      "seoDescription": "Explore how satellite observations support ecological condition assessment when indicators, reference levels and field evidence give surface changes meaning.",
+      "visual": "condition",
+      "image": "/images/eo-insights/ecological-condition.jpg",
+      "imageAlt": "Concept illustration, not satellite data, of a wetland mosaic connecting vegetation structure, water patterns and ecological condition.",
+      "readingMinutes": 3,
+      "tags": ["Ecological condition", "Biodiversity", "Habitat monitoring"],
+      "keyPoint": "Ecological condition requires defined indicators, a relevant reference and supporting evidence, not a judgement based on greenness alone.",
+      "paragraphs": [
+        "Consider two wetlands observed on the same clear morning. Both appear as broad green canopies broken by dark water. In one, native plants form a varied mosaic and seasonal flooding supports many species. In the other, a single aggressive plant dominates after the water regime has been altered. In this comparison, similar satellite appearance does not necessarily mean similar ecological condition.",
+        "A sensor records reflected light, emitted heat or microwave echoes. It does not directly record integrity, resilience or ecological quality. Those ideas describe how an ecosystem is composed, how it is structured and how it functions, usually in relation to a stated reference. The reference might be a minimally disturbed state, a historical baseline, a management target or the expected range for that ecosystem type. Without it, a greener image can be mistaken for a healthier ecosystem, even when the greenness comes from invasion, fertilisation or an unusually wet season.",
+        "Earth Observation becomes useful for condition assessment when measurements are translated into well-defined ecological variables. Repeated imagery can describe vegetation cover, fragmentation, phenological timing and fire history, and support estimates of canopy structure, productivity, surface moisture and inundation patterns. Radar, optical and thermal observations each contribute a different view. A field survey can then add what the satellite cannot reliably identify, such as species composition, regeneration, soil properties or a local pressure. The result is strongest when these pieces are treated as an observation system, not when one image is asked to stand for the whole ecosystem.",
+        "Published EOS work helps show how that translation can be organised. Petrou, Manakos and Stathaki reviewed the links between remote sensing methods, biodiversity indicators and international targets. Their synthesis showed that satellite evidence can support several dimensions of biodiversity monitoring, while also making clear that the ecological meaning depends on the indicator, scale and validation. The EODHaM system provided a practical information chain: Earth Observation features were classified through the FAO Land Cover Classification System and then translated, with expert knowledge, into General Habitat Categories and selected European habitat classes. These habitat maps help establish what is present and where; assessing condition requires further indicators and a relevant reference.",
+        "Change through time is often more revealing than appearance on one date. A shortened wet season, loss of small habitat patches or an increasingly uniform canopy may matter even when total green area remains stable. Conversely, a temporary spectral change after rain need not indicate lasting ecological decline. Comparable seasons, suitable spatial resolution and uncertainty estimates therefore belong in the interpretation.",
+        "Earth Observation can describe important dimensions of ecological condition, but only when the question is precise. The useful question is not simply, \"Does this look healthy from space?\" It is, \"Which part of condition can we observe here, against which reference, and what additional evidence is needed to interpret it responsibly?\""
+      ],
+      "paragraphLinks": [
+        {
+          "paragraphIndex": 1,
+          "label": "Ecosystem Accounting framework",
+          "url": "https://seea.un.org/en/methodology/ecosystem-accounting"
+        },
+        {
+          "paragraphIndex": 3,
+          "label": "Biodiversity review",
+          "url": "https://doi.org/10.1007/s10531-015-0947-z"
+        },
+        {
+          "paragraphIndex": 3,
+          "label": "EODHaM system",
+          "url": "https://doi.org/10.1016/j.jag.2014.10.011"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Nicholson et al. (2021), Scientific foundations for an ecosystem goal, milestones and indicators for the post-2020 global biodiversity framework",
+          "url": "https://doi.org/10.1038/s41559-021-01538-5",
+          "publisher": "Nature Ecology & Evolution",
+          "description": "The paper frames ecosystem progress through complementary measures of area, integrity and risk of collapse, rather than extent alone."
+        },
+        {
+          "label": "United Nations Statistical Commission (2021), System of Environmental-Economic Accounting - Ecosystem Accounting",
+          "url": "https://seea.un.org/en/methodology/ecosystem-accounting",
+          "publisher": "United Nations",
+          "description": "This statistical framework records ecosystem condition through selected characteristics at specific times and compares indicators against relevant reference levels."
+        },
+        {
+          "label": "Jetz et al. (2019), Essential biodiversity variables for mapping and monitoring species populations",
+          "url": "https://doi.org/10.1038/s41559-019-0826-1",
+          "publisher": "Nature Ecology & Evolution",
+          "description": "The authors show how heterogeneous observations, models and remotely sensed covariates can be combined while retaining explicit spatial, temporal and uncertainty information."
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Petrou, Manakos and Stathaki (2015), Remote sensing for biodiversity monitoring: a review of methods for biodiversity indicator extraction and assessment of progress towards international targets",
+          "description": "The review connected remote sensing methods with biodiversity indicators and international targets, while identifying where operational interpretation and validation still needed development.",
+          "href": "https://doi.org/10.1007/s10531-015-0947-z"
+        },
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Lucas et al., including Manakos (2015), The Earth Observation Data for Habitat Monitoring (EODHaM) system",
+          "description": "The study demonstrated a rule-based path from Earth Observation land-cover information to General Habitat Categories and selected Annex I habitat maps across several protected sites.",
+          "href": "https://doi.org/10.1016/j.jag.2014.10.011"
+        }
+      ],
+      "relatedSlugs": [
+        "can-satellites-reveal-the-link-between-geodiversity-and-biodiversity",
+        "why-does-a-global-land-change-taxonomy-matter",
+        "can-satellites-reveal-forest-structure-beyond-canopy-greenness"
+      ]
+    },
+    {
+      "slug": "how-can-we-separate-seasonal-forest-change-from-disturbance",
+      "title": "How Can We Separate Seasonal Forest Change from Disturbance?",
+      "shortTitle": "Seasonal forest change or disturbance?",
+      "summary": "A forest can become less green without losing its trees. Its observation history helps distinguish an expected seasonal turn from a change that needs investigation.",
+      "seoDescription": "Learn how satellite time series distinguish seasonal forest patterns from sustained disturbance, and why the first clear image is not always the event date.",
+      "visual": "forestchange",
+      "image": "/images/eo-insights/seasonal-forest-change.jpg",
+      "imageAlt": "Concept illustration, not satellite data, of a forest observed through seasonal canopy changes and a persistent disturbance.",
+      "readingMinutes": 3,
+      "tags": ["Forest change", "Phenology", "Disturbance"],
+      "keyPoint": "A sustained departure from the forest's expected seasonal pattern can flag change, but independent evidence is still needed to explain its cause and timing.",
+      "paragraphs": [
+        "A deciduous forest photographed in October may look dramatically different from the same forest in June. A storm can also transform its appearance. Put the wrong pair of images side by side and ordinary leaf fall could resemble damage; choose only two convenient dates and a real disturbance may disappear into the seasonal contrast.",
+        "The starting point is the forest's usual rhythm. Repeated satellite observations show when vegetation becomes active, reaches its seasonal peak and declines. These patterns vary with species, elevation and weather. A delayed spring is not automatically forest loss, and an evergreen stand should not be judged against the seasonal pattern of a nearby beech woodland. The phenology review by Irini Soubry, Ioannis Manakos and Chariton Kalaitzidis explains why satellite measures of seasonal vegetation development also need their own validation.",
+        "An analysis can then compare new observations with the expected behaviour. Does the signal return towards its previous range, or remain displaced? Is the change confined to one cloudy image, or supported by later clear observations? Does it form a plausible patch across neighbouring pixels? Time series methods such as Continuous Change Detection and Classification (CCDC) explicitly represent seasonal variation and identify departures from it. Annual approaches such as LandTrendr describe longer trajectories of disturbance and recovery. They answer related questions at different time scales.",
+        "An earlier study involving Ioannis Manakos illustrates both the usefulness of satellite observations and a practical constraint. Following a July 2011 storm in the Bavarian Forest National Park, researchers used RapidEye imagery to assess forest cover loss. A suitable image existed from one day before the event, but cloud cover delayed a suitable post-event image until 22 August. The study reported 96.7% overall accuracy for its forest-cover change results, using visually interpreted satellite observations supported by aerial imagery as the reference. This result covers the combined study periods, not the storm alone. Satellite revisit opportunities and usable observations were plainly different things.",
+        "That distinction still matters when presenting change dates. The first clear image showing damage tells us when it became observable, not necessarily the day it happened. Weather records, field observations and management information help narrow the interval and explain the cause. An Austrian Sentinel-2 study, for example, assessed disturbance detections with observations from forest protection inspections.",
+        "Several explanations can fit the same spectral change. Drought, insect damage, harvesting and storm loss may all alter canopy moisture and reflectance. Cloud shadow, snow and imperfect alignment introduce further ambiguity. Persistence strengthens the evidence of a lasting change, but it does not identify its cause by itself. Likewise, renewed greenness after an event may come from grasses or shrubs before the former tree canopy returns.",
+        "A useful forest change story therefore follows the sequence: what was expected, what departed from it, how long that departure lasted and what independent evidence explains it. Showing that sequence helps the reader understand why a change was flagged and what should be checked on the ground."
+      ],
+      "paragraphLinks": [
+        {
+          "paragraphIndex": 1,
+          "label": "Phenology review",
+          "url": "https://doi.org/10.1007/978-3-031-44112-7_2"
+        },
+        {
+          "paragraphIndex": 2,
+          "label": "USGS method description",
+          "url": "https://www.usgs.gov/data/land-change-monitoring-assessment-and-projection-science-products"
+        },
+        {
+          "paragraphIndex": 2,
+          "label": "LandTrendr paper",
+          "url": "https://doi.org/10.1016/j.rse.2010.07.008"
+        },
+        {
+          "paragraphIndex": 3,
+          "label": "Bavarian Forest study",
+          "url": "https://doi.org/10.3390/f5061284"
+        },
+        {
+          "paragraphIndex": 4,
+          "label": "Independent Austrian study",
+          "url": "https://doi.org/10.3390/rs12244191"
+        },
+        {
+          "paragraphIndex": 2,
+          "label": "US Forest Service abstract and paper",
+          "url": "https://research.fs.usda.gov/treesearch/54160"
+        }
+      ],
+      "sources": [
+        {
+          "label": "USGS: Land Change Monitoring, Assessment, and Projection Science Products (2020)",
+          "url": "https://www.usgs.gov/data/land-change-monitoring-assessment-and-projection-science-products",
+          "publisher": "U.S. Geological Survey",
+          "description": "Explains how Continuous Change Detection and Classification (CCDC) models seasonal patterns, trends and breaks using clear Landsat observations."
+        },
+        {
+          "label": "Kennedy, R. E., Yang, Z. and Cohen, W. B. (2010). Detecting trends in forest disturbance and recovery using yearly Landsat time series: 1. LandTrendr - Temporal segmentation algorithms",
+          "url": "https://doi.org/10.1016/j.rse.2010.07.008",
+          "publisher": "Remote Sensing of Environment",
+          "description": "Remote Sensing of Environment, 114(12), 2897-2910. A foundational method for separating abrupt events from longer changes in annual image sequences."
+        },
+        {
+          "label": "Löw, M. and Koukal, T. (2020). Phenology Modelling and Forest Disturbance Mapping with Sentinel-2 Time Series in Austria",
+          "url": "https://doi.org/10.3390/rs12244191",
+          "publisher": "Remote Sensing",
+          "description": "Remote Sensing, 12(24), 4191. Demonstrates the use of modelled seasonal behaviour to detect forest disturbance, with field observations supporting evaluation."
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Elatawneh, A., Wallner, A., Manakos, I., Schneider, T. and Knoke, T. (2014). Forest Cover Database Updates Using Multi-Seasonal RapidEye Data - Storm Event Assessment in the Bavarian Forest National Park",
+          "description": "Forests, 5(6), 1284-1303. RapidEye observations supported forest database updates and assessment of the July 2011 storm. The study reported 96.7% overall accuracy for its forest-cover change results, using visually interpreted satellite observations supported by aerial imagery as the reference. This result covers the combined study periods, not the storm alone. Cloud cover delayed the usable post-event observation by approximately six weeks.",
+          "href": "https://doi.org/10.3390/f5061284"
+        },
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Soubry, I., Manakos, I. and Kalaitzidis, C. (2023). Progress on Land Surface Phenology Estimation with Multispectral Remote Sensing",
+          "description": "Communications in Computer and Information Science, 1908, pp. 16-37. This review examines sensors, processing methods and validation challenges for seasonal vegetation monitoring, providing the methodological basis for treating seasonality as part of the interpretation. It is a synthesis, not a new forest disturbance detection experiment.",
+          "href": "https://doi.org/10.1007/978-3-031-44112-7_2"
+        },
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Sismanis, M., Chadoulis, R.-T., Manakos, I. and Drosou, A. (2023). An Unsupervised Burned Area Mapping Approach Using Sentinel-2 Images",
+          "description": "Land, 12(2), 379. Tests on three fires in Greece and Portugal assessed an adaptive mapping method against reference interpretation. The paper explicitly considers acquisition timing and warns that moisture differences or shadows can create false indications of fire damage.",
+          "href": "https://doi.org/10.3390/land12020379"
+        }
+      ],
+      "relatedSlugs": [
+        "can-satellites-reveal-forest-structure-beyond-canopy-greenness",
+        "how-do-satellites-map-wildfire-damage",
+        "when-has-the-land-really-changed",
+        "why-does-healthy-vegetation-appear-red"
+      ]
+    },
+    {
+      "slug": "when-is-a-water-quality-indicator-ready-to-support-management",
+      "title": "When Is a Water-Quality Indicator Ready to Support Management?",
+      "shortTitle": "When is a water-quality indicator ready?",
+      "summary": "A useful satellite indicator has a defined purpose, suitable field comparisons and a clear connection to the next decision.",
+      "seoDescription": "See why a satellite water-quality indicator needs a defined management task, suitable field comparisons and clear limits before it can support a decision.",
+      "visual": "watermanagement",
+      "image": "/images/eo-insights/water-quality-management.jpg",
+      "imageAlt": "Concept illustration, not satellite data, of water-quality patterns in a reservoir informing field sampling and management.",
+      "readingMinutes": 3,
+      "tags": ["Water quality", "Validation", "Water management"],
+      "keyPoint": "An indicator is useful when its evidence and limitations fit a specific decision; a satellite alert is not a declaration that water is safe or unsafe.",
+      "paragraphs": [
+        "Imagine a reservoir manager opening a map after heavy rain. One inlet appears much more turbid than the rest of the lake. A sampling boat is available that afternoon. The practical question is whether the map provides enough reliable information to help choose where the boat should go.",
+        "That is a useful starting point for evaluating an Earth Observation indicator: define the action first. Prioritising sampling, tracking seasonal conditions and estimating a concentration at a water intake are different tasks. They demand different levels of detail, timeliness and accuracy. A product can be useful for one task while requiring further testing for another.",
+        "The field comparison must also fit the satellite observation. A sample from yesterday may describe different conditions from today's image, especially after rainfall or in a moving plume. A bottle represents a small volume of water; a pixel represents a larger area and an optical signal influenced by conditions near the surface. Location, time, depth and sampling method all affect the comparison.",
+        "Two stages need particular care. Algorithm calibration establishes or adjusts the relationship between the satellite signal and the chosen indicator. Validation tests the resulting estimates against evidence held apart from that adjustment. Reusing the same observations for both can make performance look more convincing than it will be during a new season or at an unfamiliar lake. The test should represent the conditions in which the product will be used.",
+        "An overall correlation is only part of that assessment. Users also need to know whether estimates run consistently high or low, how large the errors are, and where observations are missing or unreliable. For an alert, the relevant questions include how often the system overlooks an event and how often it sends someone to investigate an apparent event that is not confirmed.",
+        "A published EOS collaboration at Lake Kerkini makes the need for parameter-specific assessment tangible. Landsat observations were compared with field measurements to develop estimates of several water properties. Performance varied considerably across the tested relationships, including unsuccessful cases. The study supports examining each indicator on its own evidence; it does not establish that all measured properties can be retrieved equally well.",
+        "The WQeMS platform publication offers a complementary example. Its services brought water-quality changes, bloom detection, changing water boundaries and extreme events into a common service environment. This makes the connection between an observation and a user's task explicit.",
+        "For our reservoir manager, a useful output would show the suspected plume, its observation time, quality flags and the limits of the estimate. A threshold for sending a sampling boat is an operational choice, not a declaration that water is safe or unsafe. Confirmation still depends on the measurements required for that question. The value of the satellite map lies in making that next investigation better informed."
+      ],
+      "paragraphLinks": [
+        {
+          "paragraphIndex": 2,
+          "label": "International validation review",
+          "url": "https://doi.org/10.3390/rs17244008"
+        },
+        {
+          "paragraphIndex": 5,
+          "label": "Kerkini study, 2021",
+          "url": "https://www.iti.gr/iti/wp-content/uploads/m-files/document/publications/CEMEPE_kerkini_2021.pdf"
+        },
+        {
+          "paragraphIndex": 6,
+          "label": "WQeMS platform, 2023",
+          "url": "https://doi.org/10.1117/12.2680817"
+        },
+        {
+          "paragraphIndex": 2,
+          "label": "USGS record",
+          "url": "https://www.usgs.gov/publications/advancements-satellite-observations-inland-and-coastal-waters-building-towards-a"
+        },
+        {
+          "paragraphIndex": 2,
+          "label": "NASA manuscript record",
+          "url": "https://ntrs.nasa.gov/citations/20250011285"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Avouris et al. (2025), Advancements in Satellite Observations of Inland and Coastal Waters: Building towards a Global Validation Network",
+          "url": "https://doi.org/10.3390/rs17244008",
+          "publisher": "Remote Sensing",
+          "description": "Reviews field measurements, validation gaps and the need to match product performance to users' requirements. The USGS record and NASA manuscript record provide additional access."
+        },
+        {
+          "label": "Zibordi et al. (2019), Protocols for Satellite Ocean Colour Data Validation: In Situ Optical Radiometry",
+          "url": "https://doi.org/10.25607/OBP-691",
+          "publisher": "International Ocean Colour Coordinating Group",
+          "description": "IOCCG guidance on collecting and checking optical reference measurements. Its marine protocols need appropriate adaptation for inland waters, as discussed in the 2025 review."
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Kanj et al. (2021), Empirical estimation of surface water quality parameters in Lake Kerkini using Landsat ETM+/OLI",
+          "description": "Published conference study comparing Landsat and field measurements for multiple water parameters. The reported results ranged from strong relationships to unsuccessful cases, providing a concrete reason to assess each indicator separately.",
+          "href": "https://www.iti.gr/iti/wp-content/uploads/m-files/document/publications/CEMEPE_kerkini_2021.pdf"
+        },
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Scarpino et al. (2023), WQEMS platform for inland surface water bodies' monitoring: serving user communities and supporting expert analyses",
+          "description": "Describes the platform's four service lines and how they support inland-water monitoring and expert analysis. An institutional full manuscript is also available.",
+          "href": "https://doi.org/10.1117/12.2680817",
+          "additionalLinks": [
+            {
+              "label": "institutional full manuscript",
+              "url": "https://m4d.iti.gr/wp-content/uploads/2023/11/RSCY2023_paper_Scarpino_et_al.pdf"
+            }
+          ]
+        },
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Kita et al. (2023), Land-Water Transition Zone Monitoring in Support of Drinking Water Production",
+          "description": "Tested inundation mapping at Polyphytos reservoir and produced water-extent and hydroperiod information. This is supporting hydrological context for management; it is not validation of a chemical or microbiological safety indicator.",
+          "href": "https://doi.org/10.3390/w15142596"
+        }
+      ],
+      "relatedSlugs": [
+        "can-satellites-detect-water-pollution",
+        "why-do-shorelines-move-between-satellite-observations",
+        "what-should-an-eo-model-do-when-the-evidence-is-insufficient"
+      ]
+    },
+    {
+      "slug": "what-should-an-eo-model-do-when-the-evidence-is-insufficient",
+      "title": "What Should an EO Model Do When the Evidence Is Insufficient?",
+      "shortTitle": "What if an EO model lacks evidence?",
+      "summary": "An informative map can show where evidence supports a conclusion and where another observation is still needed.",
+      "seoDescription": "Explore how calibrated uncertainty, broader habitat classes and selective prediction help EO models communicate conclusions that need more evidence.",
+      "visual": "uncertainty",
+      "image": "/images/eo-insights/model-uncertainty.jpg",
+      "imageAlt": "Concept illustration, not satellite data, of a landscape map with clear, ambiguous and unresolved predictions.",
+      "readingMinutes": 3,
+      "tags": ["Uncertainty", "GeoAI", "Habitat mapping"],
+      "keyPoint": "A useful EO model makes unsupported distinctions visible, and reports both the reliability of retained predictions and the cases left unresolved.",
+      "paragraphs": [
+        "Imagine a habitat map with every patch assigned a precise label. At one wetland edge, however, two habitat types share a similar satellite appearance. Distinguishing them requires information about vegetation or flooding that the available observations do not provide. A neat boundary on the map does not resolve that missing evidence.",
+        "An EO model needs a way to communicate this situation. Depending on the task, it might retain a broader category, show several plausible classes, mark an estimate for review, or leave it unassigned. Each response tells the next user something useful about the strength of the conclusion and the evidence needed to improve it.",
+        "These choices require more than a confidence score. In a classifier, a value such as 0.9 does not automatically mean that nine out of ten predictions assigned about 90% confidence are correct. Calibration examines whether the reported probabilities correspond to observed frequencies of correctness on suitable evaluation data. Even a well-calibrated model needs renewed scrutiny when applied to a different landscape, season or sensor.",
+        "Uncertainty and error also answer different questions. An error can be measured when an estimate is compared with an appropriate reference. Uncertainty describes the remaining doubt about an estimate before its true value is known. A canopy-height map may therefore need both an estimated height and an indication of how uncertain that height is. The uncertainty assessment itself must be tested.",
+        "EOS-co-authored work has addressed this explicitly. Alagialoglou and colleagues published a canopy-height method using sequences of satellite images together with calibrated uncertainty estimates. The uncertainty accompanies the height map, giving users additional information for interpretation. Its reliability still needs checking when the model is applied to unfamiliar forests.",
+        "An earlier habitat-mapping study by Petrou and colleagues, also co-authored by Ioannis Manakos, provides an especially clear example. Where information was insufficient to separate individual habitat classes, the method could retain a composite class, grouping the plausible habitat types instead of choosing one unsupported label. That preserves a useful partial conclusion while making the unresolved distinction explicit.",
+        "Allowing a model to withhold selected predictions is often called selective prediction. Its evaluation has two connected parts: the error among the predictions retained and the share of cases on which a prediction is supplied. Reporting only improved accuracy can hide how much of the map was excluded. The excluded areas also deserve attention, particularly if they repeatedly cover the same habitats or difficult terrain.",
+        "A practical map should explain why evidence was judged insufficient and suggest a relevant next check. Cloud may call for another acquisition; ambiguity between habitat types may call for a field record. A broader class may already answer a regional planning question, while a site assessment requires more detail. The appropriate level of certainty follows the question being asked and the consequences of getting the answer wrong."
+      ],
+      "paragraphLinks": [
+        {
+          "paragraphIndex": 2,
+          "label": "Guo et al., 2017",
+          "url": "https://proceedings.mlr.press/v70/guo17a.html"
+        },
+        {
+          "paragraphIndex": 4,
+          "label": "Canopy-height study, 2022",
+          "url": "https://doi.org/10.1109/TGRS.2022.3171407"
+        },
+        {
+          "paragraphIndex": 5,
+          "label": "Habitat uncertainty study, 2014",
+          "url": "https://doi.org/10.1016/j.patrec.2013.11.002"
+        },
+        {
+          "paragraphIndex": 6,
+          "label": "SelectiveNet, 2019",
+          "url": "https://proceedings.mlr.press/v97/geifman19a.html"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Guo et al. (2017), On Calibration of Modern Neural Networks",
+          "url": "https://proceedings.mlr.press/v70/guo17a.html",
+          "publisher": "Proceedings of Machine Learning Research",
+          "description": "Explains and tests the relationship between classification probabilities and actual correctness. It supplies the general machine-learning background for interpreting confidence scores."
+        },
+        {
+          "label": "Geifman and El-Yaniv (2019), SelectiveNet: A Deep Neural Network with an Integrated Reject Option",
+          "url": "https://proceedings.mlr.press/v97/geifman19a.html",
+          "publisher": "Proceedings of Machine Learning Research",
+          "description": "Examines selective prediction and the trade-off between retained predictive performance and coverage. It supplies the independent background for evaluating withheld predictions."
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Petrou et al. (2014), A rule-based classification methodology to handle uncertainty in habitat mapping employing evidential reasoning and fuzzy logic",
+          "description": "Introduced a framework for translating land cover into habitats while accounting for missing information and uncertain rules. Its use of composite classes, grouping plausible habitat types, is a published example of preserving ambiguity when the available evidence cannot support a finer distinction.",
+          "href": "https://doi.org/10.1016/j.patrec.2013.11.002"
+        },
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Alagialoglou et al. (2022), A Learnable Model With Calibrated Uncertainty Quantification for Estimating Canopy Height From Spaceborne Sequential Imagery",
+          "description": "Produces canopy-height estimates and calibrated uncertainty from satellite image sequences. The University of Freiburg repository records the publication; an EOS scientific poster presents the associated height, uncertainty and reference comparisons.",
+          "href": "https://doi.org/10.1109/TGRS.2022.3171407",
+          "additionalLinks": [
+            {
+              "label": "University of Freiburg repository",
+              "url": "https://freidok.uni-freiburg.de/data/245616"
+            },
+            {
+              "label": "EOS scientific poster",
+              "url": "https://eos.iti.gr/files/posters_SVC.pdf"
+            }
+          ]
+        }
+      ],
+      "relatedSlugs": [
+        "can-geoai-replace-the-earth-observation-expert",
+        "when-has-the-land-really-changed",
+        "can-satellites-reveal-the-link-between-geodiversity-and-biodiversity",
+        "when-is-a-water-quality-indicator-ready-to-support-management"
+      ]
+    },
+    {
       "slug": "can-radar-satellites-see-through-clouds",
       "title": "Can Radar Satellites See Through Clouds?",
       "shortTitle": "Can radar satellites see through clouds?",

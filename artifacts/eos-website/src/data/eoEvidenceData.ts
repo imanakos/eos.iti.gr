@@ -11,6 +11,7 @@ export interface EOSEvidenceItem {
   label: string;
   description: string;
   href?: string;
+  additionalLinks?: { label: string; url: string }[];
 }
 
 export const eosEvidence: Record<string, EOSEvidenceItem[]> = {

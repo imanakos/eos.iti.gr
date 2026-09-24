@@ -25,8 +25,9 @@ export interface PageMetadata {
   type?: "website" | "article";
   publishedAt?: string;
   modifiedAt?: string;
+  robots?: string;
   keywords?: string[];
-  image?: PageSocialImage;
+  image?: PageSocialImage | null;
   jsonLd?: Record<string, unknown>[];
 }
 
@@ -42,9 +43,11 @@ export function usePageMetadata(metadata: PageMetadata | null) {
     if (!metadata) return;
 
     const canonical = `${SITE_URL}${metadata.path}`;
-    const socialImage = metadata.image ?? DEFAULT_SOCIAL_IMAGE;
-    const socialImageUrl = `${SITE_URL}${socialImage.path}`;
+    const socialImage = metadata.image === null ? null : (metadata.image ?? DEFAULT_SOCIAL_IMAGE);
     const canonicalElement = document.getElementById("canonical-url");
+    const twitterCardElement = document.querySelector<HTMLMetaElement>('meta[name="twitter:card"]');
+    const previousTwitterCard = twitterCardElement?.content;
+    const removedImageElements: HTMLElement[] = [];
 
     document.querySelectorAll("[data-route-meta]").forEach((element) => element.remove());
 
@@ -54,14 +57,34 @@ export function usePageMetadata(metadata: PageMetadata | null) {
     setMetaContent("og-description", metadata.description);
     setMetaContent("og-url", canonical);
     setMetaContent("og-type", metadata.type ?? "website");
-    setMetaContent("og-image", socialImageUrl);
-    setMetaContent("og-image-width", String(socialImage.width ?? 1200));
-    setMetaContent("og-image-height", String(socialImage.height ?? 630));
-    setMetaContent("og-image-alt", socialImage.alt);
     setMetaContent("twitter-title", metadata.title);
     setMetaContent("twitter-description", metadata.description);
-    setMetaContent("twitter-image", socialImageUrl);
-    setMetaContent("twitter-image-alt", socialImage.alt);
+
+    if (socialImage) {
+      const socialImageUrl = `${SITE_URL}${socialImage.path}`;
+      setMetaContent("og-image", socialImageUrl);
+      setMetaContent("og-image-width", String(socialImage.width ?? 1200));
+      setMetaContent("og-image-height", String(socialImage.height ?? 630));
+      setMetaContent("og-image-alt", socialImage.alt);
+      setMetaContent("twitter-image", socialImageUrl);
+      setMetaContent("twitter-image-alt", socialImage.alt);
+    } else {
+      for (const id of [
+        "og-image",
+        "og-image-width",
+        "og-image-height",
+        "og-image-alt",
+        "twitter-image",
+        "twitter-image-alt",
+      ]) {
+        const element = document.getElementById(id);
+        if (element) {
+          removedImageElements.push(element);
+          element.remove();
+        }
+      }
+      if (twitterCardElement) twitterCardElement.content = "summary";
+    }
 
     if (canonicalElement instanceof HTMLLinkElement) {
       canonicalElement.href = canonical;
@@ -70,6 +93,7 @@ export function usePageMetadata(metadata: PageMetadata | null) {
     const dynamicElements: HTMLElement[] = [];
     const addMeta = (property: string, content: string, useName = false) => {
       const element = document.createElement("meta");
+      element.setAttribute("data-route-meta", "");
       element.setAttribute(useName ? "name" : "property", property);
       element.content = content;
       document.head.appendChild(element);
@@ -82,12 +106,16 @@ export function usePageMetadata(metadata: PageMetadata | null) {
     if (metadata.modifiedAt) {
       addMeta("article:modified_time", metadata.modifiedAt);
     }
+    if (metadata.robots) {
+      addMeta("robots", metadata.robots, true);
+    }
     if (metadata.keywords?.length) {
       addMeta("keywords", metadata.keywords.join(", "), true);
     }
 
     for (const data of metadata.jsonLd ?? []) {
       const script = document.createElement("script");
+      script.setAttribute("data-route-meta", "");
       script.type = "application/ld+json";
       script.text = JSON.stringify(data).replace(/</g, "\\u003c");
       document.head.appendChild(script);
@@ -96,6 +124,10 @@ export function usePageMetadata(metadata: PageMetadata | null) {
 
     return () => {
       dynamicElements.forEach((element) => element.remove());
+      removedImageElements.forEach((element) => document.head.appendChild(element));
+      if (twitterCardElement && previousTwitterCard !== undefined) {
+        twitterCardElement.content = previousTwitterCard;
+      }
       document.title = DEFAULT_TITLE;
       setMetaContent("meta-description", DEFAULT_DESCRIPTION);
       setMetaContent("og-title", DEFAULT_TITLE);

@@ -31,7 +31,7 @@ const pageMetadata = {
         "@type": "BlogPosting",
         headline: insight.title,
         url: `${SITE_URL}/eo-insights/${insight.slug}/`,
-        image: `${SITE_URL}${insight.image}`,
+        ...(insight.image ? { image: `${SITE_URL}${insight.image}` } : {}),
       })),
     },
   ],
