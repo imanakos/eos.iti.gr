@@ -1,15 +1,15 @@
 import { ArrowLeft, ArrowRight, Calendar, Clock, ExternalLink, Share2 } from "lucide-react";
 import { Link, type RouteComponentProps } from "wouter";
 import { EOInsightCard } from "@/components/eo-insights/EOInsightCard";
-import { InsightVisual } from "@/components/eo-insights/InsightVisual";
+import { InsightVisual, isFullFrameInsightVisual } from "@/components/eo-insights/InsightVisual";
 import { eosEvidence, type EOSEvidenceItem } from "@/data/eoEvidenceData";
 import {
   eoInsightsData,
   formatInsightDate,
   getEOInsight,
-  sortedEOInsights,
+  type EOInsight,
 } from "@/data/eoInsightsData";
-import { SITE_URL, usePageMetadata } from "@/lib/seo";
+import { SITE_URL, usePageMetadata, type PageMetadata } from "@/lib/seo";
 import NotFound from "./not-found";
 
 function EOSEvidenceCard({ item }: { item: EOSEvidenceItem }) {
@@ -39,6 +39,58 @@ function EOSEvidenceCard({ item }: { item: EOSEvidenceItem }) {
       {isExternal && <span className="sr-only">Opens in a new tab</span>}
     </>
   );
+
+  if (item.additionalLinks?.length) {
+    const linkClassName =
+      "block rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2";
+
+    return (
+      <div className={cardClassName}>
+        {item.href ? (
+          isExternal ? (
+            <a href={item.href} target="_blank" rel="noopener noreferrer" className={linkClassName}>
+              {content}
+            </a>
+          ) : (
+            <Link href={item.href} className={linkClassName}>
+              {content}
+            </Link>
+          )
+        ) : (
+          content
+        )}
+        <ul
+          className="mt-4 space-y-2 border-t border-border pt-3"
+          aria-label={`More evidence for ${item.label}`}
+        >
+          {item.additionalLinks.map((link) => (
+            <li key={link.url}>
+              {link.url.startsWith("http") ? (
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-start gap-1.5 rounded text-sm font-semibold text-primary underline decoration-primary/30 underline-offset-4 hover:decoration-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                >
+                  {link.label}
+                  <ExternalLink className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              ) : (
+                <Link
+                  href={link.url}
+                  className="inline-flex items-start gap-1.5 rounded text-sm font-semibold text-primary underline decoration-primary/30 underline-offset-4 hover:decoration-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                >
+                  {link.label}
+                  <ArrowRight className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                </Link>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
 
   if (!item.href) {
     return <div className={cardClassName}>{content}</div>;
@@ -103,32 +155,34 @@ export default function EOInsightArticle({ params }: RouteComponentProps<{ slug:
   const canonicalPath = insight ? `/eo-insights/${insight.slug}/` : "/eo-insights/";
   const canonicalUrl = `${SITE_URL}${canonicalPath}`;
 
-  const metadata = insight
+  const metadata: PageMetadata | null = insight
     ? {
         title: `${insight.title} | EO Analysis Notes`,
         description: insight.seoDescription,
         path: canonicalPath,
-        type: "article" as const,
+        type: "article",
         publishedAt: insight.publishedAt,
         modifiedAt: insight.modifiedAt,
         keywords: insight.tags,
-        image: {
-          path: insight.image,
-          alt: insight.imageAlt,
-          width: 1200,
-          height: 630,
-        },
+        image: insight.image
+          ? {
+              path: insight.image,
+              alt: insight.imageAlt ?? insight.title,
+              width: 1200,
+              height: 630,
+            }
+          : null,
         jsonLd: [
           {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             headline: insight.title,
             description: insight.seoDescription,
-            datePublished: insight.publishedAt,
-            dateModified: insight.modifiedAt,
+            ...(insight.publishedAt ? { datePublished: insight.publishedAt } : {}),
+            ...(insight.modifiedAt ? { dateModified: insight.modifiedAt } : {}),
             mainEntityOfPage: canonicalUrl,
             url: canonicalUrl,
-            image: `${SITE_URL}${insight.image}`,
+            ...(insight.image ? { image: `${SITE_URL}${insight.image}` } : {}),
             author: {
               "@type": "Person",
               name: eoInsightsData.author.name,
@@ -175,11 +229,11 @@ export default function EOInsightArticle({ params }: RouteComponentProps<{ slug:
     return <NotFound />;
   }
 
-  const preferredRelatedSlugs = relatedInsightSlugs[insight.slug] ?? [];
+  const preferredRelatedSlugs = insight.relatedSlugs ?? relatedInsightSlugs[insight.slug] ?? [];
   const relatedInsights = preferredRelatedSlugs
-    .map((slug) => sortedEOInsights.find((item) => item.slug === slug))
-    .filter((item): item is (typeof sortedEOInsights)[number] => Boolean(item));
-  const evidence = eosEvidence[insight.slug] ?? [];
+    .map(getEOInsight)
+    .filter((item): item is EOInsight => Boolean(item));
+  const evidence = insight.evidence ?? eosEvidence[insight.slug] ?? [];
   const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(canonicalUrl)}`;
 
   return (
@@ -195,7 +249,9 @@ export default function EOInsightArticle({ params }: RouteComponentProps<{ slug:
               All EO Analysis Notes
             </Link>
 
-            <div className="mt-8 grid items-stretch gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+            <div
+              className={`mt-8 grid items-stretch gap-8${insight.visual ? " lg:grid-cols-[1.15fr_0.85fr]" : ""}`}
+            >
               <div className="flex flex-col justify-center">
                 <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[hsl(30_75%_34%)]">
                   EO Analysis Notes
@@ -208,12 +264,14 @@ export default function EOInsightArticle({ params }: RouteComponentProps<{ slug:
                 </p>
 
                 <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
-                  <span className="inline-flex items-center gap-2">
-                    <Calendar className="h-4 w-4 text-primary" />
-                    <time dateTime={insight.publishedAt}>
-                      {formatInsightDate(insight.publishedAt)}
-                    </time>
-                  </span>
+                  {insight.publishedAt && (
+                    <span className="inline-flex items-center gap-2">
+                      <Calendar className="h-4 w-4 text-primary" aria-hidden="true" />
+                      <time dateTime={insight.publishedAt}>
+                        {formatInsightDate(insight.publishedAt)}
+                      </time>
+                    </span>
+                  )}
                   <span className="inline-flex items-center gap-2">
                     <Clock className="h-4 w-4 text-primary" />
                     {insight.readingMinutes} min read
@@ -235,25 +293,65 @@ export default function EOInsightArticle({ params }: RouteComponentProps<{ slug:
                 </p>
               </div>
 
-              <figure className="flex flex-col">
-                <InsightVisual
-                  visual={insight.visual}
-                  imageAlt={insight.imageAlt}
-                  className="min-h-72 flex-1 rounded-3xl shadow-xl"
-                />
-                <figcaption className="mt-3 px-1 text-xs leading-relaxed text-muted-foreground">
-                  {eoInsightsData.visualDisclosure}
-                </figcaption>
-              </figure>
+              {insight.visual && (
+                <figure
+                  className={`flex flex-col${isFullFrameInsightVisual(insight.visual) ? " self-start" : ""}`}
+                >
+                  <InsightVisual
+                    visual={insight.visual}
+                    imageAlt={insight.imageAlt}
+                    className={
+                      isFullFrameInsightVisual(insight.visual)
+                        ? "w-full rounded-3xl shadow-xl"
+                        : "min-h-72 flex-1 rounded-3xl shadow-xl"
+                    }
+                  />
+                  <figcaption className="mt-3 px-1 text-xs leading-relaxed text-muted-foreground">
+                    {eoInsightsData.visualDisclosure}
+                  </figcaption>
+                </figure>
+              )}
             </div>
           </div>
         </header>
 
         <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="space-y-6 text-[1.05rem] leading-8 text-foreground/85">
-            {insight.paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
+            {insight.paragraphs.map((paragraph, paragraphIndex) => {
+              const references =
+                insight.paragraphLinks?.filter((link) => link.paragraphIndex === paragraphIndex) ??
+                [];
+
+              return (
+                <div key={paragraph}>
+                  <p>{paragraph}</p>
+                  {references.length > 0 && (
+                    <ul
+                      className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm leading-relaxed"
+                      aria-label={`References for paragraph ${paragraphIndex + 1}`}
+                    >
+                      {references.map((reference) => (
+                        <li key={`${reference.label}-${reference.url}`}>
+                          <a
+                            href={reference.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-start gap-1.5 rounded font-medium text-primary underline decoration-primary/30 underline-offset-4 hover:decoration-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                          >
+                            {reference.label}
+                            <ExternalLink
+                              className="mt-0.5 h-3.5 w-3.5 shrink-0"
+                              aria-hidden="true"
+                            />
+                            <span className="sr-only"> (opens in a new tab)</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           <aside className="my-10 rounded-2xl border-l-4 border-secondary bg-secondary/10 px-6 py-5">
@@ -309,8 +407,17 @@ export default function EOInsightArticle({ params }: RouteComponentProps<{ slug:
                       <span className="mt-1 block text-xs text-muted-foreground">
                         {source.publisher}
                       </span>
+                      {source.description && (
+                        <span className="mt-2 block text-sm leading-relaxed text-muted-foreground">
+                          {source.description}
+                        </span>
+                      )}
                     </span>
-                    <ExternalLink className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                    <ExternalLink
+                      className="mt-1 h-4 w-4 shrink-0 text-primary"
+                      aria-hidden="true"
+                    />
+                    <span className="sr-only">Opens in a new tab</span>
                   </a>
                 </li>
               ))}
