@@ -1,0 +1,36 @@
+{
+  "channelName": "Earth Observation Explained",
+  "channelUrl": "https://www.youtube.com/@EOexplained",
+  "articles": {
+    "can-earth-observation-describe-ecological-condition": {
+      "short": {
+        "url": "https://www.youtube.com/shorts/LoLXs8Zghgk",
+        "durationSeconds": 42
+      },
+      "long": {
+        "url": "https://www.youtube.com/watch?v=x2GEcokBLZ8",
+        "durationSeconds": 269
+      }
+    },
+    "can-satellites-reveal-forest-structure-beyond-canopy-greenness": {
+      "short": {
+        "url": "https://www.youtube.com/shorts/W4H5YiqsHyI",
+        "durationSeconds": 44
+      },
+      "long": {
+        "url": "https://www.youtube.com/watch?v=1irzsFv0U2w",
+        "durationSeconds": 244
+      }
+    },
+    "can-geoai-replace-the-earth-observation-expert": {
+      "short": {
+        "url": "https://www.youtube.com/shorts/7nq3q647X3o",
+        "durationSeconds": 46
+      },
+      "long": {
+        "url": "https://www.youtube.com/watch?v=upDWzgNqEtY",
+        "durationSeconds": 150
+      }
+    }
+  }
+}

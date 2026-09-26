@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowRight, Calendar, Clock, ExternalLink, Share2 } from "lucide-react";
 import { Link, type RouteComponentProps } from "wouter";
 import { EOInsightCard } from "@/components/eo-insights/EOInsightCard";
+import { EOInsightVideos } from "@/components/eo-insights/EOInsightVideos";
 import { InsightVisual, isFullFrameInsightVisual } from "@/components/eo-insights/InsightVisual";
 import { eosEvidence, type EOSEvidenceItem } from "@/data/eoEvidenceData";
 import {
@@ -316,6 +317,7 @@ export default function EOInsightArticle({ params }: RouteComponentProps<{ slug:
         </header>
 
         <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
+          <EOInsightVideos insight={insight} />
           <div className="space-y-6 text-[1.05rem] leading-8 text-foreground/85">
             {insight.paragraphs.map((paragraph, paragraphIndex) => {
               const references =
