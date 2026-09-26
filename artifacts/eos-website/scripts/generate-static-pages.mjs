@@ -16,6 +16,9 @@ const siteUrl = (process.env.BASE_URL || "https://imanakos.github.io/eos.iti.gr"
 const data = JSON.parse(
   await readFile(path.join(projectDirectory, "src", "data", "eoInsights.json"), "utf8")
 );
+const eoVideos = JSON.parse(
+  await readFile(path.join(projectDirectory, "src", "data", "eoVideos.json"), "utf8")
+);
 
 async function loadTypeScriptData(relativePath) {
   const sourcePath = path.join(projectDirectory, relativePath);
@@ -480,6 +483,11 @@ function renderCollectionBody() {
         <p>${escapeHtml(data.seriesDescription)}</p>
         <p><strong>Visual note:</strong> ${escapeHtml(data.visualDisclosure)}</p>
       </header>
+      <section aria-labelledby="eo-video-channel-heading">
+        <h2 id="eo-video-channel-heading">Prefer to watch?</h2>
+        <p>Selected notes now have short introductions and full video explanations, narrated by Dr Ioannis Manakos. Look for the video label on the notes below, or explore the channel.</p>
+        <p>${renderReferenceLink({ label: "EO explained on YouTube", url: eoVideos.channelUrl })}</p>
+      </section>
       <section aria-labelledby="latest-notes-heading">
         <h2 id="latest-notes-heading">Latest notes</h2>
         ${sortedArticles
@@ -489,6 +497,7 @@ function renderCollectionBody() {
           <h3><a href="${escapeHtml(`${siteUrl}/eo-insights/${article.slug}/`)}">${escapeHtml(article.title)}</a></h3>
           ${article.publishedAt ? `<time datetime="${escapeHtml(article.publishedAt)}">${escapeHtml(article.publishedAt)}</time>` : ""}
           <p>${escapeHtml(article.readingMinutes)} min read</p>
+          ${eoVideos.articles[article.slug] ? "<p>Short + full video available</p>" : ""}
           <p>${escapeHtml(article.summary)}</p>
         </article>`
           )
@@ -502,6 +511,26 @@ function renderReferenceLink({ label, url }) {
   const href = isExternal ? url : internalUrl(url);
   const externalAttributes = isExternal ? ' target="_blank" rel="noopener noreferrer"' : "";
   return `<a href="${escapeHtml(href)}"${externalAttributes}>${escapeHtml(label)}</a>`;
+}
+
+function formatVideoDuration(durationSeconds) {
+  const roundedSeconds = Math.round(durationSeconds);
+  return `${Math.floor(roundedSeconds / 60)}:${String(roundedSeconds % 60).padStart(2, "0")}`;
+}
+
+function renderArticleVideos(slug) {
+  const videos = eoVideos.articles[slug];
+  if (!videos) return "";
+
+  return `<section aria-labelledby="watch-explanation-heading">
+          <h2 id="watch-explanation-heading">Watch this explanation</h2>
+          <p>A quick introduction or the full explanation, narrated by Dr Ioannis Manakos.</p>
+          <ul>
+            <li>${renderReferenceLink({ label: `Watch the Short (${formatVideoDuration(videos.short.durationSeconds)})`, url: videos.short.url })}</li>
+            <li>${renderReferenceLink({ label: `Watch the full explanation (${formatVideoDuration(videos.long.durationSeconds)})`, url: videos.long.url })}</li>
+          </ul>
+          <p>Opens on YouTube. No YouTube player loads on this page.</p>
+        </section>`;
 }
 
 function renderArticleBody(article) {
@@ -524,6 +553,7 @@ function renderArticleBody(article) {
             <figcaption>${escapeHtml(data.visualDisclosure)}</figcaption>
           </figure>
         </header>
+        ${renderArticleVideos(article.slug)}
         ${article.paragraphs
           .map((paragraph, paragraphIndex) => {
             const references = (article.paragraphLinks ?? []).filter(

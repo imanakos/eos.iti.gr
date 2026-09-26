@@ -1,6 +1,7 @@
-import { BookOpen, CheckCircle2, Compass, SearchCheck } from "lucide-react";
+import { BookOpen, CheckCircle2, Compass, ExternalLink, Play, SearchCheck } from "lucide-react";
 import { EOInsightCard } from "@/components/eo-insights/EOInsightCard";
 import { eoInsightsData, sortedEOInsights } from "@/data/eoInsightsData";
+import { eoVideoData } from "@/data/eoVideosData";
 import { SITE_URL, usePageMetadata } from "@/lib/seo";
 
 const pageMetadata = {
@@ -83,6 +84,27 @@ export default function EOInsights() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <aside className="mb-10 flex flex-col gap-5 rounded-2xl border border-primary/15 bg-muted/35 p-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="max-w-2xl">
+            <h2 className="text-xl font-bold text-foreground">Prefer to watch?</h2>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Selected notes now have short introductions and full video explanations, narrated by
+              Dr Ioannis Manakos. Look for the video label on the notes below, or explore the
+              channel.
+            </p>
+          </div>
+          <a
+            href={eoVideoData.channelUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 self-start rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 sm:self-auto"
+          >
+            <Play className="h-4 w-4" aria-hidden="true" />
+            EO explained on YouTube
+            <ExternalLink className="h-4 w-4" aria-hidden="true" />
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+        </aside>
         <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[hsl(30_75%_34%)]">

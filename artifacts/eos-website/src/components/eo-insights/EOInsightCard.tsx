@@ -1,7 +1,8 @@
-import { ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Clock, Play } from "lucide-react";
 import { Link } from "wouter";
 import type { EOInsight } from "@/data/eoInsightsData";
 import { formatInsightDate } from "@/data/eoInsightsData";
+import { getEOArticleVideos } from "@/data/eoVideosData";
 import { cn } from "@/lib/utils";
 import { InsightVisual, isFullFrameInsightVisual } from "./InsightVisual";
 
@@ -12,6 +13,8 @@ export function EOInsightCard({
   insight: EOInsight;
   compact?: boolean;
 }) {
+  const hasVideos = Boolean(getEOArticleVideos(insight.slug));
+
   return (
     <Link
       href={`/eo-insights/${insight.slug}/`}
@@ -53,6 +56,12 @@ export function EOInsightCard({
         <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
           {insight.summary}
         </p>
+        {hasVideos && (
+          <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
+            <Play className="h-3.5 w-3.5" aria-hidden="true" />
+            Short + full video available
+          </span>
+        )}
         <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
           Read the note
           <ArrowRight
