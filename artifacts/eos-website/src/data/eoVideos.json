@@ -31,6 +31,36 @@
         "url": "https://www.youtube.com/watch?v=upDWzgNqEtY",
         "durationSeconds": 150
       }
+    },
+    "can-satellites-reveal-the-link-between-geodiversity-and-biodiversity": {
+      "short": {
+        "url": "https://www.youtube.com/shorts/WpGXNXVFM-g",
+        "durationSeconds": 42
+      },
+      "long": {
+        "url": "https://www.youtube.com/watch?v=zCIaKvoRnuo",
+        "durationSeconds": 177
+      }
+    },
+    "why-does-a-global-land-change-taxonomy-matter": {
+      "short": {
+        "url": "https://www.youtube.com/shorts/ou7l9sOLRws",
+        "durationSeconds": 39
+      },
+      "long": {
+        "url": "https://www.youtube.com/watch?v=OWUJLE4Fz_c",
+        "durationSeconds": 147
+      }
+    },
+    "can-satellites-detect-water-pollution": {
+      "short": {
+        "url": "https://www.youtube.com/shorts/EIJSDu_C2fU",
+        "durationSeconds": 44
+      },
+      "long": {
+        "url": "https://www.youtube.com/watch?v=oNDGXo5jCto",
+        "durationSeconds": 140
+      }
     }
   }
 }
