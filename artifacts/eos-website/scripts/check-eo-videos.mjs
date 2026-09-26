@@ -29,6 +29,18 @@ const expected = {
     short: "https://www.youtube.com/shorts/7nq3q647X3o",
     long: "https://www.youtube.com/watch?v=upDWzgNqEtY",
   },
+  "can-satellites-reveal-the-link-between-geodiversity-and-biodiversity": {
+    short: "https://www.youtube.com/shorts/WpGXNXVFM-g",
+    long: "https://www.youtube.com/watch?v=zCIaKvoRnuo",
+  },
+  "why-does-a-global-land-change-taxonomy-matter": {
+    short: "https://www.youtube.com/shorts/ou7l9sOLRws",
+    long: "https://www.youtube.com/watch?v=OWUJLE4Fz_c",
+  },
+  "can-satellites-detect-water-pollution": {
+    short: "https://www.youtube.com/shorts/EIJSDu_C2fU",
+    long: "https://www.youtube.com/watch?v=oNDGXo5jCto",
+  },
 };
 
 assert.equal(videos.channelName, "Earth Observation Explained");
@@ -36,7 +48,7 @@ assert.equal(videos.channelUrl, "https://www.youtube.com/@EOexplained");
 assert.deepEqual(
   Object.keys(videos.articles).sort(),
   Object.keys(expected).sort(),
-  "Video metadata must cover exactly the three approved notes."
+  "Video metadata must cover exactly the six approved notes."
 );
 
 const noteSlugs = new Set(notes.articles.map((article) => article.slug));
@@ -77,9 +89,9 @@ for (const [slug, formats] of Object.entries(videos.articles)) {
     `${slug} full explanation should be longer than the Short.`
   );
 }
-assert.equal(videoUrls.size, 6);
+assert.equal(videoUrls.size, 12);
 process.stdout.write(
-  "PASS: three existing notes, six unique approved YouTube links and valid durations.\n"
+  "PASS: six existing notes, twelve unique approved YouTube links and valid durations.\n"
 );
 
 function decodeHtml(text) {
@@ -198,6 +210,6 @@ if (production) {
     );
   }
   process.stdout.write(
-    "PASS: production collection/channel link, six labelled video links, duration text, privacy notice and unaffected-note coverage.\n"
+    "PASS: production collection/channel link, twelve labelled video links, duration text, privacy notice and unaffected-note coverage.\n"
   );
 }
