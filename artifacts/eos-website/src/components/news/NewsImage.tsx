@@ -31,7 +31,7 @@ export function NewsImage({
   const image = (
     <img
       src={assetUrl(article.img)}
-      alt={article.title}
+      alt={article.imgAlt || article.title}
       className={className}
       loading={loading}
       decoding="async"

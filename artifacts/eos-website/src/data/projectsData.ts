@@ -104,10 +104,10 @@ export const projects: Project[] = [
     url: "https://e-shape.eu/",
   },
   {
-    name: "ODYSSEUS",
+    name: "ODYSSEAS",
     img: "/images/projects/odysseas.jpg",
     description:
-      "Earth Observation project supporting biodiversity monitoring and ecosystem assessment with remote sensing methodologies.",
+      "CERTH digital infrastructure for intelligent and automated design, simulation and development of integrated products and processes, co-funded by Greece and the European Regional Development Fund.",
     status: "recent",
     url: "https://odysseas.iti.gr/",
   },

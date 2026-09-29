@@ -175,6 +175,17 @@ export const eosEvidence: Record<string, EOSEvidenceItem[]> = {
   ],
   "when-has-the-land-really-changed": [
     {
+      kind: "Documented EOS outcome",
+      label: "Land-productivity dynamics in Asterousia, Crete",
+      description:
+        "Imam, Riitano, Giuliani, Manakos and colleagues assessed land-productivity dynamics using a fused Landsat-MODIS NDVI time series. Their LDR 2026 contribution supplies a concrete example of following vegetation through time to examine land condition, rather than treating a single map difference as proof of degradation or recovery.",
+      href: "https://doi.org/10.5281/zenodo.23001937",
+      additionalLinks: [
+        { label: "MONALISA case study", url: "/research/projects/monalisa-land-degradation/" },
+        { label: "Related spectral-index notebooks", url: "/tools/#spectral-indices-notebooks" },
+      ],
+    },
+    {
       kind: "Peer-reviewed publication",
       label: "A common language for land change",
       description:

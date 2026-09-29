@@ -1,12 +1,22 @@
 export interface NewsArticle {
   title: string;
   img: string;
+  imgAlt?: string;
   date: string;
   newsId: string;
   url?: string;
 }
 
 export const newsArticles: NewsArticle[] = [
+  {
+    title: "Ioannis Manakos appointed Conference Co-Chair of GISTAM 2027",
+    img: "/images/news/gistam-2027-co-chair.svg",
+    imgAlt:
+      "GISTAM 2027 banner announcing Ioannis Manakos as Conference Co-Chair, Rome, Italy, 20 - 22 April 2027",
+    date: "September 29, 2026",
+    newsId: "news159",
+    url: "https://gistam.scitevents.org/CallForPapers.aspx?y=2027",
+  },
   {
     title: "Ioannis Manakos co-chaired GISTAM 2026 in Benidorm, Spain",
     img: "/images/news/gistam-2026-co-chair.svg",

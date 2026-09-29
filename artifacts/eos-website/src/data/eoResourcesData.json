@@ -1,0 +1,405 @@
+[
+  {
+    "id": "spectral-indices-notebooks",
+    "section": "services",
+    "title": "Spectral Indices notebooks",
+    "type": "Notebooks",
+    "project": "MONALISA",
+    "summary": "Calculate spectral indices from Sentinel-2 or Landsat data for land-degradation analysis. The notebooks make the processing steps available for inspection and adaptation to a study area.",
+    "coverage": "Sentinel-2 and Landsat; land-degradation analysis",
+    "published": "Repository publication field: 2025; record labelled v1.2",
+    "creators": "Gregory Giuliani (creator); Audrey Lambiel (editor); Ioannis Manakos and Imma Serra (data curators).",
+    "contribution": "Ioannis Manakos is credited for data curation, alongside Imma Serra.",
+    "access": "Public notebooks. The deposited record and Landsat notebook use different version labels; check the individual file before citing or running it.",
+    "reuse": "Zenodo deposit: CC BY 4.0. Credit the creators and contributors and check the requirements of any underlying data or dependencies.",
+    "links": [
+      {
+        "label": "View notebooks and citation on Zenodo",
+        "url": "https://doi.org/10.5281/zenodo.19336775",
+        "doi": "10.5281/zenodo.19336775"
+      }
+    ],
+    "relatedNotes": [
+      {
+        "label": "When Has the Land Really Changed?",
+        "href": "/eo-insights/when-has-the-land-really-changed/"
+      }
+    ]
+  },
+  {
+    "id": "wqems-reservoir-maps",
+    "section": "services",
+    "title": "Reservoir water extent and hydroperiod",
+    "type": "Datasets",
+    "project": "WQeMS",
+    "summary": "Compare where water was present, where a shoreline shifted between observations, and how long an area remained inundated. Three complementary GeoTIFF deposits support these different questions.",
+    "coverage": "Polyphytos, Greece (inundation maps: 2021-2022); Polyphytos and Giaretta, Italy (transition and hydroperiod periods are specified in the files)",
+    "published": "Deposited 2023",
+    "creators": "Ioannis Manakos; Afroditi Kita; Christos Kalogeropoulos.",
+    "contribution": "WQeMS raster products developed with the CERTH team using Copernicus Sentinel-2 observations.",
+    "access": "Public GeoTIFF datasets. Read each deposit's class definitions and NoData conventions before comparing layers.",
+    "reuse": "All three linked deposits: CC BY 4.0. Cite the particular dataset used.",
+    "links": [
+      {
+        "label": "Polyphytos inundation maps",
+        "url": "https://doi.org/10.5281/zenodo.8134211",
+        "doi": "10.5281/zenodo.8134211"
+      },
+      {
+        "label": "Land-water transition maps",
+        "url": "https://doi.org/10.5281/zenodo.8133979",
+        "doi": "10.5281/zenodo.8133979"
+      },
+      {
+        "label": "Hydroperiod maps",
+        "url": "https://doi.org/10.5281/zenodo.8133689",
+        "doi": "10.5281/zenodo.8133689"
+      }
+    ],
+    "relatedNotes": [
+      {
+        "label": "Why Do Shorelines Move Between Satellite Observations?",
+        "href": "/eo-insights/why-do-shorelines-move-between-satellite-observations/"
+      }
+    ]
+  },
+  {
+    "id": "ecopotential-wetland-maps",
+    "section": "services",
+    "title": "Wetland inundation and hydroperiod",
+    "type": "Datasets",
+    "project": "ECOPOTENTIAL",
+    "summary": "Explore water extent at individual observation dates and estimated inundation duration across three protected wetlands. The maps include INSPIRE metadata to help identify and interpret the products.",
+    "coverage": "Doñana: 2015-2017; Camargue: 2016-2018; Danube Delta: 2016-2017. Hydroperiod products cover the specified hydrological years.",
+    "published": "Deposited 2019",
+    "creators": "Georgios Kordelas; Ioannis Manakos.",
+    "contribution": "ECOPOTENTIAL wetland-mapping products from the CERTH team.",
+    "access": "Public raster datasets and metadata. Hydroperiod is estimated between observations, not measured continuously each day.",
+    "reuse": "All six linked deposits: CC BY 4.0. Cite the site-specific products used.",
+    "links": [
+      {
+        "label": "Doñana inundation",
+        "url": "https://doi.org/10.5281/zenodo.3402851",
+        "doi": "10.5281/zenodo.3402851"
+      },
+      {
+        "label": "Doñana hydroperiod",
+        "url": "https://doi.org/10.5281/zenodo.3402896",
+        "doi": "10.5281/zenodo.3402896"
+      },
+      {
+        "label": "Camargue inundation",
+        "url": "https://doi.org/10.5281/zenodo.3402786",
+        "doi": "10.5281/zenodo.3402786"
+      },
+      {
+        "label": "Camargue hydroperiod",
+        "url": "https://doi.org/10.5281/zenodo.3403005",
+        "doi": "10.5281/zenodo.3403005"
+      },
+      {
+        "label": "Danube Delta inundation",
+        "url": "https://doi.org/10.5281/zenodo.3402864",
+        "doi": "10.5281/zenodo.3402864"
+      },
+      {
+        "label": "Danube Delta hydroperiod",
+        "url": "https://doi.org/10.5281/zenodo.3403010",
+        "doi": "10.5281/zenodo.3403010"
+      }
+    ],
+    "relatedNotes": [
+      {
+        "label": "Can Earth Observation Describe Ecological Condition?",
+        "href": "/eo-insights/can-earth-observation-describe-ecological-condition/"
+      }
+    ]
+  },
+  {
+    "id": "donana-phenological-change",
+    "section": "services",
+    "title": "Abrupt vegetation-cycle changes in Doñana",
+    "type": "Datasets",
+    "project": "ECOPOTENTIAL",
+    "summary": "Locate breaks in the NDVI time series of Doñana marshes. The layers record the timing and number of detected changes, offering a starting point for investigating changes in vegetation behaviour.",
+    "coverage": "Doñana marshes, Spain; observations from 2007-2016",
+    "published": "Deposited 2019",
+    "creators": "Georgios Kordelas; Ioannis Manakos; Kalliroi Marini; Vasileios Kotsias; Michail Papanastasiou.",
+    "contribution": "ECOPOTENTIAL change-detection products derived with BFAST time-series analysis.",
+    "access": "Public raster layers with accompanying metadata. A detected break does not, on its own, identify its ecological cause.",
+    "reuse": "CC BY 4.0. Cite the dataset and the method where appropriate.",
+    "links": [
+      {
+        "label": "View change-detection dataset",
+        "url": "https://doi.org/10.5281/zenodo.3403705",
+        "doi": "10.5281/zenodo.3403705"
+      }
+    ],
+    "relatedNotes": [
+      {
+        "label": "Separating Seasonal Forest Change from Disturbance",
+        "href": "/eo-insights/how-can-we-separate-seasonal-forest-change-from-disturbance/"
+      }
+    ]
+  },
+  {
+    "id": "donana-phenology-metrics",
+    "section": "services",
+    "title": "Seasonal vegetation metrics in Doñana",
+    "type": "Datasets",
+    "project": "ECOPOTENTIAL",
+    "summary": "Examine the timing of green-up, senescence and peak NDVI, together with the number of seasonal peaks. Classification layers group areas with similar vegetation-cycle characteristics.",
+    "coverage": "Doñana marshes, Spain; December 2015 to November 2016",
+    "published": "Deposited 2019",
+    "creators": "Ioannis Manakos; Georgios Kordelas; Kalliroi Marini; Georgios Chantziaras.",
+    "contribution": "ECOPOTENTIAL phenology layers produced from NDVI time series using Phenex.",
+    "access": "Public metric and classification layers with INSPIRE metadata. The repository title contains an invalid November end-day; the coverage is stated here by month.",
+    "reuse": "CC BY 4.0. Preserve the dataset citation when reusing the layers.",
+    "links": [
+      {
+        "label": "View phenology dataset",
+        "url": "https://doi.org/10.5281/zenodo.3403798",
+        "doi": "10.5281/zenodo.3403798"
+      }
+    ],
+    "relatedNotes": [
+      {
+        "label": "Separating Seasonal Forest Change from Disturbance",
+        "href": "/eo-insights/how-can-we-separate-seasonal-forest-change-from-disturbance/"
+      }
+    ]
+  },
+  {
+    "id": "landscape-biodiversity-indicators",
+    "section": "services",
+    "title": "Landscape structure across protected areas",
+    "type": "Datasets",
+    "project": "ECOPOTENTIAL",
+    "summary": "Explore habitat-area and fragmentation measures, including patch density and effective mesh size. Raster layers and per-object tables describe landscape structure rather than directly counting species.",
+    "coverage": "Samaria: selected years 1985-2015; Montado: 2007 and 2012; Prespa: 2012; Curonian Lagoon: 2013-2014; La Palma: 2007; Sierra Nevada: three input vegetation maps",
+    "published": "Deposited 2019",
+    "creators": "Ioannis Manakos; Georgios Kordelas.",
+    "contribution": "ECOPOTENTIAL landscape and biodiversity-indicator products derived from land-cover and habitat maps.",
+    "access": "Public raster products, indicator tables and metadata. Each site's input maps and spatial units should be checked before cross-site comparison.",
+    "reuse": "All six linked deposits: CC BY 4.0. Cite each site's dataset separately.",
+    "links": [
+      {
+        "label": "Samaria",
+        "url": "https://doi.org/10.5281/zenodo.3403600",
+        "doi": "10.5281/zenodo.3403600"
+      },
+      {
+        "label": "Montado",
+        "url": "https://doi.org/10.5281/zenodo.3403604",
+        "doi": "10.5281/zenodo.3403604"
+      },
+      {
+        "label": "Lake Prespa",
+        "url": "https://doi.org/10.5281/zenodo.3403606",
+        "doi": "10.5281/zenodo.3403606"
+      },
+      {
+        "label": "Curonian Lagoon",
+        "url": "https://doi.org/10.5281/zenodo.3403653",
+        "doi": "10.5281/zenodo.3403653"
+      },
+      {
+        "label": "La Palma",
+        "url": "https://doi.org/10.5281/zenodo.3403661",
+        "doi": "10.5281/zenodo.3403661"
+      },
+      {
+        "label": "Sierra Nevada",
+        "url": "https://doi.org/10.5281/zenodo.3403028",
+        "doi": "10.5281/zenodo.3403028"
+      }
+    ],
+    "relatedNotes": [
+      {
+        "label": "The Link Between Geodiversity and Biodiversity",
+        "href": "/eo-insights/can-satellites-reveal-the-link-between-geodiversity-and-biodiversity/"
+      }
+    ]
+  },
+  {
+    "id": "landscape-analysis-code",
+    "section": "modules",
+    "title": "Landscape fragmentation and connectivity code",
+    "type": "Historical code",
+    "project": "ECOPOTENTIAL",
+    "summary": "Python scripts for moving-window landscape measures such as patch density, class area and effective mesh size, developed for the original parallel-processing workflow.",
+    "coverage": "Land-cover and habitat maps; original Sandbox VM workflow",
+    "published": "Repository development recorded in 2016-2017",
+    "creators": "Repository contribution records include Ioannis Manakos and Zisis Petrou.",
+    "contribution": "CERTH landscape-analysis work within ECOPOTENTIAL, drawing on the BIO_SOS indicator methodology.",
+    "access": "Historical public source code. Present-day dependencies and execution have not been tested for this catalogue.",
+    "reuse": "No standard project-level licence was identified in the repository audit. Ask the maintainers about reuse terms.",
+    "links": [],
+    "relatedNotes": [
+      {
+        "label": "The Link Between Geodiversity and Biodiversity",
+        "href": "/eo-insights/can-satellites-reveal-the-link-between-geodiversity-and-biodiversity/"
+      }
+    ]
+  },
+  {
+    "id": "guided-filter-despeckling-code",
+    "section": "modules",
+    "title": "Guided-filter radar despeckling",
+    "type": "Historical code",
+    "project": "ECOPOTENTIAL",
+    "summary": "The CERTH guided-filter implementation reduces speckle in radar imagery. The standalone code and Virtual Laboratory adaptation are two forms of the same software family.",
+    "coverage": "Sentinel-1 radar processing; standalone and VLab implementations",
+    "published": "Repository development recorded in 2017-2018",
+    "creators": "CERTH implementation; repository contribution records include Georgios Kordelas and Ioannis Manakos.",
+    "contribution": "CERTH software developed within ECOPOTENTIAL. The standalone and Virtual Laboratory versions share the main despeckling implementation.",
+    "access": "Historical public source code and instructions. Present-day dependencies and execution have not been tested for this catalogue.",
+    "reuse": "The source headers contain custom redistribution and modification terms. Read those terms and third-party requirements; no standard project-level licence was identified.",
+    "links": [],
+    "relatedNotes": [
+      {
+        "label": "Can Radar Satellites See Through Clouds?",
+        "href": "/eo-insights/can-radar-satellites-see-through-clouds/"
+      }
+    ]
+  },
+  {
+    "id": "ndvi-thresholding-r-example",
+    "section": "modules",
+    "title": "NDVI thresholding example in R",
+    "type": "Historical code",
+    "project": "ECOPOTENTIAL",
+    "summary": "A small demonstration script illustrates NDVI thresholding and masking with the Gewata example data. It is a useful code example, not a complete ecosystem-modelling package.",
+    "coverage": "R demonstration using Gewata example data",
+    "published": "Repository development recorded in 2016",
+    "creators": "Ioannis Manakos (repository contribution records).",
+    "contribution": "An ECOPOTENTIAL WP6 demonstration shared through the project's public code repositories.",
+    "access": "Historical public source code. Present-day dependencies and execution have not been tested for this catalogue.",
+    "reuse": "No standard project-level licence was identified in the repository audit. Ask the maintainer about reuse terms.",
+    "links": [],
+    "relatedNotes": []
+  },
+  {
+    "id": "eotist-standard-course",
+    "section": "elearning",
+    "title": "EOTiST Standard Course",
+    "type": "Course",
+    "project": "EOTiST",
+    "summary": "Work through lessons and practical exercises spanning remote sensing, ecosystem research, modelling and computer science. The deposited course materials provide a stable reference alongside the training platform.",
+    "coverage": "Four subject areas; theoretical units and practical exercises",
+    "published": "Course publication field: 2022; deposited version 1.1",
+    "creators": "CREAF; CBK PAN; Centre for Research and Technology Hellas; Consiglio Nazionale delle Ricerche (institutional creators).",
+    "contribution": "Ioannis Manakos is credited among the course producers. The repository lists the full producer team.",
+    "access": "Public course materials in the deposit.",
+    "reuse": "CC BY-NC-ND 4.0 for the deposit. Non-commercial sharing with attribution is permitted under its terms; adapted versions are not covered by that permission.",
+    "links": [
+      {
+        "label": "View course materials and credits",
+        "url": "https://doi.org/10.5281/zenodo.13712172",
+        "doi": "10.5281/zenodo.13712172"
+      }
+    ],
+    "relatedNotes": []
+  },
+  {
+    "id": "eotist-advanced-outline",
+    "section": "elearning",
+    "title": "EOTiST Advanced Course outline",
+    "type": "Course",
+    "project": "EOTiST",
+    "summary": "Read the advanced course structure and learning outcomes across remote sensing, ecosystem research, modelling and computer science. This public deposit describes the programme rather than providing all of its lessons.",
+    "coverage": "Advanced course structure and learning outcomes",
+    "published": "Course publication field: 2024; deposited version 1.0",
+    "creators": "CREAF; CBK PAN; Centre for Research and Technology Hellas; Consiglio Nazionale delle Ricerche (institutional creators).",
+    "contribution": "Ioannis Manakos is credited among the course producers. The repository lists the full producer team.",
+    "access": "Public outline only. Access to the full course materials is restricted to the intended project research staff.",
+    "reuse": "CC BY-NC-ND 4.0 for the public deposit; the deposit does not grant access to the restricted lessons.",
+    "links": [
+      {
+        "label": "View public outline and credits",
+        "url": "https://doi.org/10.5281/zenodo.13710888",
+        "doi": "10.5281/zenodo.13710888"
+      }
+    ],
+    "relatedNotes": []
+  },
+  {
+    "id": "wqems-service-factsheets",
+    "section": "elearning",
+    "title": "WQeMS service factsheets",
+    "type": "Project guide",
+    "project": "WQeMS",
+    "summary": "Short illustrated guides introduce the WQeMS service elements to water-sector users. The six language versions are grouped here as one resource family so readers can choose the most useful edition.",
+    "coverage": "English, Greek, German, Spanish, Finnish and Italian",
+    "published": "Deposited 2023",
+    "creators": "WQeMS consortium materials; Ioannis Manakos is the named repository creator.",
+    "contribution": "Project dissemination materials. Repository creator credit is distinct from authorship of every factsheet or translation.",
+    "access": "Public factsheet deposits on Zenodo.",
+    "reuse": "Linked deposits: CC BY 4.0. Follow the selected edition's attribution and any separately credited material.",
+    "links": [
+      {
+        "label": "English factsheets",
+        "url": "https://doi.org/10.5281/zenodo.8155357",
+        "doi": "10.5281/zenodo.8155357"
+      },
+      {
+        "label": "Greek factsheets",
+        "url": "https://doi.org/10.5281/zenodo.8155667",
+        "doi": "10.5281/zenodo.8155667"
+      },
+      {
+        "label": "German factsheets",
+        "url": "https://doi.org/10.5281/zenodo.8155462",
+        "doi": "10.5281/zenodo.8155462"
+      },
+      {
+        "label": "Spanish factsheets",
+        "url": "https://doi.org/10.5281/zenodo.8155518",
+        "doi": "10.5281/zenodo.8155518"
+      },
+      {
+        "label": "Finnish factsheets",
+        "url": "https://doi.org/10.5281/zenodo.8155597",
+        "doi": "10.5281/zenodo.8155597"
+      },
+      {
+        "label": "Italian factsheets",
+        "url": "https://doi.org/10.5281/zenodo.8155673",
+        "doi": "10.5281/zenodo.8155673"
+      }
+    ],
+    "relatedNotes": [
+      {
+        "label": "Can Satellites Detect Water Pollution?",
+        "href": "/eo-insights/can-satellites-detect-water-pollution/"
+      }
+    ]
+  },
+  {
+    "id": "wqems-newsletter-vi",
+    "section": "elearning",
+    "title": "WQeMS Newsletter VI",
+    "type": "Project guide",
+    "project": "WQeMS",
+    "summary": "This issue introduces the project's training resources and outreach to the water sector. It provides a practical entry point for readers interested in how the research was communicated to service users.",
+    "coverage": "Capacity building, e-training and project outreach",
+    "published": "Published 2023",
+    "creators": "WQeMS consortium; Ioannis Manakos, project coordinator and author of the signed editorial.",
+    "contribution": "Manakos introduces the issue on behalf of the consortium and signs its editorial.",
+    "access": "Public newsletter deposit. This is a dissemination output, not a research article.",
+    "reuse": "Deposit: CC BY 4.0. Retain the attribution of the newsletter and any separately credited material.",
+    "links": [
+      {
+        "label": "Read Newsletter VI",
+        "url": "https://doi.org/10.5281/zenodo.8134825",
+        "doi": "10.5281/zenodo.8134825"
+      }
+    ],
+    "relatedNotes": [
+      {
+        "label": "When Is a Water-Quality Indicator Ready to Support Management?",
+        "href": "/eo-insights/when-is-a-water-quality-indicator-ready-to-support-management/"
+      }
+    ]
+  }
+]

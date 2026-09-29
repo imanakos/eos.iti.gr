@@ -96,7 +96,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       {
         title: "Reusable training resources",
         detail:
-          "The project results archive includes reports, training material, and resources intended to support continued use beyond the funded project.",
+          "Public service factsheets explain the WQeMS capabilities in several languages. Newsletter VI records project activities and includes the coordinator's editorial, connecting the service outputs with their user community.",
         status: "Documented output",
       },
     ],
@@ -118,6 +118,18 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
         url: "https://cordis.europa.eu/project/id/101004157/results",
         publisher: "European Commission CORDIS",
         kind: "Official project record",
+      },
+      {
+        label: "WQeMS service factsheet: English edition",
+        url: "https://doi.org/10.5281/zenodo.8155357",
+        publisher: "WQeMS consortium / Zenodo",
+        kind: "Training resource",
+      },
+      {
+        label: "WQeMS Newsletter VI",
+        url: "https://doi.org/10.5281/zenodo.8134825",
+        publisher: "WQeMS consortium / Zenodo",
+        kind: "Public communication",
       },
       {
         label: "Monitoring European water quality from space",
@@ -152,8 +164,14 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       },
       {
         label: "EOS publications",
-        path: "/research/",
+        path: "/research/publications/",
         description: "Find the related research papers, posters, and presentations.",
+      },
+      {
+        label: "WQeMS learning and communication resources",
+        path: "/tools/elearning/",
+        description:
+          "Browse the factsheet language editions and newsletter with deposit credits and reuse terms.",
       },
     ],
     themes: ["Water quality", "Copernicus", "Emergency monitoring", "Water utilities"],
@@ -173,7 +191,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
         "water utilities",
         "Earth Observation",
       ],
-      modifiedAt: "2026-08-30",
+      modifiedAt: "2026-09-29",
     },
     officialProjectUrl: "https://wqems.eu/",
   },
@@ -289,20 +307,27 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     programme: "European Union Horizon Europe, Innovation Action",
     periodLabel: "Ongoing project",
     summary:
-      "MONALISA addresses land degradation and desertification across Mediterranean drylands. EOS is contributing to the preparation of Earth Observation monitoring in the South Crete case study and to the dialogue between field evidence, local knowledge, and spatial analysis.",
+      "MONALISA addresses land degradation and desertification across Mediterranean drylands. In South Crete, EOS connects field knowledge and stakeholder dialogue with satellite monitoring, including a co-authored fine-resolution assessment of land-productivity dynamics in Asterousia.",
     challenge:
       "Land degradation is shaped by interacting land-use, climatic, geomorphological, and socioeconomic pressures. A useful monitoring approach must connect what satellites observe with conditions on the ground and with the practical experience of people managing the landscape.",
     eosContribution: [
       "EOS documented environmental conditions in the Asterousia region of South Crete in preparation for Earth Observation monitoring activities. Discussions with local stakeholders examined land use, landscape development, soil loss, and the pressures shaping the area.",
-      "Because MONALISA is ongoing, this case study separates completed preparatory work from the project's intended results. The repository supports a clear account of field familiarisation and stakeholder engagement, while the Decision Support System remains a project target.",
+      "A co-authored contribution in the LDR 2026 proceedings examines land-productivity dynamics in Asterousia using a fused Landsat-MODIS NDVI time series. It provides a concrete monitoring output alongside the field work. The wider project's Decision Support System remains an ongoing target.",
     ],
     methodsAndData: [
       "Field observation and local environmental documentation in Asterousia, South Crete",
       "Stakeholder knowledge about land use, landscape development, and soil-loss pressures",
       "Earth Observation monitoring prepared in relation to climatic and geomorphological context",
+      "Fused Landsat-MODIS NDVI time series for fine-resolution land-productivity assessment",
       "Remote sensing and artificial intelligence planned within the wider decision-support workflow",
     ],
     outputsAndOutcomes: [
+      {
+        title: "Asterousia land-productivity assessment",
+        detail:
+          "Imam, Riitano, Giuliani, Manakos and colleagues documented a fine-resolution assessment of land-productivity dynamics in the LDR 2026 proceedings, contribution 175. The output concerns vegetation productivity over time, not a measured restoration success.",
+        status: "Documented output",
+      },
       {
         title: "South Crete case-study preparation",
         detail:
@@ -335,6 +360,12 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
         publisher: "MONALISA consortium",
         kind: "Project website",
       },
+      {
+        label: "LDR 2026 proceedings: Asterousia study, contribution 175, beginning p. 632",
+        url: "https://doi.org/10.5281/zenodo.23001937",
+        publisher: "LDR 2026 / Zenodo (proceedings-volume DOI)",
+        kind: "Research publication",
+      },
     ],
     relatedInternalTargets: [
       {
@@ -366,7 +397,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     metadata: {
       title: "MONALISA Land Degradation Case Study | EOS",
       description:
-        "EOS contributions to MONALISA in South Crete, connecting field context, stakeholder knowledge, and planned Earth Observation monitoring.",
+        "EOS contributions to MONALISA in South Crete, connecting field context and stakeholder knowledge with a published land-productivity assessment in Asterousia.",
       keywords: [
         "MONALISA",
         "land degradation neutrality",
@@ -375,7 +406,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
         "Asterousia",
         "South Crete",
       ],
-      modifiedAt: "2026-08-30",
+      modifiedAt: "2026-09-29",
     },
     officialProjectUrl: "https://monalisa4land.eu/",
   },

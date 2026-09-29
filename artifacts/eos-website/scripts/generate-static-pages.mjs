@@ -19,6 +19,9 @@ const data = JSON.parse(
 const eoVideos = JSON.parse(
   await readFile(path.join(projectDirectory, "src", "data", "eoVideos.json"), "utf8")
 );
+const eoResources = JSON.parse(
+  await readFile(path.join(projectDirectory, "src", "data", "eoResourcesData.json"), "utf8")
+);
 
 async function loadTypeScriptData(relativePath) {
   const sourcePath = path.join(projectDirectory, relativePath);
@@ -48,13 +51,19 @@ async function loadTypeScriptData(relativePath) {
   return import(moduleUrl);
 }
 
-const [newsDataModule, newsBodyModule, projectCaseStudiesModule, eoEvidenceModule] =
-  await Promise.all([
-    loadTypeScriptData("src/data/newsData.ts"),
-    loadTypeScriptData("src/data/newsBodyData.ts"),
-    loadTypeScriptData("src/data/projectCaseStudiesData.ts"),
-    loadTypeScriptData("src/data/eoEvidenceData.ts"),
-  ]);
+const [
+  newsDataModule,
+  newsBodyModule,
+  projectCaseStudiesModule,
+  eoEvidenceModule,
+  publicationsModule,
+] = await Promise.all([
+  loadTypeScriptData("src/data/newsData.ts"),
+  loadTypeScriptData("src/data/newsBodyData.ts"),
+  loadTypeScriptData("src/data/projectCaseStudiesData.ts"),
+  loadTypeScriptData("src/data/eoEvidenceData.ts"),
+  loadTypeScriptData("src/data/publicationsData.ts"),
+]);
 const newsArticles = newsDataModule.newsArticles;
 const newsBodyText = newsBodyModule.newsBodyText;
 const projectCaseStudies = projectCaseStudiesModule.projectCaseStudies;
@@ -63,10 +72,17 @@ const eosEvidence = eoEvidenceModule.eosEvidence;
 if (
   !Array.isArray(newsArticles) ||
   !Array.isArray(projectCaseStudies) ||
+  !Array.isArray(eoResources) ||
+  !Array.isArray(publicationsModule.journalPubs) ||
+  !Array.isArray(publicationsModule.bookPubs) ||
+  !Array.isArray(publicationsModule.conferencePubs) ||
+  !Array.isArray(publicationsModule.networkingPubs) ||
   typeof eosEvidence !== "object" ||
   eosEvidence === null
 ) {
-  throw new Error("The news, project case-study, or EO evidence data could not be loaded.");
+  throw new Error(
+    "The news, project case-study, EO evidence, resource, or publication data could not be loaded."
+  );
 }
 
 function slugify(value) {
@@ -232,7 +248,14 @@ function webpPath(imagePath) {
     : null;
 }
 
-function renderSimplePageBody({ eyebrow, title, description, paragraphs = [], links = [] }) {
+function renderSimplePageBody({
+  eyebrow,
+  title,
+  description,
+  paragraphs = [],
+  links = [],
+  contentHtml = "",
+}) {
   const supportingCopy = paragraphs
     .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
     .join("\n");
@@ -261,8 +284,111 @@ function renderSimplePageBody({ eyebrow, title, description, paragraphs = [], li
         <p>${escapeHtml(description)}</p>
       </header>
       ${supportingCopy}
+      ${contentHtml}
       ${navigation}
     </main>`;
+}
+
+function renderPublicLink(label, href) {
+  const url = href.startsWith("/") && !href.startsWith("//") ? internalUrl(href) : href;
+  if (!/^https?:\/\//i.test(url)) return escapeHtml(label);
+  return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`;
+}
+
+function renderResourceCatalogue(section) {
+  const headings = {
+    services: {
+      title: "Explore the data behind the research",
+      intro:
+        "Find a dataset or notebook by topic, place or project. Related products are grouped together, with observation periods kept separate from publication dates.",
+    },
+    modules: {
+      title: "Historical EO software",
+      intro:
+        "Documented implementations and examples from ECOPOTENTIAL, with their purpose and contributors. Contact the team for questions about these historical modules.",
+    },
+    elearning: {
+      title: "Courses and practical reading",
+      intro:
+        "Go directly to course deposits and project guides. The cards distinguish public learning materials from course outlines and show the contribution and reuse terms for each resource.",
+    },
+  };
+  const heading = headings[section];
+  const resources = eoResources.filter((resource) => resource.section === section);
+
+  return `<section aria-labelledby="resource-catalogue-${escapeHtml(section)}">
+      <h2 id="resource-catalogue-${escapeHtml(section)}">${escapeHtml(heading.title)}</h2>
+      <p>${escapeHtml(heading.intro)}</p>
+      ${resources
+        .map(
+          (
+            resource
+          ) => `<article id="${escapeHtml(resource.id)}" aria-labelledby="${escapeHtml(resource.id)}-title">
+        <p>${escapeHtml(resource.type)} | ${escapeHtml(resource.project)}</p>
+        <h3 id="${escapeHtml(resource.id)}-title">${escapeHtml(resource.title)}</h3>
+        <p>${escapeHtml(resource.summary)}</p>
+        <p><strong>Coverage:</strong> ${escapeHtml(resource.coverage)}</p>
+        ${
+          resource.links.length
+            ? `<ul aria-label="${escapeHtml(resource.title)}: public resource links">
+          ${resource.links.map((link) => `<li>${renderPublicLink(link.label, link.url)}</li>`).join("\n")}
+        </ul>`
+            : ""
+        }
+        <details>
+          <summary>Credits, access and reuse for ${escapeHtml(resource.title)}</summary>
+          <dl>
+            ${[
+              ["Publication", resource.published],
+              ["Credits", resource.creators],
+              ["Contribution", resource.contribution],
+              ["Access", resource.access],
+              ["Reuse", resource.reuse],
+            ]
+              .map(([label, value]) => `<dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd>`)
+              .join("\n")}
+            ${
+              resource.links.some((link) => link.doi)
+                ? `<dt>Persistent identifiers</dt><dd>${resource.links
+                    .filter((link) => link.doi)
+                    .map((link) => `<p>${escapeHtml(link.label)}: ${escapeHtml(link.doi)}</p>`)
+                    .join("\n")}</dd>`
+                : ""
+            }
+          </dl>
+        </details>
+        ${resource.relatedNotes.length ? `<nav aria-label="Related EO analysis for ${escapeHtml(resource.title)}"><h4>Related EO analysis</h4><ul>${resource.relatedNotes.map((note) => `<li><a href="${escapeHtml(internalUrl(note.href))}">${escapeHtml(note.label)}</a></li>`).join("\n")}</ul></nav>` : ""}
+      </article>`
+        )
+        .join("\n")}
+      <p>${section === "modules" ? "These summaries describe earlier research software; current compatibility and support have not been assessed." : "Files stay with their public repositories. Consult each record for its citation, metadata and reuse terms."}</p>
+    </section>`;
+}
+
+function renderPublicationGroups() {
+  const groups = [
+    ["journal-publications", "Journal Publications", publicationsModule.journalPubs],
+    ["books-book-chapters", "Books / Book Chapters", publicationsModule.bookPubs],
+    [
+      "conference-contributions",
+      "Conference programme contributions",
+      publicationsModule.conferenceContributions || [],
+    ],
+    ["conference-publications", "Published conference work", publicationsModule.conferencePubs],
+    ["networking-communication", "Networking / Communication", publicationsModule.networkingPubs],
+  ];
+
+  return groups
+    .filter(([, , entries]) => entries.length)
+    .map(
+      ([id, title, entries]) => `<section aria-labelledby="${escapeHtml(id)}">
+      <h2 id="${escapeHtml(id)}">${escapeHtml(title)}</h2>
+      <ol>
+        ${entries.map((entry) => `<li><p>${entry.link ? renderPublicLink(entry.text, entry.link) : escapeHtml(entry.text)}</p>${entry.relatedLinks?.length ? `<ul>${entry.relatedLinks.map((link) => `<li>${renderPublicLink(link.label, link.url)}</li>`).join("\n")}</ul>` : ""}</li>`).join("\n")}
+      </ol>
+    </section>`
+    )
+    .join("\n");
 }
 
 const monthNumbers = {
@@ -384,8 +510,8 @@ function renderNewsArticleBody(article) {
           <figure>
             ${
               optimizedImage
-                ? `<picture><source srcset="${escapeHtml(internalUrl(optimizedImage))}" type="image/webp" /><img src="${escapeHtml(internalUrl(article.img))}" alt="${escapeHtml(article.title)}" loading="eager" /></picture>`
-                : `<img src="${escapeHtml(internalUrl(article.img))}" alt="${escapeHtml(article.title)}" loading="eager" />`
+                ? `<picture><source srcset="${escapeHtml(internalUrl(optimizedImage))}" type="image/webp" /><img src="${escapeHtml(internalUrl(article.img))}" alt="${escapeHtml(article.imgAlt || article.title)}" loading="eager" /></picture>`
+                : `<img src="${escapeHtml(internalUrl(article.img))}" alt="${escapeHtml(article.imgAlt || article.title)}" loading="eager" />`
             }
           </figure>
         </header>
@@ -649,6 +775,7 @@ const staticRoutes = [
       title: "Dr Ioannis Manakos and the EOS team",
       description:
         "Research profile, international engagement and Earth Observation expertise of Dr Ioannis Manakos and the CERTH/ITI Remote Sensing Research Team.",
+      contentHtml: `<p>He also made an in-kind contribution to ${renderPublicLink("DynamicLand", "https://data.snf.ch/grants/grant/221323")}, a University of Geneva project supported by the Swiss National Science Foundation (SNSF grant 221323, 2024 - 2025).</p>`,
       links: [
         {
           label: "Research projects and publications",
@@ -717,6 +844,7 @@ const staticRoutes = [
       title: "Publications",
       description:
         "Browse EOS journal articles, conference publications, books, presentations and other Earth Observation research outputs.",
+      contentHtml: renderPublicationGroups(),
       links: [
         { label: "Research projects", href: "/research/" },
         { label: "Special issues", href: "/research/issues/" },
@@ -789,11 +917,12 @@ const staticRoutes = [
       title: "Earth Observation services",
       description:
         "Explore Earth Observation tools, data products, maps, training resources and environmental monitoring services from EOS.",
+      contentHtml: renderResourceCatalogue("services"),
       links: [
         {
           label: "Software modules",
           href: "/tools/modules/",
-          description: "Explore downloadable and reusable EOS software modules.",
+          description: "Explore documented EO software and processing methods.",
         },
         {
           label: "E-learning",
@@ -818,6 +947,7 @@ const staticRoutes = [
       title: "Software modules",
       description:
         "Explore EOS software modules for satellite image processing, mapping, environmental monitoring and spatial analysis.",
+      contentHtml: renderResourceCatalogue("modules"),
       links: [
         { label: "Earth Observation services", href: "/tools/" },
         { label: "E-learning", href: "/tools/elearning/" },
@@ -835,6 +965,7 @@ const staticRoutes = [
       title: "Earth Observation e-learning",
       description:
         "Explore EOS Earth Observation e-learning platforms, introductory modules and training resources.",
+      contentHtml: renderResourceCatalogue("elearning"),
       links: [
         { label: "Earth Observation services", href: "/tools/" },
         { label: "Software modules", href: "/tools/modules/" },
@@ -1057,7 +1188,7 @@ for (const article of newsEntries) {
       publishedAt,
       image: {
         path: article.img,
-        alt: article.title,
+        alt: article.imgAlt || article.title,
       },
       jsonLd: [
         {
