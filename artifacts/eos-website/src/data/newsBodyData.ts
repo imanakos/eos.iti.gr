@@ -1,4 +1,7 @@
 export const newsBodyText: Record<string, string> = {
+  news159: `Dr. Ioannis Manakos has been appointed Conference Co-Chair of the 13th International Conference on Geographical Information Systems Theory, Applications and Management (GISTAM 2027). He will co-chair the conference with Dr. Lemonia Ragia of the Hellenic Open University.
+
+The conference is scheduled for 20 - 22 April 2027 in Rome, Italy. Its programme areas connect geospatial data and analysis with Earth Observation, artificial intelligence, and environmental applications. The official call for papers provides the conference scope, submission details, and current deadlines.`,
   news158: `Dr. Ioannis Manakos served as Conference Co-Chair of the 12th International Conference on Geographical Information Systems Theory, Applications and Management (GISTAM 2026), held in Benidorm, Spain, from 21 to 23 May 2026. He co-chaired the conference with Dr. Lemonia Ragia of the Hellenic Open University.
 
 GISTAM brings together researchers and practitioners working on new challenges in geospatial data sensing, Earth Observation, representation, processing, visualization, sharing, and management. The 2026 programme covered GIS theory and applications, spatial data analysis, GeoAI and machine learning, environmental monitoring, Digital Earth, and related geoinformation technologies.

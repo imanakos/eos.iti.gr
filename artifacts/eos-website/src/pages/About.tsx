@@ -141,6 +141,19 @@ export default function About() {
                 monitoring.
               </p>
               <p>
+                He also made an in-kind contribution to{" "}
+                <a
+                  href="https://data.snf.ch/grants/grant/221323"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  DynamicLand
+                </a>
+                , a University of Geneva project supported by the Swiss National Science Foundation
+                (SNSF grant 221323, 2024 - 2025).
+              </p>
+              <p>
                 He was elected{" "}
                 <strong className="text-foreground">
                   Chairman of the Special Interest Group 'Remote Sensing in Land Use &amp; Land

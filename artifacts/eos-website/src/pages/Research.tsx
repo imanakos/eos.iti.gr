@@ -9,10 +9,12 @@ import {
   journalPubs,
   bookPubs,
   conferencePubs,
+  conferenceContributions,
   networkingPubs,
   pressItems,
   posterItems,
   videoItems,
+  type PubEntry,
 } from "@/data/publicationsData";
 
 const TABS = [
@@ -324,13 +326,7 @@ const PUB_SUB_TABS = [
   { id: "press", label: "Press" },
 ];
 
-function PubList({
-  pubs,
-  label,
-}: {
-  pubs: { text: string; link: string | null }[];
-  label: string;
-}) {
+function PubList({ pubs, label }: { pubs: PubEntry[]; label: string }) {
   return (
     <div>
       <p className="text-xs text-muted-foreground mb-5">
@@ -354,6 +350,17 @@ function PubList({
                   Open <ExternalLink className="w-3 h-3" />
                 </a>
               )}
+              {pub.relatedLinks?.map((related) => (
+                <a
+                  key={related.url}
+                  href={related.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-4 mt-1 inline-flex items-center gap-1 text-xs text-primary hover:underline"
+                >
+                  {related.label} <ExternalLink className="w-3 h-3" />
+                </a>
+              ))}
             </div>
           </li>
         ))}
@@ -624,6 +631,13 @@ function PublicationsTab() {
           <PubList pubs={bookPubs} label="book / book chapter" />
         </TabsContent>
         <TabsContent value="conference" className="mt-0">
+          <section aria-labelledby="conference-contributions" className="mb-10">
+            <h3 id="conference-contributions" className="mb-3 text-lg font-display font-bold">
+              Conference programme contributions
+            </h3>
+            <PubList pubs={conferenceContributions} label="programme contribution" />
+          </section>
+          <h3 className="mb-3 text-lg font-display font-bold">Published conference work</h3>
           <PubList pubs={conferencePubs} label="conference publication" />
         </TabsContent>
         <TabsContent value="networking" className="mt-0">

@@ -1,6 +1,7 @@
 export interface PubEntry {
   text: string;
   link: string | null;
+  relatedLinks?: { label: string; url: string }[];
 }
 
 export interface PressItem {
@@ -39,7 +40,7 @@ export const journalPubs: PubEntry[] = [
     link: "https://link.springer.com/article/10.1007/s42979-024-02873-7",
   },
   {
-    text: "F. Lokmen, I. Manakos, G. Sylaios, C. Kalaitzidis, A modified version of the Direct Sampling method for filling gaps in Landsat 7 and Sentinel 2 satellite imagery in the coastal area of Rhone River , 2023, Remote Sensing, DOI: 10.3390/rs15215122.",
+    text: "L. Farhat, I. Manakos, G. Sylaios, C. Kalaitzidis, A modified version of the Direct Sampling method for filling gaps in Landsat 7 and Sentinel 2 satellite imagery in the coastal area of Rhone River , 2023, Remote Sensing, DOI: 10.3390/rs15215122.",
     link: "https://www.mdpi.com/2072-4292/15/21/5122",
   },
   {
@@ -172,7 +173,7 @@ export const journalPubs: PubEntry[] = [
   },
   {
     text: "I. Manakos, Remote Sensing in Europe: Status analysis and trends focusing on environment and agriculture , Journal of Aeronautics and Space Technologies, 2013, Vol.6, No. 1, Pages 1-5.",
-    link: "https://www.tandfonline.com/doi/full/10.1080/01431161.2017.1291484",
+    link: "https://jast.hho.msu.edu.tr/index.php/JAST/article/download/223/211",
   },
 ];
 
@@ -182,7 +183,7 @@ export const bookPubs: PubEntry[] = [
     link: "https://link.springer.com/chapter/10.1007/978-3-031-16763-8_19",
   },
   {
-    text: "I. Soubry, I. Manakos, C. Kalaitzidis, Progress on Land Surface Phenology Estimation with Multispectral Remote Sensing, 2023, Communications in Computer and Information Science (1908), Editors: C. Grueau, R. Lauren, L. Ragia, Springer, ISBN 978-3-031-44111-0, pp. 16-37, https://doi.org/10.1007/978-3-031-44112-7 .",
+    text: "I. Soubry, I. Manakos, C. Kalaitzidis, Progress on Land Surface Phenology Estimation with Multispectral Remote Sensing, 2023, Communications in Computer and Information Science (1908), Editors: C. Grueau, R. Lauren, L. Ragia, Springer, ISBN 978-3-031-44111-0, pp. 16-37, DOI: 10.1007/978-3-031-44112-7_2.",
     link: "https://link.springer.com/chapter/10.1007/978-3-031-44112-7_2",
   },
   {
@@ -201,24 +202,53 @@ export const bookPubs: PubEntry[] = [
     text: 'I. Manakos, S. Lavender, "Remote Sensing in Support of Geo-Information in Europe", Land Use and Land Cover Mapping in Europe - practices & trends, Remote Sensing and Digital Image Processing Book Series, 2014, Springer Verlag, 18, 3-10.',
     link: null,
   },
+  {
+    text: "E. Ivanov, I. Manakos, W. van der Knaap, Conservation of coastal habitats in Mediterranean areas: A combined analytical framework for case studies, 2009, in M. J. Prados (ed.), Naturbanization: New Identities and Processes for Rural-Natural Areas, Taylor & Francis / CRC Press, pp. 205-224, ISBN 978-0-415-49000-9, DOI: 10.1201/9780203881149.ch11. Year follows the print edition; electronic release was in 2008.",
+    link: "https://doi.org/10.1201/9780203881149.ch11",
+  },
+];
+
+export const conferenceContributions: PubEntry[] = [
+  {
+    text: "R.-T. Chadoulis, M. Zubkova, C. Kotropoulos, I. Manakos, G. Kalantonis, Automated agro-pastoral enclosure detection using instance segmentation for enhanced land cover land use mapping in Somalia. IGARSS 2026, Washington, D.C., conference programme: Land Cover Dynamics I, poster session WEP1.PG, 12 August 2026.",
+    link: "https://2026.ieeeigarss.org/view_session.php?SessionID=1454",
+  },
+  {
+    text: "R.-T. Chadoulis, I. Livieratos, I. Manakos, T. Spanos, Z. Marouni, C. Kalogeropoulos, C. Kotropoulos, 3D-CNN detection of systemic symptoms induced by different Potexvirus infections in four Nicotiana benthamiana genotypes using leaf hyperspectral imaging. IGARSS 2026, Washington, D.C., conference programme: Passive Optical MSI/HSI Cal/Val and Applications, poster session FRP1.PM, 14 August 2026.",
+    link: "https://2026.ieeeigarss.org/view_session.php?SessionID=1558",
+    relatedLinks: [
+      { label: "Related 2025 journal article", url: "https://doi.org/10.1186/s13007-025-01337-0" },
+    ],
+  },
 ];
 
 export const conferencePubs: PubEntry[] = [
+  {
+    text: "F.-E. Imam, N. Riitano, G. Giuliani, I. Manakos, A. Kardamaki, D. Smiraglia, M. E. Brick, A. Lambiel, F. Assennato, G. Seddaiu, Fine resolution assessment of Land Productivity Dynamics from a fused Landsat-MODIS NDVI time series in Asterousia, Crete, 2026, contribution 175, beginning p. 632, in A. Cerdà, J. Barrena-González, S. Keesstra and Y. Zhao (eds.), Proceedings of the 1st International Conference on Land Degradation and Restoration, version 2. Proceedings-volume DOI: 10.5281/zenodo.23001937.",
+    link: "https://zenodo.org/records/23001937",
+  },
+  {
+    text: "H. Linseisen, I. Manakos, A. Delopoulos, M. Linseisen, Optimizing spatially variable information acquisition for smart hop management, 2025, Proceedings of the Scientific-Technical Commission of the International Hop Growers' Convention, Spalt, Germany, pp. 94-98, ISSN 1814-2206.",
+    link: "https://www.ihgc.org/wp-content/uploads/2025_06_IHGC-STC-Proceedings.pdf#page=96",
+    relatedLinks: [
+      { label: "Related GIL 2025 hop-yield study", url: "https://doi.org/10.18420/giljt2025_34" },
+    ],
+  },
   {
     text: "L. Alagialoglou, I. Manakos, O. Brovkina, J. Novotný, A. Delopoulos, Assessment of Fine-Tuned Canopy Height Maps from Satellite Imagery: A Case Study in the Czech Republic , In Proceedings of the 11th International Conference on Geographical Information Systems Theory, Applications and Management, 1-3 April, 2025, Porto, Portugal, SciTePress, pages 236-243, DOI: 10.5220/0013475200003935",
     link: null,
   },
   {
-    text: 'I. Manakos, H. Linseisen, E. Katsikis, A. Delopoulos, Hop yield forecast using Sentinel-2 images, Referate der 45. GIL-Jahrestagung, "Informatik in der Land-, Forst und Ernährungswirtschaft", J. Dörr et al. (Hrsg.), GI-Edition "Lecture Notes in Informatics" , 25-26 February 2025, Wieselburg, Austria, pp. 309-314.',
-    link: null,
+    text: 'I. Manakos, H. Linseisen, E. Katsikis, A. Delopoulos, Hop yield forecast using Sentinel-2 images, Referate der 45. GIL-Jahrestagung, "Informatik in der Land-, Forst und Ernährungswirtschaft", J. Dörr et al. (Hrsg.), GI-Edition "Lecture Notes in Informatics" , 25-26 February 2025, Wieselburg, Austria, pp. 309-314, DOI: 10.18420/giljt2025_34.',
+    link: "https://doi.org/10.18420/giljt2025_34",
   },
   {
-    text: "P. Ribeiro, O. Reigners, T. Voirand, M. Delpey, A. Declerck, C. Pulido, I. Manakos, C. Kalogeropoulos, T. Habib, E. Tsiros, MEDEOS - Earth Observation for land-based pollution assessment & monitoring in mediterranean coastal waters, 2024 IEEE International Geoscience and Remote Sensing Symposium , 7-12 July 2024, Athens, Greece.",
-    link: null,
+    text: "P. Ribeiro, O. Regniers, T. Voirand, M. Delpey, A. Declerck, C. L. Pulido, I. Manakos, C. Kalogeropoulos, E. Tsiros, T. Habib, MEDEOS - Earth Observation for land-based pollution assessment & monitoring in Mediterranean coastal waters, 2024 IEEE International Geoscience and Remote Sensing Symposium, 7-12 July 2024, Athens, Greece, pp. 5906-5910, DOI: 10.1109/IGARSS53475.2024.10642455.",
+    link: "https://doi.org/10.1109/IGARSS53475.2024.10642455",
   },
   {
-    text: 'H. Linseisen, I. Manakos, E. Katsikis, A. Delopoulos, Assimilation von satellitenbasierten Reflexionsmessungen in einem Informationssystem für einen modernen Hopfenbaubetrieb, Referate der 44. GIL-Jahrestagung, "Informatik in der Land-, Forst und Ernährungswirtschaft", C. Hoffmann et al. (Hrsg.), GI-Edition "Lecture Notes in Informatics" , 27-28 February 2024, Stuttgart-Hohenheim, Germany, pp. 323-327.',
-    link: "https://gil-net.de/wp-content/uploads/2024/02/GI_Proceedings_344-3.f.pdf",
+    text: 'H. Linseisen, I. Manakos, E. Katsikis, A. Delopoulos, Assimilation von satellitenbasierten Reflexionsmessungen in einem Informationssystem für einen modernen Hopfenbaubetrieb, Referate der 44. GIL-Jahrestagung, "Informatik in der Land-, Forst und Ernährungswirtschaft", C. Hoffmann et al. (Hrsg.), GI-Edition "Lecture Notes in Informatics" , 27-28 February 2024, Stuttgart-Hohenheim, Germany, pp. 323-327, DOI: 10.18420/giljt2024_23.',
+    link: "https://doi.org/10.18420/giljt2024_23",
   },
   {
     text: "R.-T. Chadoulis, M. Ruciński, E. Katsikis, P. Archicinski, S. Sala, E. Gromny, E. Wozniak, I. Manakos, A. Affek, A. Foks-Ryznar, Phenological Metrics Derived From Sentinel-2 Data For Solidago Gigantea Mapping, IGARSS 2023 - 2023 IEEE International Geoscience and Remote Sensing Symposium , 16-21 July 2023, Pasadena, CA, USA, pp. 445-447, DOI: 10.1109/IGARSS52108.2023.10282732.",
@@ -265,28 +295,36 @@ export const conferencePubs: PubEntry[] = [
     link: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8519474&isnumber=8517275&tag=1",
   },
   {
-    text: "Z. Petrou, T. Stathaki, I. Manakos, M. Adamo, C. Tarantino, P. Blonda, Land cover to habitat map conversion using remote sensing data: a supervised learning approach , in: IEEE Int. Geoscience and Remote Sensing Symp., IEEE, Quebec City, 2014, pp. 4683 - 4686.",
-    link: "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6947538",
+    text: "Z. Petrou, T. Stathaki, I. Manakos, M. Adamo, C. Tarantino, P. Blonda, Land cover to habitat map conversion using remote sensing data: a supervised learning approach, IEEE International Geoscience and Remote Sensing Symposium, Quebec City, 2014, pp. 4683-4686, DOI: 10.1109/IGARSS.2014.6947538.",
+    link: "https://doi.org/10.1109/IGARSS.2014.6947538",
   },
   {
     text: "Z. Petrou, I. Manakos, T. Stathaki, C. Tarantino, M. Adamo, P. Blonda, A vegetation height classification approach based on texture analysis of a single VHR image , Proceedings of the 35th International Symposium on Remote Sensing of Environment, 2014, IOP Conference Series: Earth and Environmental Science, 17, 012210 doi:10.1088/1755-1315/17/1/012210.",
     link: "https://iopscience.iop.org/article/10.1088/1755-1315/17/1/012210/meta",
   },
   {
-    text: "S. Mucher, L. Roupioz, H. Kramer, M. Wolters, M. Bogers, R. Lucas, P. Bunting, Z. Petrou, V. Kosmidou, I. Manakos, E. Padoa-Schioppa, G.F. Ficetola, A. Bonardi, M. Adamo, P. Blonda, LIDAR as a valuable information source for habitat mapping , GI_Forum conference, 2-5 July 2013, Salzburg, Austria, pp. 520 - 523.",
-    link: "https://gispoint.de/fileadmin/user_upload/paper_gis_open/537532044.pdf",
+    text: "S. Mücher, L. Roupioz, H. Kramer, M. Wolters, M. Bogers, R. Lucas, P. Bunting, Z. Petrou, V. Kosmidou, I. Manakos, E. Padoa-Schioppa, G. F. Ficetola, A. Bonardi, M. Adamo, P. Blonda, LiDAR as a valuable information source for habitat mapping, peer-reviewed extended abstract, GI_Forum conference, 2-5 July 2013, Salzburg, Austria, pp. 520-523, DOI: 10.1553/giscience2013s520.",
+    link: "https://doi.org/10.1553/giscience2013s520",
   },
   {
-    text: "M. Adamo, C. Tarantino, V. Kosmidou, Z. Petrou, I. Manakos, V. Tomaselli, R. Lucas, S. Muncher, P. Blonda, Disambiguation rules based on Earth Observation data for Land Cover to habitat map translation: a case study, GI_Forum conference, 2-5 July 2013, Salzburg, Austria, pp. 487 - 491.",
-    link: null,
+    text: "M. Adamo, C. Tarantino, V. Kosmidou, Z. Petrou, I. Manakos, V. Tomaselli, R. Lucas, S. Mücher, P. Blonda, Exploitation of Remote Sensing Data for Land Cover to Habitat Map Translation: A Case Study, peer-reviewed extended abstract, GI_Forum conference, 2-5 July 2013, Salzburg, Austria, pp. 487-491, DOI: 10.1553/giscience2013s487.",
+    link: "https://doi.org/10.1553/giscience2013s487",
   },
   {
-    text: "M. Adamo, C. Tarantino, V. Kosmidou, Z. Petrou, I. Manakos, R. M. Lucas, V. Tomaselli, C. A. Mucher, P. Blonda, Land cover to habitat map translation: Disambiguation rules based on Earth Observation data , in: IEEE Int. Geoscience and Remote Sensing Symp., IEEE, Melbourne, 2013. pp. 3817 - 3820.",
-    link: "https://ieeexplore.ieee.org/document/6723663/",
+    text: "M. Adamo, C. Tarantino, V. Kosmidou, Z. Petrou, I. Manakos, R. M. Lucas, V. Tomaselli, C. A. Mücher, P. Blonda, Land cover to habitat map translation: Disambiguation rules based on Earth Observation data, IEEE International Geoscience and Remote Sensing Symposium, Melbourne, 2013, pp. 3817-3820, DOI: 10.1109/IGARSS.2013.6723663.",
+    link: "https://doi.org/10.1109/IGARSS.2013.6723663",
   },
   {
     text: 'P. Blonda, P. Dimopoulos, R. H. G. Jongman, C. A. Mucher, H. Nagendra, D. Iasillo, A. Arnaud, P. Mairota, J. P. Honrado, E. Padoa-Schioppa, R. Lucas, P. Bunting, L. Durieux, S. Bollanos, L. Candela, J. Inglada, I. Manakos, "The BIO_SOS European Initiative for Habitat Monitoring", 33rd EARSeL annual Symposium Proceedings, Matera, Italy, 2013, 911 - 920.',
     link: null,
+  },
+  {
+    text: "A. Elatawneh, I. Manakos, C. Kalaitzidis, T. Schneider, Land-cover classification and unmixing of Hyperion image in area of Anopoli, 2010, Imagin[e,g] Europe: Proceedings of the 29th EARSeL Symposium (conference held in Chania in 2009), IOS Press, pp. 111-121, DOI: 10.3233/978-1-60750-494-8-111.",
+    link: "https://doi.org/10.3233/978-1-60750-494-8-111",
+  },
+  {
+    text: "K. Perakis, I. Manakos, N. Silleos, Qualitative and Spatial Comparative Study of Satellite Images Classified by Supervised and Fuzzy Logic Based Classification Algorithms: A case study in Kilkis prefecture, Central Macedonia, Greece, 1998, IFAC Proceedings Volumes, 31(12), pp. 195-200, DOI: 10.1016/S1474-6670(17)36064-0.",
+    link: "https://doi.org/10.1016/S1474-6670(17)36064-0",
   },
 ];
 
@@ -304,8 +342,8 @@ export const networkingPubs: PubEntry[] = [
     link: null,
   },
   {
-    text: "P. Ribeiro, O. Reigners, T. Voirand, M. Delpey, A. Declerck, C. Pulido, I. Manakos, C. Kalogeropoulos, T. Habib, E. Tsiros, 2024, MEDEOS - Earth Observation for land-based pollution assessment & monitoring in mediterranean coastal waters , IEEE International Geoscience and Remote Sensing Symposium, Athens, Greece, 7-12, July.",
-    link: null,
+    text: "P. Ribeiro, O. Regniers, T. Voirand, M. Delpey, A. Declerck, C. L. Pulido, I. Manakos, C. Kalogeropoulos, E. Tsiros, T. Habib, 2024, MEDEOS - Earth Observation for land-based pollution assessment & monitoring in Mediterranean coastal waters, IEEE International Geoscience and Remote Sensing Symposium, Athens, Greece, 7-12 July. Related proceedings paper: DOI 10.1109/IGARSS53475.2024.10642455.",
+    link: "https://doi.org/10.1109/IGARSS53475.2024.10642455",
   },
   {
     text: "I. Serral, P. Bauer, A. Kita, K. Vlachos, M. Matera, M. Basile, R.T. Chadoulis, J. Masó, I. Manakos, 2024. An innovative Drinking Water Data Space in times of water scarcity and extreme events: the WQeMS platform , EGU General Assembly, Vienna, Austria, 14 - 19, April, EGU24-17631.",

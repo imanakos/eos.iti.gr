@@ -22,7 +22,7 @@ export default function NewsArticlePage({ params }: RouteComponentProps<{ slug: 
         publishedAt,
         image: {
           path: article.img,
-          alt: article.title,
+          alt: article.imgAlt || article.title,
         },
         jsonLd: [
           {
