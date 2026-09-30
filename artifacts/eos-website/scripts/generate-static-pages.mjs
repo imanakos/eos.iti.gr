@@ -1380,6 +1380,14 @@ ${sitemapPaths
 `;
 await writeFile(path.join(outputDirectory, "sitemap.xml"), sitemap);
 
+// Keep the diagnostic text sitemap in sync with the XML sitemap on every build.
+// The text format contains only absolute URLs, one per line, with no XML escaping.
+await writeFile(
+  path.join(outputDirectory, "sitemap.txt"),
+  `${sitemapPaths.map((pathname) => `${siteUrl}${pathname}`).join("\n")}\n`,
+  "utf8"
+);
+
 const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -1407,5 +1415,5 @@ ${sortedArticles
 await writeFile(path.join(outputDirectory, "eo-insights.xml"), rss);
 
 process.stdout.write(
-  `Generated ${data.articles.length} EO insight pages, ${newsEntries.length} news pages, ${projectCaseStudies.length} project case studies, sitemap.xml and eo-insights.xml.\n`
+  `Generated ${data.articles.length} EO insight pages, ${newsEntries.length} news pages, ${projectCaseStudies.length} project case studies, sitemap.xml, sitemap.txt and eo-insights.xml.\n`
 );
