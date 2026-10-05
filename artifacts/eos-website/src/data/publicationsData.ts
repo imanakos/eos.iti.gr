@@ -224,8 +224,8 @@ export const conferenceContributions: PubEntry[] = [
 
 export const conferencePubs: PubEntry[] = [
   {
-    text: "F.-E. Imam, N. Riitano, G. Giuliani, I. Manakos, A. Kardamaki, D. Smiraglia, M. E. Brick, A. Lambiel, F. Assennato, G. Seddaiu, Fine resolution assessment of Land Productivity Dynamics from a fused Landsat-MODIS NDVI time series in Asterousia, Crete, 2026, contribution 175, beginning p. 632, in A. Cerdà, J. Barrena-González, S. Keesstra and Y. Zhao (eds.), Proceedings of the 1st International Conference on Land Degradation and Restoration, version 2. Proceedings-volume DOI: 10.5281/zenodo.23001937.",
-    link: "https://zenodo.org/records/23001937",
+    text: "F.-E. Imam, N. Riitano, G. Giuliani, I. Manakos, A. Kardamaki, D. Smiraglia, M. E. Brick, A. Lambiel, F. Assennato, G. Seddaiu, Fine resolution assessment of Land Productivity Dynamics from a fused Landsat-MODIS NDVI time series in Asterousia, Crete, 2026, contribution 175, pp. 641-646, in A. Cerdà, J. Barrena-González, S. Keesstra and Y. Zhao (eds.), Proceedings of the 1st International Conference on Land Degradation and Restoration, version 3 (4 October 2026). Proceedings-volume DOI: 10.5281/zenodo.23138989.",
+    link: "https://doi.org/10.5281/zenodo.23138989",
   },
   {
     text: "H. Linseisen, I. Manakos, A. Delopoulos, M. Linseisen, Optimizing spatially variable information acquisition for smart hop management, 2025, Proceedings of the Scientific-Technical Commission of the International Hop Growers' Convention, Spalt, Germany, pp. 94-98, ISSN 1814-2206.",

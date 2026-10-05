@@ -179,7 +179,7 @@ export const eosEvidence: Record<string, EOSEvidenceItem[]> = {
       label: "Land-productivity dynamics in Asterousia, Crete",
       description:
         "Imam, Riitano, Giuliani, Manakos and colleagues assessed land-productivity dynamics using a fused Landsat-MODIS NDVI time series. Their LDR 2026 contribution supplies a concrete example of following vegetation through time to examine land condition, rather than treating a single map difference as proof of degradation or recovery.",
-      href: "https://doi.org/10.5281/zenodo.23001937",
+      href: "https://doi.org/10.5281/zenodo.23138989",
       additionalLinks: [
         { label: "MONALISA case study", url: "/research/projects/monalisa-land-degradation/" },
         { label: "Related spectral-index notebooks", url: "/tools/#spectral-indices-notebooks" },

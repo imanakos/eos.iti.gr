@@ -361,8 +361,8 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
         kind: "Project website",
       },
       {
-        label: "LDR 2026 proceedings: Asterousia study, contribution 175, beginning p. 632",
-        url: "https://doi.org/10.5281/zenodo.23001937",
+        label: "LDR 2026 proceedings: Asterousia study, contribution 175, pp. 641-646",
+        url: "https://doi.org/10.5281/zenodo.23138989",
         publisher: "LDR 2026 / Zenodo (proceedings-volume DOI)",
         kind: "Research publication",
       },
