@@ -61,6 +61,36 @@
         "url": "https://www.youtube.com/watch?v=oNDGXo5jCto",
         "durationSeconds": 140
       }
+    },
+    "why-do-shorelines-move-between-satellite-observations": {
+      "short": {
+        "url": "https://www.youtube.com/shorts/ZksQ5-p3QrI",
+        "durationSeconds": 44
+      },
+      "long": {
+        "url": "https://www.youtube.com/watch?v=hik_sWS6eaI",
+        "durationSeconds": 246
+      }
+    },
+    "how-can-we-separate-seasonal-forest-change-from-disturbance": {
+      "short": {
+        "url": "https://www.youtube.com/shorts/zTlecW82cR4",
+        "durationSeconds": 42
+      },
+      "long": {
+        "url": "https://www.youtube.com/watch?v=n-POrxSzeTI",
+        "durationSeconds": 251
+      }
+    },
+    "when-is-a-water-quality-indicator-ready-to-support-management": {
+      "short": {
+        "url": "https://www.youtube.com/shorts/Mhzy3vESqHE",
+        "durationSeconds": 44
+      },
+      "long": {
+        "url": "https://www.youtube.com/watch?v=SriSG_pEnbE",
+        "durationSeconds": 229
+      }
     }
   }
 }
