@@ -1,4 +1,11 @@
 export const newsBodyText: Record<string, string> = {
+  news160: `Dr. Ioannis Manakos coordinated the local organisation of the Second MONALISA General Assembly, hosted by the Centre for Research and Technology Hellas (CERTH) in Thessaloniki, Greece, on 14-15 October 2026. He welcomed the consortium to CERTH's Thermi campus and opened the meeting with institutional greetings.
+
+The two-day meeting reviewed the first two years of MONALISA, a Horizon Europe project addressing land degradation and desertification in Mediterranean regions. Project Coordinator Giovanna Seddaiu of the University of Sassari presented the consortium's progress. Partners discussed prevention and restoration practices across the Mediterranean case studies, desertification risk assessment and monitoring at country and local scales, and the development of MONALISA's modular Decision Support System.
+
+Scientific exchange extended to related European projects. Adriana Bruggeman of The Cyprus Institute shared experience from TERRASAFE, while Panagiotis Georgiakakis of the University of Crete presented NewLIFE4BioIslands. Their contributions supported discussion of monitoring methods and restoration approaches across different Mediterranean environments.
+
+Young researchers Audrey Lambiel and Fatima-Ezzahrae Imam from MONALISA, together with Mona Bonnier from the Nemesis project, presented research on land degradation and desertification monitoring. Further working sessions addressed stakeholder engagement, the MONALISA Community of Knowledge, capacity development, and the practical uptake of project results. The meeting helped partners coordinate the next phase of scientific work and digital-tool development.`,
   news159: `Dr. Ioannis Manakos has been appointed Conference Co-Chair of the 13th International Conference on Geographical Information Systems Theory, Applications and Management (GISTAM 2027). He will co-chair the conference with Dr. Lemonia Ragia of the Hellenic Open University.
 
 The conference is scheduled for 20 - 22 April 2027 in Rome, Italy. Its programme areas connect geospatial data and analysis with Earth Observation, artificial intelligence, and environmental applications. The official call for papers provides the conference scope, submission details, and current deadlines.`,
