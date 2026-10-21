@@ -9,6 +9,15 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    title: "MONALISA Second General Assembly hosted at CERTH in Thessaloniki",
+    img: "/images/news/monalisa-second-general-assembly-certh-2026.jpg",
+    imgAlt:
+      "MONALISA consortium members gathered outside CERTH in Thessaloniki during the Second General Assembly, 14-15 October 2026",
+    date: "October 14 - 15, 2026",
+    newsId: "news160",
+    url: "https://monalisa4land.eu/2026/10/19/monalisa-second-general-assembly-advancing-solutions-to-combat-land-degradation-and-desertification/",
+  },
+  {
     title: "Ioannis Manakos appointed Conference Co-Chair of GISTAM 2027",
     img: "/images/news/gistam-2027-co-chair.svg",
     imgAlt:
