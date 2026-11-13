@@ -1,16 +1,16 @@
-import { ArrowDown, ArrowUpRight, Droplets, Leaf, ScanSearch, ShieldCheck } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Droplets, Flame, Leaf, ScanSearch } from "lucide-react";
 import { Link } from "wouter";
 import { eoReaderTopics, type EOReaderTopicId } from "@/data/eoReaderTopics";
 import { sortedEOInsights, type EOInsight } from "@/data/eoInsightsData";
 import { CuriousThinker } from "./CuriousThinker";
 import "./reader-wheel.css";
 
-const icons = { water: Droplets, safety: ShieldCheck, nature: Leaf, trust: ScanSearch };
+const icons = { water: Droplets, safety: Flame, nature: Leaf, trust: ScanSearch };
 const lines = {
   water: ["The water", "we drink"],
-  safety: ["Staying", "safe"],
+  safety: ["Heat, fire", "& floods"],
   nature: ["Nature", "around us"],
-  trust: ["What can", "I trust?"],
+  trust: ["Behind", "the maps"],
 };
 type Props = { selected: EOReaderTopicId | null; choose: (id: EOReaderTopicId | null) => void };
 
@@ -69,7 +69,7 @@ export function WheelPicks({
     <div id="eo-wheel-results">
       <span role="status" className="sr-only">
         {group
-          ? group.label + ": " + notes.length + " notes. Three suggested reads follow."
+          ? group.label + ": " + notes.length + " notes. Suggested reads follow."
           : "All notes are shown."}
       </span>
       {group && (
@@ -82,6 +82,11 @@ export function WheelPicks({
               See all {notes.length} in this topic <ArrowDown size={15} aria-hidden="true" />
             </a>
           </div>
+          {group.id === "trust" && (
+            <p className="mt-1 text-sm text-white/80">
+              What did the satellite see, and what did a person or an AI infer?
+            </p>
+          )}
           <div className="eo-wheel-picks-grid">
             {notes.slice(0, 3).map((note) => (
               <Link key={note.slug} href={`/eo-insights/${note.slug}/`} className="eo-wheel-pick">

@@ -81,17 +81,22 @@
 .eo-wheel-sector-content svg {
   color: var(--light);
 }
-.eo-wheel-sector[data-sector="water"] .eo-wheel-sector-content {
-  transform: translate(3px, 6px);
+.eo-wheel-disc {
+  --column-inset: 15px;
 }
-.eo-wheel-sector[data-sector="safety"] .eo-wheel-sector-content {
-  transform: translate(-3px, 6px);
+.eo-wheel-sector {
+  --label-x: var(--column-inset);
+  --label-y: -3px;
 }
-.eo-wheel-sector[data-sector="nature"] .eo-wheel-sector-content {
-  transform: translate(3px, -6px);
+.eo-wheel-sector:is([data-sector="safety"], [data-sector="trust"]) {
+  --label-x: calc(0px - var(--column-inset));
 }
-.eo-wheel-sector[data-sector="trust"] .eo-wheel-sector-content {
-  transform: translate(-3px, -6px);
+.eo-wheel-sector:is([data-sector="nature"], [data-sector="trust"]) {
+  --label-y: -10px;
+}
+.eo-wheel-sector-content {
+  transform: translate(var(--label-x), var(--label-y));
+  text-align: center;
 }
 .eo-wheel-sector:hover {
   background: color-mix(in srgb, var(--light) 18%, var(--tile));
