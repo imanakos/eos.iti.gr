@@ -9,8 +9,9 @@ import {
   BookOpen,
 } from "lucide-react";
 import { NewsImage } from "@/components/news/NewsImage";
+import { RidgeFieldAtlas } from "@/components/eo-insights/RidgeFieldAtlas";
 import { EOInsightCard } from "@/components/eo-insights/EOInsightCard";
-import { sortedEOInsights } from "@/data/eoInsightsData";
+import { eoInsightsData, sortedEOInsights } from "@/data/eoInsightsData";
 import { projects } from "@/data/projectsData";
 import { newsEntries } from "@/lib/newsIndex";
 import { assetUrl } from "@/lib/utils";
@@ -108,56 +109,7 @@ export default function Home() {
 
   return (
     <div className="w-full">
-      {/* ── Hero ── */}
-      <section className="relative flex min-h-[680px] items-center justify-center overflow-hidden pb-12 pt-28 sm:min-h-[700px] sm:pb-10 sm:pt-28 lg:min-h-[660px] lg:h-[82svh]">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={`${import.meta.env.BASE_URL}images/hero-bg.webp`}
-            alt="Earth Observation satellite view"
-            className="w-full h-full object-cover"
-            width={1408}
-            height={768}
-            fetchPriority="high"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[hsl(222_56%_10%)]/80 via-[hsl(222_56%_12%)]/60 to-background" />
-        </div>
-
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/85 text-sm font-medium mb-8">
-            <Satellite className="w-4 h-4 text-[hsl(37_80%_65%)]" />
-            CERTH/ITI Remote Sensing Research Team
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-white leading-tight mb-6">
-            Interfacing{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(16_62%_65%)] to-[hsl(37_80%_65%)]">
-              Earth Observation
-            </span>
-            <br />
-            to the public
-          </h1>
-
-          <p className="text-lg md:text-xl text-white/75 max-w-2xl mx-auto leading-relaxed mb-10">
-            Turning satellite observations into practical evidence for land, water, ecosystems, and
-            agriculture.
-          </p>
-
-          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 justify-center">
-            <Link
-              href="/eo-insights/"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[hsl(37_80%_58%)] hover:bg-[hsl(37_80%_66%)] text-[hsl(222_56%_14%)] font-semibold text-sm transition-all shadow-lg shadow-[hsl(37_80%_46%)]/30"
-            >
-              <BookOpen className="w-4 h-4" /> EO Analysis Notes
-            </Link>
-            <Link
-              href="/research"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[hsl(222_56%_20%)] hover:bg-[hsl(222_56%_28%)] text-white font-semibold text-sm transition-all shadow-lg shadow-[hsl(222_56%_20%)]/40"
-            >
-              Explore Research <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RidgeFieldAtlas />
 
       {/* ── Stats bar ── */}
       <section className="bg-[hsl(222_56%_15%)] py-10">
@@ -302,15 +254,12 @@ export default function Home() {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between mb-12">
             <div className="max-w-2xl">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[hsl(37_80%_62%)] mb-3">
-                Expert briefings
+                {eoInsightsData.seriesTitle}
               </p>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-3">
-                EO Analysis Notes
+                {eoInsightsData.publicTitle}
               </h2>
-              <p className="text-white/60 leading-relaxed">
-                Short, expert-led explanations that connect satellite signals with sound
-                environmental interpretation.
-              </p>
+              <p className="text-white/60 leading-relaxed">{eoInsightsData.publicTagline}</p>
             </div>
             <Link
               href="/eo-insights/"

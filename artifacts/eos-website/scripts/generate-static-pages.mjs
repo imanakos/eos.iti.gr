@@ -633,8 +633,8 @@ function renderCollectionBody() {
   return `<main>
       <header>
         <p>Earth Observation</p>
-        <h1>${escapeHtml(data.seriesTitle)}</h1>
-        <p>${escapeHtml(data.seriesDescription)}</p>
+        <h1>${escapeHtml(data.publicTitle)}</h1>
+        <p>${escapeHtml(data.publicTagline)}</p>
         <p><strong>Visual note:</strong> ${escapeHtml(data.visualDisclosure)}</p>
       </header>
       <section aria-labelledby="eo-video-channel-heading">
@@ -1101,7 +1101,7 @@ const collectionUrl = `${siteUrl}${collectionPath}`;
 await writeRoute(
   collectionPath,
   {
-    title: `${data.seriesTitle} | EOS`,
+    title: `${data.publicTitle} | EOS`,
     description: data.seriesDescription,
     pathname: collectionPath,
     image: defaultSocialImage,
@@ -1109,7 +1109,8 @@ await writeRoute(
       {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        name: data.seriesTitle,
+        name: data.publicTitle,
+        alternateName: data.seriesTitle,
         description: data.seriesDescription,
         url: collectionUrl,
         primaryImageOfPage: `${siteUrl}${defaultSocialImage.path}`,
