@@ -44,14 +44,6 @@
   color: #ffd082;
   font-style: normal;
 }
-.ridge-intro .ridge-mission {
-  margin: 0 0 0.7rem;
-  max-width: 65ch;
-  color: #ecf1f8;
-  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
-  line-height: 1.45;
-  text-wrap: pretty;
-}
 .ridge-intro > p:last-child {
   max-width: 61rem;
   color: #c5d0e3;
@@ -182,7 +174,7 @@
   --hint-half: min(9.5rem, calc(50% - 0.65rem));
   position: absolute;
   z-index: 1;
-  pointer-events: none;
+  pointer-events: auto;
   left: clamp(
     calc(var(--hint-half) + 0.6rem),
     var(--hint-x, 50%),
@@ -202,6 +194,8 @@
   white-space: normal;
   text-wrap: pretty;
   font: 650 0.91rem/1.35 var(--font-sans);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 .ridge-note-link[data-paired="true"][data-highlight="true"] .ridge-note-shape {
   stroke: #ffdd83;
@@ -211,6 +205,13 @@
   fill-opacity: 0.13;
   filter: drop-shadow(0 0 1.6px #26303f);
 }
+@media (hover: none), (pointer: coarse) {
+  .ridge-place-hint {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
 .ridge-place-hint[data-near-skyline="true"] {
   transform: translate(-50%, 0.8rem);
 }
@@ -218,9 +219,6 @@
   .ridge-place-hint[data-upper="true"] {
     transform: translate(-50%, 0.7rem);
   }
-}
-.ridge-touch-instruction {
-  display: none;
 }
 .ridge-next {
   display: flex;
@@ -249,14 +247,6 @@
 .ridge-next a:focus-visible {
   outline: 2px solid var(--ridge-gold);
   outline-offset: 2px;
-}
-@media (hover: none), (pointer: coarse) {
-  .ridge-touch-instruction {
-    display: inline;
-  }
-  .ridge-pointer-instruction {
-    display: none;
-  }
 }
 @media (max-width: 480px) {
   .ridge-atlas {

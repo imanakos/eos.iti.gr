@@ -38,6 +38,7 @@ export function RidgeFieldAtlas() {
   const plane = useRef<HTMLDivElement>(null);
   const lastPointer = useRef("");
   const pressedSpot = useRef("");
+  const hoverExit = useRef<number | undefined>(undefined);
   const [hovered, setHovered] = useState<string | null>(null);
   const [focused, setFocused] = useState<string | null>(null);
   const [armed, setArmed] = useState<string | null>(null);
@@ -45,13 +46,22 @@ export function RidgeFieldAtlas() {
   const [loadedLayer, setLoadedLayer] = useState("");
   const active = spots.find((spot) => spot.id === (armed ?? hovered ?? focused));
 
+  function keepHint() {
+    window.clearTimeout(hoverExit.current);
+  }
+  function leaveHint() {
+    keepHint();
+    hoverExit.current = window.setTimeout(() => setHovered(null), 240);
+  }
+  useEffect(() => () => window.clearTimeout(hoverExit.current), []);
+
   useEffect(() => {
     if (!armed) return;
     const outside = (e: globalThis.PointerEvent) => {
       if (
         !(e.target instanceof Element) ||
         !stage.current?.contains(e.target) ||
-        !e.target.closest(".ridge-note-link")
+        !e.target.closest(".ridge-note-link, .ridge-place-hint")
       ) {
         setArmed(null);
         setFocused(null);
@@ -86,20 +96,9 @@ export function RidgeFieldAtlas() {
             CERTH / ITI <b>·</b> Remote Sensing Research Team
           </p>
           <h1 id="ridge-title">
-            Earth Observation <em>for the public.</em>
+            Earth Observation <em>for the public</em>
           </h1>
-          <p className="ridge-mission">
-            Turning satellite observations into practical evidence for land, water, ecosystems, and
-            agriculture.
-          </p>
-          <p>
-            <span className="ridge-pointer-instruction">
-              Hover over a patch of colour to uncover a puzzle. Click to read the story.
-            </span>
-            <span className="ridge-touch-instruction">
-              Tap a patch of colour to uncover a puzzle. Tap again to read the story.
-            </span>
-          </p>
+          <p>Hover over a patch of colour to uncover a puzzle. Click to read the story.</p>
         </header>
         <div className="ridge-plate">
           <figure className="ridge-figure">
@@ -173,10 +172,7 @@ export function RidgeFieldAtlas() {
                         onFocus={(e) => {
                           if (e.currentTarget.matches(":focus-visible")) setFocused(patch.id);
                         }}
-                        onBlur={() => {
-                          setFocused(null);
-                          setArmed(null);
-                        }}
+                        onBlur={() => setFocused(null)}
                         onClick={(e) => {
                           const touch = lastPointer.current === "touch";
                           lastPointer.current = "";
@@ -198,11 +194,12 @@ export function RidgeFieldAtlas() {
                             key={region.id}
                             onPointerEnter={(e) => {
                               if (e.pointerType !== "touch") {
+                                keepHint();
                                 setArmed(null);
                                 setHovered(region.id);
                               }
                             }}
-                            onPointerLeave={() => setHovered(null)}
+                            onPointerLeave={leaveHint}
                             onPointerDown={(e) => {
                               lastPointer.current = e.pointerType;
                               pressedSpot.current = region.id;
@@ -225,9 +222,12 @@ export function RidgeFieldAtlas() {
                 </div>
               </div>
               {active && (
-                <span
+                <a
                   className="ridge-place-hint"
-                  aria-hidden="true"
+                  href={active.note.href}
+                  tabIndex={-1}
+                  onPointerEnter={keepHint}
+                  onPointerLeave={leaveHint}
                   data-upper={active.y < 260}
                   data-near-skyline={active.y < 100}
                   style={
@@ -238,7 +238,7 @@ export function RidgeFieldAtlas() {
                   }
                 >
                   {active.note.title}
-                </span>
+                </a>
               )}
             </div>
             <figcaption>
