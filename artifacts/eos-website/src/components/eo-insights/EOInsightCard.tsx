@@ -24,6 +24,7 @@ export function EOInsightCard({
       {insight.visual && (
         <InsightVisual
           visual={insight.visual}
+          image={insight.image}
           loading="lazy"
           imageAlt={isFullFrameInsightVisual(insight.visual) ? insight.imageAlt : undefined}
           className={cn(
@@ -34,7 +35,7 @@ export function EOInsightCard({
       )}
       <div className={cn("flex flex-1 flex-col", compact ? "p-5" : "p-6")}>
         <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
-          {insight.publishedAt ? (
+          {insight.publishedAt && !insight.diagram ? (
             <time dateTime={insight.publishedAt}>{formatInsightDate(insight.publishedAt)}</time>
           ) : (
             <span>EO Analysis Note</span>

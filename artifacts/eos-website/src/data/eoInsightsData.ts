@@ -1,5 +1,7 @@
 import rawData from "./eoInsights.json";
 import type { EOSEvidenceItem } from "./eoEvidenceData";
+import { orderEOInsights } from "./eoInsightOrder";
+import type { IllustratedTopic } from "./eoInsightIllustrations";
 
 export type InsightVisual =
   | "radar"
@@ -16,7 +18,8 @@ export type InsightVisual =
   | "condition"
   | "forestchange"
   | "watermanagement"
-  | "uncertainty";
+  | "uncertainty"
+  | IllustratedTopic;
 
 export interface EOInsightSource {
   label: string;
@@ -38,6 +41,7 @@ export interface EOInsight {
   visual?: InsightVisual;
   image?: string;
   imageAlt?: string;
+  diagram?: { src: string; alt: string; caption: string };
   tags: string[];
   keyPoint: string;
   paragraphs: string[];
@@ -61,12 +65,7 @@ interface EOInsightsCollection {
 
 export const eoInsightsData = rawData as EOInsightsCollection;
 export const eoInsights = eoInsightsData.articles;
-export const sortedEOInsights = [...eoInsights].sort((left, right) => {
-  if (!left.publishedAt && !right.publishedAt) return 0;
-  if (!left.publishedAt) return -1;
-  if (!right.publishedAt) return 1;
-  return right.publishedAt.localeCompare(left.publishedAt);
-});
+export const sortedEOInsights = orderEOInsights(eoInsights);
 
 export function getEOInsight(slug: string): EOInsight | undefined {
   return eoInsights.find((insight) => insight.slug === slug);

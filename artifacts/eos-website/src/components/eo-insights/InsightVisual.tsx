@@ -11,7 +11,15 @@ import {
   Waves,
 } from "lucide-react";
 import type { InsightVisual as InsightVisualName } from "@/data/eoInsightsData";
+import { illustratedTopics, type IllustratedTopic } from "@/data/eoInsightIllustrations";
 import { assetUrl, cn } from "@/lib/utils";
+
+const topicIcons = { Waves, Layers3, ThermometerSun, CloudRain, Leaf };
+
+function illustratedTopic(name: IllustratedTopic) {
+  const topic = illustratedTopics[name];
+  return { ...topic, Icon: topicIcons[topic.icon], fullFrame: true };
+}
 
 const visualStyles: Record<
   InsightVisualName,
@@ -19,12 +27,17 @@ const visualStyles: Record<
     Icon: typeof Leaf;
     label: string;
     detail: string;
-    image: string;
-    background: string;
-    accent: string;
+    image?: string;
+    background?: string;
+    accent?: string;
     fullFrame?: boolean;
   }
 > = {
+  sediment: illustratedTopic("sediment"),
+  mapagreement: illustratedTopic("mapagreement"),
+  upwelling: illustratedTopic("upwelling"),
+  cloudgap: illustratedTopic("cloudgap"),
+  aquaticplants: illustratedTopic("aquaticplants"),
   radar: {
     Icon: CloudRain,
     label: "Radar observation",
@@ -159,24 +172,28 @@ export function isFullFrameInsightVisual(visual: InsightVisualName): boolean {
 
 export function InsightVisual({
   visual,
+  image,
   className,
   imageAlt,
   loading = "eager",
 }: {
   visual: InsightVisualName;
+  image?: string;
   className?: string;
   imageAlt?: string;
   loading?: "eager" | "lazy";
 }) {
   const style = visualStyles[visual];
   const Icon = style.Icon;
+  const src = image ?? style.image;
+  if (!src) return null;
 
   if (style.fullFrame) {
     return (
       <div className={cn("overflow-hidden bg-[hsl(222_56%_13%)] text-white", className)}>
         <div className="aspect-[40/21] w-full">
           <img
-            src={assetUrl(style.image)}
+            src={assetUrl(src)}
             alt={imageAlt ?? ""}
             width={1200}
             height={630}
@@ -212,7 +229,7 @@ export function InsightVisual({
       )}
     >
       <img
-        src={assetUrl(style.image)}
+        src={assetUrl(src)}
         alt={imageAlt ?? ""}
         className="absolute inset-0 h-full w-full object-cover"
       />
