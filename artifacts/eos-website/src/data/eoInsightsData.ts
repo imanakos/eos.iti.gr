@@ -53,6 +53,8 @@ export interface EOInsight {
 
 interface EOInsightsCollection {
   seriesTitle: string;
+  publicTitle: string;
+  publicTagline: string;
   seriesDescription: string;
   visualDisclosure: string;
   author: {

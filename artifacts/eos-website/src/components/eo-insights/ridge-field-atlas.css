@@ -1,0 +1,294 @@
+.ridge-atlas {
+  --ridge-night: hsl(222 56% 13%);
+  --ridge-gold: hsl(37 80% 62%);
+  --ridge-rule: hsl(222 40% 80% / 0.22);
+  background: var(--ridge-night);
+  color: #fff;
+  padding: clamp(6.1rem, 7.6vw, 7.6rem) 0 1.4rem;
+}
+.ridge-inner {
+  max-width: 84rem;
+  margin: auto;
+  padding: 0 clamp(1rem, 4.3vw, 3rem);
+}
+.ridge-intro {
+  margin-bottom: clamp(1.25rem, 2.1vw, 1.75rem);
+}
+.ridge-eyebrow {
+  font: 650 0.7rem/1.45 var(--font-sans);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.ridge-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #dbe3f2;
+}
+.ridge-eyebrow span {
+  width: 1.5rem;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--ridge-gold);
+}
+.ridge-eyebrow b {
+  color: var(--ridge-gold);
+}
+.ridge-intro h1 {
+  margin: 0.5rem 0 0.65rem;
+  color: #fff;
+  font: 800 clamp(2.35rem, 5.2vw, 4.65rem)/1.05 var(--font-display);
+  letter-spacing: -0.043em;
+}
+.ridge-intro h1 em {
+  color: #ffd082;
+  font-style: normal;
+}
+.ridge-intro .ridge-mission {
+  margin: 0 0 0.7rem;
+  max-width: 65ch;
+  color: #ecf1f8;
+  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+.ridge-intro > p:last-child {
+  max-width: 61rem;
+  color: #c5d0e3;
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.55;
+}
+.ridge-intro strong {
+  color: #f4f7ff;
+  font-weight: 650;
+}
+.ridge-plate {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--ridge-rule);
+  border-radius: 1rem;
+  background: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  box-shadow: 0 0.65rem 1.9rem hsl(222 75% 5% / 0.21);
+}
+.ridge-figure {
+  min-width: 0;
+  margin: 0;
+  background: #101c36;
+}
+.ridge-stage {
+  position: relative;
+  isolation: isolate;
+}
+.ridge-map {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1000 / 520;
+}
+.ridge-plane {
+  position: absolute;
+  inset: 0;
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .ridge-plane {
+    transform: translate(var(--ridge-x, 0px), var(--ridge-y, 0px)) scale(1.022);
+    transition: transform 0.27s ease-out;
+  }
+}
+.ridge-map img,
+.ridge-overlay {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.ridge-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+/* Keep the same pixels in register: one quieter base exposure and the
+   original colour re-exposed only inside the illustrated places. */
+.ridge-map[data-ready="true"] .ridge-plane > img {
+  filter: saturate(0.32) contrast(0.68) brightness(1.13);
+}
+.ridge-vivid-image {
+  filter: saturate(1.22) contrast(1.075) brightness(1.035);
+  pointer-events: none;
+}
+.ridge-note-link {
+  cursor: pointer;
+  outline: none;
+}
+.ridge-note-hit-pad {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 8px;
+  stroke-linejoin: round;
+  pointer-events: stroke;
+  vector-effect: non-scaling-stroke;
+}
+@media (pointer: coarse), (max-width: 620px) {
+  .ridge-note-hit-pad {
+    stroke-width: 36px;
+  }
+}
+.ridge-note-link .ridge-note-shape {
+  pointer-events: visiblePainted;
+  fill: #fff8d8;
+  fill-opacity: 0;
+  stroke: #fff3cf;
+  stroke-opacity: 0.58;
+  stroke-width: 1;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  transition:
+    fill-opacity 0.15s ease,
+    stroke-opacity 0.15s ease,
+    stroke-width 0.15s ease;
+}
+.ridge-note-link[data-highlight="true"] .ridge-note-shape {
+  fill-opacity: 0.05;
+  stroke-opacity: 1;
+  stroke-width: 1.8;
+}
+.ridge-note-link:focus-visible .ridge-note-shape {
+  stroke: #fff5cc;
+  stroke-opacity: 1;
+  stroke-width: 3;
+  filter: drop-shadow(0 0 1.6px #112137);
+}
+.ridge-figure figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.85rem;
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+  background: hsl(222 52% 16%);
+  color: #fff;
+}
+.ridge-figure figcaption span {
+  font: 650 0.85rem/1.4 var(--font-sans);
+}
+.ridge-figure figcaption small {
+  font-size: 0.71rem;
+  line-height: 1.45;
+  color: #c4cfe3;
+}
+.ridge-place-hint {
+  --hint-half: min(9.5rem, calc(50% - 0.65rem));
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  left: clamp(
+    calc(var(--hint-half) + 0.6rem),
+    var(--hint-x, 50%),
+    calc(100% - var(--hint-half) - 0.6rem)
+  );
+  top: var(--hint-y, 50%);
+  transform: translate(-50%, calc(-100% - 0.85rem));
+  width: max-content;
+  max-width: min(19rem, calc(100% - 1.3rem));
+  box-sizing: border-box;
+  padding: 0.46rem 0.8rem;
+  border: 1px solid #fff7de8a;
+  border-radius: 0.52rem;
+  background: #101b30fa;
+  color: #fff;
+  box-shadow: 0 0.18rem 0.7rem #0b162850;
+  white-space: normal;
+  text-wrap: pretty;
+  font: 650 0.91rem/1.35 var(--font-sans);
+}
+.ridge-note-link[data-paired="true"][data-highlight="true"] .ridge-note-shape {
+  stroke: #ffdd83;
+  stroke-width: 2.6;
+  stroke-opacity: 1;
+  fill: #ffdf88;
+  fill-opacity: 0.13;
+  filter: drop-shadow(0 0 1.6px #26303f);
+}
+.ridge-place-hint[data-near-skyline="true"] {
+  transform: translate(-50%, 0.8rem);
+}
+@media (max-width: 620px) {
+  .ridge-place-hint[data-upper="true"] {
+    transform: translate(-50%, 0.7rem);
+  }
+}
+.ridge-touch-instruction {
+  display: none;
+}
+.ridge-next {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.2rem 1rem;
+  margin-top: 0.4rem;
+}
+.ridge-next a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  color: #ffcf82;
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+.ridge-next a:last-child {
+  color: #d3dff1;
+}
+.ridge-next a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.ridge-next a:focus-visible {
+  outline: 2px solid var(--ridge-gold);
+  outline-offset: 2px;
+}
+@media (hover: none), (pointer: coarse) {
+  .ridge-touch-instruction {
+    display: inline;
+  }
+  .ridge-pointer-instruction {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .ridge-atlas {
+    padding-top: 5.6rem;
+  }
+  .ridge-intro {
+    margin-bottom: 1rem;
+  }
+  .ridge-figure figcaption {
+    padding: 0.45rem 0.8rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ridge-note-link .ridge-note-shape {
+    transition: none;
+  }
+}
+@media (forced-colors: active) {
+  .ridge-note-link .ridge-note-shape {
+    forced-color-adjust: none;
+    fill: transparent;
+    stroke: CanvasText;
+    stroke-opacity: 1;
+  }
+  .ridge-note-link[data-highlight="true"] .ridge-note-shape,
+  .ridge-note-link:focus-visible .ridge-note-shape {
+    stroke: Highlight;
+    stroke-width: 3;
+  }
+  .ridge-place-hint {
+    border: 1px solid CanvasText;
+    background: Canvas;
+    color: CanvasText;
+  }
+}

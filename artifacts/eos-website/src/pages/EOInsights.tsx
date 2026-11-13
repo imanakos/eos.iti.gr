@@ -8,7 +8,7 @@ import { eoVideoData } from "@/data/eoVideosData";
 import { SITE_URL, usePageMetadata } from "@/lib/seo";
 
 const pageMetadata = {
-  title: "EO Analysis Notes | EOS",
+  title: `${eoInsightsData.publicTitle} | EOS`,
   description: eoInsightsData.seriesDescription,
   path: "/eo-insights/",
   type: "website" as const,
@@ -22,7 +22,8 @@ const pageMetadata = {
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: eoInsightsData.seriesTitle,
+      name: eoInsightsData.publicTitle,
+      alternateName: eoInsightsData.seriesTitle,
       description: eoInsightsData.seriesDescription,
       url: `${SITE_URL}/eo-insights/`,
       author: {
@@ -92,12 +93,10 @@ export default function EOInsights() {
                 EO Analysis Notes
               </div>
               <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl md:text-6xl">
-                EO Analysis Notes
+                {eoInsightsData.publicTitle}
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70 sm:text-xl">
-                {eoInsightsData.seriesDescription} Concise enough to explore quickly, rigorous
-                enough to reveal where confident interpretation begins - and where caution is
-                needed.
+                {eoInsightsData.publicTagline}
               </p>
             </div>
             <ReaderWheel selected={selected} choose={choose} />
