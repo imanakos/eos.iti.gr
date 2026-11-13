@@ -135,7 +135,7 @@ export default function Home() {
       </section>
 
       {/* ── Capability pillars ── */}
-      <section className="py-20 bg-background">
+      <section className="pt-20 pb-8 sm:pb-10 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
@@ -144,10 +144,6 @@ export default function Home() {
             <p className="text-muted-foreground max-w-xl mx-auto">
               Three decades of interdisciplinary Earth Observation research across four thematic
               pillars.
-            </p>
-            <p className="text-muted-foreground max-w-2xl mx-auto mt-2">
-              Turning satellite observations into practical evidence for land, water, ecosystems,
-              and agriculture
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -172,6 +168,10 @@ export default function Home() {
               </Link>
             ))}
           </div>
+          <p className="mx-auto mt-8 max-w-4xl text-balance text-center leading-relaxed text-muted-foreground sm:mt-10">
+            Turning satellite observations into practical evidence for land, water, ecosystems, and
+            agriculture
+          </p>
         </div>
       </section>
 
