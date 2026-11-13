@@ -194,8 +194,7 @@
   white-space: normal;
   text-wrap: pretty;
   font: 650 0.91rem/1.35 var(--font-sans);
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
+  text-decoration: none;
 }
 .ridge-note-link[data-paired="true"][data-highlight="true"] .ridge-note-shape {
   stroke: #ffdd83;
