@@ -145,6 +145,10 @@ export default function Home() {
               Three decades of interdisciplinary Earth Observation research across four thematic
               pillars.
             </p>
+            <p className="text-muted-foreground max-w-2xl mx-auto mt-2">
+              Turning satellite observations into practical evidence for land, water, ecosystems,
+              and agriculture
+            </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {pillars.map((p) => (
