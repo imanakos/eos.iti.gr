@@ -1,5 +1,8 @@
 import { BookOpen, CheckCircle2, Compass, ExternalLink, Play, SearchCheck } from "lucide-react";
+import { useState } from "react";
 import { EOInsightCard } from "@/components/eo-insights/EOInsightCard";
+import { ReaderWheel, WheelPicks } from "@/components/eo-insights/ReaderWheel";
+import { eoReaderTopics, type EOReaderTopicId } from "@/data/eoReaderTopics";
 import { eoInsightsData, sortedEOInsights } from "@/data/eoInsightsData";
 import { eoVideoData } from "@/data/eoVideosData";
 import { SITE_URL, usePageMetadata } from "@/lib/seo";
@@ -58,28 +61,48 @@ const editorialPrinciples = [
 
 export default function EOInsights() {
   usePageMetadata(pageMetadata);
+  const [selected, setSelected] = useState<EOReaderTopicId | null>(() => {
+    const id = new URLSearchParams(window.location.search).get("interest");
+    return eoReaderTopics.find((topic) => topic.id === id)?.id ?? null;
+  });
+  const group = eoReaderTopics.find((topic) => topic.id === selected);
+  const notes = group
+    ? group.slugs.flatMap((slug) => sortedEOInsights.filter((note) => note.slug === slug))
+    : sortedEOInsights;
+  function choose(id: EOReaderTopicId | null) {
+    const url = new URL(window.location.href);
+    if (id) url.searchParams.set("interest", id);
+    else url.searchParams.delete("interest");
+    window.history.replaceState(window.history.state, "", url);
+    setSelected(id);
+  }
 
   return (
     <div className="min-h-screen bg-background pb-20 pt-24">
-      <section className="relative overflow-hidden bg-[hsl(222_56%_13%)] py-20 text-white">
+      <section className="relative overflow-hidden bg-[hsl(222_56%_13%)] py-10 text-white sm:py-12">
         <div className="absolute -right-28 -top-32 h-96 w-96 rounded-full border border-white/10" />
         <div className="absolute -right-8 -top-12 h-72 w-72 rounded-full border border-white/10" />
         <div className="absolute bottom-0 left-0 h-28 w-full bg-gradient-to-t from-black/15 to-transparent" />
 
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white/85">
-              <BookOpen className="h-4 w-4 text-[hsl(37_80%_62%)]" />
-              EO Analysis Notes
+          <div className="eo-reader-hero">
+            <div className="max-w-3xl">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white/85">
+                <BookOpen className="h-4 w-4 text-[hsl(37_80%_62%)]" />
+                EO Analysis Notes
+              </div>
+              <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl md:text-6xl">
+                EO Analysis Notes
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70 sm:text-xl">
+                {eoInsightsData.seriesDescription} Concise enough to explore quickly, rigorous
+                enough to reveal where confident interpretation begins - and where caution is
+                needed.
+              </p>
             </div>
-            <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl md:text-6xl">
-              EO Analysis Notes
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70 sm:text-xl">
-              {eoInsightsData.seriesDescription} Concise enough to explore quickly, rigorous enough
-              to reveal where confident interpretation begins - and where caution is needed.
-            </p>
+            <ReaderWheel selected={selected} choose={choose} />
           </div>
+          <WheelPicks selected={selected} notes={notes} />
         </div>
       </section>
 
@@ -105,14 +128,26 @@ export default function EOInsights() {
             <span className="sr-only"> (opens in a new tab)</span>
           </a>
         </aside>
-        <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div
+          id="eo-notes-catalogue"
+          className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between"
+        >
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[hsl(30_75%_34%)]">
-              Latest notes
+              {group ? `Selected topic · ${notes.length} notes` : "Latest notes"}
             </p>
             <h2 className="mt-2 text-3xl font-bold text-foreground">
-              Satellite image analysis, explained
+              {group?.label ?? "Satellite image analysis, explained"}
             </h2>
+            {group && (
+              <button
+                type="button"
+                onClick={() => choose(null)}
+                className="mt-2 min-h-11 cursor-pointer text-sm font-semibold text-primary underline underline-offset-4"
+              >
+                Show all {sortedEOInsights.length} notes
+              </button>
+            )}
           </div>
           <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
             Notes by {eoInsightsData.author.name}, with selected institutional references for
@@ -126,7 +161,7 @@ export default function EOInsights() {
         </p>
 
         <div className="grid grid-cols-1 gap-7 md:grid-cols-3">
-          {sortedEOInsights.map((insight) => (
+          {notes.map((insight) => (
             <EOInsightCard key={insight.slug} insight={insight} />
           ))}
         </div>
