@@ -9,6 +9,359 @@
   },
   "articles": [
     {
+      "slug": "where-did-all-that-mud-come-from",
+      "title": "Where did all that mud come from?",
+      "shortTitle": "Where did all that mud come from?",
+      "summary": "A storm turns one corner of a lake brown. The freshly ploughed field beside it looks like the obvious source. There’s just one problem: which way does the rain run?",
+      "seoDescription": "Trace a muddy plume upstream and learn why a satellite image cannot, by itself, identify the field that supplied the sediment.",
+      "publishedAt": "2026-11-13",
+      "visual": "sediment",
+      "image": "/images/eo-insights/where-did-all-that-mud-come-from.jpg",
+      "imageAlt": "Concept illustration of brown water entering a lake below a river and farmed hills.",
+      "diagram": {
+        "src": "/images/eo-insights/where-did-all-that-mud-come-from.svg",
+        "alt": "A conceptual stream enters a lake beside a plume-like patch. Field A has a possible drainage connection. Field B is nearby, but no flow path from it is established. The diagram identifies no source.",
+        "caption": "Hypothetical example. Rainwater from field A might reach the stream along the dashed line. Field B is closer to the lake. The drawing does not tell us which field, if either, supplied the mud."
+      },
+      "readingMinutes": 2,
+      "tags": ["Runoff", "Sediment transport", "Lake monitoring"],
+      "keyPoint": "Follow the water, not the shortest line on the map.",
+      "paragraphs": [
+        "Picture a lake the morning after a storm. In a satellite image, a brown fan spreads from the mouth of a stream. There’s a bare field right beside it. If you had to explain the picture to a neighbour, would you point to the field?",
+        "Now stand on the little ridge between the field and the stream. Rain from the field runs down the other side. A field farther away drains into the stream. So does a crumbling bank. Both have a route to the lake that the nearest field does not.",
+        "Here’s a place to start looking: the fork where two streams meet. During the next storm, sample the water in each branch just above the fork. Finding much muddier water in one branch tells you where to look next. It doesn’t tell you which patch of ground supplied the mud, or how much each branch carried over the whole storm.",
+        "Researchers working in two Australian catchments compared river measurements, chemical clues in the sediment and estimates of erosion. In some places these clues pointed to the same source. In others they disagreed. Knowing where the evidence stopped helped the team decide where more measurements were worth taking.",
+        "The satellite gave us a good starting point: the place where the muddy water met the lake. To work backwards, put your finger on the stream and follow it uphill. That is a different journey from pointing at the nearest field."
+      ],
+      "paragraphLinks": [
+        {
+          "paragraphIndex": 3,
+          "label": "Fu et al. (2013) — A weight-of-evidence approach to integrate suspended sediment source information",
+          "url": "https://doi.org/10.1016/j.jenvman.2013.05.005"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Fu et al. (2013) — A weight-of-evidence approach to integrate suspended sediment source information",
+          "url": "https://doi.org/10.1016/j.jenvman.2013.05.005",
+          "description": "River measurements, sediment chemistry and erosion estimates pointed to likely sources, but did not always agree.",
+          "publisher": "Journal of Environmental Management"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Kita, Manakos and colleagues (2023) — Land–water transition zone monitoring in support of drinking water production",
+          "description": "At the Polyphytos reservoir in Greece, the team used repeated images to follow changes where land meets water. This work did not identify a particular field as the source of mud.",
+          "href": "https://doi.org/10.3390/w15142596"
+        }
+      ],
+      "relatedSlugs": [
+        "can-satellites-detect-water-pollution",
+        "when-has-the-land-really-changed",
+        "why-do-shorelines-move-between-satellite-observations"
+      ]
+    },
+    {
+      "slug": "can-two-maps-agree-and-both-be-wrong",
+      "title": "Can two maps agree and both be wrong?",
+      "shortTitle": "Can two maps agree and both be wrong?",
+      "summary": "Two maps put an orange patch in exactly the same bay. It looks like two votes for algae. What if one learned its answer from the other?",
+      "seoDescription": "Two maps of an algal bloom can agree because one learned from the other. See how independent lake measurements put both maps to the test.",
+      "publishedAt": "2026-11-13",
+      "visual": "mapagreement",
+      "image": "/images/eo-insights/can-two-maps-agree-and-both-be-wrong.jpg",
+      "imageAlt": "Concept illustration comparing a water sample with a coloured screening map on a tablet.",
+      "diagram": {
+        "src": "/images/eo-insights/can-two-maps-agree-and-both-be-wrong.svg",
+        "alt": "One comparison measures agreement with the image-derived screening rule. A separate comparison uses appropriately located and timed independent measurements to address what was present in the water.",
+        "caption": "Hypothetical example. On the left, two maps can make the same mistake. On the right, a sample taken at the right time can help check what was in the water."
+      },
+      "readingMinutes": 2,
+      "tags": ["GeoAI", "Algal blooms", "Independent validation"],
+      "keyPoint": "Before you count two maps as two witnesses, ask where each one got its answer.",
+      "paragraphs": [
+        "Imagine two maps on a table. One was made with a simple rule: mark the water orange wherever its colour looks like algae. The other was made by AI. Both mark the same little bay. Would you count that as two sightings?",
+        "Turn the second map over, so to speak, and read how it was made. The AI practised on pictures labelled by the first rule. No one had to visit the lake to make those labels. Agreement tells you the AI can reproduce the markings. It doesn’t give you a second witness.",
+        "Suppose sunlight glints off the water and fools the rule. The AI can make the same mistake. A useful next clue would be a sample taken in the bay when the satellite passed. Tomorrow’s beautifully sharp photograph cannot tell you what was in yesterday’s bottle.",
+        "You can still put the AI to a fair test. Give it a bay it has never seen. Can it predict the rule’s marks there? Then ask a different question: did someone find algae at that place and time? Passing the first test does not settle the second.",
+        "In a published US study, researchers compared satellite detections with reports of bloom events and with local advisories. Those records gave them something beyond a second set of marks on an image. Even then, an advisory records a decision to warn people; it is not itself a measurement of the water."
+      ],
+      "paragraphLinks": [
+        {
+          "paragraphIndex": 1,
+          "label": "Ratner et al. (2020) — Snorkel: rapid training data creation with weak supervision",
+          "url": "https://doi.org/10.1007/s00778-019-00552-1"
+        },
+        {
+          "paragraphIndex": 3,
+          "label": "Roberts et al. (2017) — Cross-validation strategies for structured data",
+          "url": "https://doi.org/10.1111/ecog.02881"
+        },
+        {
+          "paragraphIndex": 4,
+          "label": "Whitman et al. (2022) — Satellite cyanobacteria detections compared with events and advisories",
+          "url": "https://doi.org/10.1016/j.hal.2022.102191"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ratner et al. (2020) — Snorkel: rapid training data creation with weak supervision",
+          "url": "https://doi.org/10.1007/s00778-019-00552-1",
+          "description": "How simple rules can supply the examples a computer learns from.",
+          "publisher": "The VLDB Journal"
+        },
+        {
+          "label": "Roberts et al. (2017) — Cross-validation strategies for structured data",
+          "url": "https://doi.org/10.1111/ecog.02881",
+          "description": "Why it helps to test a model on different dates or in different places.",
+          "publisher": "Ecography"
+        },
+        {
+          "label": "Whitman et al. (2022) — Satellite cyanobacteria detections compared with events and advisories",
+          "url": "https://doi.org/10.1016/j.hal.2022.102191",
+          "description": "How researchers checked satellite warnings against reports and swimming advisories at US lakes.",
+          "publisher": "Harmful Algae"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "Documented EOS outcome",
+          "label": "Kanj, Manakos and colleagues (2021) — Water-quality parameters in Lake Kerkini",
+          "description": "At Lake Kerkini, the team compared Landsat images with measurements taken in the lake. That is a real example of checking a satellite picture against the water itself.",
+          "href": "https://www.iti.gr/iti/wp-content/uploads/m-files/document/publications/CEMEPE_kerkini_2021.pdf"
+        }
+      ],
+      "relatedSlugs": [
+        "can-geoai-replace-the-earth-observation-expert",
+        "what-should-an-eo-model-do-when-the-evidence-is-insufficient",
+        "ai-removed-the-clouds-did-it-see-the-lake"
+      ]
+    },
+    {
+      "slug": "its-hot-outside-why-did-the-lake-turn-cold",
+      "title": "It’s hot outside. Why did the lake turn cold?",
+      "shortTitle": "It’s hot outside. Why did the lake turn cold?",
+      "summary": "Yesterday the water at your usual swimming spot was warm. Today the sun is out, the stones are hot, and the first step into the lake makes you catch your breath. Where did the warm water go?",
+      "seoDescription": "A sunny beach can have suddenly cold water. Satellite temperature maps, beach reports and wind reveal how lake upwelling works.",
+      "publishedAt": "2026-11-13",
+      "visual": "upwelling",
+      "image": "/images/eo-insights/its-hot-outside-why-did-the-lake-turn-cold.jpg",
+      "imageAlt": "Concept illustration of sunlit stones at the edge of a breezy blue lake. The colours are not temperature measurements.",
+      "diagram": {
+        "src": "/images/eo-insights/its-hot-outside-why-did-the-lake-turn-cold.svg",
+        "alt": "Illustrative side view. An arrow in the warmer surface layer points away from the shore. A second arrow curves up through the colder water below, towards the shallow shore.",
+        "caption": "Hypothetical example. A side view of one shore. The arrows show water movement, not wind direction. Colours distinguish the layers; they are not measured temperatures. Not to scale."
+      },
+      "readingMinutes": 2,
+      "tags": ["Lake temperature", "Wind", "Upwelling"],
+      "keyPoint": "The whole lake need not cool for your beach to turn cold. The wind can move the warm surface water away and bring colder water up from below.",
+      "paragraphs": [
+        "Picture the same beach on two summer afternoons. The air feels just as warm on the second day. The water at your ankles does not. You might think the whole lake cooled overnight. But what if the water you stepped into yesterday is now somewhere else?",
+        "In summer, the top layer of a deep lake can be much warmer than the water below. When a steady wind carries that warm layer away from a shore, colder water rises to take its place. This is called upwelling. The water that feels so cold at the beach today may have been there all along, just deeper down.",
+        "A satellite can show the shape of the change. On 2 August 2007, NASA’s Terra satellite mapped the surface temperature of Lake Superior. Look along the northwestern shore in the image: a narrow dark-blue strip hugs the coast. That blue means colder water on a temperature map, not the colour you would have seen from the beach. Winds from the west had moved warmer surface water away from that shore.",
+        "What might that feel like? In a separate event on Lake Michigan, Warren Dunes beach reported water at about 24°C on 7 August 2006. Two days later it was about 13°C. An infrared satellite image that week showed cooler water along the southeastern shore, while a buoy out in the lake was still reporting much warmer water.",
+        "If this happened at your beach, start with two clues: is the cold water a strip along the shore, and which way has the wind been blowing? A satellite map shows where the surface is cold. The recent wind and a thermometer at the beach help explain why your second swim feels nothing like your first."
+      ],
+      "paragraphLinks": [
+        {
+          "paragraphIndex": 1,
+          "label": "NOAA Great Lakes Environmental Research Laboratory — How wind changes lake temperature",
+          "url": "https://www.glerl.noaa.gov/education/FAQs/temperatureFAQ.html"
+        },
+        {
+          "paragraphIndex": 2,
+          "label": "NASA Earth Observatory — Summer on Lake Superior",
+          "url": "https://science.nasa.gov/earth/earth-observatory/summer-on-lake-superior-7951/"
+        },
+        {
+          "paragraphIndex": 3,
+          "label": "US National Weather Service — Upwelling along southeast Lake Michigan",
+          "url": "https://www.weather.gov/iwx/20060811_upwelling"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NASA Earth Observatory — Summer on Lake Superior",
+          "url": "https://science.nasa.gov/earth/earth-observatory/summer-on-lake-superior-7951/",
+          "description": "See the actual Terra/MODIS temperature image from 2 August 2007. Look for the cold strip on the northwestern shore.",
+          "publisher": "NASA Earth Observatory"
+        },
+        {
+          "label": "US National Weather Service — Upwelling along southeast Lake Michigan",
+          "url": "https://www.weather.gov/iwx/20060811_upwelling",
+          "description": "The August 2006 infrared image and beach reports, including Warren Dunes. The original reports use degrees Fahrenheit: 75°F and 55°F.",
+          "publisher": "US National Weather Service"
+        },
+        {
+          "label": "NOAA Great Lakes Environmental Research Laboratory — How wind changes lake temperature",
+          "url": "https://www.glerl.noaa.gov/education/FAQs/temperatureFAQ.html",
+          "description": "An explanation of how steady winds can move warm surface water away from a coast and allow colder water to rise.",
+          "publisher": "NOAA Great Lakes Environmental Research Laboratory"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "Documented EOS outcome",
+          "label": "Kanj, Manakos and colleagues (2021) — Lake Kerkini, Greece",
+          "description": "At Lake Kerkini, the team compared Landsat observations with measurements taken in the lake, including water temperature. That work tested local estimates; it did not investigate the upwelling events in the Great Lakes.",
+          "href": "https://www.iti.gr/iti/wp-content/uploads/m-files/document/publications/CEMEPE_kerkini_2021.pdf"
+        }
+      ],
+      "relatedSlugs": [
+        "can-satellites-identify-urban-heat-islands",
+        "when-is-a-water-quality-indicator-ready-to-support-management"
+      ]
+    },
+    {
+      "slug": "ai-removed-the-clouds-did-it-see-the-lake",
+      "title": "AI removed the clouds. Did it see the lake?",
+      "shortTitle": "AI removed the clouds. Did it see the lake?",
+      "summary": "A green streak shows up on Monday and Friday. Wednesday was cloudy, but an AI-filled picture now shows a streak there too. On which days can we actually see the green streak in the original satellite images?",
+      "seoDescription": "Cloud removal can fill the gaps in a lake image. Learn how to tell a sighting of a green streak from an AI estimate.",
+      "publishedAt": "2026-11-13",
+      "visual": "cloudgap",
+      "image": "/images/eo-insights/ai-removed-the-clouds-did-it-see-the-lake.jpg",
+      "imageAlt": "Concept illustration of a lake jetty, a green surface streak and a bank of cloud.",
+      "diagram": {
+        "src": "/images/eo-insights/ai-removed-the-clouds-did-it-see-the-lake.svg",
+        "alt": "Monday and Friday were observed. The reconstructed Wednesday is an estimate, not a third sighting.",
+        "caption": "Hypothetical example. The middle entry is a prediction. Only the two outer entries are direct sightings in the original satellite images."
+      },
+      "readingMinutes": 2,
+      "tags": ["AI", "Clouds", "Satellite images"],
+      "keyPoint": "Keep the estimate. Keep the label. A filled-in day is not another sighting.",
+      "paragraphs": [
+        "Imagine you keep a diary of the water beside a jetty. On Monday a satellite picture shows a green streak. On Wednesday a thick cloud hides the jetty. On Friday the streak is visible again. So far your diary has two sightings and a blank.",
+        "Now someone hands you a cloud-free version of Wednesday. AI has filled the gap using the surrounding observations. There’s the jetty. There’s the green streak. Which days belong in your diary as sightings? Monday and Friday. Wednesday is an estimate.",
+        "Consider two possible weeks. In one, the streak stayed put. In the other, the wind carried it away on Tuesday and another streak arrived on Thursday. Monday and Friday look the same in either story. Filling in Wednesday can give you a reasonable estimate, but it doesn’t turn that estimate into something the camera saw.",
+        "Some methods have more to go on than the two clear days. In a published study, researchers used radar measurements to help reconstruct land hidden by cloud in optical satellite images. Radar really did measure something; it did not take a colour photograph beneath the cloud. The study did not test whether an algal streak was present at our imaginary jetty.",
+        "What would change the diary? A time-stamped photo taken at the jetty on Wednesday could add a sighting, or show no visible streak at that moment. Until then, keep both the useful estimate and the honest label: “filled in,” not “seen.”"
+      ],
+      "paragraphLinks": [
+        {
+          "paragraphIndex": 3,
+          "label": "Meraner et al. (2020) — Cloud removal in Sentinel-2 imagery",
+          "url": "https://doi.org/10.1016/j.isprsjprs.2020.05.013"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Meraner et al. (2020) — Cloud removal in Sentinel-2 imagery",
+          "url": "https://doi.org/10.1016/j.isprsjprs.2020.05.013",
+          "description": "A published example of using radar to guide the reconstruction of a cloudy optical image of land; not evidence for an algal bloom.",
+          "publisher": "ISPRS Journal of Photogrammetry and Remote Sensing"
+        },
+        {
+          "label": "Coffer et al. (2021) — Assessing cyanobacterial bloom frequency",
+          "url": "https://doi.org/10.1016/j.ecolind.2021.107822",
+          "description": "How researchers counted weeks with signs of a bloom without treating missing pictures as clear water.",
+          "publisher": "Ecological Indicators"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Manakos, Kordelas and Marini — Fusion of Sentinel-1 data with Sentinel-2 products for inundation mapping",
+          "description": "The EOS team combined radar and optical products to map inundation in unfavourable weather. That is an example of using another measurement, not a claim that AI recovered a lake’s colour.",
+          "href": "https://doi.org/10.1080/22797254.2019.1596757"
+        }
+      ],
+      "relatedSlugs": [
+        "can-radar-satellites-see-through-clouds",
+        "can-satellites-detect-water-pollution",
+        "can-two-maps-agree-and-both-be-wrong"
+      ]
+    },
+    {
+      "slug": "whats-growing-where-the-map-says-open-water",
+      "title": "Can you spot an underwater meadow from space?",
+      "shortTitle": "Can you spot an underwater meadow from space?",
+      "summary": "Imagine paddling past the last lily pad. Your map says “open water”, but a leafy stem brushes your paddle. Did the map miss a whole bed of plants?",
+      "seoDescription": "See how satellites and drones map reeds, floating leaves and submerged plant beds, and why “open water” does not necessarily mean a bare lakebed.",
+      "publishedAt": "2026-11-13",
+      "visual": "aquaticplants",
+      "image": "/images/eo-insights/whats-growing-where-the-map-says-open-water.jpg",
+      "imageAlt": "Illustration of lily pads lying flat on a channel and reeds rising above the water along its bank.",
+      "diagram": {
+        "src": "/images/eo-insights/whats-growing-where-the-map-says-open-water.svg",
+        "alt": "Conceptual side view, not a satellite image. On the left, reeds rise above the water. In the middle, lily-like leaves rest on the surface while stems reach down to roots. On the right, the surface is bare but plants grow below it. An overhead camera may see them in clear, shallow water; an undetected plant is not necessarily absent.",
+        "caption": "Hypothetical example. A side view of a wetland, not a survey of either study site. A map of floating leaves and emergent stems can leave an underwater bed unmarked."
+      },
+      "readingMinutes": 2,
+      "tags": ["Wetlands", "Aquatic plants", "Drone and satellite images"],
+      "keyPoint": "“Open water” describes the surface on these maps. It does not mean the lakebed is bare.",
+      "paragraphs": [
+        "Not necessarily. A reed pokes above the water. A lily pad rests on it. A third plant can grow entirely below it. A satellite can sometimes spot a whole patch of those underwater plants, especially in clear, shallow water. But the first question is simpler: which of the three was the map made to show?",
+        "In Ukraine’s Dniester Delta, the team mapped the surface. They compared Sentinel-2 satellite images with what people saw from a boat: plants standing above the water, leaves floating on it, or stretches of open water. Reed beds stood out. Scattered floating leaves were trickier: one square in the image could hold both leaves and the water between them.",
+        "The first map used a rule based on how much light came back from each patch. In a follow-up, the team tested machine learning on images from five summers. It picked out floating plants better than the earlier rule. Neither map was a survey of the lakebed.",
+        "At Lake Polyphytos in Greece, a separate study looked below the surface. Given a few examples of what was plant and what was not, an AI tool traced underwater plant beds well in detailed drone photos. On satellite images of the same reservoir, it did not beat simpler methods. As the water gets deeper or murkier, less light from the leaves reaches the camera.",
+        "Back in the boat, your paddle and your map can both be right. Before using a patch marked “open water” to rule out plant habitat, check the legend: does this map even have a category for plants growing underwater?"
+      ],
+      "paragraphLinks": [
+        {
+          "paragraphIndex": 1,
+          "label": "The original Dniester study",
+          "url": "https://doi.org/10.5220/0012024000003473"
+        },
+        {
+          "paragraphIndex": 2,
+          "label": "The five-summer comparison",
+          "url": "https://doi.org/10.1007/s42979-024-02873-7"
+        },
+        {
+          "paragraphIndex": 3,
+          "label": "The Lake Polyphytos study",
+          "url": "https://doi.org/10.3390/rs15164001"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Rowan and colleagues (2021) — How well can submerged plants be distinguished?",
+          "url": "https://doi.org/10.3389/fenvs.2021.760372",
+          "description": "An independent freshwater study compared individual leaves, patches of vegetation and airborne images. It explains how the water between a sensor and a leaf changes what can be distinguished.",
+          "publisher": "Frontiers in Environmental Science"
+        },
+        {
+          "label": "Rowan & Kalacska (2021) — A guide to seeing underwater plants",
+          "url": "https://doi.org/10.3390/rs13040623",
+          "description": "A review for non-specialists explaining why depth and water clarity matter for seeing submerged vegetation from above.",
+          "publisher": "Remote Sensing"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Dniester Delta: mapping reeds and floating leaves",
+          "description": "Manakos, I.; Katsikis, E.; Medinets, S.; Gazyetov, Y.; Alagialoglou, L.; Medinets, V. (2023). Identification of Emergent and Floating Aquatic Vegetation Using an Unsupervised Thresholding Approach: A Case Study of the Dniester Delta in Ukraine. GISTAM 2023, Prague, pp. 98–103. Best Paper Award.",
+          "href": "https://doi.org/10.5220/0012024000003473",
+          "additionalLinks": [
+            {
+              "label": "GISTAM 2023 Best Paper Award — official record",
+              "url": "https://gistam.scitevents.org/PreviousAwards.aspx"
+            }
+          ]
+        },
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Dniester Delta: did machine learning improve the map?",
+          "description": "Alagialoglou, L.; Manakos, I.; Katsikis, E.; Medinets, S.; Gazyetov, Y.; Medinets, V.; Delopoulos, A. (2024). Machine Learning for Identifying Emergent and Floating Aquatic Vegetation from Space: A Case Study in the Dniester Delta, Ukraine. SN Computer Science, 5, article 597. Follow-up in the same delta.",
+          "href": "https://doi.org/10.1007/s42979-024-02873-7"
+        },
+        {
+          "kind": "Peer-reviewed publication",
+          "label": "Lake Polyphytos: mapping plants beneath the water",
+          "description": "Alagialoglou, L.; Manakos, I.; Papadopoulou, S.; Chadoulis, R.-T.; Kita, A. (2023). Mapping Underwater Aquatic Vegetation Using Foundation Models With Air- and Space-Borne Images: The Case of Polyphytos Lake. Remote Sensing, 15(16), article 4001. A separate study in Greece.",
+          "href": "https://doi.org/10.3390/rs15164001"
+        }
+      ],
+      "relatedSlugs": [
+        "why-does-healthy-vegetation-appear-red",
+        "can-geoai-replace-the-earth-observation-expert",
+        "can-earth-observation-describe-ecological-condition"
+      ]
+    },
+    {
       "slug": "can-satellites-reveal-forest-structure-beyond-canopy-greenness",
       "title": "Can Satellites Reveal Forest Structure Beyond Canopy Greenness?",
       "shortTitle": "Can satellites reveal forest structure?",
@@ -181,7 +534,8 @@
       "relatedSlugs": [
         "can-radar-satellites-see-through-clouds",
         "when-is-a-water-quality-indicator-ready-to-support-management",
-        "when-has-the-land-really-changed"
+        "when-has-the-land-really-changed",
+        "where-did-all-that-mud-come-from"
       ]
     },
     {
@@ -258,7 +612,8 @@
       "relatedSlugs": [
         "can-satellites-reveal-the-link-between-geodiversity-and-biodiversity",
         "why-does-a-global-land-change-taxonomy-matter",
-        "can-satellites-reveal-forest-structure-beyond-canopy-greenness"
+        "can-satellites-reveal-forest-structure-beyond-canopy-greenness",
+        "whats-growing-where-the-map-says-open-water"
       ]
     },
     {
@@ -453,7 +808,8 @@
       "relatedSlugs": [
         "can-satellites-detect-water-pollution",
         "why-do-shorelines-move-between-satellite-observations",
-        "what-should-an-eo-model-do-when-the-evidence-is-insufficient"
+        "what-should-an-eo-model-do-when-the-evidence-is-insufficient",
+        "can-two-maps-agree-and-both-be-wrong"
       ]
     },
     {

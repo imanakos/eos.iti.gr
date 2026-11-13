@@ -39,6 +39,14 @@ const newImages = new Map([
   ["when-is-a-water-quality-indicator-ready-to-support-management", "water-quality-management.jpg"],
   ["what-should-an-eo-model-do-when-the-evidence-is-insufficient", "model-uncertainty.jpg"],
 ]);
+const illustratedSlugs = [
+  "where-did-all-that-mud-come-from",
+  "can-two-maps-agree-and-both-be-wrong",
+  "its-hot-outside-why-did-the-lake-turn-cold",
+  "ai-removed-the-clouds-did-it-see-the-lake",
+  "whats-growing-where-the-map-says-open-water",
+];
+const releaseSlugs = [...originalSlugs, ...newImages.keys(), ...illustratedSlugs];
 const hash = (value) => createHash("sha256").update(JSON.stringify(value)).digest("hex");
 const noDraftStamps =
   /local draft|local review only|drafts for review|not published|unpublished drafts?/i;
@@ -118,14 +126,40 @@ function checkJpeg(file) {
 }
 
 assert(Array.isArray(data.articles), "Articles must be an array.");
-assert.equal(data.articles.length, 15, "The release must contain all 15 notes.");
+assert.equal(data.articles.length, releaseSlugs.length, "The release must contain all notes.");
 const knownSlugs = new Set(data.articles.map(({ slug }) => slug));
-assert.equal(knownSlugs.size, 15, "All note slugs must be unique.");
-assert.deepEqual(
-  [...knownSlugs].sort(),
-  [...originalSlugs, ...newImages.keys()].sort(),
-  "Unexpected note membership."
-);
+assert.equal(knownSlugs.size, releaseSlugs.length, "All note slugs must be unique.");
+assert.deepEqual([...knownSlugs].sort(), [...releaseSlugs].sort(), "Unexpected note membership.");
+for (const slug of illustratedSlugs) {
+  const note = data.articles.find((entry) => entry.slug === slug);
+  assert.equal(note.publishedAt, "2026-11-13");
+  assert.notEqual(note.status, "draft");
+  assert.equal(note.image, `/images/eo-insights/${slug}.jpg`);
+  assert.equal(note.diagram.src, `/images/eo-insights/${slug}.svg`);
+  assert(note.diagram.caption.startsWith("Hypothetical example."));
+  nonemptyString(note.diagram.alt, slug);
+  checkJpeg(path.join(projectDirectory, "public", note.image));
+  const svg = readFileSync(path.join(projectDirectory, "public", note.diagram.src), "utf8");
+  assert(/<svg\b/.test(svg) && /<desc\b/.test(svg) && /<title\b/.test(svg));
+  assert(!/<script\b|<foreignObject\b|file:\/\/|\/Users\//i.test(svg));
+  assert(note.sources.length && note.evidence.length);
+  assert(
+    note.relatedSlugs.length && note.relatedSlugs.every((s) => s !== slug && knownSlugs.has(s))
+  );
+  for (const ref of note.paragraphLinks ?? []) {
+    assert(
+      Number.isInteger(ref.paragraphIndex) &&
+        ref.paragraphIndex >= 0 &&
+        ref.paragraphIndex < note.paragraphs.length
+    );
+    validLink(ref.url, slug);
+  }
+  for (const { url } of note.sources) validLink(url, slug, false);
+  for (const item of note.evidence) {
+    validLink(item.href, slug);
+    for (const ref of item.additionalLinks ?? []) validLink(ref.url, slug);
+  }
+}
 assert.equal(
   hash(originalSlugs.map((slug) => data.articles.find((article) => article.slug === slug))),
   "36d188533921e50c81282b95bee067c76924f6efe68de87aef03c2dc05164fc0",
@@ -300,13 +334,13 @@ if (arguments_.includes("--production")) {
   const sitemap = readOutput("sitemap.xml");
   const rss = readOutput("eo-insights.xml");
   const items = [...rss.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((match) => match[1]);
-  assert.equal(items.length, 15, "RSS must contain exactly 15 notes.");
+  assert.equal(items.length, releaseSlugs.length, "RSS must include all notes.");
   const collection = readOutput("eo-insights/index.html");
   const collectionSchema = jsonLd(collection).find((item) => item["@type"] === "CollectionPage");
   assert.equal(
     collectionSchema?.hasPart?.length,
-    15,
-    "Collection structured data must contain 15 notes."
+    releaseSlugs.length,
+    "Collection structured data must include all notes."
   );
   const sitemapNotes = [...sitemap.matchAll(/<loc>[^<]*\/eo-insights\/([^/<]+)\/<\/loc>/g)].map(
     (match) => match[1]
@@ -314,7 +348,7 @@ if (arguments_.includes("--production")) {
   assert.deepEqual(
     sitemapNotes.sort(),
     [...knownSlugs].sort(),
-    "Sitemap must contain exactly the 15 note routes."
+    "Sitemap must contain exactly the published note routes."
   );
   for (const article of data.articles) {
     const route = `/eo-insights/${article.slug}/`;
@@ -345,6 +379,23 @@ if (arguments_.includes("--production")) {
     );
     const rssItem = items.find((item) => item.includes(`<link>${posting.url}</link>`));
     assert(rssItem, `${article.slug}: missing RSS item.`);
+    if (illustratedSlugs.includes(article.slug)) {
+      assert(html.includes(data.visualDisclosure));
+      assert(html.includes(`src="${siteBase}${article.diagram.src}"`));
+      assert(html.includes(`alt="${article.diagram.alt}"`));
+      assert(existsSync(path.join(outputDirectory, article.diagram.src)));
+      assert(readOutput("sitemap.txt").split(/\s+/).includes(posting.url));
+      assert(!html.includes("Watch this explanation"));
+      const evidenceHtml = section(html, "eos-practice-heading");
+      const sourcesHtml = section(html, "references-heading");
+      for (const r of article.paragraphLinks ?? []) assertLink(html, r.url, r.label, article.slug);
+      for (const s of article.sources) assertLink(sourcesHtml, s.url, s.label, article.slug);
+      for (const e of article.evidence) {
+        assertLink(evidenceHtml, e.href, e.label, article.slug);
+        for (const r of e.additionalLinks ?? [])
+          assertLink(evidenceHtml, r.url, r.label, article.slug);
+      }
+    }
     if (newImages.has(article.slug)) {
       assert(
         !("datePublished" in posting) && !("dateModified" in posting),
@@ -390,7 +441,7 @@ if (arguments_.includes("--production")) {
     }
   }
   process.stdout.write(
-    "PASS production readiness: 15 routes, collection entries, sitemap entries and RSS items; six figures and static evidence links; clean metadata with no invented dates.\n"
+    "PASS production readiness: 20 article routes, collection entries, sitemap entries and RSS items; legacy records and five illustrated notes verified.\n"
   );
 }
 

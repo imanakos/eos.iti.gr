@@ -11,6 +11,8 @@ import {
   type EOInsight,
 } from "@/data/eoInsightsData";
 import { SITE_URL, usePageMetadata, type PageMetadata } from "@/lib/seo";
+import { assetUrl } from "@/lib/utils";
+import { examplePrefix } from "@/data/eoInsightIllustrations";
 import NotFound from "./not-found";
 
 function EOSEvidenceCard({ item }: { item: EOSEvidenceItem }) {
@@ -300,6 +302,7 @@ export default function EOInsightArticle({ params }: RouteComponentProps<{ slug:
                 >
                   <InsightVisual
                     visual={insight.visual}
+                    image={insight.image}
                     imageAlt={insight.imageAlt}
                     className={
                       isFullFrameInsightVisual(insight.visual)
@@ -364,6 +367,28 @@ export default function EOInsightArticle({ params }: RouteComponentProps<{ slug:
               {insight.keyPoint}
             </p>
           </aside>
+
+          {insight.diagram && (
+            <figure className="my-10 overflow-hidden rounded-2xl border border-border bg-card">
+              <img
+                src={assetUrl(insight.diagram.src)}
+                alt={insight.diagram.alt}
+                className="block h-auto w-full"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption className="px-5 py-4 text-sm leading-relaxed text-muted-foreground">
+                {insight.diagram.caption.startsWith(examplePrefix) ? (
+                  <>
+                    <strong className="text-foreground">{examplePrefix}</strong>
+                    {insight.diagram.caption.slice(examplePrefix.length)}
+                  </>
+                ) : (
+                  insight.diagram.caption
+                )}
+              </figcaption>
+            </figure>
+          )}
 
           {evidence.length > 0 && (
             <section aria-labelledby="eos-practice-heading" className="mt-12">

@@ -4,6 +4,9 @@ import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
 import ts from "typescript";
+import { createElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { CloudRain, Layers3, Leaf, ThermometerSun, Waves } from "lucide-react";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const projectDirectory = path.resolve(scriptDirectory, "..");
@@ -57,12 +60,16 @@ const [
   projectCaseStudiesModule,
   eoEvidenceModule,
   publicationsModule,
+  insightOrderModule,
+  illustrationModule,
 ] = await Promise.all([
   loadTypeScriptData("src/data/newsData.ts"),
   loadTypeScriptData("src/data/newsBodyData.ts"),
   loadTypeScriptData("src/data/projectCaseStudiesData.ts"),
   loadTypeScriptData("src/data/eoEvidenceData.ts"),
   loadTypeScriptData("src/data/publicationsData.ts"),
+  loadTypeScriptData("src/data/eoInsightOrder.ts"),
+  loadTypeScriptData("src/data/eoInsightIllustrations.ts"),
 ]);
 const newsArticles = newsDataModule.newsArticles;
 const newsBodyText = newsBodyModule.newsBodyText;
@@ -122,15 +129,10 @@ function addNewsSlugs(articles) {
 }
 
 const newsEntries = addNewsSlugs(newsArticles);
-const sortedArticles = [...data.articles].sort((left, right) => {
-  if (!left.publishedAt && !right.publishedAt) return 0;
-  if (!left.publishedAt) return -1;
-  if (!right.publishedAt) return 1;
-  return right.publishedAt.localeCompare(left.publishedAt);
-});
+const sortedArticles = insightOrderModule.orderEOInsights(data.articles);
+const noteChangedOn = (article) => article.modifiedAt ?? article.publishedAt;
 const latestModifiedAt = sortedArticles.reduce(
-  (latest, article) =>
-    article.modifiedAt && article.modifiedAt > latest ? article.modifiedAt : latest,
+  (latest, article) => (noteChangedOn(article) > latest ? noteChangedOn(article) : latest),
   ""
 );
 const defaultSocialImage = {
@@ -601,6 +603,32 @@ function renderProjectCaseStudyBody(caseStudy) {
     </main>`;
 }
 
+function renderInsightCover(article) {
+  const image = `<img src="${escapeHtml(`${siteUrl}${article.image}`)}" alt="${escapeHtml(article.imageAlt)}" width="1200" height="630" />`;
+  const topic = illustrationModule.illustratedTopics[article.visual];
+  if (!topic) return image;
+  const Icon = { CloudRain, Layers3, Leaf, ThermometerSun, Waves }[topic.icon];
+  const glyph = renderToStaticMarkup(
+    createElement(Icon, { className: "h-4 w-4", "aria-hidden": true })
+  );
+  return `<div class="w-full overflow-hidden bg-[hsl(222_56%_13%)] text-white">
+    ${image}
+    <div class="flex items-start gap-3 px-5 py-4"><span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/20 bg-white/10">${glyph}</span>
+    <div><p class="text-xs font-semibold uppercase tracking-[0.12em] text-white/90">${escapeHtml(topic.label)}</p><p class="mt-1 text-sm text-white/75">${escapeHtml(topic.detail)}</p></div></div></div>`;
+}
+
+function renderInsightDiagram(diagram) {
+  if (!diagram) return "";
+  const prefix = illustrationModule.examplePrefix;
+  const caption = diagram.caption.startsWith(prefix)
+    ? `<strong class="text-foreground">${escapeHtml(prefix)}</strong>${escapeHtml(diagram.caption.slice(prefix.length))}`
+    : escapeHtml(diagram.caption);
+  return `<figure class="my-10 overflow-hidden rounded-2xl border border-border bg-card">
+    <img src="${escapeHtml(`${siteUrl}${diagram.src}`)}" alt="${escapeHtml(diagram.alt)}" loading="lazy" class="block h-auto w-full" />
+    <figcaption class="px-5 py-4 text-sm leading-relaxed text-muted-foreground">${caption}</figcaption>
+  </figure>`;
+}
+
 function renderCollectionBody() {
   return `<main>
       <header>
@@ -619,10 +647,9 @@ function renderCollectionBody() {
         ${sortedArticles
           .map(
             (article) => `<article>
-          <img src="${escapeHtml(`${siteUrl}${article.image}`)}" alt="${escapeHtml(article.imageAlt)}" width="1200" height="630" />
+          ${renderInsightCover(article)}
           <h3><a href="${escapeHtml(`${siteUrl}/eo-insights/${article.slug}/`)}">${escapeHtml(article.title)}</a></h3>
-          ${article.publishedAt ? `<time datetime="${escapeHtml(article.publishedAt)}">${escapeHtml(article.publishedAt)}</time>` : ""}
-          <p>${escapeHtml(article.readingMinutes)} min read</p>
+          ${article.diagram ? `<p>EO Analysis Note • ${escapeHtml(article.readingMinutes)} min read</p>` : `${article.publishedAt ? `<time datetime="${escapeHtml(article.publishedAt)}">${escapeHtml(article.publishedAt)}</time>` : ""}<p>${escapeHtml(article.readingMinutes)} min read</p>`}
           ${eoVideos.articles[article.slug] ? "<p>Short + full video available</p>" : ""}
           <p>${escapeHtml(article.summary)}</p>
         </article>`
@@ -675,7 +702,7 @@ function renderArticleBody(article) {
           <p>${escapeHtml(article.readingMinutes)} min read</p>
           <p>By <a href="${escapeHtml(`${siteUrl}${data.author.profilePath}/`)}">${escapeHtml(data.author.name)}</a>, ${escapeHtml(data.author.role)}</p>
           <figure>
-            <img src="${escapeHtml(`${siteUrl}${article.image}`)}" alt="${escapeHtml(article.imageAlt)}" width="1200" height="630" />
+            ${renderInsightCover(article)}
             <figcaption>${escapeHtml(data.visualDisclosure)}</figcaption>
           </figure>
         </header>
@@ -695,6 +722,7 @@ function renderArticleBody(article) {
           <h2>Key point</h2>
           <p>${escapeHtml(article.keyPoint)}</p>
         </aside>
+        ${renderInsightDiagram(article.diagram)}
         ${
           evidence.length
             ? `<section aria-labelledby="eos-practice-heading">
@@ -1346,7 +1374,7 @@ const latestNewsDate = newsEntries
 const lastModifiedByPath = new Map([
   [collectionPath, latestModifiedAt],
   ["/news/", latestNewsDate],
-  ...sortedArticles.map((article) => [`/eo-insights/${article.slug}/`, article.modifiedAt]),
+  ...sortedArticles.map((article) => [`/eo-insights/${article.slug}/`, noteChangedOn(article)]),
   ...newsEntries
     .map((article) => [`/news/${article.slug}/`, getNewsDateIso(article.date)])
     .filter(([, lastModified]) => Boolean(lastModified)),
