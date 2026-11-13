@@ -221,6 +221,7 @@
   }
   .ridge-figure figcaption span {
     font-size: 0.75rem;
+    font-weight: 500;
   }
   .ridge-figure figcaption small {
     font-size: 0.66rem;
